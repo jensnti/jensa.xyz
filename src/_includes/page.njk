@@ -2,4 +2,34 @@
 layout: base.njk
 ---
 
-{{ content | safe }}
+<article class="post">
+    <header class="post-header">
+        <div class="container">
+            <h1 >{{ title }}</h1>
+            {# <div>
+                <p class="lead">
+                {% if date %}
+                    <time datetime="{{ date | htmlDateString }}" class="dt-published">{{ date | readableDate }}</time>
+                {% endif %}
+                <span>— {{ helpers.getReadingTime(content) }} minuters läsning</span>
+                </p>
+            </div> #}
+        </div>
+    </header>
+    <div class="container">
+        {{ content | safe }}
+    </div>
+    {% if tags %}
+    <footer class="post-footer">
+        <div class="container">
+            <ul>
+                {% for tag in tags %}
+                <li>
+                    <a href="/tags/{{ tag }}">{{ tag }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </footer>
+    {% endif %}
+</article>
