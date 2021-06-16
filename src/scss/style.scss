@@ -1,0 +1,62 @@
+@import "reset";
+@import "color-tokens";
+@import "vars";
+@import '../../node_modules/modularscale-sass/stylesheets/modularscale';
+
+$modularscale: (
+  base: 1rem,
+  ratio: 1.414,
+);
+
+.skip-link {
+    &:not(:focus) {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+    }
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+body {
+    font-size: ms(1);
+    font-family: $sans-serif;
+    font-weight: 400;
+}
+
+h1, h2 {
+    font-family: $serif;
+}
+
+p {
+    max-width: 60ch;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  ms(1);
+    padding-right:  ms(1);
+    max-width: 45.18rem;
+}
+
+.site-header-inner, .site-footer-inner{
+    display: flex;
+    justify-content: space-between;
+}
