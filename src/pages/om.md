@@ -1,6 +1,6 @@
 ---
-title: 'Om'
-permalink: '/om/index.html'
+title: Om
+permalink: /om/index.html
 ---
 
 Om sidan

@@ -1,6 +1,6 @@
 ---
-title: 'kontakt'
-permalink: '/kontakt/index.html'
+title: Kontakt
+permalink: /kontakt/index.html
 ---
 
 Kontakt sidan
