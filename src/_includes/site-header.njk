@@ -1,0 +1,15 @@
+<a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+<header role="banner" class="site-header">
+    <div class="container">
+        <div class="site-header-inner">
+            <a href="/" class="site-header-brand" aria-label="{{ meta.siteName }} - Hem">
+                <span class="site-header-title" aria-hidden="true">{{ meta.siteName }}</span>
+            </a>
+            <nav class="site-header-nav" aria-label="navigation">
+                {% for page in collections.pages %}
+                    <a class="{% if page.url == page.url %} active{% endif %}" href="{{ page.url }}">{{ page.data.title }}</a>
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
+</header>

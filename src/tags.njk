@@ -1,0 +1,35 @@
+---
+title: Tag arkiv
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+  addAllPagesToCollections: true
+permalink: /tags/{{ tag }}/
+layout: base.njk
+---
+
+{% if collections[tag].length %}
+  <section class="post-list">
+    <div class="container">
+      <h2>posts i {{ tag }}</h2>
+      <ol reversed>
+        {% for post in collections[tag] %}
+            <li>
+              <h3>
+                <a href="{{ post.url }}" rel="bookmark">{{ post.data.title }}</a>
+              </h3>
+              <p>
+                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+              </p>
+            </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+{% endif %}

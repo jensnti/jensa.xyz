@@ -1,0 +1,19 @@
+{% if collections.posts.length %}
+  <section class="post-list">
+    <div class="container">
+      <h2>Senaste inläggen</h2>
+      <ol>
+        {% for post in collections.posts | reverse %}
+            <li>
+              <h3>
+                <a href="{{ post.url }}" rel="bookmark">{{ post.data.title }}</a>
+              </h3>
+              <p>
+                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+              </p>
+            </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+{% endif %}

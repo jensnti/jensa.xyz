@@ -1,0 +1,31 @@
+/* 🛑 STOP!
+  Do not change this file directly.
+  Modify colors in src/_theme/color-tokens.js
+ */
+
+$color-primary: rgb(171, 13, 47) !default;
+$color-on-primary: rgb(246, 186, 199) !default;
+$color-dark: rgb(23, 31, 38) !default;
+$color-on-dark: rgb(124, 135, 144) !default;
+$color-light: rgb(239, 232, 230) !default;
+$color-on-light: rgb(113, 103, 101) !default;
+
+$base-color-tokens: ("primary", "dark", "light");
+
+$color-tokens: (
+  "color-primary": $color-primary,
+  "color-on-primary": $color-on-primary,
+  "color-dark": $color-dark,
+  "color-on-dark": $color-on-dark,
+  "color-light": $color-light,
+  "color-on-light": $color-on-light
+) !default;
+
+@mixin color-tokens() {
+  --color-primary: #{$color-primary};
+  --color-on-primary: #{$color-on-primary};
+  --color-dark: #{$color-dark};
+  --color-on-dark: #{$color-on-dark};
+  --color-light: #{$color-light};
+  --color-on-light: #{$color-on-light};
+}
