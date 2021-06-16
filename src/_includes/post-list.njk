@@ -3,7 +3,7 @@
     <div class="container">
       <h2>Senaste inläggen</h2>
       <ol>
-        {% for post in collections.posts | reverse %}
+        {% for post in collections.feed  %}
             <li>
               <h3>
                 <a href="{{ post.url }}" rel="bookmark">{{ post.data.title }}</a>

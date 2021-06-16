@@ -54,8 +54,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('pages', (collectionApi) =>
         collectionApi.getFilteredByGlob('src/pages/*.md')
     );
+
     eleventyConfig.addCollection('posts', (collectionApi) =>
         collectionApi.getFilteredByGlob('src/posts/*.md')
+    );
+
+    eleventyConfig.addCollection('feed', (collectionApi) =>
+        [...collectionApi.getFilteredByGlob('src/posts/*.md')].reverse().slice(0, 5)
     );
 
     const markdownLibrary = markdownIt({
