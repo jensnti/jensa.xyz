@@ -44,6 +44,10 @@ h1, h2 {
     font-family: $serif;
 }
 
+h1 {
+    font-weight: 900;
+}
+
 p {
     max-width: 60ch;
 }
@@ -59,4 +63,31 @@ p {
 .site-header-inner, .site-footer-inner{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.site-header-title {
+    font-weight: 900;
+    font-size: ms(2);
+}
+
+.site-header-brand {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.nav-item {
+    font-size: ms(1);
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.site-footer-nav {
+    @media (max-width: map-get($breakpoints, md )) {
+        display: none;
+    }
 }
