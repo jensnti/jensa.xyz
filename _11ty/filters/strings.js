@@ -2,7 +2,7 @@ const slugify = require('slugify');
 
 module.exports = {
     capitalize: (str) => {
-        return s.charAt(0).toUpperCase() + s.slice(1);
+        return str.charAt(0).toUpperCase() + str.slice(1);
     },
 
     slugUrl: (str) => {
