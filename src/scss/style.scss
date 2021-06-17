@@ -34,10 +34,26 @@ $modularscale: (
     white-space: nowrap;
 }
 
+body, html {
+    height: 100%;
+}
+
 body {
     font-size: ms(1);
     font-family: $sans-serif;
     font-weight: 400;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
 }
 
 h1, h2 {
@@ -45,11 +61,40 @@ h1, h2 {
 }
 
 h1 {
+    font-size: ms(4);
     font-weight: 900;
+    max-width: 15ch;
+}
+
+h1 > a > svg {
+    width: ms(2);
+    height:  ms(2);
+}
+
+h2, h3 {
+    font-weight: 600;
+    max-width: 25ch;
+}
+
+h2 {
+    font-size: ms(3);
+}
+
+h3 {
+    font-size: ms(2);
 }
 
 p {
     max-width: 60ch;
+    margin-top: 0;
+    margin-bottom: ms(0);
+}
+
+ol, ul {
+    margin-top: ms(-1);
+    margin-bottom: ms(-1);
+    padding-left: 0rem;
+    padding-right: 0rem;
 }
 
 .container {
@@ -63,7 +108,7 @@ p {
 .site-header-inner, .site-footer-inner{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .site-header-title {
@@ -90,4 +135,63 @@ p {
     @media (max-width: map-get($breakpoints, md )) {
         display: none;
     }
+}
+
+.anchor {
+    text-decoration: none;
+    margin-left: ms(-2);
+}
+// a[href].anchor,
+// a[href].anchor:visited {
+//     visibility: hidden;
+// }
+// :focus > a[href].anchor,
+// :focus > a[href].anchor:visited,
+// :hover > a[href].anchor,
+// :hover > a[href].anchor:visited,
+// a[href].anchor:focus,
+// a[href].anchor:focus:visited {
+//     visibility: visible;
+// }
+
+.post-list {
+    list-style: none;
+}
+
+.lead {
+    font-size: ms(2);
+    font-weight: 300;
+}
+
+.site-header {
+    padding-top: ms(1);
+    padding-bottom: ms(1);
+}
+
+.site-footer {
+    padding-top: ms(3);
+    padding-bottom: ms(4);
+}
+
+.post-header, .home-header {
+    padding-top: ms(3);
+    padding-bottom: ms(3);
+}
+
+.post-footer {
+    padding-top: ms(2);
+    padding-bottom: ms(2);
+}
+
+.header-title {
+    margin-bottom: ms(1);
+}
+
+.tag-list {
+    list-style: none;
+    display: flex;
+}
+
+.tag-item {
+    padding-right: ms(1);
 }
