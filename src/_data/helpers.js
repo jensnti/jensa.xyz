@@ -2,6 +2,11 @@ module.exports = {
   getReadingTime(text) {
     const wordsPerMinute = 200;
     const numberOfWords = text.split(/\s/g).length;
-    return Math.ceil(numberOfWords / wordsPerMinute);
+    const readingTime = Math.ceil(numberOfWords / wordsPerMinute);
+    if (readingTime > 1) {
+        return `${readingTime} minuters läsning`;
+    } else {
+        return `${readingTime} minuts läsning`;
+    }
   }
 };
