@@ -3,10 +3,10 @@ layout: base.njk
 ---
 
 {% if collections.posts.length %}
-  <section class="post-list">
+  <section>
     <div class="container">
-      <h2>Alla inlägg</h2>
-      <ol>
+      <h2 class="post-list-title">Alla inlägg</h2>
+      <ol class="post-list">
         {% for post in collections.posts | reverse %}
             <li>
               <h3>
@@ -21,3 +21,5 @@ layout: base.njk
     </div>
   </section>
 {% endif %}
+
+<script src="/js/sort.js"></script>
