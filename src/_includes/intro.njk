@@ -10,12 +10,12 @@
             {{ introSummary | safe }}
         </div>
         {% elif date %}
-        <div class="site-lead">
+        <div>
             <p class="lead">
             {% if date %}
             <time datetime="{{ date | htmlDateString }}" class="dt-published">{{ date | readableDate }}</time>
             {% endif %}
-            <span>— {{ helpers.getReadingTime(content) }} minuters läsning</span>
+            <span>— {{ helpers.getReadingTime(content) }}</span>
             </p>
         </div>
         {% endif %}
