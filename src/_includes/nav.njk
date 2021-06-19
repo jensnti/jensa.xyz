@@ -1,0 +1,5 @@
+<nav class="nav" aria-label="navigation">
+    {% for page in collections.pages %}
+        <a class="nav-item{% if page.url == page.url %} active{% endif %}" href="{{ page.url }}">{{ page.data.title }}</a>
+    {% endfor %}
+</nav>

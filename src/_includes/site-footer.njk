@@ -2,14 +2,12 @@
     <div class="container">
         <div class="site-footer-inner">
             <div>
-                <a class="sidebar-nav-item" href="{{ pkg.homepage }}" rel="noopener" target="_blank">GitHub project</a>
-                <span class="sidebar-nav-item">Currently v{{ pkg.version }}</span>
+                <p>Den här sidan är skapad med <a href="https://www.11ty.dev/">Eleventy</a> 
+                och med stor hjälp av <a href="https://github.com/andy-piccalilli/hylia">Hylia</a>
+                och diverse andra starter kits.</p>
+                <a href="{{ pkg.homepage }}" rel="noopener" target="_blank">Sidans GitHub repo</a>
             </div>
-            <nav class="site-footer-nav" aria-label="navigation">
-                {% for item in collections.pages %}
-                    <a class="{% if page.url == item.url %} active{% endif %}" href="{{ item.url }}">{{ item.data.title }}</a>
-                {% endfor %}
-                </nav>
-            </div>
+            {% include "nav.njk" %}
         </div>
-    </footer>
+    </div>
+</footer>
