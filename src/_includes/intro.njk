@@ -6,11 +6,11 @@
             </a>
         </h1>
         {% if introSummary %}
-        <div>
+        <div class="site-lead">
             {{ introSummary | safe }}
         </div>
         {% elif date %}
-        <div>
+        <div class="site-lead">
             <p class="lead">
             {% if date %}
             <time datetime="{{ date | htmlDateString }}" class="dt-published">{{ date | readableDate }}</time>

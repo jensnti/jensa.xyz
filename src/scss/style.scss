@@ -131,7 +131,7 @@ ol, ul {
     }
 }
 
-.site-footer-nav {
+.site-footer-inner > nav {
     @media (max-width: map-get($breakpoints, md )) {
         display: none;
     }
@@ -158,7 +158,8 @@ ol, ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-
+    margin-top: ms(0);
+    margin-bottom: ms(0);
     &-title {
         display: flex;
         align-items: baseline;
@@ -173,6 +174,7 @@ ol, ul {
 .lead {
     font-size: ms(2);
     font-weight: 300;
+    margin-bottom: 0;
 }
 
 .site-header {
@@ -185,18 +187,21 @@ ol, ul {
     padding-bottom: ms(4);
 }
 
-.post-header, .home-header {
+.site-intro {
     padding-top: ms(3);
     padding-bottom: ms(3);
 }
 
 .post-footer {
-    padding-top: ms(2);
-    padding-bottom: ms(2);
+    padding-top: ms(1);
+    padding-bottom: ms(1);
 }
 
-.header-title {
-    margin-bottom: ms(1);
+.site-lead {
+    margin-top: ms(1);
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .tag-list {
@@ -209,7 +214,6 @@ ol, ul {
 }
 
 .icon {
-    content: ' ';
     width: 24px;
     height: 24px;
     display: inline-block;
@@ -222,3 +226,8 @@ ol, ul {
     }
 }
 
+.text-small {
+    font-size: ms(0);
+    margin-bottom: ms(-2);
+    line-height: 1.4;
+}
