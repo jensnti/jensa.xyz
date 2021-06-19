@@ -2,22 +2,11 @@
 layout: base.njk
 ---
 
+{# Intro content #}
+{% set introHeading = title %}
+
 <article class="post">
-    <header class="post-header">
-        <div class="container">
-            <a href="#{{ title | slug }}" class="anchor">
-                <h1 id="{{ title | slug }}">{{ title }}</h1>
-            </a>
-            {# <div>
-                <p class="lead">
-                {% if date %}
-                    <time datetime="{{ date | htmlDateString }}" class="dt-published">{{ date | readableDate }}</time>
-                {% endif %}
-                <span>— {{ helpers.getReadingTime(content) }} minuters läsning</span>
-                </p>
-            </div> #}
-        </div>
-    </header>
+    {% include "intro.njk" %}
     <div class="container">
         {{ content | safe }}
     </div>

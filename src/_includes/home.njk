@@ -3,14 +3,13 @@ layout: base.njk
 postsHeading: Senaste inläggen
 ---
 
-<header class="home-header">
-    <div class="container">
-        <h1 class="header-title">{{ title }}</h1>
-        <div>
-            {{ content | safe }}
-        </div>
-    </div>
-</header>
+{# Intro content #}
+{% set introHeading = title %}
+{% set introSummary %}
+  {{ content | safe }}
+{% endset %}
+
+{% include "intro.njk" %}
 
 {# Post list content #}
 {% set postListHeading = postsHeading %}
