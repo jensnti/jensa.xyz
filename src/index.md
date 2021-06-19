@@ -3,4 +3,4 @@ layout: home.njk
 title: Hej, jag heter Jens
 ---
 
-Den här webbsidan är...
+Den här webbsidan är mer eller mindre en blog.
