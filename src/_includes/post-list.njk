@@ -1,9 +1,9 @@
-{% if collections.posts.length %}
+{% if postListItems.length %}
   <section>
     <div class="container">
-      <h2>Senaste inläggen</h2>
+      <h2 class="post-list-title">{{ postListHeading }}</h2>
       <ol class="post-list">
-        {% for post in collections.feed  %}
+        {% for post in postListItems  %}
             <li>
               <h3>
                 <a href="{{ post.url }}" rel="bookmark">{{ post.data.title }}</a>

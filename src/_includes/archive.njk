@@ -1,25 +1,12 @@
 ---
 layout: base.njk
+postsHeading: Alla inlägg
 ---
 
-{% if collections.posts.length %}
-  <section>
-    <div class="container">
-      <h2 class="post-list-title">Alla inlägg</h2>
-      <ol class="post-list">
-        {% for post in collections.posts | reverse %}
-            <li>
-              <h3>
-                <a href="{{ post.url }}" rel="bookmark">{{ post.data.title }}</a>
-              </h3>
-              <p>
-                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-              </p>
-            </li>
-        {% endfor %}
-      </ol>
-    </div>
-  </section>
-{% endif %}
+{# Post list content #}
+{% set postListHeading = postsHeading %}
+{% set postListItems = collections.posts | reverse %}
+
+{% include "post-list.njk" %}
 
 <script src="/js/sort.js"></script>

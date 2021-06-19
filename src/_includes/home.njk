@@ -1,5 +1,6 @@
 ---
 layout: base.njk
+postsHeading: Senaste inläggen
 ---
 
 <header class="home-header">
@@ -10,5 +11,9 @@ layout: base.njk
         </div>
     </div>
 </header>
+
+{# Post list content #}
+{% set postListHeading = postsHeading %}
+{% set postListItems = collections.feed %}
 
 {% include "post-list.njk" %}
