@@ -1,12 +1,15 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const mila = require('markdown-it-link-attributes');
-const markdownItAnchor = require('markdown-it-anchor');
 const emojiReadTime = require('@11tyrocks/eleventy-plugin-emoji-readtime');
 const mia = require('markdown-it-attrs');
 const glob = require('fast-glob');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const fs = require('fs');
+
+// Import transforms
+const htmlMinTransform = require('./src/transforms/html-min-transform.js');
+const parseTransform = require('./src/transforms/parse-transform.js');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(rssPlugin);
@@ -27,7 +30,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/favicon.ico');
 
     // Filters
-    glob.sync(['_11ty/filters/*.js']).forEach((file) => {
+    glob.sync(['src/filters/*.js']).forEach((file) => {
         let filters = require('./' + file);
         Object.keys(filters).forEach((name) =>
             eleventyConfig.addFilter(name, filters[name])
@@ -35,7 +38,7 @@ module.exports = function (eleventyConfig) {
     });
 
     // Shortcodes
-    glob.sync(['_11ty/shortcodes/*.js']).forEach((file) => {
+    glob.sync(['src/shortcodes/*.js']).forEach((file) => {
         let shortcodes = require('./' + file);
         Object.keys(shortcodes).forEach((name) =>
             eleventyConfig.addShortcode(name, shortcodes[name])
@@ -43,12 +46,16 @@ module.exports = function (eleventyConfig) {
     });
 
     // PairedShortcodes
-    glob.sync(['_11ty/paired-shortcodes/*.js']).forEach((file) => {
+    glob.sync(['src/paired-shortcodes/*.js']).forEach((file) => {
         let pairedShortcodes = require('./' + file);
         Object.keys(pairedShortcodes).forEach((name) =>
             eleventyConfig.addPairedShortcode(name, pairedShortcodes[name])
         );
     });
+
+    // Transforms
+    eleventyConfig.addTransform('htmlmin', htmlMinTransform);
+    eleventyConfig.addTransform('parse', parseTransform);
 
     // Collections
     eleventyConfig.addCollection('pages', (collectionApi) =>
@@ -69,20 +76,6 @@ module.exports = function (eleventyConfig) {
         linkify: true,
         typographer: true
     })
-        .use(markdownItAnchor, {
-            permalink: true,
-            permalinkClass: 'anchor',
-            permalinkSymbol: '#',
-            permalinkSpace: false,
-            permalinkBefore: false,
-            level: [1, 2, 3],
-            slugify: (s) =>
-                s
-                    .trim()
-                    .toLowerCase()
-                    .replace(/[\s+~\/]/g, '-')
-                    .replace(/[().`,%·'"!?¿:@*]/g, '')
-        })
         .use(mila, {
             pattern: /^https:/,
             attrs: {
