@@ -2,15 +2,14 @@
     <div class="container">
         <div class="site-footer-inner">
             <div>
-                <p class="text-small">Den här sidan är skapad med <a href="https://www.11ty.dev/">Eleventy</a> 
-                och med stor hjälp av <a href="https://github.com/andy-piccalilli/hylia">Hylia</a>
-                och diverse andra starter kits.</p>
-                <p class="text-small">Källkoden finns på sidans
-                <a href="{{ pkg.homepage }}" rel="noopener" target="_blank">GitHub repo</a>
-                och är fri att använda. All text och innehåll &copy; {% year %} {{ meta.author.name }}.
-                </p>
-                <p class="text-small">Sidan hostas med <a href="https://www.netlify.com/">Netlify</a>.</p>
-                <p class="text-small"><a href="/feed.xml">Prenumerera</a> på sidans feed.</p>
+                <p class="text-small">Den här sidan är skapad med <a href="https://www.11ty.dev/">Eleventy</a>.
+                Med stor hjälp av <a href="https://github.com/andy-piccalilli/hylia">Hylia</a>, ideér från
+                <a href="https://github.com/TigersWay/eleventy-classic-blog-starter">EBCS</a>
+                och diverse andra <a href="https://www.11ty.dev/docs/starter/">starter projects</a>. 
+                Källkoden finns på sidans <a href="{{ pkg.homepage }}" rel="noopener" target="_blank">GitHub repo</a>
+                och är fri att använda.</p>
+                <p class="text-small">Sidan är publicerad på <a href="https://www.netlify.com/">Netlify</a>.</p>
+                <p class="text-small">All text och innehåll &copy; {% year %} {{ meta.author.name }}.</p>
             </div>
             {% include "nav.njk" %}
         </div>
