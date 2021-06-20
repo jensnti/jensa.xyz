@@ -5,7 +5,7 @@ permalink: /om/index.html
 
 Tack för besöket.
 
-Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans. Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmering. Jag är även lärare på vårt program för Gymnasieingenjörer.
+Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst, 2021, blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans. Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmering. Förutom det är jag även en del av vårt program för Gymnasieingenjörer.
 
 Att designa och koda är något som jag gjort större delen av mitt liv. Det är nu något som jag har privilegiet att arbeta med.
 
