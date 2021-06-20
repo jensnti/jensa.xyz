@@ -1,5 +1,5 @@
 module.exports = {
-    siteName: 'Anteckningar',
+    siteName: 'J.Anteckningar',
     siteDesc: 'Blog och anteckningsblock för Jens Andreasson',
     colors: {
         fg: '#fff',
