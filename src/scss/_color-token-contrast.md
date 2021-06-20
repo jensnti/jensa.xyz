@@ -6,24 +6,68 @@ title: Color Token Contrast
 
 ## color-primary
   - `color-on-primary`
-  - `color-light`
 
 ## color-on-primary
   - `color-primary`
+  - `color-purple`
+  - `color-link`
+  - `color-on-secondary`
   - `color-dark`
+  - `color-on-light`
+
+## color-purple
+  - `color-on-primary`
+  - `color-on-purple`
+  - `color-on-link`
+  - `color-secondary`
+  - `color-on-dark`
+  - `color-light`
+
+## color-on-purple
+  - `color-purple`
+
+## color-link
+  - `color-on-primary`
+  - `color-on-link`
+  - `color-secondary`
+  - `color-on-dark`
+  - `color-light`
+
+## color-on-link
+  - `color-purple`
+  - `color-link`
+  - `color-dark`
+
+## color-secondary
+  - `color-purple`
+  - `color-link`
+  - `color-on-secondary`
+  - `color-dark`
+
+## color-on-secondary
+  - `color-on-primary`
+  - `color-secondary`
+  - `color-light`
 
 ## color-dark
   - `color-on-primary`
+  - `color-on-link`
+  - `color-secondary`
   - `color-on-dark`
   - `color-light`
 
 ## color-on-dark
+  - `color-purple`
+  - `color-link`
   - `color-dark`
 
 ## color-light
-  - `color-primary`
+  - `color-purple`
+  - `color-link`
+  - `color-on-secondary`
   - `color-dark`
   - `color-on-light`
 
 ## color-on-light
+  - `color-on-primary`
   - `color-light`

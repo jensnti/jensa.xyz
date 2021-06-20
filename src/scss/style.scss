@@ -8,6 +8,13 @@ $modularscale: (
   ratio: 1.414,
 );
 
+$light: #fffffe;
+$bg: #f8f5f2;
+$dark: #232323;
+$primary: #097B7B;
+$secondary: #E12B0E;
+
+
 .skip-link {
     &:not(:focus) {
         border: 0;
@@ -46,12 +53,33 @@ body {
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
-    background-color: rgba(251, 251, 254, 1);
-    color: rgba(42, 42, 46, 1);
+    background-color: $bg;
+    color: $dark;
 }
 
 main {
     flex: 1 0 auto;
+    background-color: $light;
+}
+
+.site-header {
+    background-color: $light;
+}
+
+.site-intro {
+    background-color: $bg;
+}
+
+.site-header, .site-footer {
+    a {
+        color: $primary;
+        &:hover {
+            color: scale-color($primary, $lightness: -20%, $saturation: 10%) !important;
+        }
+        &:visited {
+            color: $primary;
+        }
+    }
 }
 
 h1, h2, h3 {
@@ -100,6 +128,16 @@ ol, ul {
 ol, .tag-list {
     padding-left: 0rem;
     padding-right: 0rem;
+}
+
+a {
+    color: $secondary;
+    &:visited {
+        color: $secondary;
+    }
+    &:hover {
+        color: scale-color($secondary, $lightness: -20%, $saturation: 10%);
+    }
 }
 
 .container {
@@ -201,6 +239,7 @@ ol, .tag-list {
 .site-intro {
     padding-top: ms(3);
     padding-bottom: ms(3);
+    margin-bottom: ms(1);
 }
 
 .post-footer {

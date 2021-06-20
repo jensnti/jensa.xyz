@@ -3,18 +3,30 @@
   Modify colors in src/_theme/color-tokens.js
  */
 
-$color-primary: rgb(171, 13, 47) !default;
-$color-on-primary: rgb(246, 186, 199) !default;
-$color-dark: rgb(23, 31, 38) !default;
-$color-on-dark: rgb(124, 135, 144) !default;
-$color-light: rgb(239, 232, 230) !default;
-$color-on-light: rgb(113, 103, 101) !default;
+$color-primary: #078080 !default;
+$color-on-primary: #F3FBFB !default;
+$color-purple: #381436 !default;
+$color-on-purple: #A47CA2 !default;
+$color-link: #182142 !default;
+$color-on-link: #8089AA !default;
+$color-secondary: #f45d48 !default;
+$color-on-secondary: #530F05 !default;
+$color-dark: #232323 !default;
+$color-on-dark: #8A8A8A !default;
+$color-light: #f8f5f2 !default;
+$color-on-light: #75706C !default;
 
-$base-color-tokens: ("primary", "dark", "light");
+$base-color-tokens: ("primary", "purple", "link", "secondary", "dark", "light");
 
 $color-tokens: (
   "color-primary": $color-primary,
   "color-on-primary": $color-on-primary,
+  "color-purple": $color-purple,
+  "color-on-purple": $color-on-purple,
+  "color-link": $color-link,
+  "color-on-link": $color-on-link,
+  "color-secondary": $color-secondary,
+  "color-on-secondary": $color-on-secondary,
   "color-dark": $color-dark,
   "color-on-dark": $color-on-dark,
   "color-light": $color-light,
@@ -24,6 +36,12 @@ $color-tokens: (
 @mixin color-tokens() {
   --color-primary: #{$color-primary};
   --color-on-primary: #{$color-on-primary};
+  --color-purple: #{$color-purple};
+  --color-on-purple: #{$color-on-purple};
+  --color-link: #{$color-link};
+  --color-on-link: #{$color-on-link};
+  --color-secondary: #{$color-secondary};
+  --color-on-secondary: #{$color-on-secondary};
   --color-dark: #{$color-dark};
   --color-on-dark: #{$color-on-dark};
   --color-light: #{$color-light};
