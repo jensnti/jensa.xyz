@@ -82,6 +82,7 @@ h2 {
 
 h3 {
     font-size: ms(2);
+    margin-bottom: ms(-2);
 }
 
 p {
@@ -93,6 +94,8 @@ p {
 ol, ul {
     margin-top: ms(-1);
     margin-bottom: ms(-1);
+}
+ol, .tag-list {
     padding-left: 0rem;
     padding-right: 0rem;
 }
@@ -164,6 +167,12 @@ ol, ul {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
+    }
+    h3 {
+        margin-bottom: 0;
+    }
+    li {
+        margin-bottom: ms(-1);
     }
 }
 
