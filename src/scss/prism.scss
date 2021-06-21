@@ -12,9 +12,7 @@ Colors changed by Jens Andreasson
 
 code[class*="language-"],
 pre[class*="language-"] {
-    font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
-        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier,
-        monospace;
+    font-family: $mono;
     font-size: 14px;
     line-height: 1.375;
     direction: ltr;
@@ -52,7 +50,8 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
     text-shadow: none;
-    background: $black;
+    color: $black;
+    background: $light;
 }
 
 /* Code blocks */
@@ -70,11 +69,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: $light;
+    color: $gray;
 }
 
 .token.punctuation {
-    color: $light;
+    color: $white;
 }
 
 .token.namespace {
@@ -84,18 +83,26 @@ pre[class*="language-"] {
 .token.tag,
 .token.operator,
 .token.number {
-    color: $tertiary;
+    color: $primary;
 }
 
 .token.property,
-.token.function {
+.token.attr-value {
     color: $lightness;
+}
+
+.token.function {
+    color: $secondary
+}
+
+.token.parameter {
+    color: $tertiary;
 }
 
 .token.tag-id,
 .token.selector,
 .token.atrule-id {
-    color: $white;
+    color: $primary;
 }
 
 code.language-javascript,
@@ -112,7 +119,6 @@ code.language-scss,
 .language-css .token.string,
 .language-scss .token.string,
 .style .token.string,
-.token.attr-value,
 .token.keyword,
 .token.control,
 .token.directive,
@@ -125,7 +131,7 @@ code.language-scss,
 
 .token.placeholder,
 .token.variable {
-    color: $primary
+    color: $tertiary
 }
 
 .token.deleted {
