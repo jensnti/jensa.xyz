@@ -1,15 +1,21 @@
 <footer role="contentinfo" class="site-footer">
     <div class="container">
         <div class="site-footer-inner">
-            <div>
-                <p class="text-small">Den här sidan är skapad med <a href="https://www.11ty.dev/">Eleventy</a>.
-                Med stor hjälp av <a href="https://github.com/andy-piccalilli/hylia">Hylia</a>, ideér från
-                <a href="https://github.com/TigersWay/eleventy-classic-blog-starter">EBCS</a>
-                och diverse andra <a href="https://www.11ty.dev/docs/starter/">starter projects</a>. 
-                Källkoden finns på sidans <a href="{{ pkg.homepage }}" rel="noopener" target="_blank">GitHub repo</a>
-                och är fri att använda.</p>
-                <p class="text-small">Sidan är publicerad på <a href="https://www.netlify.com/">Netlify</a>.</p>
-                <p class="text-small">All text och innehåll &copy; {% year %} {{ meta.author.name }}.</p>
+            <div class="pr-md-3">
+                <p class="text-small">Den här sidan är skapad med
+                    <a href="https://www.11ty.dev/">Eleventy</a>.
+                                        Med stor hjälp av
+                    <a href="https://github.com/andy-piccalilli/hylia">Hylia</a>, ideér från
+                    <a href="https://github.com/TigersWay/eleventy-classic-blog-starter">EBCS</a>
+                    och diverse andra
+                    <a href="https://www.11ty.dev/docs/starter/">starter projects</a>. 
+                                        Källkoden finns på sidans
+                    <a href="{{ pkg.homepage }}" rel="noopener" target="_blank">GitHub repo</a>
+                    och är fri att använda.</p>
+                <p class="text-small">Sidan är publicerad på
+                    <a href="https://www.netlify.com/">Netlify</a>.</p>
+                <p class="text-small">All text och innehåll &copy; {% year %}
+                    {{ meta.author.name }}.</p>
             </div>
             {% include "nav.njk" %}
         </div>
