@@ -20,21 +20,16 @@
         <link rel="stylesheet" href="https://use.typekit.net/hzx7qyg.css">
         <link rel="alternate" type="application/rss+xml" title="{{ meta.siteName }}" href="{{ meta.url }}/feed.xml"/>
         <link rel='icon' type='image/x-icon' href='/favicon.ico'/>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
-            integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="{{ '/css/prism.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
         <title>{{ pageTitle }}</title>
     </head>
-    <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
+    <body class="dark page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
         {% include "site-header.njk" %}
-        <main id="main-content" tabindex="-1">
+        <main id="main-content" tabindex="-1" role="main">
             {{ content | safe }}
         </main>
         {% include "site-footer.njk" %}
-        <script defer src="/js/dark.js"></script>
+        {# <script defer src="/js/dark.js"></script> #}
     </body>
 </html>
