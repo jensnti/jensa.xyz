@@ -4,13 +4,15 @@ date: 2021-06-21
 tags: ['kod', 'markdown', 'prism']
 ---
 
-Att kunna skriva kodexempel och visa kod på den här sidan är nödvändigt. Som tur är så finns det tillgängligt med Eleventys [Syntax Highlight Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/). Det använder i sin tur [Prism](https://prismjs.com/) för att formattera koden.
+Att kunna skriva kodexempel och visa kod på den här sidan är ett måste. Som tur är så finns det tillgängligt med Eleventys [Syntax Highlight Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/). Det använder i sin tur [Prism](https://prismjs.com/) för att styla koden.
 
 Att inkludera ett tema blir första steget, att sedan bli nöjd med det tillsammans med den här sidans tema, det är en annan fråga. Förutom Prisms startteman så finns det lite fler i det här repot, [Prism themes](https://github.com/PrismJS/prism-themes/blob/master/README.md).
 
 Min tanke ~~är~~/~~var~~ att utgå från [GitHubs](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) tema och sedan ändra, Vi ~~får se hur det går~~ kan nu se hur det gick.
 
-För att inkludera ett plugin i eleventy så behöver det läggas till o konfigurationen.
+## Tester
+
+För att inkludera ett plugin i eleventy så behöver det läggas till i konfigurationen.
 ```js
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -33,7 +35,7 @@ Sedan behöver Prisms css laddas, detta kan göras med lokal fil eller från CDN
 
 Det första jag vill åtgärda är fontstorleken, jag har valt stor text på denna sida för att jag gillar det, men för koden blir det inte bra.
 ```css
-pre {
+.text-small {
     font-size: ms(0) !important;
 }
 ```

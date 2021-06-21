@@ -2,21 +2,24 @@
 title: Om
 permalink: /om/index.html
 ---
+{% lead %}
+Tack för titten.
+{% endlead %}
+Jag heter Jens, något som kanske är uppenbart vid det här laget.
 
-Tack för besöket.
+Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst, 2021, så blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans.
 
-Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst, 2021, blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans.
-Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmering. Förutom så kör vi även Gymnasieingenjör på skolan, teknikprogrammets fjärde år.
+Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmering. Jag jobbar även med eftergymnasial utbildning för gymnasieingenjörer på teknikprogrammets fjärde år.
 
 Jag är en [GitHub Campus Advisor](https://education.github.com/teachers/advisors).
 
-### Mitt hem...
+### Mitt hem
 
-Är i Umeå.
+Är i Umeå, Sverige.
 
-### På webben...
+### På webben
 
-Finns jag på bland annat följande platser.
+Finns jag bland annat på följande platser.
 
  - [GitHub](https://github.com/jensnti)
  - [Gitbook](https://jens-andreasson.gitbook.io/)
