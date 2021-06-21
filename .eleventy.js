@@ -1,7 +1,6 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const mila = require('markdown-it-link-attributes');
-const emojiReadTime = require('@11tyrocks/eleventy-plugin-emoji-readtime');
 const mia = require('markdown-it-attrs');
 const glob = require('fast-glob');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
@@ -14,18 +13,13 @@ const parseTransform = require('./src/transforms/parse-transform.js');
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(syntaxHighlight);
-    eleventyConfig.addPlugin(emojiReadTime, {
-        emoji: '📕',
-        label: 'minuters läsning',
-        wpm: 200,
-        bucketSize: 3
-    });
 
     eleventyConfig.setDataDeepMerge(true);
 
     eleventyConfig.addWatchTarget('./src/scss/');
     eleventyConfig.addWatchTarget('./src/js/');
 
+    eleventyConfig.addPassthroughCopy('src/images');
     eleventyConfig.addPassthroughCopy('./src/js');
     eleventyConfig.addPassthroughCopy('./src/favicon.ico');
 
