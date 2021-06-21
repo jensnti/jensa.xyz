@@ -29,9 +29,14 @@ Det är även relevant med ```.code``` i text.
 ### Rubriknivå, h3
 
 Börjar på h2 dock.
+Hur ser det ut med en bild då?
+
+![3km spåret på Carlshem, lagom myggigt.](/images/trail.jpg "Sommarbild. Foto av Jens Andreasson.")
 
 #### Detta är således h4
 
 En klok orm sa...
 
 > Men sir!
+
+{% image "./src/images/IMG_20210407_174823.jpg", "Fläsk" %}

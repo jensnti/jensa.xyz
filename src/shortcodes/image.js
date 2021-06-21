@@ -4,7 +4,7 @@ async function imageShortcode(src, alt, sizes) {
     let metadata = await Image(src, {
         widths: [600],
         formats: ['avif', 'jpeg'],
-        outputDir: './public/img/'
+        outputDir: './public/images/'
     });
 
     let imageAttributes = {
@@ -23,7 +23,3 @@ async function imageShortcode(src, alt, sizes) {
 module.exports = {
     image: imageShortcode
 };
-
-// eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
-// eleventyConfig.addLiquidShortcode('image', imageShortcode);
-// eleventyConfig.addJavaScriptFunction('image', imageShortcode);

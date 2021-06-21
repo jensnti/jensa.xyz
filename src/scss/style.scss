@@ -19,6 +19,7 @@ $modularscale: (
 
     --color-primary: #{$primary};
     --color-primary-darker: #{$primary-darken};
+    --color-primary-lighter: #{$primary-lighten};
     --color-secondary: #{$secondary};
     --color-secondary-darker: #{$secondary-darken};
     --color-tertiary: #{$tertiary};
@@ -49,11 +50,11 @@ $modularscale: (
         --variant: var(--color-darker);
         --text-color: var(--color-light);
         --primary: var(--color-primary);
-        --primary-hover: var(--color-primary-lighter);
+        --primary-hover: var(--color-primary-darker);
         --secondary: var(--color-secondary);
-        --secondary-hover: var(--color-secondary-lighter);
+        --secondary-hover: var(--color-secondary-darker);
         --tertiary: var(--color-tertiary);
-        --tertiary-hover: var(--color-tertiary-lighter);
+        --tertiary-hover: var(--color-tertiary-darker);
 
         --selection-text: var(--color-dark);
         --selection-background: var(--color-light);
@@ -65,11 +66,11 @@ $modularscale: (
     --variant: var(--color-darker);
     --text-color: var(--color-light);
     --primary: var(--color-primary);
-    --primary-hover: var(--color-primary-lighter);
+    --primary-hover: var(--color-primary-darker);
     --secondary: var(--color-secondary);
-    --secondary-hover: var(--color-secondary-lighter);
+    --secondary-hover: var(--color-secondary-darker);
     --tertiary: var(--color-tertiary);
-    --tertiary-hover: var(--color-tertiary-lighter);
+    --tertiary-hover: var(--color-tertiary-darker);
 
     --selection-text: var(--color-dark);
     --selection-background: var(--color-light);

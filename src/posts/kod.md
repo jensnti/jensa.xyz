@@ -10,7 +10,7 @@ Att inkludera ett tema blir första steget, att sedan bli nöjd med det tillsamm
 
 Min tanke ~~är~~/~~var~~ att utgå från [GitHubs](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) tema och sedan ändra, Vi ~~får se hur det går~~ kan nu se hur det gick.
 
-## Tester
+## Dags att testa
 
 För att inkludera ett plugin i eleventy så behöver det läggas till i konfigurationen.
 ```js
