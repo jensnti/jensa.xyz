@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: layouts/base.njk
 postsHeading: Alla inlägg
 ---
 
@@ -9,12 +9,12 @@ postsHeading: Alla inlägg
   {{ content | safe }}
 {% endset %}
 
-{% include "intro.njk" %}
+{% include "../components/intro.njk" %}
 
 {# Post list content #}
 {% set postListHeading = postsHeading %}
 {% set postListItems = collections.posts | reverse %}
 
-{% include "post-list.njk" %}
+{% include "../components/post-list.njk" %}
 
 <script defer src="/js/sort.js"></script>

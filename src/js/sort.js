@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    const title = document.querySelector('.post-list-title');
+    const title = document.querySelector('.post-list__title');
     const postlist = document.querySelector('.post-list');
     const icon = document.createElement('button');
     icon.classList.add('icon');

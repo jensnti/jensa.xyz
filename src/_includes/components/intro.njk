@@ -1,6 +1,6 @@
 <header class="site-intro">
     <div class="container">
-        <h1 class="intro-title" id="{{ title | slug }}">{{ introHeading }}
+        <h1 class="site-intro__title" id="{{ title | slug }}">{{ introHeading }}
             <a href="#{{ introHeading | slug }}" class="anchor">
                 <span class="visually-hidden">permalink</span>
                 <svg
@@ -19,14 +19,14 @@
             </a>
         </h1>
         {% if introSummary %}
-            <div class="site-lead">
+            <div class="site-intro__lead">
                 {{ introSummary | safe }}
             </div>
         {% elif date %}
             <div>
                 <p class="lead">
                     {% if date %}
-                        <time datetime="{{ date | htmlDateString }}" class="dt-published">{{ date | readableDate }}</time>
+                        <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
                     {% endif %}
                     <span>— {{ helpers.getReadingTime(content) }}</span>
                 </p>

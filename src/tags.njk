@@ -1,5 +1,5 @@
 ---
-title: Tag
+title: Taggat
 pagination:
   data: collections
   size: 1
@@ -11,19 +11,19 @@ pagination:
     - posts
   addAllPagesToCollections: true
 permalink: /tags/{{ tag }}/
-layout: base.njk
+layout: layouts/base.njk
 postsHeading: Inlägg
 ---
 
 {# Intro content #}
 {% set introHeading = title + ' - ' + tag %}
 
-{% include "intro.njk" %}
+{% include "components/intro.njk" %}
 
 {# Post list content #}
 {% set postListHeading = postsHeading %}
 {% set postListItems =  collections[tag] %}
 
-{% include "post-list.njk" %}
+{% include "components/post-list.njk" %}
 
 <script src="/js/sort.js"></script>

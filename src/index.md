@@ -1,5 +1,5 @@
 ---
-layout: home.njk
+layout: layouts/home.njk
 title: Hej, jag heter Jens
 ---
 

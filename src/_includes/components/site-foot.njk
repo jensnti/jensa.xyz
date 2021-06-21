@@ -1,0 +1,24 @@
+<footer role="contentinfo" class="site-foot">
+    <div class="container">
+        <div class="site-foot__inner">
+            <div class="pr-md-3">
+                <p class="text-small">Den här sidan är skapad med
+                    <a href="https://www.11ty.dev/" rel="noopener" target="_blank">Eleventy</a>. 
+                    Med stor hjälp av
+                    <a href="https://github.com/andy-piccalilli/hylia" rel="noopener" target="_blank">Hylia</a>,
+                    ideér från
+                    <a href="https://github.com/TigersWay/eleventy-classic-blog-starter" rel="noopener" target="_blank">EBCS</a>
+                    och diverse andra
+                    <a href="https://www.11ty.dev/docs/starter/" rel="noopener" target="_blank">starter projects</a>. 
+                    Källkoden finns på sidans
+                    <a href="{{ pkg.homepage }}" rel="noopener" target="_blank">GitHub repo</a>
+                    och är fri att använda.</p>
+                <p class="text-small">Sidan är publicerad på
+                    <a href="https://www.netlify.com/" rel="noopener" target="_blank">Netlify</a>.
+                </p>
+                <p class="text-small">All text och innehåll &copy; {% year %}{{ meta.author.name }}.</p>
+            </div>
+            {% include "components/nav.njk" %}
+        </div>
+    </div>
+</footer>

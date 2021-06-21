@@ -1,6 +1,6 @@
 ---
 title: Arkiv
-layout: archive.njk
+layout: layouts/archive.njk
 permalink: /arkiv/index.html
 ---
 

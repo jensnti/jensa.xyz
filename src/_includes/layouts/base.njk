@@ -25,11 +25,11 @@
         <title>{{ pageTitle }}</title>
     </head>
     <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
-        {% include "site-header.njk" %}
+        {% include "../components/site-head.njk" %}
         <main id="main-content" tabindex="-1" role="main">
             {{ content | safe }}
         </main>
-        {% include "site-footer.njk" %}
+        {% include "../components/site-foot.njk" %}
         <script defer src="/js/dark.js"></script>
     </body>
 </html>

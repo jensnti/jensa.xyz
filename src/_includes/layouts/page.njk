@@ -1,12 +1,12 @@
 ---
-layout: base.njk
+layout: layouts/base.njk
 ---
 
 {# Intro content #}
 {% set introHeading = title %}
 
 <article class="post">
-    {% include "intro.njk" %}
+    {% include "../components/intro.njk" %}
     <div class="container">
         {{ content | safe }}
     </div>
