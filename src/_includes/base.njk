@@ -24,12 +24,12 @@
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
         <title>{{ pageTitle }}</title>
     </head>
-    <body class="dark page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
+    <body class="page-{% if page.fileSlug %}{{ page.fileSlug }}{% else %}home{% endif %}">
         {% include "site-header.njk" %}
         <main id="main-content" tabindex="-1" role="main">
             {{ content | safe }}
         </main>
         {% include "site-footer.njk" %}
-        {# <script defer src="/js/dark.js"></script> #}
+        <script defer src="/js/dark.js"></script>
     </body>
 </html>
