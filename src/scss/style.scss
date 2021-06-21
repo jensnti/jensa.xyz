@@ -439,7 +439,6 @@ ul {
     border: none;
     padding: 0;
     margin: 0;
-    transition: background 500ms ease-in-out, color 200ms ease;
     &:hover > span > svg > path {
         fill-rule: inherit;
     }
@@ -447,11 +446,17 @@ ul {
 
 .toggle-button__icon {
     color: var(--primary);
-    filter: var(--button-icon-filter);
     transform: translateY(1px); /* Optical adjustment */
-    transition: filter 500ms ease-in-out;
+    transition: color 200ms ease;
     height:  ms(1);
     width: ms(1);
+    &:hover {
+        color: var(--text-color);
+    }
+    svg {
+        height:  ms(1);
+        width: ms(1);
+    }
 }
 
 .d-none {
