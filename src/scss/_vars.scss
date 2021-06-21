@@ -7,9 +7,30 @@ $breakpoints: (
   xxl: 1400px
 );
 
-$font-heading: 'Fira Sans', sans-serif;
-$font-body: 'Merriweather', serif;
-
-
 $serif: 'calluna', serif; 
 $sans-serif: 'calluna-sans', sans-serif; 
+
+// $light: #fffffe;
+// $bg: #f8f5f2;
+// $dark: #232323;
+// $primary: #097b7b;
+// $primary-darken: scale-color($primary, $lightness: -20%, $saturation: 10%);
+// $primary-lighten: scale-color($primary, $lightness: 20%, $saturation: 10%);
+// $secondary: #e12b0e;
+// $secondary-darken: scale-color($secondary, $lightness: -20%, $saturation: 10%);
+// $secondary-lighten: scale-color($secondary, $lightness: 30%, $saturation: 10%);
+
+$white: #e7e9ee;
+$light: #cdd1db;
+$lightness: #acb3c3;
+$gray: #545968;
+$black: #2d303c;
+$blacker: #2b2e3b;
+$blackest: #212430;
+$primary: #e17f5c;
+$primary-darken: scale-color($primary, $lightness: -10%);
+$primary-lighten: scale-color($primary, $lightness: 10%);
+$secondary: #7daaab;
+$secondary-darken: scale-color($secondary, $lightness: -35%);
+$secondary-lighten: scale-color($secondary, $lightness: 30%);
+$tertiary: #d75c64;

@@ -8,34 +8,26 @@ $modularscale: (
     ratio: 1.414,
 );
 
-$light: #fffffe;
-$bg: #f8f5f2;
-$dark: #232323;
-$primary: #097b7b;
-$primary-darken: scale-color($primary, $lightness: -20%, $saturation: 10%);
-$primary-lighten: scale-color($primary, $lightness: 20%, $saturation: 10%);
-$secondary: #e12b0e;
-$secondary-darken: scale-color($secondary, $lightness: -20%, $saturation: 10%);
-$secondary-lighten: scale-color($secondary, $lightness: 30%, $saturation: 10%);
-
 :root {
-    --color-body-background: #{$bg};
-    --color-main-background: #{$light};
-    --color-text: #{$dark};
-    --color-primary: #{$primary};
-    --color-primary-darken: #{$primary-darken};
-    --color-secondary: #{$secondary};
-    --color-secondary-darken: #{$secondary-darken};
+    --color-body-background: #{$white};
+    --color-main-background: #{$white};
+    --color-text: #{$black};
+    --color-primary: #{$primary-darken};
+    --color-primary-darken: #{$primary};
+    --color-secondary: #{$secondary-darken};
+    --color-secondary-darken: #{$secondary};
+    --color-tertiary: #{$tertiary};
 }
 
 .dark {
-    --color-body-background: #{$dark};
-    --color-main-background: #{$dark};
-    --color-text: #{$bg};
-    --color-primary: #{$primary-lighten};
-    --color-primary-darken: #{$primary};
+    --color-body-background: #{$black};
+    --color-main-background: #{$blacker};
+    --color-text: #{$light};
+    --color-primary: #{$primary};
+    --color-primary-darken: #{$primary-darken};
     --color-secondary: #{$secondary-lighten};
     --color-secondary-darken: #{$secondary};
+    --color-tertiary: #{$tertiary};
 }
 
 * {
@@ -45,6 +37,7 @@ $secondary-lighten: scale-color($secondary, $lightness: 30%, $saturation: 10%);
 body,
 html {
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -95,6 +88,16 @@ a {
     }
 }
 
+button {
+    color: var(--color-tertiary);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
 h1,
 h2,
 h3 {
@@ -109,7 +112,6 @@ h2 {
 h1 {
     font-size: ms(4);
     font-weight: 900;
-    max-width: 15ch;
 }
 
 h1 > a > svg {
@@ -120,7 +122,6 @@ h1 > a > svg {
 h2,
 h3 {
     font-weight: 600;
-    max-width: 25ch;
 }
 
 h2 {
@@ -136,6 +137,33 @@ p {
     max-width: 60ch;
     margin-top: 0;
     margin-bottom: ms(0);
+}
+
+$code-paths: (
+    1: polygon(0 0, 100% 2%, 100% 98%, 0% 100%),
+    2: polygon(0 2%, 100% 0, 100% 100%, 0 98%)
+);
+
+pre {
+    width: 100vw;
+    margin-left: 50% !important;
+    transform: translateX(-50%);
+    display: flex;
+    align-content: center;
+    &:nth-of-type(even) {
+        clip-path: map-get($code-paths, 1);
+    }
+    &:nth-of-type(odd) {
+        clip-path: map-get($code-paths, 2);
+    }
+    code {
+        width: 100%;
+        display: inline-block;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: ms(1) !important;
+        max-width: 45.18rem !important;
+    }
 }
 
 ol,
@@ -179,7 +207,7 @@ ol,
 .nav-item {
     font-size: ms(1);
     text-decoration: none;
-    padding-right: ms(-2);
+    padding-left: ms(-2);
     &:hover {
         text-decoration: underline;
     }
@@ -279,19 +307,6 @@ ol,
     padding-right: ms(1);
 }
 
-.icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    cursor: pointer;
-    &-asc {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M18.5 17.25a.75.75 0 01-1.5 0V7.56l-2.22 2.22a.75.75 0 11-1.06-1.06l3.5-3.5a.75.75 0 011.06 0l3.5 3.5a.75.75 0 01-1.06 1.06L18.5 7.56v9.69zm-15.75.25a.75.75 0 010-1.5h9.5a.75.75 0 010 1.5h-9.5zm0-5a.75.75 0 010-1.5h5.5a.75.75 0 010 1.5h-5.5zm0-5a.75.75 0 010-1.5h3.5a.75.75 0 010 1.5h-3.5z'%3E%3C/path%3E%3C/svg%3E");
-    }
-    &-desc {
-        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M18.5 16.44V6.75a.75.75 0 00-1.5 0v9.69l-2.22-2.22a.75.75 0 10-1.06 1.06l3.5 3.5a.75.75 0 001.06 0l3.5-3.5a.75.75 0 10-1.06-1.06l-2.22 2.22zM2 7.25a.75.75 0 01.75-.75h9.5a.75.75 0 010 1.5h-9.5A.75.75 0 012 7.25zm0 5a.75.75 0 01.75-.75h5.5a.75.75 0 010 1.5h-5.5a.75.75 0 01-.75-.75zm0 5a.75.75 0 01.75-.75h3.5a.75.75 0 010 1.5h-3.5a.75.75 0 01-.75-.75z"%3E%3C/path%3E%3C/svg%3E');
-    }
-}
-
 .text-small {
     font-size: ms(0);
     margin-bottom: ms(-2);
@@ -334,4 +349,20 @@ ol,
     svg > path:hover {
         fill-rule: inherit;
     }
+}
+
+.full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+::selection {
+    background-color: $blackest;
+    color: var(--color-text);
+}
+
+::-moz-selection {
+    background-color: $blackest;
+    color: var(--color-text);
 }
