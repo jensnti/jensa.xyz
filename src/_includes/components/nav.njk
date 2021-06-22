@@ -1,9 +1,9 @@
 <nav class="nav" role="navigation">
     {% for item in collections.pages %}
-        <a class="nav-item{% if item.url == page.url %} active{% endif %}" href="{{ item.url }}">{{ item.data.title }}</a>
+        <a class="nav__item{% if item.url == page.url %} active{% endif %}" href="{{ item.url }}">{{ item.data.title }}</a>
     {% endfor %}
     {% if top %}
-    <div class="nav-item user-toggle">
+    <div class="nav__item user-toggle">
         <div role="status" class="visually-hidden js-mode-status"></div>
         <button class="toggle-button js-mode-toggle">
             <span class="visually-hidden toggle-button__text js-mode-toggle-text">Enable dark mode</span>

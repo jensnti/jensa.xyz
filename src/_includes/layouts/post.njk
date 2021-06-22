@@ -10,12 +10,12 @@ layout: layouts/base.njk
         {{ content | safe }}
     </div>
     {% if tags %}
-    <footer class="post-footer">
+    <footer class="post__foot">
         <div class="container">
             <ul class="tag-list">
                 {% for tag in tags %}
-                <li class="tag-item">
-                    <a href="/tags/{{ tag }}">{{ tag | capitalize }}</a>
+                <li class="tag-list__item">
+                    <a href="/tags/{{ tag }}">{{ tag }}</a>
                 </li>
                 {% endfor %}
             </ul>
