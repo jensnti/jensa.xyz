@@ -4,4 +4,4 @@ layout: layouts/archive.njk
 permalink: /arkiv/index.html
 ---
 
-Här finns en lista över alla inlägg på den här sidan.
+Här finns samtliga inlägg på den här sidan samlade.
