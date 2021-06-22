@@ -1,42 +1,30 @@
 ---
 title: Sommarlov
 date: 2021-06-23
-tags: ['test']
+tags: ['hosta', 'projekt']
 ---
 
 {% lead %}
-Sommarlov, hello world eller något sådant. Nu börjar det iaf.
+Sommarlovet tar sin början och jag tänkte inleda med att publicera den här bloggen. Förhoppningsvis blir det en del skrivet under sommaren.
 {% endlead %}
 
-Får se om shortcode fungerar.
-Det är även relevant med ```.code``` i text.
+För min del så finns det alltid en tanke om ett antal projekt under ~~sommaren~~ hela året. Jag ser fram emot att förkovra mig och koda under min lediga tid. Så i arbetet med det lär det dyka upp saker att skriva om.
 
-## Lite test av formattering från md
+ 🚧 Projekten som väntar är:
 
-**Fetstil**
+ * [Tema, område, del](https://github.com/jensnti/tod), en form av kurswebb med tydlig struktur. Detta är ett template-repo att bygga ifrån. Byggt med Eleventy.
+ * [Webbutveckling 1](https://keen-jones-305b5d.netlify.app/), byggt med TOD och en första test.
+ * [Måltidsloggen](https://github.com/jensnti/mat-nextjs), bygg i Nextjs med en tillhörande [backend](https://github.com/jensnti/mat).
+ * TE4...
 
- * Lista
- * av 
- * ul
- * typ
+Men nog om det, lite om den här sidans hosting och publicering.
 
-*Italic text kanske inte används så ofta.*
+## Netlify
 
-1. Ordnad
-2. Lista
-3. Funkar?
+Hittils har jag hostat alla projekt jag skrivit i Eleventy på [Netlify](https://www.netlify.com/). Det kanske inte riktigt behövs, då en skulle kunna hosta det på [GitHub](https://github.com/) direkt med pages. En av skillnaderna blir att bygga det på Netlify vs lokalt och sedan pusha resultatet.
 
-### Rubriknivå, h3
+Men Netlify har fungerat utmärkt som sagt så vi kör på det. Det är även bra att öva på att inte arbeta i main.
 
-Börjar på h2 dock.
-Hur ser det ut med en bild då?
+## Domän
 
-<!-- ![3km spåret på Carlshem, lagom myggigt.](/images/trail.jpg "Sommarbild. Foto av Jens Andreasson.") -->
-
-#### Detta är således h4
-
-En klok orm sa...
-
-> Men sir!
-
-{% image "./src/images/IMG_20210407_174823.jpg", "Fläsk" %}
+Väl uppe så tänkte jag försöka koppla ihop det med min domän, [jensa.xyz](https://www.jensa.xyz). Jag har än så länge enbart använt den till [Måltidsloggen](https://mat.jensa.xyz).
