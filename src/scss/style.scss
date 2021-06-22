@@ -1,83 +1,19 @@
 @import "reset";
-@import "color-tokens";
-@import "vars";
 @import "../../node_modules/modularscale-sass/stylesheets/modularscale";
+
+@import "mixins/dark-mode";
+
+@import "theme";
+@import "typography";
+@import "utils";
 
 $modularscale: (
     base: 1rem,
     ratio: 1.414,
 );
 
-:root {
-    --color-mode: "light";
-    --color-white: #{$white};
-    --color-dark: #{$black};
-    --color-darker: #{$blacker};
-    --color-darkest: #{$blackest};
-    --color-light: #{$light};
-    --color-lightness: #{$lightness};
-
-    --color-primary: #{$primary};
-    --color-primary-darker: #{$primary-darken};
-    --color-primary-lighter: #{$primary-lighten};
-    --color-secondary: #{$secondary};
-    --color-secondary-darker: #{$secondary-darken};
-    --color-tertiary: #{$tertiary};
-    --color-tertiary-darker: #{$tertiary-darken};
-
-    --background: #{$white};
-    --variant: #{$whiter};
-    --text-color: #{$black};
-
-    --selection-text: #{$light};
-    --selection-background: #{$black};
-
-    --primary: #{$primary-darken};
-    --primary-hover: #{$primary};
-    --secondary: #{$secondary-darken};
-    --secondary-hover: #{$secondary};
-    --tertiary: #{$tertiary-darken};
-    --tertiary-hover: #{$tertiary};
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-mode: "dark";
-    }
-
-    :root:not([data-user-color-scheme]) {
-        --background: var(--color-dark);
-        --variant: var(--color-darker);
-        --text-color: var(--color-light);
-        --primary: var(--color-primary);
-        --primary-hover: var(--color-primary-darker);
-        --secondary: var(--color-secondary);
-        --secondary-hover: var(--color-secondary-darker);
-        --tertiary: var(--color-tertiary);
-        --tertiary-hover: var(--color-tertiary-darker);
-
-        --selection-text: var(--color-dark);
-        --selection-background: var(--color-light);
-    }
-}
-
-[data-user-color-scheme="dark"] {
-    --background: var(--color-dark);
-    --variant: var(--color-darker);
-    --text-color: var(--color-light);
-    --primary: var(--color-primary);
-    --primary-hover: var(--color-primary-darker);
-    --secondary: var(--color-secondary);
-    --secondary-hover: var(--color-secondary-darker);
-    --tertiary: var(--color-tertiary);
-    --tertiary-hover: var(--color-tertiary-darker);
-
-    --selection-text: var(--color-dark);
-    --selection-background: var(--color-light);
-}
-
 * {
-    transition: background 500ms ease-in-out, color 200ms ease;
+    transition: background 500ms ease-in-out, color 200ms ease, fill 200ms ease;
 }
 
 body,
@@ -87,34 +23,30 @@ html {
 }
 
 body {
-    font-size: ms(1);
-    font-family: $sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
-    background: var(--background);
-    color: var(--text-color);
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 main {
     flex: 1 0 auto;
-    background-color: var(--variant);
+    background-color: var(--color-bg-variant);
 }
 
 a {
-    color: var(--secondary);
+    color: var(--color-secondary);
     &:visited {
-        color: var(--secondary);
+        color: var(--color-secondary);
     }
     &:hover {
-        color: var(--secondary-hover);
+        color: var(--color-secondary-hover);
     }
 }
 
 button {
-    color: var(--tertiary);
+    color: var(--color-secondary);
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -122,24 +54,8 @@ button {
     margin: 0;
     line-height: 1;
     &:hover {
-        color: var(--tertiary-hover);
+        color: var(--color-secondary-hover);
     }
-}
-
-h1,
-h2,
-h3 {
-    line-height: 1.2;
-}
-
-h1,
-h2 {
-    font-family: $serif;
-}
-
-h1 {
-    font-size: ms(4);
-    font-weight: 900;
 }
 
 h1 > a > svg {
@@ -148,22 +64,8 @@ h1 > a > svg {
 }
 
 h2,
-h3,
-h4 {
-    font-weight: 600;
-}
-
-h2 {
-    font-size: ms(3);
-}
-
 h3 {
-    font-size: ms(2);
     margin-bottom: ms(-2);
-}
-
-h4 {
-    font-size: ms(1);
 }
 
 p {
@@ -174,14 +76,12 @@ p {
 
 blockquote {
     padding-left: ms(1);
-    font-style: italic;
-    font-size: ms(2);
-    font-weight: 300;
 }
 
 code {
-    font-family: $mono;
-    padding: ms(-4);
+    background-color: var(--color-code-bg);
+    color: var(--color-code-text);
+    padding: ms(-4) ms(-3);
 }
 
 img {
@@ -227,7 +127,7 @@ ul {
 .site-head {
     padding-top: ms(1);
     padding-bottom: ms(1);
-    background-color: var(--variant);
+    background-color: var(--color-bg-variant);
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -237,7 +137,6 @@ ul {
         font-weight: 900;
         font-size: ms(2);
     }
-
     &__brand {
         text-decoration: none;
         &:hover {
@@ -262,33 +161,34 @@ ul {
 .site-head,
 .site-foot {
     a {
-        color: var(--primary);
+        color: var(--color-primary);
         &:visited {
-            color: var(--primary);
+            color: var(--color-primary);
         }
         &:hover {
-            color: var(--primary-hover);
+            color: var(--color-primary-hover);
         }
     }
 }
 
 .site-intro {
-    background-color: var(--background);
+    background-color: var(--color-bg);
     padding-top: ms(2);
     padding-bottom: ms(2);
     margin-bottom: ms(1);
-}
-
-.site-lead {
-    margin-top: ms(1);
-    p:last-child {
-        margin-bottom: 0;
+    &__title {
+    }
+    &__lead {
+        margin-top: ms(1);
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
 .nav {
     display: flex;
-    &-item {
+    &__item {
         font-size: ms(1);
         text-decoration: none;
         &:not(:first-child) {
@@ -301,7 +201,14 @@ ul {
 }
 
 .post {
-    &-list {
+    &__foot {
+        padding-top: ms(1);
+        padding-bottom: ms(1);
+    }
+}
+
+.post-list {
+    &__list {
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -309,21 +216,17 @@ ul {
         margin-bottom: ms(0);
         padding-left: 0rem;
         padding-right: 0rem;
-        &__title {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-        }
-        h3 {
-            margin-bottom: 0;
-        }
         li {
             margin-bottom: ms(-1);
+            h3 {
+                margin-bottom: 0;
+            }
         }
     }
-    &-foot {
-        padding-top: ms(1);
-        padding-bottom: ms(1);
+    &__title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
     }
 }
 
@@ -336,18 +239,12 @@ ul {
     font-weight: 300;
 }
 
-.flex-reverse {
-    flex-direction: column-reverse !important;
-}
-
-.tag {
-    &-list {
-        list-style: none;
-        display: flex;
-        padding-left: 0rem;
-        padding-right: 0rem;
-    }
-    &-item {
+.tag-list {
+    list-style: none;
+    display: flex;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    &__item {
         padding-right: ms(1);
     }
 }
@@ -369,51 +266,14 @@ ul {
 //     visibility: visible;
 // }
 
-.text-small {
-    font-size: ms(0);
-    margin-bottom: ms(-2);
-    line-height: 1.4;
-}
-
-.skip-link {
-    &:not(:focus) {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: auto;
-        margin: 0;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-        white-space: nowrap;
-    }
-}
-
-.visually-hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: auto;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap;
-}
-
-.full-bleed {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-}
-
 ::selection {
-    background-color: var(--selection-background);
-    color: var(--selection-text);
+    background-color: var(--color-selection-bg);
+    color: var(--color-selection-text);
 }
 
 ::-moz-selection {
-    background-color: var(--selection-background);
-    color: var(--selection-text);
+    background-color: var(--color-selection-bg);
+    color: var(--color-selection-text);
 }
 
 .no-js .user-toggle {
@@ -423,7 +283,7 @@ ul {
 .toggle-button {
     display: inline-flex;
     background-color: transparent;
-    color: var(--primary);
+    color: var(--color-primary);
     border: none;
     padding: 0;
     margin: 0;
@@ -431,28 +291,17 @@ ul {
         fill-rule: inherit;
     }
     &__icon {
-        color: var(--primary);
+        color: var(--color-primary);
         transform: translateY(1px); /* Optical adjustment */
         transition: color 200ms ease;
         height: ms(1);
         width: ms(1);
         &:hover {
-            color: var(--text-color);
+            color: var(--color-text);
         }
         svg {
             height: ms(1);
             width: ms(1);
         }
-    }
-}
-
-.d-none {
-    display: none;
-}
-
-.pr-md-3 {
-    padding-right: ms(3);
-    @media (max-width: map-get($breakpoints, md )) {
-        padding-right: 0;
     }
 }

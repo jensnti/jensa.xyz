@@ -3,47 +3,83 @@
   Modify colors in src/_theme/color-tokens.js
  */
 
-$color-primary: #078080 !default;
-$color-on-primary: #F3FBFB !default;
-$color-purple: #381436 !default;
-$color-on-purple: #A47CA2 !default;
-$color-link: #182142 !default;
-$color-on-link: #8089AA !default;
-$color-secondary: #f45d48 !default;
-$color-on-secondary: #530F05 !default;
-$color-dark: #232323 !default;
-$color-on-dark: #8A8A8A !default;
-$color-light: #f8f5f2 !default;
-$color-on-light: #75706C !default;
+$color-light: #cdd1db !default;
+$color-on-light: #575A63 !default;
+$color-gray: #6d7488 !default;
+$color-on-gray: #FAFBFC !default;
+$color-black: #2d303c !default;
+$color-on-black: #9497A1 !default;
+$color-white: #e7e9ee !default;
+$color-on-white: #676970 !default;
+$color-dm-primary: #e17f5c !default;
+$color-on-dm-primary: #2d303c !default;
+$color-dm-secondary: #7daaab !default;
+$color-on-dm-secondary: #2d303c !default;
+$color-dm-tertiary: #d75c64 !default;
+/* 🚫 Contrast fails against dm */
+$color-on-dm-tertiary: #2d303c !default;
+$color-lm-primary: #e17f5c !default;
+/* 🚫 Contrast fails against lm */
+$color-on-lm-primary: #e7e9ee !default;
+$color-lm-secondary: #7daaab !default;
+/* 🚫 Contrast fails against lm */
+$color-on-lm-secondary: #e7e9ee !default;
+$color-lm-tertiary: #d75c64 !default;
+/* 🚫 Contrast fails against lm */
+$color-on-lm-tertiary: #e7e9ee !default;
 
-$base-color-tokens: ("primary", "purple", "link", "secondary", "dark", "light");
+$base-color-tokens: ("light", "gray", "black", "white", "dm-primary", "dm-secondary", "dm-tertiary", "lm-primary", "lm-secondary", "lm-tertiary");
 
 $color-tokens: (
-  "color-primary": $color-primary,
-  "color-on-primary": $color-on-primary,
-  "color-purple": $color-purple,
-  "color-on-purple": $color-on-purple,
-  "color-link": $color-link,
-  "color-on-link": $color-on-link,
-  "color-secondary": $color-secondary,
-  "color-on-secondary": $color-on-secondary,
-  "color-dark": $color-dark,
-  "color-on-dark": $color-on-dark,
   "color-light": $color-light,
-  "color-on-light": $color-on-light
+  "color-on-light": $color-on-light,
+  "color-gray": $color-gray,
+  "color-on-gray": $color-on-gray,
+  "color-black": $color-black,
+  "color-on-black": $color-on-black,
+  "color-white": $color-white,
+  "color-on-white": $color-on-white,
+  "color-dm-primary": $color-dm-primary,
+  "color-on-dm-primary": $color-on-dm-primary,
+  "color-dm-secondary": $color-dm-secondary,
+  "color-on-dm-secondary": $color-on-dm-secondary,
+  "color-dm-tertiary": $color-dm-tertiary,
+  /* 🚫 Contrast fails against dm */
+"color-on-dm-tertiary": $color-on-dm-tertiary,
+  "color-lm-primary": $color-lm-primary,
+  /* 🚫 Contrast fails against lm */
+"color-on-lm-primary": $color-on-lm-primary,
+  "color-lm-secondary": $color-lm-secondary,
+  /* 🚫 Contrast fails against lm */
+"color-on-lm-secondary": $color-on-lm-secondary,
+  "color-lm-tertiary": $color-lm-tertiary,
+  /* 🚫 Contrast fails against lm */
+"color-on-lm-tertiary": $color-on-lm-tertiary
 ) !default;
 
 @mixin color-tokens() {
-  --color-primary: #{$color-primary};
-  --color-on-primary: #{$color-on-primary};
-  --color-purple: #{$color-purple};
-  --color-on-purple: #{$color-on-purple};
-  --color-link: #{$color-link};
-  --color-on-link: #{$color-on-link};
-  --color-secondary: #{$color-secondary};
-  --color-on-secondary: #{$color-on-secondary};
-  --color-dark: #{$color-dark};
-  --color-on-dark: #{$color-on-dark};
   --color-light: #{$color-light};
   --color-on-light: #{$color-on-light};
+  --color-gray: #{$color-gray};
+  --color-on-gray: #{$color-on-gray};
+  --color-black: #{$color-black};
+  --color-on-black: #{$color-on-black};
+  --color-white: #{$color-white};
+  --color-on-white: #{$color-on-white};
+  --color-dm-primary: #{$color-dm-primary};
+  --color-on-dm-primary: #{$color-on-dm-primary};
+  --color-dm-secondary: #{$color-dm-secondary};
+  --color-on-dm-secondary: #{$color-on-dm-secondary};
+  --color-dm-tertiary: #{$color-dm-tertiary};
+  /* 🚫 Contrast fails against dm */
+--color-on-dm-tertiary: #{$color-on-dm-tertiary};
+  --color-lm-primary: #{$color-lm-primary};
+  /* 🚫 Contrast fails against lm */
+--color-on-lm-primary: #{$color-on-lm-primary};
+  --color-lm-secondary: #{$color-lm-secondary};
+  /* 🚫 Contrast fails against lm */
+--color-on-lm-secondary: #{$color-on-lm-secondary};
+  --color-lm-tertiary: #{$color-lm-tertiary};
+  /* 🚫 Contrast fails against lm */
+--color-on-lm-tertiary: #{$color-on-lm-tertiary};
 }

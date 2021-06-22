@@ -30,12 +30,20 @@ $black: #2d303c;
 $blacker: #2c2f3a;
 $blackest: #23252f;
 $primary: #e17f5c;
+$secondary: #7daaab;
+$tertiary: #d75c64;
+
+$primary-dark: mix($primary, $black, 20%);
+$primary-light: mix($primary, $white, 20%);
+$secondary-dark: mix($secondary, $black, 20%);
+$secondary-light: mix($secondary, $white, 20%);
+$tertiary-dark: mix($tertiary, $black, 20%);
+$tertiary-light: mix($tertiary, $white, 20%);
+
 $primary-darken: scale-color($primary, $lightness: -30%, $saturation: 10%);
 $primary-lighten: scale-color($primary, $lightness: 10%);
-$secondary: #7daaab;
 $secondary-darken: scale-color($secondary, $lightness: -35%, $saturation: 10%);
 $secondary-lighten: scale-color($secondary, $lightness: 30%);
-$tertiary: #d75c64;
 $tertiary-darken: scale-color($tertiary, $lightness: -10%);
 $tertiary-lighten: scale-color($tertiary, $lightness: 10%);
 

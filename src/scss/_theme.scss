@@ -1,0 +1,70 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$code-paths: (
+    1: polygon(0 0, 100% 4%, 100% 96%, 0% 100%),
+    2: polygon(0 4%, 100% 0, 100% 100%, 0 96%),
+    3: polygon(0 0, 100% 4%, 100% 100%, 0 96%),
+    4: polygon(0 4%, 100% 0, 100% 96%, 0 100%)
+);
+
+$whiter: #f3f4f6;
+$white: #e7e9ee;
+$lighter: #DBDEE6;
+$light: #cdd1db;
+$lightness: #acb3c3;
+$gray: #6d7488;
+$black: #2d303c;
+$blacker: #2c2f3a;
+$blackest: #23252f;
+$primary: #e17f5c;
+$secondary: #7daaab;
+$tertiary: #d75c64;
+
+$primary-dark: scale-color($primary, $lightness: -35%, $saturation: 10%);
+$primary-light: mix($primary, $white, 70%);
+$secondary-dark: scale-color($secondary, $lightness: -35%, $saturation: 10%);
+$secondary-light: mix($secondary, $white, 70%);
+$tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
+
+:root {
+    --color-mode: "light";
+
+    --color-bg: #{$white};
+    --color-bg-variant: #{$whiter};
+    --color-text: #{$black};
+
+    --color-selection-text: #{$light};
+    --color-selection-bg: #{$black};
+
+    --color-code-text: #{$tertiary-dark};
+    --color-code-bg: #fff;
+
+    --color-primary: #{$primary-dark};
+    --color-primary-hover: #{$primary};
+    --color-secondary: #{$secondary-dark};
+    --color-secondary-hover: #{$secondary};
+}
+
+@include dark-mode() {
+    --color-bg: #{$black};
+    --color-bg-variant: #{$blacker};
+    --color-text: #{$light};
+
+    --color-selection-text: #{$black};
+    --color-selection-bg: #{$light};
+
+    --color-code-text: #{$tertiary};
+    --color-code-bg: #{$blackest};
+
+    --color-primary: #{$primary};
+    --color-primary-hover: #{$primary-dark};
+    --color-secondary: #{$secondary};
+    --color-secondary-hover: #{$secondary-dark};
+}
