@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "color-tokens": "a11y-color-tokens --outputDirPath='src/scss' --colorTokensPath='src/_theme/color-tokens.js'",
     "watch:sass": "sass --no-source-map --watch src/scss:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass --no-source-map src/scss:public/css",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all color-tokens build:sass --parallel watch:*",
-    "build": "npm-run-all color-tokens build:sass --parallel build:*",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:sass --parallel build:*",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r"
   },
   "repository": {
@@ -30,7 +29,6 @@
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "@tbranyen/jsdom": "^13.0.0",
-    "a11y-color-tokens": "^0.5.0",
     "autoprefixer": "^10.2.6",
     "cssnano": "^5.0.6",
     "date-fns": "^2.22.1",
