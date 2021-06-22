@@ -8,7 +8,9 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 Colors changed by Jens Andreasson 
 */
 
-@import "vars";
+@import "mixins/dark-mode";
+
+@import "theme";
 
 code[class*="language-"],
 pre[class*="language-"] {
