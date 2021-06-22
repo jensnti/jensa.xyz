@@ -31,7 +31,7 @@ Det är även relevant med ```.code``` i text.
 Börjar på h2 dock.
 Hur ser det ut med en bild då?
 
-![3km spåret på Carlshem, lagom myggigt.](/images/trail.jpg "Sommarbild. Foto av Jens Andreasson.")
+<!-- ![3km spåret på Carlshem, lagom myggigt.](/images/trail.jpg "Sommarbild. Foto av Jens Andreasson.") -->
 
 #### Detta är således h4
 

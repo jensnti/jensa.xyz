@@ -184,6 +184,11 @@ code {
     padding: ms(-4);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 pre {
     width: 100vw;
     margin-left: calc(50% - 50vw) !important;

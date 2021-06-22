@@ -5,6 +5,9 @@ permalink: /om/index.html
 {% lead %}
 Tack för titten.
 {% endlead %}
+
+{% image "./src/images/jens.jpg", "En Jens" %}
+
 Jag heter Jens, något som kanske är uppenbart vid det här laget.
 
 Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst, 2021, så blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans.
