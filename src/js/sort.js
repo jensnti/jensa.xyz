@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     const title = document.querySelector('.post-list__title');
-    const postlist = document.querySelector('.post-list');
+    const postlist = document.querySelector('.post-list__list');
     const icon = document.createElement('button');
     icon.classList.add('icon');
     icon.title = 'Klicka för att ändra sortering';
