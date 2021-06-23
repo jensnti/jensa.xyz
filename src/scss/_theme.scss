@@ -37,7 +37,7 @@ $primary-light: mix($primary, $white, 70%);
 $secondary-dark: scale-color($secondary, $lightness: -35%, $saturation: 10%);
 $secondary-darker: scale-color($secondary, $lightness: -45%, $saturation: 10%);
 $secondary-light: mix($secondary, $white, 70%);
-$tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
+$tertiary-dark: scale-color($tertiary, $lightness: -10%);
 
 :root {
     --color-mode: "light";
@@ -49,15 +49,13 @@ $tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
     --color-selection-text: #{$light};
     --color-selection-bg: #{$black};
 
-    --color-code-text: #{$tertiary-dark};
+    --color-code-text: #{$primary-dark};
     --color-code-bg: #fff;
 
     --color-primary: #{$primary-dark};
     --color-primary-hover: #{$primary-darker};
     --color-secondary: #{$secondary-dark};
     --color-secondary-hover: #{$secondary-darker};
-    --color-tertiary: #{$tertiary};
-    --color-tertiary-hover: #{$tertiary-dark};
 }
 
 @include dark-mode() {
@@ -68,13 +66,11 @@ $tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
     --color-selection-text: #{$black};
     --color-selection-bg: #{$light};
 
-    --color-code-text: #{$tertiary};
+    --color-code-text: #{$primary};
     --color-code-bg: #{$blackest};
 
     --color-primary: #{$primary};
     --color-primary-hover: #{$primary-dark};
     --color-secondary: #{$secondary};
     --color-secondary-hover: #{$secondary-dark};
-    --color-tertiary: #{$tertiary};
-    --color-tertiary-hover: #{$tertiary-dark};
 }

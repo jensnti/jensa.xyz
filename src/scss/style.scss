@@ -12,13 +12,12 @@ $modularscale: (
     ratio: 1.414,
 );
 
-* {
-    transition: all 50ms ease;
-}
+// * {
+//     transition: all 50ms ease;
+// }
 
 body,
 html {
-    height: 100%;
     overflow-x: hidden;
 }
 
@@ -40,19 +39,6 @@ a {
     &:visited {
         color: var(--color-secondary);
     }
-    &:hover {
-        color: var(--color-secondary-hover);
-    }
-}
-
-button {
-    color: var(--color-secondary);
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
     &:hover {
         color: var(--color-secondary-hover);
     }
@@ -137,7 +123,7 @@ ul {
         }
     }
     &__title {
-        font-weight: 900;
+        font-weight: 700;
         font-size: ms(2);
     }
     &__brand {
@@ -222,6 +208,7 @@ ul {
         li {
             margin-bottom: ms(-1);
             h3 {
+                font-family: $sans-serif;
                 margin-bottom: 0;
             }
         }
@@ -231,10 +218,22 @@ ul {
         align-items: baseline;
         justify-content: space-between;
     }
+    &__icon {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        color: var(--color-secondary);
+        &:hover {
+            color: var(--color-tertiary-hover);
+        }
+    }
 }
 
 .active {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .lead {
@@ -250,10 +249,10 @@ ul {
     &__item {
         margin-right: ms(1);
         a {
-            color: var(--color-tertiary);
+            color: var(--color-secondary);
             text-decoration: none;
             &:hover {
-                color: var(--color-tertiary-hover);
+                color: var(--color-secondary-hover);
             }
         }
     }
@@ -262,9 +261,12 @@ ul {
 .anchor {
     text-decoration: none;
     margin-left: ms(-2);
-    color: var(--color-tertiary);
+    color: var(--color-secondary);
+    &:visited {
+        color: var(--color-secondary);
+    }
     &:hover {
-        color: var(--color-tertiary-hover);
+        color: var(--color-secondary-hover);
     }
 }
 // a[href].anchor,
@@ -307,7 +309,7 @@ ul {
     &__icon {
         color: var(--color-primary);
         transform: translateY(1px); /* Optical adjustment */
-        transition: color 200ms ease;
+        transition: all 500ms ease;
         height: ms(2);
         width: ms(2);
         &:hover {

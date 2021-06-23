@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     const title = document.querySelector('.post-list__title');
     const postlist = document.querySelector('.post-list__list');
     const icon = document.createElement('button');
-    icon.classList.add('icon');
+    icon.classList.add('post-list__icon');
     icon.title = 'Klicka för att ändra sortering';
     icon.innerHTML = `<span class="visually-hidden">permalink</span>
     <svg fill='currentColor' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
