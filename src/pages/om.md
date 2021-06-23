@@ -1,6 +1,7 @@
 ---
 title: Om
 permalink: /om/index.html
+date: 2021-06-20
 ---
 {% lead %}
 Tack för titten.
