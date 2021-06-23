@@ -32,8 +32,10 @@ $secondary: #7daaab;
 $tertiary: #d75c64;
 
 $primary-dark: scale-color($primary, $lightness: -35%, $saturation: 10%);
+$primary-darker: scale-color($primary, $lightness: -40%, $saturation: 10%);
 $primary-light: mix($primary, $white, 70%);
 $secondary-dark: scale-color($secondary, $lightness: -35%, $saturation: 10%);
+$secondary-darker: scale-color($secondary, $lightness: -45%, $saturation: 10%);
 $secondary-light: mix($secondary, $white, 70%);
 $tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
 
@@ -51,9 +53,11 @@ $tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
     --color-code-bg: #fff;
 
     --color-primary: #{$primary-dark};
-    --color-primary-hover: #{$primary};
+    --color-primary-hover: #{$primary-darker};
     --color-secondary: #{$secondary-dark};
-    --color-secondary-hover: #{$secondary};
+    --color-secondary-hover: #{$secondary-darker};
+    --color-tertiary: #{$tertiary};
+    --color-tertiary-hover: #{$tertiary-dark};
 }
 
 @include dark-mode() {
@@ -71,4 +75,6 @@ $tertiary-dark: scale-color($tertiary, $lightness: -20%, $saturation: 10%);
     --color-primary-hover: #{$primary-dark};
     --color-secondary: #{$secondary};
     --color-secondary-hover: #{$secondary-dark};
+    --color-tertiary: #{$tertiary};
+    --color-tertiary-hover: #{$tertiary-dark};
 }

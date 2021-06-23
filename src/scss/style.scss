@@ -13,7 +13,7 @@ $modularscale: (
 );
 
 * {
-    transition: all 200ms ease;
+    transition: all 50ms ease;
 }
 
 body,
@@ -248,13 +248,24 @@ ul {
     padding-left: 0rem;
     padding-right: 0rem;
     &__item {
-        padding-right: ms(1);
+        margin-right: ms(1);
+        a {
+            color: var(--color-tertiary);
+            text-decoration: none;
+            &:hover {
+                color: var(--color-tertiary-hover);
+            }
+        }
     }
 }
 
 .anchor {
     text-decoration: none;
     margin-left: ms(-2);
+    color: var(--color-tertiary);
+    &:hover {
+        color: var(--color-tertiary-hover);
+    }
 }
 // a[href].anchor,
 // a[href].anchor:visited {
