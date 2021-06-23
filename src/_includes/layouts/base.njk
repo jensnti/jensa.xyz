@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ meta.locale }}">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RREZWE4VCC"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-RREZWE4VCC');
+        </script>
         {% set pageTitle = title + ' - ' + meta.siteName %}
         {% set siteTitle = meta.siteName %}
-        {% set currentUrl = meta.url + page.url %}
-        <meta charset="UTF-8">
+        {% set currentUrl = meta.url + page.url %} <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="description" content="{{ meta.siteDesc }}">
         <meta name="theme-color" content="{{ meta.colors.bg }}">
-        <meta property="og:site_name" content="{{ siteTitle }}" />
-        <meta property="og:title" content="{{ pageTitle }}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ currentUrl }}" />
-        <meta property="og:description" content="{{ meta.siteDesc }}" />
-
-        <link rel="canonical" href="{{ currentUrl }}" />
+        <meta property="og:site_name" content="{{ siteTitle }}"/>
+        <meta property="og:title" content="{{ pageTitle }}"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="{{ currentUrl }}"/>
+        <meta property="og:description" content="{{ meta.siteDesc }}"/>
+        <link rel="canonical" href="{{ currentUrl }}"/>
         <link rel="preconnect" href="https://use.typekit.net">
         <link rel="stylesheet" href="https://use.typekit.net/hzx7qyg.css">
         <link rel="alternate" type="application/rss+xml" title="{{ meta.siteName }}" href="{{ meta.url }}/feed.xml"/>
         <link rel='icon' type='image/x-icon' href='/favicon.ico'/>
         <link rel="stylesheet" href="{{ '/css/prism.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
-
         <title>{{ pageTitle }}</title>
     </head>
     <body>
