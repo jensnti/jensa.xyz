@@ -7,6 +7,11 @@ layout: layouts/base.njk
 <article class="post">
     {% include "../components/intro.njk" %}
     <div class="container">
+        {% if lead %}
+            <p class="post__lead">
+                <em>{{ lead | safe }}</em>
+            </p>
+        {% endif %}
         {{ content | safe }}
     </div>
     {% if tags %}

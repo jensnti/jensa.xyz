@@ -1,4 +1,4 @@
-<nav class="nav" role="navigation">
+<nav class="nav" role="navigation" {% if top %} aria-label="Primary" {% endif %}>
     {% for item in collections.pages | reverse %}
         <a class="nav__item{% if item.url == page.url %} active{% endif %}" href="{{ item.url }}">{{ item.data.title }}</a>
     {% endfor %}
