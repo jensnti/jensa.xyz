@@ -12,7 +12,7 @@ Min tanke ~~är~~/~~var~~ att utgå från [GitHubs](https://github.com/PrismJS/p
 
 ## Dags att testa
 
-För att inkludera ett plugin i eleventy så behöver det läggas till i konfigurationen.
+För att inkludera ett plugin i eleventy så behöver det inkluderas i konfigurationen.
 ```js
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -33,7 +33,7 @@ Sedan behöver Prisms css laddas, detta kan göras med lokal fil eller från CDN
 <link rel="stylesheet" href="{{ '/css/prism.css' }}">
 ```
 
-Det första jag vill åtgärda är fontstorleken, jag har valt stor text på denna sida för att jag gillar det, men för koden blir det inte bra.
+Det första jag vill ändra på är fontstorleken, jag har valt stor text på denna sida för att jag gillar det, men för kod-stycken blir det inte bra.
 ```css
 .text-small {
     font-size: ms(0) !important;
@@ -71,3 +71,9 @@ pre {
 ```
 
 Men nja, nu är det nog dags att skrota allt, [skapa ett eget tema](http://k88hudson.github.io/syntax-highlighting-theme-generator/www/) eller titta vad andra gjort.
+
+## Slutresultat
+
+Vad det blev i slutändan syns på sidan och kommer säkert att ändras. Jag utgick från [Prism Duotone Space](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-duotone-space.css) för att få en enkel grund. Sedan ändrade jag på färgerna.
+
+Klart.
