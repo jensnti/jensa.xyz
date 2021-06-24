@@ -1,11 +1,9 @@
 ---
 title: Om
 permalink: /om/index.html
+lead: 'Tack för titten.'
 date: 2021-06-20
 ---
-{% lead %}
-Tack för titten.
-{% endlead %}
 
 {% image "./src/images/jens.jpg", "En Jens" %}
 

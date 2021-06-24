@@ -1,12 +1,9 @@
 ---
 title: Sommarlov
 date: 2021-06-23
+lead: 'Sommarlovet tar sin början och jag tänkte inleda med att publicera den här bloggen. Förhoppningsvis blir det en del skrivet under sommaren.'
 tags: ['hosta', 'projekt']
 ---
-
-{% lead %}
-Sommarlovet tar sin början och jag tänkte inleda med att publicera den här bloggen. Förhoppningsvis blir det en del skrivet under sommaren.
-{% endlead %}
 
 För min del så finns det alltid en tanke om ett antal projekt under ~~sommaren~~ hela året. Jag ser fram emot att förkovra mig och koda under min lediga tid. Så i arbetet med det lär det dyka upp saker att skriva om.
 
