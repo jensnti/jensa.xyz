@@ -4,9 +4,9 @@ date: 2021-06-21
 tags: ['kod', 'markdown', 'prism', 'css']
 ---
 
-Att kunna skriva kodexempel och visa kod på den här sidan är ett måste. Som tur är så finns det tillgängligt med Eleventys [Syntax Highlight Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/). Det använder i sin tur [Prism](https://prismjs.com/) för att styla koden.
+Att kunna skriva kodexempel och visa kod på den här sidan är ett måste. Som tur är så finns det tillgängligt med Eleventys [Syntax Highlight Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/). Det använder i sin tur [Prism](https://prismjs.com/) för att stila koden.
 
-Att inkludera ett tema blir första steget, att sedan bli nöjd med det tillsammans med den här sidans tema, det är en annan fråga. Förutom Prisms startteman så finns det lite fler i det här repot, [Prism themes](https://github.com/PrismJS/prism-themes/blob/master/README.md).
+Att inkludera ett tema blir första steget, att sedan bli nöjd med det tillsammans med den här sidans tema, det är en annan fråga. Förutom Prisms startteman så finns det lite fler i det här Git-repot, [Prism themes](https://github.com/PrismJS/prism-themes/blob/master/README.md).
 
 Min tanke ~~är~~/~~var~~ att utgå från [GitHubs](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) tema och sedan ändra, Vi ~~får se hur det går~~ kan nu se hur det gick.
 

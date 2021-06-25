@@ -11,14 +11,14 @@ För min del så finns det alltid en tanke om ett antal projekt under ~~sommaren
 
  * [Tema, område, del](https://github.com/jensnti/tod), en form av kurswebb med tydlig struktur. Detta är ett template-repo att bygga ifrån. Byggt med Eleventy.
  * [Webbutveckling 1](https://keen-jones-305b5d.netlify.app/), byggt med TOD och en första test.
- * [Måltidsloggen](https://github.com/jensnti/mat-nextjs), bygg i Nextjs med en tillhörande [backend](https://github.com/jensnti/mat).
+ * [Måltidsloggen](https://github.com/jensnti/mat-nextjs), bygg i Next.js med en tillhörande [backend](https://github.com/jensnti/mat).
  * TE4...
 
 Men nog om det, lite om den här sidans hosting och publicering.
 
 ## Netlify
 
-Hittils har jag hostat alla projekt jag skrivit i Eleventy på [Netlify](https://www.netlify.com/). Det kanske inte riktigt behövs, då en skulle kunna hosta det på [GitHub](https://github.com/) direkt med pages. En av skillnaderna blir att bygga det på Netlify vs lokalt och sedan pusha resultatet.
+Hittills har jag hostat alla projekt jag skrivit i Eleventy på [Netlify](https://www.netlify.com/). Det kanske inte riktigt behövs, då en skulle kunna hosta det på [GitHub](https://github.com/) direkt med pages. En av skillnaderna blir att bygga det på Netlify vs lokalt och sedan pusha resultatet.
 
 Men Netlify har fungerat utmärkt som sagt så vi kör på det. Det är även bra att öva på att inte arbeta i main.
 

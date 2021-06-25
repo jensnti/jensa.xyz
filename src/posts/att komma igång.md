@@ -17,4 +17,4 @@ Så här sitter jag nu och tvingar mig själv att skriva lite innehåll, innan s
 Det finns något väldigt lärorikt i att skriva och reflektera och det vill jag utnyttja. Sedan om någon faktiskt läser det här eller inte, det är inte lika relevant. Om du nu kommit hit, så bra jobbat! 🙂
 
 Den här webbplatsen kommer främst att vara dokumentation relaterat till kodning. Min tanke är att skriva om allt det som händer när jag kodar. Det kan vara problem, lösningar, frustrationer, undersökningar, tester och annat. Förhoppningsvis så kan jag skriva om mina lösningar, men kanske inte alltid.
-Förutom det så kommer det nog dyka upp en del länkar, tankar om saker jag kodat. Allt kryddat med  pedagigska spörsmål.
+Förutom det så kommer det nog dyka upp en del länkar, tankar om saker jag kodat. Allt kryddat med pedagogiska spörsmål.
