@@ -48,10 +48,6 @@ module.exports = function (eleventyConfig) {
         });
     });
 
-    // eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
-    // eleventyConfig.addLiquidShortcode('image', imageShortcode);
-    // eleventyConfig.addJavaScriptFunction('image', imageShortcode);
-
     // PairedShortcodes
     glob.sync(['src/paired-shortcodes/*.js']).forEach((file) => {
         let pairedShortcodes = require('./' + file);
