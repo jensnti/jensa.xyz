@@ -1,6 +1,6 @@
 const Image = require('@11ty/eleventy-img');
 
-async function imageShortcode(src, alt, sizes = '100%') {
+async function imageShortcode(src, alt, title, sizes = '100%') {
     let metadata = await Image(src, {
         widths: [300, 600],
         outputDir: './public/img/'
@@ -9,6 +9,7 @@ async function imageShortcode(src, alt, sizes = '100%') {
     let imageAttributes = {
         alt,
         sizes,
+        title,
         loading: 'lazy',
         decoding: 'async'
     };

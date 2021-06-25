@@ -5,7 +5,7 @@ lead: 'Tack för titten.'
 date: 2021-06-20
 ---
 
-{% image "./src/images/jens.jpg", "En Jens" %}
+{% image "./src/images/jens.jpg", "En Jens", "Mitt fejs. Foto av Jens Andreasson." %}
 
 Jag heter Jens, något som kanske är uppenbart vid det här laget.
 

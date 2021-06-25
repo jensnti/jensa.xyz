@@ -12,7 +12,7 @@ module.exports = function (value, outputPath) {
 
         const document = DOM.window.document;
         const articleImages = [
-            ...document.querySelectorAll('main article img, .intro img')
+            ...document.querySelectorAll('main .post picture')
         ];
         const articleHeadings = [
             ...document.querySelectorAll('main article h2, main article h3')
@@ -21,36 +21,37 @@ module.exports = function (value, outputPath) {
             ...document.querySelectorAll('main article iframe')
         ];
 
-        // if (articleImages.length) {
-        //     articleImages.forEach((image) => {
-        //         image.setAttribute('loading', 'lazy');
+        if (articleImages.length) {
+            articleImages.forEach((picture) => {
+                // image.setAttribute('loading', 'lazy');
 
-        //         const file = image.getAttribute('src');
+                // const file = image.getAttribute('src');
 
-        //         if (file.indexOf('http') < 0) {
-        //             const dimensions = getSize('src' + file);
+                // if (file.indexOf('http') < 0) {
+                //     const dimensions = getSize('src' + file);
 
-        //             image.setAttribute('width', dimensions.width);
-        //             image.setAttribute('height', dimensions.height);
-        //         }
+                //     image.setAttribute('width', dimensions.width);
+                //     image.setAttribute('height', dimensions.height);
+                // }
 
-        //         // If an image has a title it means that the user added a caption
-        //         // so replace the image with a figure containing that image and a caption
-        //         if (image.hasAttribute('title')) {
-        //             const figure = document.createElement('figure');
-        //             const figCaption = document.createElement('figcaption');
+                // If an image has a title it means that the user added a caption
+                // so replace the image with a figure containing that image and a caption
+                const image = picture.querySelector('img');
+                if (image.hasAttribute('title')) {
+                    const figure = document.createElement('figure');
+                    const figCaption = document.createElement('figcaption');
 
-        //             figCaption.innerHTML = image.getAttribute('title');
+                    figCaption.innerHTML = image.getAttribute('title');
 
-        //             image.removeAttribute('title');
+                    image.removeAttribute('title');
 
-        //             figure.appendChild(image.cloneNode(true));
-        //             figure.appendChild(figCaption);
+                    figure.appendChild(picture.cloneNode(true));
+                    figure.appendChild(figCaption);
 
-        //             image.replaceWith(figure);
-        //         }
-        //     });
-        // }
+                    picture.replaceWith(figure);
+                }
+            });
+        }
 
         if (articleHeadings.length) {
             // Loop each heading and add a little anchor and an ID to each one
