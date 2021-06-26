@@ -1,12 +1,11 @@
 ---
 title: Att komma igång
 date: 2021-06-16
+lead: 'Att komma igång och skriva på webben, blogga, är kanske inte det lättaste. Jag har funderat en del på ett varför. Varför ska jag skriva och varför skulle det vara intressant för någon annan. Nu skriver jag redan en hel del i mitt yrke, men detta är tänkt att hysa en annan form.'
 tags: ['skriva', 'reflektion']
 ---
 
-Att komma igång och skriva på webben, blogga, är kanske inte det lättaste. Jag har funderat en del på ett varför. Varför ska jag skriva och varför skulle det vara intressant för någon annan. Nu skriver jag redan en hel del i mitt yrke, men detta är tänkt att hysa en annan form.
-
-Kanske är det inte så intressant för någon annan, men att skriva är en viktig och lärorik process som jag vill komma åt. Så med det som utgångspunkt har jag bestämt mig för att komma igång och skriva lite om vad jag gör.
+Kanske är det inte så intressant för någon annan, men att skriva är en viktig och lärorik process som jag vill komma åt. Det blev min slutsats efter att ha läst lite kring ämnet(länkarna finns här nedanför).
 
 Eftersom jag är som jag är så började jag med den tekniska biten. Ett nytt repo, titta runt lite på teknik och fundera och grubbla.
 Jag har nyligen lärt mig lite [Eleventy](https://11ty.dev) och det har varit en väldigt trevlig erfarenhet. I samma veva har jag läst en om DX(eng. developer experience) och det har varit intressant. Så att köra en blogg, eller personlig sida om en vill kalla det det med Eleventy kändes självklart. Jag började genast titta, gilla, undersöka, rata, kolla, och fundera på massor av olika 11ty starters, alla skapade av mer begåvade kodare än vad jag är. Utifrån det så började jag sätta ihop bitar och skriva CSS och... Sen stannade jag där, för att fixa med hela den biten är kul, engagerande och tillfredsställande.
@@ -18,3 +17,9 @@ Det finns något väldigt lärorikt i att skriva och reflektera och det vill jag
 
 Den här webbplatsen kommer främst att vara dokumentation relaterat till kodning. Min tanke är att skriva om allt det som händer när jag kodar. Det kan vara problem, lösningar, frustrationer, undersökningar, tester och annat. Förhoppningsvis så kan jag skriva om mina lösningar, men kanske inte alltid.
 Förutom det så kommer det nog dyka upp en del länkar, tankar om saker jag kodat. Allt kryddat med pedagogiska spörsmål.
+
+### Läs mer
+
+* https://firstsiteguide.com/why-start-a-blog/
+* https://leportella.com/why-have-a-blog.html/
+* https://www.sarasoueidan.com/desk/just-write/
