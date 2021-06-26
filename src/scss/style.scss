@@ -35,11 +35,13 @@ main {
 }
 
 a {
+    text-decoration: none;
     color: var(--color-secondary);
     &:visited {
         color: var(--color-secondary);
     }
     &:hover {
+        text-decoration: underline;
         color: var(--color-secondary-hover);
     }
 }
@@ -86,6 +88,8 @@ img {
 }
 
 pre {
+    margin-top: ms(1);
+    margin-bottom: ms(1);
     width: 100vw;
     margin-left: calc(50% - 50vw) !important;
     display: flex;
@@ -200,6 +204,9 @@ ul {
 }
 
 .post {
+    h2, h3 {
+        margin-top: ms(1);
+    }
     figure {
         padding: ms(1) 0;
         width: 100vw;
@@ -245,6 +252,9 @@ ul {
             h3 {
                 font-family: $sans-serif;
                 margin-bottom: 0;
+                a {
+                    text-decoration: underline;
+                }
             }
         }
     }

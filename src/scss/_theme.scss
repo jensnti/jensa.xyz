@@ -33,10 +33,11 @@ $secondary: #7daaab;
 $tertiary: #d75c64;
 
 $primary-dark: scale-color($primary, $lightness: -35%, $saturation: 10%);
+$primary-hover: scale-color($primary, $lightness: -10%);
 $primary-darker: scale-color($primary, $lightness: -40%, $saturation: 10%);
 $primary-light: mix($primary, $white, 70%);
-$secondary-dark: scale-color($secondary, $lightness: -35%, $saturation: 10%);
-$secondary-darker: scale-color($secondary, $lightness: -45%, $saturation: 10%);
+$secondary-dark: scale-color($secondary, $lightness: -40%, $saturation: 10%);
+$secondary-darker: scale-color($secondary, $lightness: -50%, $saturation: 10%);
 $secondary-light: mix($secondary, $white, 70%);
 $tertiary-dark: scale-color($tertiary, $lightness: -10%);
 
@@ -71,7 +72,7 @@ $tertiary-dark: scale-color($tertiary, $lightness: -10%);
     --color-code-bg: #{$blackest};
 
     --color-primary: #{$primary};
-    --color-primary-hover: #{$primary-dark};
+    --color-primary-hover: #{$primary-hover};
     --color-secondary: #{$secondary};
     --color-secondary-hover: #{$secondary-dark};
 }
