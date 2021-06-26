@@ -1,9 +1,10 @@
 ---
 title: Om
 permalink: /om/index.html
-lead: 'Tack för titten.'
 date: 2021-06-20
 ---
+
+## Tack för titten
 
 {% image "./src/images/jens.jpg", "En Jens", "Mitt fejs. Foto av Jens Andreasson." %}
 

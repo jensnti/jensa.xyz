@@ -9,8 +9,8 @@ Jag har omformulerat texten till det här inlägget ett par gånger nu istället
 
 Det första utkastet handlade om BEM och det sättet att tänka kring CSS, men jag vet inte om jag riktigt är med på tåget. Jag har använt [Bootstrap](https://getbootstrap.com/) väldigt mycket för de projekt jag har gjort och det följer ett annat sätta att tänka. Men jag har till största del använt mig av Bootstraps utility klasser. Positionering, grid och en grundläggande stil för forms. Väldigt smidigt och fungerar utmärkt när en vant sig vid det.
 
-Jag har sneglat en del på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Det är som att det tar utilities ett steg för långt(det som jag dock använt från Bootstrap), allt blir utilities och vi är nästan tillbaka till att skriva inline CSS(detta är vad många som ondgör sig över Tailwind säger). Det är inte riktigt sant då utility klasserna exempelvis ser till att textstorleken är konsekvent.
-Jag kan dock hålla med Adam Wathan i hans [resonemang](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) som lett till skapandet av Tailwind.
+Jag har sneglat en del på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Det är som att det tar utilities ett steg för långt(det som jag dock använt från Bootstrap), allt blir utilities och det blir väldigt många klasser. Många som ondgör sig över Tailwind jämför det med att skriva inline css och det är inte en helt rättvis jämförelse(mer läsning om detta på [CSS-tricks](https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/)). 
+Jag kan dock hålla med Adam Wathan i flera av hans [resonemang](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) som lett till skapandet av Tailwind. Klassnamn, semantik och annat har lett till olika faser som i sin tur landat i det han kallar Utility-first CSS.
 
 ## Vad gör jag då
 
@@ -25,4 +25,4 @@ Optimalt så kan en bygga upp sitt eget bibliotek med utilities som går att anp
 * https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/
 * http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 * https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
-* https://cube.fyi/
+* https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/
