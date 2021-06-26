@@ -49,6 +49,16 @@ h1 > a > svg {
     height: ms(2);
 }
 
+h2 > a > svg {
+    width: ms(1);
+    height: ms(1);
+}
+
+h3 > a > svg {
+    width: ms(0);
+    height: ms(0);
+}
+
 h2,
 h3 {
     margin-bottom: ms(-2);
@@ -102,12 +112,12 @@ ul {
     margin-bottom: ms(-1);
 }
 
-.container {
+.container, figcaption {
     margin-left: auto;
     margin-right: auto;
     padding-left: ms(1);
     padding-right: ms(1);
-    max-width: 45.18rem;
+    max-width: ms(11);
 }
 
 .site-head {
@@ -190,8 +200,27 @@ ul {
 }
 
 .post {
+    figure {
+        padding: ms(1) 0;
+        width: 100vw;
+        max-width: ms(11);
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        figcaption {
+            padding-top: ms(-1);
+            font-style: italic;
+        }
+    }
     img, picture {
         width: 100%;
+    }
+    img {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+                    0 2px 2px rgba(0,0,0,0.12), 
+                    0 4px 4px rgba(0,0,0,0.12), 
+                    0 8px 8px rgba(0,0,0,0.12),
+                    0 16px 16px rgba(0,0,0,0.12);
     }
     &__lead {
         font-family: $serif;
@@ -326,4 +355,12 @@ ul {
             width: ms(2);
         }
     }
+}
+
+.shadow {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+                0 2px 2px rgba(0,0,0,0.12), 
+                0 4px 4px rgba(0,0,0,0.12), 
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
 }
