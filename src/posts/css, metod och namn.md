@@ -5,7 +5,7 @@ lead: 'Att namnge CSS, att återanvända CSS och hantera cascade är något som 
 tags: ['css', 'bem', 'bootstrap', 'tailwind', 'utilities']
 ---
 
-Jag har omformulerat texten till det här inlägget ett par gånger nu istället för att skriva flera. Kanske är det så att jag borde skriva ett inlägg mer som en artikel och låta den gro några dagar innan jag publicerar. Jag har även försökt att skriva så att den ska bidra något snarare än att bara kasta ut min egen åsikt. Att bidra med något konstruktivt.
+Jag har omformulerat texten till det här inlägget ett par gånger nu istället för att skriva flera. Kanske är det så att jag borde skriva ett inlägg mer som en artikel och låta den gro några dagar innan jag publicerar. Jag har även försökt att skriva så att texten kan bidra med lite förståelse och olika synpunkter, inte bara kasta ut min åsikt.
 
 Det första utkastet handlade om BEM och det sättet att tänka kring CSS, men jag vet inte om jag riktigt är med på tåget. Jag har använt [Bootstrap](https://getbootstrap.com/) väldigt mycket för de projekt jag har gjort och det följer ett annat sätta att tänka. Men jag har till största del använt mig av Bootstraps utility klasser. Positionering, grid och en grundläggande stil för forms. Väldigt smidigt och fungerar utmärkt när en vant sig vid det.
 

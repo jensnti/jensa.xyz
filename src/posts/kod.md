@@ -6,22 +6,30 @@ tags: ['kod', 'markdown', 'prism', 'css']
 
 Att kunna skriva kodexempel och visa kod på den här sidan är ett måste. Som tur är så finns det tillgängligt med Eleventys [Syntax Highlight Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/). Det använder i sin tur [Prism](https://prismjs.com/) för att stila koden.
 
-Att inkludera ett tema blir första steget, att sedan bli nöjd med det tillsammans med den här sidans tema, det är en annan fråga. Förutom Prisms startteman så finns det lite fler i det här Git-repot, [Prism themes](https://github.com/PrismJS/prism-themes/blob/master/README.md).
+Att inkludera ett Prism-tema är det första steget, att sedan bli nöjd med det tillsammans med den här sidans tema, det är ett senare steg. Önskar en fler teman än Prisms standard, så finns det här Git-repot, [Prism themes](https://github.com/PrismJS/prism-themes/blob/master/README.md).
 
-Min tanke ~~är~~/~~var~~ att utgå från [GitHubs](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) tema och sedan ändra, Vi ~~får se hur det går~~ kan nu se hur det gick.
+Min tanke för den här sidan ~~är~~/~~var~~ att utgå från [GitHubs](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-ghcolors.css) tema och sedan ändra. Vi ~~får se hur det går~~ kan nu se hur det gick.
 
-## Dags att testa
+## Installation och konfiguration
 
-För att inkludera ett plugin i eleventy så behöver det inkluderas i konfigurationen.
+Installera först pluginet.
+
+```bash
+npm i @11ty/eleventy-plugin-syntaxhighlight
+```
+
+Pluginet behöver sedan laddas i konfigurationen.
+
 ```js
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(syntaxHighlight);
 };
 ```
 
 Sedan behöver Prisms css laddas, detta kan göras med lokal fil eller från CDN.
+
 ```html
 <link
     rel="stylesheet"
@@ -33,14 +41,18 @@ Sedan behöver Prisms css laddas, detta kan göras med lokal fil eller från CDN
 <link rel="stylesheet" href="{{ '/css/prism.css' }}">
 ```
 
-Det första jag vill ändra på är fontstorleken, jag har valt stor text på denna sida för att jag gillar det, men för kod-stycken blir det inte bra.
+## Eget tema och stil
+
+Fontstorleken behöver åtgärdas då den annars blev för stor för kodavsnitt.
+
 ```css
 .text-small {
     font-size: ms(0) !important;
 }
 ```
 
-En del trixande senare...
+Just fonten flyttade sedan in i ett eget Prism-tema. Koden här nedan formaterar "kod-styckena" i texten.
+
 ```scss
 $code-paths: (
     1: polygon(0 0, 100% 2%, 100% 98%, 0% 100%),
@@ -70,10 +82,11 @@ pre {
 }
 ```
 
-Men nja, nu är det nog dags att skrota allt, [skapa ett eget tema](http://k88hudson.github.io/syntax-highlighting-theme-generator/www/) eller titta vad andra gjort.
+Detta tog inte direkt hand om temat dock.
 
 ## Slutresultat
 
+Jag provade att skapa ett eget tema med en [generator](http://k88hudson.github.io/syntax-highlighting-theme-generator/www/) men blev inte så nöjd.
 Vad det blev i slutändan syns på sidan och kommer säkert att ändras. Jag utgick från [Prism Duotone Space](https://github.com/PrismJS/prism-themes/blob/master/themes/prism-duotone-space.css) för att få en enkel grund. Sedan ändrade jag på färgerna.
 
-Klart.
+Här kan du titta på [CSS-resultatet](/css/prism.css).
