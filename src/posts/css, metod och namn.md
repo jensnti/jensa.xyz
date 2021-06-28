@@ -18,9 +18,15 @@ I ett blogginlägg från 2017 resonerar sig Adam Wathan fram till detta tänk, [
 
 ## BEM
 
-Jag nämnde BEM tidigare i texten, det står för Block Element Modifier och är en metod för att namnge CSS i större projekt. Ordningen i BEM är tämligen sund och tydlig tycker jag. BEM försöker att [undvika cascade](https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/), något som jag förstår poängen med, men samtidigt så är cascade en feature i språket och något som bör användas. 
+Jag nämnde BEM tidigare i texten, det står för Block Element Modifier och är en metod för att namnge CSS i större projekt. Ordningen i BEM är tämligen sund och tydlig tycker jag. 
+
+* Block, en semantisk komponent
+* Element, en del som är beroende av blocket
+* Modifier, något som kan ändra blockets stil
+
+BEM försöker att [undvika cascade](https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/), något som jag förstår poängen med, men samtidigt så är cascade en feature i språket och något som bör användas. 
 På den här sidan har jag försökt låna BEM liknande klassnamn i min CSS, men jag är ganska långt ifrån att följa reglerna.
-Läs mer om BEM i [BEM-101](https://css-tricks.com/bem-101/) på CSS-Tricks.
+Läs mer om BEM i [BEM-101](https://css-tricks.com/bem-101/) på CSS-Tricks, för det har en del bra poänger.
 
 ## Ett exempel
 
