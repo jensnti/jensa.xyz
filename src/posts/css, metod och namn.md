@@ -1,25 +1,147 @@
 ---
-title: CSS, metoder och namn
+title: CSS, namn och semantik
 date: 2021-06-22
 lead: 'Att namnge CSS, att återanvända CSS och hantera cascade är något som de flesta webb-projekt behöver göra. Det finns ett antal olika sätt att närma sig detta.'
 tags: ['css', 'bem', 'bootstrap', 'tailwind', 'utilities']
 ---
 
-Jag har omformulerat texten till det här inlägget ett par gånger nu istället för att skriva flera. Kanske är det så att jag borde skriva ett inlägg mer som en artikel och låta den gro några dagar innan jag publicerar. Vem vet.
+Jag har omformulerat texten till det här inlägget ett par gånger nu istället för att skriva flera. Kanske är det så att jag borde skriva ett inlägg mer som en artikel och låta den gro några dagar innan jag publicerar. Jag har även försökt att skriva så att den ska bidra något snarare än att bara kasta ut min egen åsikt. Att bidra med något konstruktivt.
 
 Det första utkastet handlade om BEM och det sättet att tänka kring CSS, men jag vet inte om jag riktigt är med på tåget. Jag har använt [Bootstrap](https://getbootstrap.com/) väldigt mycket för de projekt jag har gjort och det följer ett annat sätta att tänka. Men jag har till största del använt mig av Bootstraps utility klasser. Positionering, grid och en grundläggande stil för forms. Väldigt smidigt och fungerar utmärkt när en vant sig vid det.
 
 Jag har sneglat en del på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Det är som att det tar utilities ett steg för långt(det som jag dock använt från Bootstrap), allt blir utilities och det blir väldigt många klasser. Många som ondgör sig över Tailwind jämför det med att skriva inline css och det är inte en helt rättvis jämförelse(mer läsning om detta på [CSS-tricks](https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/)). 
-Jag kan dock hålla med Adam Wathan i flera av hans [resonemang](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) som lett till skapandet av Tailwind. Klassnamn, semantik och annat har lett till olika faser som i sin tur landat i det han kallar Utility-first CSS.
 
-## Vad gör jag då
+## Utility-first
 
-Jag tror jag landar någonstans i mitten, jag har en del utility men försöker skriva en del komponentstyrda css regler. Det är å andra sidan det som har lett till att folk håller sig till något som BEM eller utilities. Jag försvarar mig genom att försöka använda SCSS och variabler för färger, avstånd och annat. Nu har jag för den här sidan försökt använda mig av BEM liknande class-namn för struktur. Jag tror jag inte vill använda BEM helt ut, dels för att det försöker [undvika cascade](https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/), något som jag förstår poängen med, men samtidigt så är cascade en feature i språket och något som jag försöker använda.
-Sen att enbart jobba med utilities säger jag nja till, men de har definitivt sin plats. 
+Det som Tailwind kommit att representera är att skriva CSS Utility-first.
+I ett blogginlägg från 2017 resonerar sig Adam Wathan fram till detta tänk, [posten finns här](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/). Texten är väl värd att läsa och jag tror att de flesta kan känna igen sig.
 
-Optimalt så kan en bygga upp sitt eget bibliotek med utilities som går att anpassa till nya projekt och efter behov. Bootstrap har varit mitt bibliotek med utilities länge, men det ger en hel del overhead så i det här projektet har jag hoppat det.
+## BEM
 
-### Mer läsning
+Jag nämnde BEM tidigare i texten, det står för Block Element Modifier och är en metod för att namnge CSS i större projekt. Ordningen i BEM är tämligen sund och tydlig tycker jag. BEM försöker att [undvika cascade](https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/), något som jag förstår poängen med, men samtidigt så är cascade en feature i språket och något som bör användas. 
+På den här sidan har jag försökt låna BEM liknande klassnamn i min CSS, men jag är ganska långt ifrån att följa reglerna.
+Läs mer om BEM i [BEM-101](https://css-tricks.com/bem-101/) på CSS-Tricks.
+
+## Ett exempel
+
+Här nedan finns scss koden för ```.post``` klassen här på sidan. ```.post``` är ett semantiskt namn för vad det är. Klassen återfinns på ett ```<article>``` element.
+
+```scss
+.post {
+    h2, h3 {
+        margin-top: ms(1);
+    }
+    figure {
+        padding: ms(1) 0;
+        width: 100vw;
+        max-width: ms(11);
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        figcaption {
+            padding-top: ms(-1);
+            font-style: italic;
+        }
+    }
+    img, picture {
+        width: 100%;
+    }
+    ...
+}
+```
+
+I posten så återfinner vi ett antal andra element, headings, bilder osv. Eftersom dessa element kommer från MarkDown filer och en Eleventy-transform så har jag satt stilar på elementen direkt. Detta skapar då problemet att klassen med största sannolikhet inte går att återanvända, den blir väldigt specifik för denna sida.
+
+Det går inte heller att återanvända koden för en figure, då den är specifik under ```.post```. Den skulle behöva flyttas till en klass. Inte jättebäst ur en Don't Repeat Yourself(DRY) synpunkt, särskilt då koden för bleed återfinns för ```pre``` elementet(som används för koddelarna).
+
+```scss
+    &__lead {
+        font-family: $serif;
+    }
+    &__foot {
+        padding-top: ms(1);
+        padding-bottom: ms(1);
+    }
+```
+
+Sist finns det två klasser för delar i en ```.post```. Tyvärr är bitar av det också återanvänt i ```.pagination```.
+
+Utöver det så laddas en del andra stilar kopplade till header- och image-elementen som ärvs med cascade. Det är även det som gör att marginaler och padding krävs på vissa ställen, då andra värden önskas.
+
+### Analys
+
+En stor del av den CSS på den här sidan faller i fällorna som Adam tar upp i sin artikel. Klassnamnen försöker vara semantiska, men klasserna i sig är inte tillräckligt generiska för att kunna återanvändas.
+Jag har lite BEM tänk där, vilket åsamkar en del upprepning. 
+
+```scss
+.post-list__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    ...
+}
+
+.tag-list {
+    list-style: none;
+    display: flex;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+```
+
+Här är ett exempel som är ganska hemskt faktiskt. Men samtidigt så vill jag inte att elementet för tag-list ska ha klassen post-list, det känns rörigt och inte BEM. Det åsamkar dock upprepning för att uppnå någorlunda semantiska klassnamn.
+En variant hade såklart kunnat vara att arbeta med utilities.
+
+```scss
+li {
+    list-style: none;
+}
+.d-flex {
+    display: flex;
+}
+
+.px-0 {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+```
+
+Då hade min markup ändrats ganska avsevärt för att undvika upprepning i CSS-klasserna. Jag får samtidigt ett gäng CSS-klasser som jag kan återanvända.
+
+```html
+<ul class="tag-list">
+    ...
+</ul>
+
+<ul class="tag-list d-flex px-0">
+    ...
+</ul>
+```
+
+En annan variant är att skippa det semantiska och skapa en ```.styled-list``` klass som går att återanvända tillsammans med specifika och/eller utilities.
+
+```scss
+.styled-list {
+    list-style: none;
+    display: flex;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+```
+
+Då hade CSS-klassens namn kanske blivit något mindre semantisk i min markup, men frågan om det verkligen gjort min kod mindre läsbar. En vinner lite här och förlorar lite där.
+
+## Slutsats
+
+Jag tror jag landar någonstans i mitten, jag har en del utility men försöker skriva en del komponentstyrda css regler. Jag känner ingen större lust att använda Tailwind och samtidigt så använder jag gärna Bootstrap för utility. Kanske är det så att det är dags att skriva mitt eget utility baserat på vad jag använder från Bootstrap, det vore nog rätt lärorikt.
+
+#### Länkarna
 
 * https://css-tricks.com/bem-101/
 * https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/

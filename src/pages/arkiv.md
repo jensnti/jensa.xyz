@@ -1,7 +1,12 @@
 ---
 title: Arkiv
 layout: layouts/archive.njk
-permalink: /arkiv/index.html
+pagination:
+    data: collections.posts
+    size: 6
+permalink: 'arkiv{% if pagination.pageNumber > 0 %}/posts/{{ pagination.pageNumber }}{% endif %}/index.html'
+paginationPrevText: 'Nyare inlägg'
+paginationNextText: 'Tidigare inlägg'
 date: 2021-06-15
 ---
 

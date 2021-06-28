@@ -66,7 +66,7 @@ module.exports = function (eleventyConfig) {
     );
 
     eleventyConfig.addCollection('posts', (collectionApi) =>
-        collectionApi.getFilteredByGlob('src/posts/*.md')
+        collectionApi.getFilteredByGlob('src/posts/*.md').reverse()
     );
 
     eleventyConfig.addCollection('feed', (collectionApi) =>
