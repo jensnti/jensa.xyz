@@ -1,17 +1,12 @@
 ---
 title: Taggat
+layout: layouts/base.njk
 pagination:
     data: collections
     size: 1
     alias: tag
-    filter:
-        - all
-        - nav
-        - post
-        - posts
-    addAllPagesToCollections: true
-permalink: /tags/{{ tag }}/
-layout: layouts/base.njk
+    filter: ['all', 'nav', 'pages']
+permalink: /tag/{{ tag | slug }}/
 postsHeading: 'Alla inlägg'
 ---
 

@@ -20,7 +20,7 @@ layout: layouts/base.njk
             <ul class="tag-list">
                 {% for tag in tags %}
                 <li class="tag-list__item">
-                    <a href="/tags/{{ tag }}">{{ tag }}</a>
+                    <a href="/tag/{{ tag | slug }}">{{ tag }}</a>
                 </li>
                 {% endfor %}
             </ul>
