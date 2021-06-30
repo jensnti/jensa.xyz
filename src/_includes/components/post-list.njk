@@ -28,6 +28,9 @@
                             <a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
                         </h3>
                         <time datetime="{{ item.date | htmlDateString }}">{{ item.date | readableDate }}</time>
+                        {% if item.data.update %}
+                            (uppdaterad <time datetime="{{ item.data.update | htmlDateString }}">{{ item.data.update | readableDate }}</time>)
+                        {% endif %}
                     </li>
                 {% endfor %}
             </ol>
