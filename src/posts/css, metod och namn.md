@@ -7,14 +7,14 @@ tags: ['css', 'bem', 'bootstrap', 'tailwind', 'utilities']
 
 Jag har omformulerat texten till det här inlägget ett par gånger nu istället för att skriva flera. Kanske är det så att jag borde skriva ett inlägg mer som en artikel och låta den gro några dagar innan jag publicerar. Jag har även försökt att skriva så att texten kan bidra med lite förståelse och olika synpunkter, inte bara kasta ut min åsikt.
 
-Det första utkastet handlade om BEM och det sättet att tänka kring CSS, men jag vet inte om jag riktigt är med på tåget. Jag har använt [Bootstrap](https://getbootstrap.com/) väldigt mycket för de projekt jag har gjort och det följer ett annat sätta att tänka. Men jag har till största del använt mig av Bootstraps utility klasser. Positionering, grid och en grundläggande stil för forms. Väldigt smidigt och fungerar utmärkt när en vant sig vid det.
+Det första utkastet handlade om BEM och det sättet att tänka kring CSS, men jag vet inte om jag riktigt är med på tåget. Jag har använt [Bootstrap](https://getbootstrap.com/) väldigt mycket för de projekt jag har gjort och Bootstrap följer inte BEM i sin utformning. Från Bootstrap har jag främst använt mig av de utility-klasser som finns. Positionering, grid och en grundläggande stil för forms. Ett bibliotek som Bootstrap är väldigt smidigt och fungerar utmärkt när en vant sig vid det.
 
-Jag har sneglat en del på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Det är som att det tar utilities ett steg för långt(det som jag dock använt från Bootstrap), allt blir utilities och det blir väldigt många klasser. Många som ondgör sig över Tailwind jämför det med att skriva inline css och det är inte en helt rättvis jämförelse(mer läsning om detta på [CSS-tricks](https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/)). 
+Jag har sneglat en del på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Det är som att det tar utilities ett steg för långt (det som jag använt från Bootstrap), allt blir utilities och det blir väldigt många klasser. Många som ondgör sig över Tailwind jämför det med att skriva inline css och det är inte en helt rättvis jämförelse (mer läsning om detta på [CSS-tricks](https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/)). 
 
 ## Utility-first
 
 Det som Tailwind kommit att representera är att skriva CSS Utility-first.
-I ett blogginlägg från 2017 resonerar sig Adam Wathan fram till detta tänk, [posten finns här](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/). Texten är väl värd att läsa och jag tror att de flesta kan känna igen sig.
+I ett blogginlägg från 2017 resonerar sig Adam Wathan fram till detta tänk, [posten finns här](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/). Texten är väl värd att läsa. Jag tror att de flesta som arbetat med HTML och CSS kommer att känna igen sig i hans resonemang om hur CSS bör/ska/kan struktureras.
 
 ## BEM
 
@@ -56,9 +56,9 @@ Här nedan finns scss koden för ```.post``` klassen här på sidan. ```.post```
 }
 ```
 
-I posten så återfinner vi ett antal andra element, headings, bilder osv. Eftersom dessa element kommer från MarkDown filer och en Eleventy-transform så har jag satt stilar på elementen direkt. Detta skapar då problemet att klassen med största sannolikhet inte går att återanvända, den blir väldigt specifik för denna sida.
+I ```.post``` klassen så är ett antal andra element nästlade, headings, bilder osv. Eftersom dessa element, i HTML koden, är genererade av Eleventy så har jag satt stilar på elementen direkt. Detta skapar då problemet att klassen med största sannolikhet inte går att återanvända, den blir väldigt specifik för denna sida.
 
-Det går inte heller att återanvända koden för en figure, då den är specifik under ```.post```. Den skulle behöva flyttas till en klass. Inte jättebäst ur en Don't Repeat Yourself(DRY) synpunkt, särskilt då koden för bleed återfinns för ```pre``` elementet(som används för koddelarna).
+Det går inte heller att återanvända koden för en figure, då den är specifik under ```.post```. Den skulle behöva flyttas till en klass. Inte jättebäst ur en Don't Repeat Yourself (DRY) synpunkt, särskilt då koden för bleed återfinns för ```pre``` elementet (som används för kodsnuttarna).
 
 ```scss
     &__lead {
@@ -77,7 +77,7 @@ Utöver det så laddas en del andra stilar kopplade till header- och image-eleme
 ### Analys
 
 En stor del av den CSS på den här sidan faller i fällorna som Adam tar upp i sin artikel. Klassnamnen försöker vara semantiska, men klasserna i sig är inte tillräckligt generiska för att kunna återanvändas.
-Jag har lite BEM tänk där, vilket åsamkar en del upprepning. 
+Jag har lite BEM tänk där, vilket orsakar en del upprepning. 
 
 ```scss
 .post-list__list {
@@ -97,7 +97,7 @@ Jag har lite BEM tänk där, vilket åsamkar en del upprepning.
 }
 ```
 
-Här är ett exempel som är ganska hemskt faktiskt. Men samtidigt så vill jag inte att elementet för tag-list ska ha klassen post-list, det känns rörigt och inte BEM. Det åsamkar dock upprepning för att uppnå någorlunda semantiska klassnamn.
+Här är ett exempel som är ganska hemskt faktiskt. Men samtidigt så vill jag inte att elementet för tag-list ska ha klassen post-list, det känns rörigt och inte BEM. Det orsakar dock upprepning för att uppnå någorlunda semantiska klassnamn.
 En variant hade såklart kunnat vara att arbeta med utilities.
 
 ```scss
@@ -145,7 +145,7 @@ Då hade CSS-klassens namn kanske blivit något mindre semantisk i min markup, m
 
 ## Slutsats
 
-Jag tror jag landar någonstans i mitten, jag har en del utility men försöker skriva en del komponentstyrda css regler. Jag känner ingen större lust att använda Tailwind och samtidigt så använder jag gärna Bootstrap för utility. Kanske är det så att det är dags att skriva mitt eget utility baserat på vad jag använder från Bootstrap, det vore nog rätt lärorikt.
+Jag tror jag landar någonstans i mitten, jag har en del utility men försöker skriva en del komponentstyrda CSS-regler. Jag känner ingen större lust att använda Tailwind och samtidigt så använder jag gärna Bootstrap för utility. Kanske är det så att det är dags att skriva mitt eget utility baserat på vad jag använder från Bootstrap, det vore nog rätt lärorikt.
 
 #### Länkarna
 
