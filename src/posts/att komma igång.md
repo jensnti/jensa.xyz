@@ -8,7 +8,7 @@ tags: ['skriva', 'reflektion']
 Kanske är det inte så intressant för någon annan, men att skriva är en viktig och lärorik process som jag vill komma åt. Det blev min slutsats efter att ha läst lite kring ämnet(länkarna finns här nedanför). Nu skriver jag redan en hel del i mitt yrke, men innehållet på den här sidan är tänkt att hysa en annan form.
 
 Eftersom jag är som jag är så började jag med den tekniska biten. Ett nytt repo, titta runt lite på teknik och fundera och grubbla.
-Jag har nyligen lärt mig lite [Eleventy](https://11ty.dev) och det har varit en väldigt trevlig erfarenhet(bra developer experience, DX). Så att köra en blogg, eller personlig sida om en vill kalla det det med Eleventy kändes självklart. Jag började genast titta, gilla, undersöka, rata, kolla, och fundera på massor av olika 11ty starters, alla skapade av mer begåvade kodare än vad jag är. Utifrån det så började jag sätta ihop bitar och skriva CSS och... Sen stannade jag där, för att fixa med hela den biten är kul, engagerande och tillfredsställande.
+Jag har nyligen lärt mig lite [Eleventy](https://11ty.dev) och det har varit en väldigt trevlig erfarenhet. En bra utvecklar upplevelse (eng. developer experience, DX). Så att köra en blogg, eller personlig sida om en vill kalla det det med Eleventy kändes självklart. Jag började genast titta, gilla, undersöka, rata, kolla, och fundera på massor av olika [Eleventy-starters](https://www.11ty.dev/docs/starter/), alla skapade av mer begåvade kodare än undertecknad. Utifrån det så började jag sätta ihop bitar och skriva CSS och... Sen stannade jag där, för att fixa med hela den biten är kul, engagerande och tillfredsställande.
 
 > Men det som oftast saknas är innehållet.
 

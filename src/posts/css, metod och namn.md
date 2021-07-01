@@ -59,7 +59,7 @@ Här nedan finns scss koden för ```.post``` klassen här på sidan. ```.post```
 
 I ```.post``` klassen så är ett antal andra element nästlade, headings, bilder osv. Eftersom dessa element är genererade av Eleventy så har jag valt att använda element-selektorer. Detta skapar då problemet att klassen med största sannolikhet inte går att återanvända, den blir väldigt specifik för denna sida.
 
-Det går inte heller att återanvända koden för en figure, då den är specifik under ```.post```. Den skulle behöva flyttas till en klass. Den upprepning är inte heller bra i enlighet med Don't Repeat Yourself (DRY) principer. Koden för utfall (engelska [bleed](https://en.wikipedia.org/wiki/Bleed_(printing))) även på ```pre``` elementet (som används för kod).
+Det går inte heller att återanvända koden för en figure, då den är specifik under ```.post```. Den skulle behöva flyttas till en klass. Den upprepning är inte heller bra i enlighet med Don't Repeat Yourself (DRY) principer. Koden för utfall (eng. [bleed](https://en.wikipedia.org/wiki/Bleed_(printing))) även på ```pre``` elementet (som används för kod).
 
 ```scss
     &__lead {

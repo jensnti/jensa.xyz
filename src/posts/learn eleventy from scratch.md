@@ -12,7 +12,7 @@ Alltså är det ett utmärkt tillfälle att lära sig mer om [Eleventy](https://
 Eleventy har snabbt blivit något jag verkligen gillar. I våras har jag gett mig i kast med [Vue](https://vuejs.org/), [React](https://reactjs.org/) och [Next.js](https://nextjs.org/) för att skapa en frontend till en separat backend. Resultatet av det finns på min [GitHub](https://github.com/) och på [Måltidsloggen](https://mat.jensa.xyz/).
 
 I slutändan så är jag inte övertygad, jag gillar det inte så värst mycket och tycker att mycket av det det gör är omständligt. Ska jag ranka dem så hamnar React sist. Next förbättrar dock utvecklarupplevelsen med React markant.
-Av den anledning så känns Eleventy kul och inspirerande att jobba med(och ja jag är medveten om att det inte riktigt är samma sak eller löser samma problem).
+Så utifrån vårens erfarenheter så känns Eleventy kul och inspirerande att jobba med (och ja, det är lite som att jämföra äpplen och apelsiner).
 
 Hursomhelst så ser jag fram emot att köra igenom kursen nu i sommar och att använda den i höst förhoppningsvis.
 
