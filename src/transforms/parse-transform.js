@@ -37,6 +37,7 @@ module.exports = function (value, outputPath) {
                 // If an image has a title it means that the user added a caption
                 // so replace the image with a figure containing that image and a caption
                 const image = picture.querySelector('img');
+                image.classList.add('shadow');
                 if (image.hasAttribute('title')) {
                     const figure = document.createElement('figure');
                     const figCaption = document.createElement('figcaption');
