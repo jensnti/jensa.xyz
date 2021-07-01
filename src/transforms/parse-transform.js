@@ -40,6 +40,7 @@ module.exports = function (value, outputPath) {
                 image.classList.add('shadow');
                 if (image.hasAttribute('title')) {
                     const figure = document.createElement('figure');
+                    figure.setAttribute('role', 'group');
                     const figCaption = document.createElement('figcaption');
 
                     figCaption.innerHTML = image.getAttribute('title');
