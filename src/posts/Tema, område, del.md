@@ -12,7 +12,7 @@ Det var i samband med detta som jag bestämde mig för att testa [Eleventy](http
 Min testkurs blev [Webbutveckling](https://www.skolverket.se/undervisning/gymnasieskolan/laroplan-program-och-amnen-i-gymnasieskolan/gymnasieprogrammen/amne?url=1530314731%2Fsyllabuscw%2Fjsp%2Fsubject.htm%3FsubjectCode%3DWEU%26tos%3Dgy&sv.url=12.5dfee44715d35a5cdfa92a3) och jag skapade ett system kring detta. Min kurswebb för [Webbutveckling](https://keen-jones-305b5d.netlify.app/) är ofullständig, men gav mig en bas för att skapa en Eleventy template att använda.
 
 ## TOD
-[Templaten](https://github.com/jensnti/tod) kom att döpas till TOD efter just tema, område, del(fiffigare namnförslag är välkomna). Så nu skriver jag om TOD här, eftersom jag nyss gått igenom sidan och gjort en rejäl uppdatering av den. Efter att ha skapat [jensa.xyz](https://jensa.xyz), där du läser detta och sedan kört igenom [Learn eleventy from scratch](/posts/learn-eleventy-from-scratch/) kursen så bestämde jag mig för att arbeta om vissa grunder på sidan.
+[Templaten](https://github.com/jensnti/tod) kom att döpas till TOD efter just tema, område, del(fiffigare namnförslag är välkomna). Så nu skriver jag om TOD här, eftersom jag nyss gått igenom sidan och gjort en rejäl uppdatering av den. Efter att ha skapat [jensa.xyz](https://www.jensa.xyz), där du läser detta och sedan kört igenom [Learn eleventy from scratch](/posts/learn-eleventy-from-scratch/) kursen så bestämde jag mig för att arbeta om vissa grunder på sidan.
 
 * Skippa [Bootstrap](https://getbootstrap.com/)
 * Skriva CSS med struktur och tanke 
