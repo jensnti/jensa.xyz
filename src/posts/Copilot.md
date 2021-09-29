@@ -1,9 +1,15 @@
 ---
 title: Github Copilot
 date: 2021-07-12
+update: 2021-09-29
 lead: 'GitHub har i sommar släppt en teknisk förhandstitt på sin nya AI, GItHub Copilot. Den beskrivs som en AI att parprogrammera med. I nuläget finns den endast som VSCode extension.'
 tags: ['github', 'copilot', 'ai']
 ---
+
+En kort uppdatering såhär 2 månader senare.
+Copilot är roligt att använda. Det har visat sig intressant och kul att använda tillsammans med eleverna i klassrummet och reaktionen har hittills varit 🤯 från dem.
+
+Copilot kan leverera kod efter kommentarer och fungerar förvånansvärt bra. Kanske är det inte riktigt parprogrammering, men det kan ersätta googlande och läsande av stack overflow i ett nafs. Det aktualiserar dock och visar supertydligt hur viktigt det är att förstå och granska koden som en använder.
 
 Jag har fått tillgång till den tekniska förhandstitten och testat lite. Men vad är Copilot? GitHub själva beskriver det så här:
 
