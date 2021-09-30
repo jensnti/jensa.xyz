@@ -61,15 +61,3 @@ Det har hänt en del kring Eleventy sen kursen skapades. Nyheter och plugins har
 Så slutligen kan jag *verkligen* rekommendera kursen för att komma igång med statiska sidor och Eleventy.
 
 ⭐⭐⭐⭐⭐
-
-### Länkar
-
-* https://css-tricks.com/video-screencasts/191-learn-by-doing-cube-css/
-* https://principles.adactio.com/
-* https://inclusivedesignprinciples.org/
-* https://www.smashingmagazine.com/2020/01/html5-article-section/
-* https://every-layout.dev/rudiments/units/
-* https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
-* https://gridbyexample.com/
-* https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
-* https://www.modularscale.com/

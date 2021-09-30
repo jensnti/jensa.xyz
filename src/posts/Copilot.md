@@ -18,7 +18,3 @@ Jag har fått tillgång till den tekniska förhandstitten och testat lite. Men v
 Min erfarenhet hittills är att det är helt ok, det känns inte banbrytande. Jag har dock inte kodat särskilt mycket, så det jag framförallt sett är autocompletion och vid något tillfälle har jag fått kod föreslagen med alternativ. Det känns som en naturlig utökning av intellisense.
 
 Så i nuläget kan jag inte direkt säga att det känns som att par-programmera. Tillägget har potential och det är hjälpsamt.
-
-### Läs mer på 
-
-https://copilot.github.com/
