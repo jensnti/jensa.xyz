@@ -6,7 +6,7 @@ lead: 'GitHub har i sommar släppt en teknisk förhandstitt på sin nya AI, GItH
 tags: ['github', 'copilot', 'ai']
 ---
 
-En kort uppdatering såhär 2 månader senare.
+Såhär två månader senare så kommer här en kort uppdatering.
 Copilot är roligt att använda. Det har visat sig intressant och kul att använda tillsammans med eleverna i klassrummet och reaktionen har hittills varit 🤯 från dem.
 
 Copilot kan leverera kod efter kommentarer och fungerar förvånansvärt bra. Kanske är det inte riktigt parprogrammering, men det kan ersätta googlande och läsande av stack overflow i ett nafs. Det aktualiserar dock och visar supertydligt hur viktigt det är att förstå och granska koden som en använder.
