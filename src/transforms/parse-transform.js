@@ -21,6 +21,24 @@ module.exports = function (value, outputPath) {
             ...document.querySelectorAll('main article iframe')
         ];
 
+        const articleLinks = [
+            ...document.querySelectorAll('main .post a')
+        ];
+
+        if (articleLinks.length) {
+            const list = document.querySelector('.post__harvest-links');
+            articleLinks.forEach((anchor) => {
+                if (anchor.href.startsWith('https')) {
+                    const listItem = document.createElement('li');
+                    const listLink = document.createElement('a');
+                    listLink.href = anchor.href;
+                    listLink.textContent = anchor.textContent;
+                    listItem.appendChild(listLink);
+                    list.appendChild(listItem);
+                }
+            });
+        }
+
         if (articleImages.length) {
             articleImages.forEach((picture) => {
                 // image.setAttribute('loading', 'lazy');
