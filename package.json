@@ -1,6 +1,6 @@
 {
   "name": "jensa.xyz",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Personal website of Jens Andreasson",
   "scripts": {
     "watch:sass": "sass --no-source-map --watch src/scss:public/css",
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/jensnti/jensa.xyz/issues"
   },
-  "homepage": "https://www.jensa.xyz",
+  "homepage": "https://github.com/jensnti/jensa.xyz",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.9.0",

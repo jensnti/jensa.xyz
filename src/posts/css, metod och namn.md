@@ -150,11 +150,3 @@ I det här fallet kanske klassen passar bättre som ```.unstyled-list```. CSS-kl
 ## Slutsats
 
 Jag tror jag landar någonstans i mitten, jag har en del utility men försöker skriva en del komponentstyrda CSS-regler. Jag känner ingen större lust att använda Tailwind och samtidigt så använder jag gärna Bootstrap för utility. Kanske är det så att det är dags att skriva mitt eget utility baserat på vad jag använder från Bootstrap, det vore nog rätt lärorikt.
-
-#### Länkarna
-
-* https://css-tricks.com/bem-101/
-* https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/
-* http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
-* https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
-* https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/

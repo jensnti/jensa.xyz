@@ -21,6 +21,41 @@ module.exports = function (value, outputPath) {
             ...document.querySelectorAll('main article iframe')
         ];
 
+        const articleLinks = [
+            ...document.querySelectorAll('main .post a')
+        ];
+
+        if (articleLinks.length) {
+            const pageTitle = document.querySelector('.site-intro__title');
+            console.log(pageTitle.textContent);
+            // horrible code, what if I write the post Om... something
+            if (!pageTitle.textContent.startsWith('Om')) {
+                const list = document.querySelector('.post__harvest-links');
+                const externalLinks = [];
+
+                articleLinks.forEach((anchor) => {
+                    if (anchor.href.startsWith('https')) {
+                        const listItem = document.createElement('li');
+                        const listLink = document.createElement('a');
+                        listLink.href = anchor.href;
+                        listLink.textContent = anchor.textContent;
+                        listLink.target = '_blank';
+                        listLink.rel = 'noopener';
+                        listItem.appendChild(listLink);
+                        list.appendChild(listItem);
+                        externalLinks.push(anchor);
+                    }
+                });
+
+                if (externalLinks.length) {
+                    const title = document.createElement('h3');
+                    title.classList.add('post__harvest-titel');
+                    title.textContent = 'Länkar';
+                    list.parentNode.insertBefore(title, list);    
+                }
+            }
+        }
+
         if (articleImages.length) {
             articleImages.forEach((picture) => {
                 // image.setAttribute('loading', 'lazy');

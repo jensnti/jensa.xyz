@@ -24,12 +24,7 @@ Jag är hyfsat nöjd med slutresultatet och har lyckats halvera storleken på CS
 
 ## Innehåll
 
-Så nu när sidan är mer eller mindre klar(fix fix fix) handlar det främst om att skriva innehåll. Förhoppningsvis kan jag komma igång med det snart, men det tar emot att slita sig ur sommarlovslunken.
+Så nu när sidan är mer eller mindre klar(fix fix fix) handlar det främst om att skriva innehåll. Förhoppningsvis kan jag komma igång med det snart, men det tar emot att slita sig ur sommarlovslunken. 
 När det är gjort så ska jag försöka uppdatera den här sidan med lite av det jag lärt mig.
 
-### Länkar
-
-* https://github.com/jensnti/tod
-* https://silly-bhaskara-09612e.netlify.app/
-* https://github.com/jensnti/tod-webbutveckling
-* https://keen-jones-305b5d.netlify.app/
+Resultaten av arbetet finns att beskåda på [Webbutveckling](https://webbutveckling.jensa.xyz) och [Programmering](https://programmering.jensa.xyz) och uppdateras kontinuerligt.

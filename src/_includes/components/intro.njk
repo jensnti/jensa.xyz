@@ -32,5 +32,17 @@
                 </p>
             </div>
         {% endif %}
+        {% if tags %}
+            <div>
+                <p class="visually-hidden" id="tags-desc">Taggar för det här inlägget.</p>
+                <ul class="tag-list" aria-describedby="tags-desc">
+                    {% for tag in tags %}
+                    <li class="tag-list__item">
+                        <a href="/tag/{{ tag | slug }}">{{ tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
     </div>
 </header>

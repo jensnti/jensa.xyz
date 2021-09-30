@@ -19,18 +19,9 @@ layout: layouts/base.njk
         {% endif %}
         {{ content | safe }}
     </div>
-    {% if tags %}
     <footer class="post__foot">
         <div class="container">
-            <p class="visually-hidden" id="tags-desc">Taggar för det här inlägget.</p>
-            <ul class="tag-list" aria-describedby="tags-desc">
-                {% for tag in tags %}
-                <li class="tag-list__item">
-                    <a href="/tag/{{ tag | slug }}">{{ tag }}</a>
-                </li>
-                {% endfor %}
-            </ul>
+            {% include "../components/link-list.njk" %}
         </div>
     </footer>
-    {% endif %}
 </article>
