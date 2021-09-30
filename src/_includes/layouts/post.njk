@@ -19,11 +19,9 @@ layout: layouts/base.njk
         {% endif %}
         {{ content | safe }}
     </div>
-    {% if tags %}
     <footer class="post__foot">
         <div class="container">
             {% include "../components/link-list.njk" %}
         </div>
     </footer>
-    {% endif %}
 </article>
