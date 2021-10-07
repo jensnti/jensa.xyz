@@ -25,6 +25,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/js');
     eleventyConfig.addPassthroughCopy('./src/favicon.ico');
 
+    eleventyConfig.addPassthroughCopy('./src/images/jens.jpg');
+
     // Filters
     glob.sync(['src/filters/*.js']).forEach((file) => {
         let filters = require('./' + file);

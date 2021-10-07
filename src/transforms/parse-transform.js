@@ -27,9 +27,9 @@ module.exports = function (value, outputPath) {
 
         if (articleLinks.length) {
             const pageTitle = document.querySelector('.site-intro__title');
-            console.log(pageTitle.textContent);
+            // console.log(pageTitle.textContent);
             // horrible code, what if I write the post Om... something
-            if (!pageTitle.textContent.startsWith('Om')) {
+            if (pageTitle !== null && !pageTitle.textContent.startsWith('Om')) {
                 const list = document.querySelector('.post__harvest-links');
                 const externalLinks = [];
 
