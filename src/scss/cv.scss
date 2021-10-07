@@ -1,0 +1,70 @@
+@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
+@import "mixins/dark-mode";
+@import "theme";
+
+$modularscale: (
+    base: 1rem,
+    ratio: 1.414,
+);
+
+h1 { font-size: ms(3); }
+h2 { font-size: ms(2); }
+h3 { font-size: ms(1); }
+body { font-size: ms(0); }
+.lead { font-size: ms(1); }
+
+
+
+.cv-list {
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 0;
+}
+
+.post__cv {
+    width: 100%;
+}
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: ms(0) ms(3);
+}
+
+.sidebar {
+    /* ↓ The width when the sidebar _is_ a sidebar */
+    flex-basis: ms(8);
+    flex-grow: 1;
+}
+
+.sidebar__mug {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.not-sidebar {
+    /* ↓ Grow from nothing */
+    flex-basis: 0;
+    flex-grow: 999;
+    /* ↓ Wrap when the elements are of equal width */
+    min-width: 50%;
+
+    h2, h3 {
+        margin-top: 0;
+    }
+}
+
+.erf {
+    margin-bottom: ms(1);
+    &__lead {
+        margin-bottom: ms(-4);
+    }
+}
+
+@media print {
+    .adr-link::after{
+        content: " (" attr(href) ") ";
+    }
+    .site-head, footer, .anchor {
+        display: none;
+    }
+}
