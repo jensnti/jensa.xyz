@@ -1,0 +1,145 @@
+---
+title : CV
+layout : layouts/base.njk
+eleventyExcludeFromCollections : true
+permalink : /cv/index.html
+---
+<style>
+    h1 { font-size: 2.827rem; }
+    h2 { font-size: 1.999rem; }
+    h3, h4 { font-size: 1.414rem; }
+    body { font-size: 1rem; }
+    .lead { font-size: 1.414rem; }
+
+    .cv-list {
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    .post__cv {
+        width: 100%;
+    }
+    .with-sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2.827rem;
+    }
+
+    .sidebar {
+        /* ↓ The width when the sidebar _is_ a sidebar */
+        flex-basis: 15.981rem;
+        flex-grow: 1;
+    }
+
+    .sidebar__mug {
+        width: 100%;
+    }
+
+    .not-sidebar {
+        /* ↓ Grow from nothing */
+        flex-basis: 0;
+        flex-grow: 999;
+        /* ↓ Wrap when the elements are of equal width */
+        min-width: 50%;
+    }
+
+    .erf {
+        margin-bottom: 1.414rem;
+    }
+    .erf__lead {
+        margin-bottom: 0.25rem;
+    }
+    
+    @media print {
+        .adr-link::after{
+            content: " (" attr(href) ") ";
+        }
+        .site-head, footer, .anchor {
+            display: none;
+        }
+    }
+</style>
+<article class="post">
+    <div class="container with-sidebar">
+        <header class="post__cv">
+            <h1>Jens Andreasson</h1>
+            <p class="lead">Legitimerad lärare i webbteknik, programmering och engelska</p>
+        </header>
+        <aside class="sidebar">
+            <img src="/images/jens.jpg" class="sidebar__mug">
+            <div>
+                <h3>Kontakt</h3>
+                <address>
+                    Jens Andreasson<br>
+                    073-7084974
+                    <a href="mailto:jensandreasson77@gmail.com">jensandreasson77@gmail.com</a>
+                    Kuratorvägen 25<br>
+                    907 36 Umeå<br>
+                    <a class="adr-link" href="https://www.jensa.xyz" target="_blank" rel="noreferrer noopener">www.jensa.xyz</a><br>
+                    <a class="adr-link" href="https://www.linkedin.com/in/jens-andreasson-bba4141a2/" target="_blank" rel="noreferrer noopener">LinkedIn</a><br>
+                    <a class="adr-link" href="https://github.com/jensnti" target="_blank" rel="noreferrer noopener">GitHub</a>
+                </address>
+            </div>
+            <div>
+               <h3>Övriga kompetenser</h3>
+                    <ul class="cv-list">
+                        <li>GitHub Campus Advisor</li>
+                        <li>MTA: Javascript, css, html</li>
+                        <li>B körkort</li>
+                    </ul>
+            </div>
+            <div>
+                <h3>Språk</h3>
+                <ul class="cv-list">
+                    <li>Svenska – Modersmål</li>
+                    <li>Engelska – Obehindrat</li>
+                    <li>HTML, CSS
+                    Javascript (node, next, react), PHP (laravel), Python, C#,
+                    SQL</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Referenser</h3>
+                <p>Referenser lämnas på begäran.</p>
+            </div>
+        </aside>
+        <section class="not-sidebar">
+            <h2>Arbetslivserfarenhet</h2>
+            <div class="erf">
+                <h3>NTI Gymnasiet</h3>
+                <p class="erf__lead">Lärare - <time datetime="2017-08">Augusti 2017</time> – <time>nu</time></p>
+                <p>På NTI Gymnasiet är jag lärare inom webbteknik(er) och programmering. Jag är även en av de ansvariga för skolans
+                    gymnasieingenjörsutbildning, teknikprogrammets fjärde år. Här får jag arbeta med att utveckla och styra våra kursers innehåll och nivå.
+                </p>
+            </div>
+            <div class="erf">
+                <h3>NTI Skolan</h3>
+                <p class="erf__lead">Lärare - <time datetime="2014-01">Januari 2014</time> – <time datetime="2017-08">Augusti 2017</time></p>
+                <p>Vuxenutbildning på distans. Kursutveckling. Ett flertal olika ämnen och kurser, från datorteknik till programmering och grafisk form.</p>
+            </div>
+            <div class="erf">
+                <h3>Skolverket</h3>
+                <p class="erf__lead">Föreläsare, konferens om Tillämpad programmering - <time datetime="2019">2019</time></p>
+            </div>
+            <h2>Utbildning</h2>
+            <div class="erf">
+                <h3>Umeå universitet</h3>
+                <p class="erf__lead">Lärarexamen på avancerad nivå.</p>
+            </div>
+            <div class="erf">
+                <h3>Umeå universitet</h3>
+                <ul class="cv-list">
+                    <li>Webbutveckling, css, javascript - flertal kurser</li>
+                    <li>Informatik</li>
+                </ul>
+            </div>
+            <div class="erf">
+                <h3>Luleå tekniska universitet</h3>
+                <ul class="cv-list">
+                    <li>Introduktion till programmering och C#</li>
+                    <li>Introduktion till datorspelsskapande</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</article>
