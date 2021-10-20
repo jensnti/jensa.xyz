@@ -1,12 +1,9 @@
 ---
 title: Om
 permalink: /om/index.html
-date: 2021-06-20
 ---
 
 {% image "./src/images/jens.jpg", "En Jens", "Mitt fejs. Foto av Jens Andreasson." %}
-
-Jag heter Jens, något som kanske är uppenbart vid det här laget.
 
 Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst, 2021, så blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans.
 
@@ -22,13 +19,13 @@ Vid sidan av mitt arbete och det som jag skriver om på denna sida så gillar ja
 
 ### På webben
 
-Finns jag bland annat på följande platser.
+Finns jag bland annat på följande platser:
 
  - [GitHub](https://github.com/jensnti)
  - [Goodreads](https://www.goodreads.com/user/show/16975751-jens)
  - [Discogs](https://www.discogs.com/user/zvorak/collection)
 
-För min undervisning har jag skapat en del material.
+För min undervisning har jag skapat en del material:
 
  - [Webbutveckling](https://webbutveckling.jensa.xyz/)
  - [Programmering](https://programmering.jensa.xyz/)
