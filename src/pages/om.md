@@ -14,9 +14,11 @@ Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmer
 
 Jag är en [GitHub Campus Advisor](https://education.github.com/teachers/advisors).
 
+Vid sidan av mitt arbete och det som jag skriver om på denna sida så gillar jag att lyssna på och spela musik, laga mat, flugfiska, vandra, spela dataspel, läsa, nörda om saker.
+
 ### Mitt hem
 
-Är i Umeå, Sverige.
+Är i Umeå, Sverige. Det delas med sambo och barn.
 
 ### På webben
 
@@ -25,6 +27,12 @@ Finns jag bland annat på följande platser.
  - [GitHub](https://github.com/jensnti)
  - [Gitbook](https://jens-andreasson.gitbook.io/)
  - [Goodreads](https://www.goodreads.com/user/show/16975751-jens)
+ - [Discogs](https://www.discogs.com/user/zvorak/collection)
+
+För min undervisning har jag skapat en del material.
+
+ - [Webbutveckling](https://webbutveckling.jensa.xyz/)
+ - [Programmering](https://programmering.jensa.xyz/)
  - [YouTube](https://www.youtube.com/channel/UCTqbOlkdA_9q-agUM0Hh9Ag)
 
 Önskar du kontakta mig använd denna [mail](mailto:jens.andreasson@ntig.se).
