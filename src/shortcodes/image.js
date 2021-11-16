@@ -1,25 +1,23 @@
-const Image = require('@11ty/eleventy-img');
+const img = require('@11ty/eleventy-img');
 
-async function imageShortcode(src, alt, title, sizes = '100%') {
-    let metadata = await Image(src, {
+async function imageShortCode(src, alt, title, sizes = '100%') {
+    const metadata = await img(src, {
         widths: [300, 600],
-        outputDir: './public/img/'
+        outputDir: './dist/img/',
     });
 
-    let imageAttributes = {
+    const imageAttributes = {
         alt,
         sizes,
         title,
         loading: 'lazy',
-        decoding: 'async'
+        decoding: 'async',
     };
 
     // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-    return Image.generateHTML(metadata, imageAttributes, {
-        whitespaceMode: 'inline'
+    return img.generateHTML(metadata, imageAttributes, {
+        whitespaceMode: 'inline',
     });
 }
 
-module.exports = {
-    image: imageShortcode
-};
+module.exports = { image: imageShortCode };

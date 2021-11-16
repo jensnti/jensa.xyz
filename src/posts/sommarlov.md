@@ -7,12 +7,12 @@ tags: ['hosta', 'projekt']
 
 För min del så finns det alltid en tanke om ett antal projekt under ~~sommaren~~ hela året. Jag ser fram emot att förkovra mig och koda under min lediga tid. Så i arbetet med det lär det dyka upp saker att skriva om.
 
-Projekten som väntar är  🚧
+Projekten som väntar är 🚧
 
- * [Tema, område, del](https://github.com/jensnti/tod), en form av kurswebb med tydlig struktur. Detta är ett template-repo att bygga ifrån. Byggt med Eleventy.
- * [Webbutveckling 1](https://keen-jones-305b5d.netlify.app/), byggt med TOD och en första test.
- * [Måltidsloggen](https://github.com/jensnti/mat-nextjs), bygg i Next.js med en tillhörande [backend](https://github.com/jensnti/mat).
- * [Learn Eleventy From Scratch](https://piccalil.li/course/learn-eleventy-from-scratch/) och använda det.
+-   [Tema, område, del](https://github.com/jensnti/tod), en form av kurswebb med tydlig struktur. Detta är ett template-repo att bygga ifrån. Byggt med Eleventy.
+-   [Webbutveckling 1](https://keen-jones-305b5d.netlify.app/), byggt med TOD och en första test.
+-   [Måltidsloggen](https://github.com/jensnti/mat-nextjs), bygg i Next.js med en tillhörande [backend](https://github.com/jensnti/mat).
+-   [Learn Eleventy From Scratch](https://piccalil.li/course/learn-eleventy-from-scratch/) och använda det.
 
 Men nog om det, lite om den här sidans hosting och publicering.
 

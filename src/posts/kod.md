@@ -22,9 +22,9 @@ npm i @11ty/eleventy-plugin-syntaxhighlight
 Pluginet behöver sedan laddas i konfigurationen.
 
 ```js
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
 };
 ```
@@ -37,9 +37,10 @@ Sedan behöver Prisms css laddas, detta kan göras med lokal fil eller från CDN
     href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
     integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"/>
+    referrerpolicy="no-referrer"
+/>
 <!-- eller -->
-<link rel="stylesheet" href="{{ '/css/prism.css' }}">
+<link rel="stylesheet" href="{{ '/css/prism.css' }}" />
 ```
 
 ## Eget tema och stil
@@ -57,7 +58,7 @@ Just fonten flyttade sedan in i ett eget Prism-tema. Koden här nedan formaterar
 ```scss
 $code-paths: (
     1: polygon(0 0, 100% 2%, 100% 98%, 0% 100%),
-    2: polygon(0 2%, 100% 0, 100% 100%, 0 98%)
+    2: polygon(0 2%, 100% 0, 100% 100%, 0 98%),
 );
 
 pre {

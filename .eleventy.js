@@ -81,17 +81,17 @@ module.exports = function (eleventyConfig) {
         html: true,
         breaks: true,
         linkify: true,
-        typographer: true
+        typographer: true,
     })
         .use(mila, {
             pattern: /^https:/,
             attrs: {
                 target: '_blank',
-                rel: 'noopener'
-            }
+                rel: 'noopener',
+            },
         })
         .use(mia, {
-            allowedAttributes: ['id', 'class']
+            allowedAttributes: ['id', 'class'],
         });
 
     eleventyConfig.setLibrary('md', markdownLibrary);
@@ -104,22 +104,22 @@ module.exports = function (eleventyConfig) {
                     const content_404 = fs.readFileSync('public/404.html');
                     // Add 404 http status code in request header.
                     res.writeHead(404, {
-                        'Content-Type': 'text/html; charset=UTF-8'
+                        'Content-Type': 'text/html; charset=UTF-8',
                     });
                     // Provides the 404 content without redirect.
                     res.write(content_404);
                     res.end();
                 });
-            }
-        }
+            },
+        },
     });
 
     return {
         markdownTemplateEngine: 'njk',
         dir: {
             input: 'src',
-            output: 'public'
+            output: 'public',
         },
-        passthroughFileCopy: true
+        passthroughFileCopy: true,
     };
 };

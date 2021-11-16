@@ -2,28 +2,26 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const minify = require('../utils/minify.js');
 const slugify = require('slugify');
-const getSize = require('image-size');
+// const getSize = require('image-size');
 
 module.exports = function (value, outputPath) {
     if (outputPath.endsWith('.html')) {
         const DOM = new JSDOM(value, {
-            resources: 'usable'
+            resources: 'usable',
         });
 
         const document = DOM.window.document;
         const articleImages = [
-            ...document.querySelectorAll('main .post picture')
+            ...document.querySelectorAll('main .post picture'),
         ];
         const articleHeadings = [
-            ...document.querySelectorAll('main article h2, main article h3')
+            ...document.querySelectorAll('main article h2, main article h3'),
         ];
         const articleEmbeds = [
-            ...document.querySelectorAll('main article iframe')
+            ...document.querySelectorAll('main article iframe'),
         ];
 
-        const articleLinks = [
-            ...document.querySelectorAll('main .post a')
-        ];
+        const articleLinks = [...document.querySelectorAll('main .post a')];
 
         if (articleLinks.length) {
             const pageTitle = document.querySelector('.site-intro__title');
@@ -51,7 +49,7 @@ module.exports = function (value, outputPath) {
                     const title = document.createElement('h3');
                     title.classList.add('post__harvest-titel');
                     title.textContent = 'Länkar';
-                    list.parentNode.insertBefore(title, list);    
+                    list.parentNode.insertBefore(title, list);
                 }
             }
         }
@@ -125,7 +123,7 @@ module.exports = function (value, outputPath) {
             });
         }
 
-        return '<!DOCTYPE html>\r\n' + document.documentElement.outerHTML;
+        return `<!DOCTYPE html>\r\n${document.documentElement.outerHTML}`;
     }
     return value;
 };
