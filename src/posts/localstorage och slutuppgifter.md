@@ -5,7 +5,7 @@ lead: 'Kurswebbsystemet, TOD, behövde en uppdatering för att tillåta slutuppg
 tags: ['TOD', 'pedagogik', 'eleventy', 'javascript', 'lodash', 'localstorage']
 ---
 
-Jag har tidigare skrivit om kurswebbsystemet jag byggt, [Tema, område, del](/tag/tod). Det är ett ständigt work in progress (vad är inte det) och jag har inte tidigare riktigt fått till uppgiftsfunktionen som jag önskat.
+Jag har tidigare skrivit om kurswebbsystemet jag byggt, [Tema, område, del](/tag/tod). Det är ett ständigt work in progress (vad är inte det) och jag har inte riktigt fått till uppgiftsfunktionen som jag önskat.
 
 TOD grunden finns hostad som [Ämnestitel](https://silly-bhaskara-09612e.netlify.app/) på Netlify och för den som vill kolla på koden (eller skapa en egen kurswebb) finns det ett [template repo](https://github.com/jensnti/tod).
 
@@ -13,8 +13,8 @@ TOD grunden finns hostad som [Ämnestitel](https://silly-bhaskara-09612e.netlify
 
 Tidigare så fanns ingen data i systemet över vilka teman, områden, delar och uppgifter som existerade. Detta för att jag inte ville att en sådan data skulle behöva skapas manuellt. Systemet är skapat med iden att det ska vara tämligen enkelt att köra igång en kurswebb och fokus ska ligga på att skriva innehåll (sen kanske det är ofrånkomligt att viss programmeringskunskap krävs).
 
-Det fungerade så att när en användare checkade av en uppgift som klar så skapades ett objekt för att identifiera detta i localstorage. När sidan för en del (med uppgifterna) sedan laddas så kontrolleras då uppgiften i fråga och checkboxen uppdateras.
-Startsidan fungerade så att alla element för de olika teman, områden och delarna laddas och sedan kollar scriptet om en progress finns i localstorage. Om uppgiften finns sparad så skapas stjärnorna samt en progressbar.
+Det fungerade så att när en användare checkade av en uppgift som klar så skapades ett objekt för att identifiera detta i localstorage. När sidan för en del (med uppgifterna) sedan laddas så kontrolleras då uppgiften i fråga och checkboxens status uppdaterades.
+Startsidan fungerade så att alla element för de olika teman, områden och delarna laddades från sidans DOM. Sedan kollade scriptet om en progress finns i localstorage. Om uppgiften finns sparad så skapas stjärnorna samt en progressbar.
 
 {% image "./src/images/tod-progress.png", "Skärmdump av startsidan på programmeringswebben.", "Illustration, startsida - progress." %}
 
@@ -66,7 +66,8 @@ Progress delen för framsidan och uppgiftshanteringen fick skrivas om, men i slu
 Mitt första utkast av koden använde sig av [lodash](https://lodash.com/) för att leta sig igenom objekt och arrayer med objekt i arrayer och så vidare. Lodash fick åka med som en dependecy och jag tänkte inte så mycket mer på det. Detta tills jag började bli klar och såg att min javascript bundle plötsligt blivit gigantisk. Jag trixade en del med [rollup](https://rollupjs.org/) för att få ordning på detta, men lyckades inte. Huruvida detta beror på min förmåga eller rollup/lodash låter jag vara osagt, men jag bestämde mig vilketsom för att lösa problemet utan lodash.
 
 ### Find
-Att göra detta kom att resultera i att ganska mycket kod skrevs på annat sätt, men här nedan följer ett exempel på hur jag bytte ut [_find](https://lodash.com/docs/4.17.15#find) mot [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). Nu är dess funktion inte riktigt jämförbar, lodash gör mer, men för mitt behov så behövde jag inte mer heller.
+
+Att göra detta kom att resultera i att ganska mycket kod skrevs på annat sätt, men här nedan följer ett exempel på hur jag bytte ut [\_find](https://lodash.com/docs/4.17.15#find) mot [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find). Nu är dess funktion inte riktigt jämförbar, lodash gör mer, men för mitt behov så behövde jag inte mer heller.
 
 ```js
 result = _find(['name', theme], this.storage.themes); // med lodash
@@ -101,7 +102,7 @@ export { merge };
 
 ## Slutsats
 
-Detta var lärorikt och bra att göra. Jag är nöjdare med systemet och jag tror att resultatet både fungerar bättre och är mer robust. 
+Detta var lärorikt och bra att göra. Jag är nöjd med systemet och jag tror att resultatet både fungerar bättre och är mer robust.
 
 Att skriva javascript på det här sättet tycker jag är både roligt och lärorikt, men det är lagomt besvärligt (i den här skalan). Projektet i sig kanske är på gränsen till att behöva ett ramverk och det är absolut inget konstigt att använda sig av det för att skapa en webb med dessa funktioner, det kan tillochmed vara så att det är att föredra.
 
