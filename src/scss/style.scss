@@ -231,6 +231,9 @@ ul {
 }
 
 .post-list {
+    &__lead {
+        font-style: italic;
+    }
     &__list {
         list-style: none;
         display: flex;
@@ -246,6 +249,9 @@ ul {
                 margin-bottom: 0;
                 a {
                     text-decoration: underline;
+                }
+                time {
+                    font-size: ms(1);
                 }
             }
         }
