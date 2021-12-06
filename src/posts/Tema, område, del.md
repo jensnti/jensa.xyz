@@ -12,11 +12,12 @@ Det var i samband med detta som jag bestämde mig för att testa [Eleventy](http
 Min testkurs blev [Webbutveckling](https://www.skolverket.se/undervisning/gymnasieskolan/laroplan-program-och-amnen-i-gymnasieskolan/gymnasieprogrammen/amne?url=1530314731%2Fsyllabuscw%2Fjsp%2Fsubject.htm%3FsubjectCode%3DWEU%26tos%3Dgy&sv.url=12.5dfee44715d35a5cdfa92a3) och jag skapade ett system kring detta. Min kurswebb för [Webbutveckling](https://keen-jones-305b5d.netlify.app/) är ofullständig, men gav mig en bas för att skapa en Eleventy template att använda.
 
 ## TOD
+
 [Templaten](https://github.com/jensnti/tod) kom att döpas till TOD efter just tema, område, del(fiffigare namnförslag är välkomna). Så nu skriver jag om TOD här, eftersom jag nyss gått igenom sidan och gjort en rejäl uppdatering av den. Efter att ha skapat [jensa.xyz](https://www.jensa.xyz), där du läser detta och sedan kört igenom [Learn eleventy from scratch](/posts/learn-eleventy-from-scratch/) kursen så bestämde jag mig för att arbeta om vissa grunder på sidan.
 
-* Skippa [Bootstrap](https://getbootstrap.com/)
-* Skriva CSS med struktur och tanke 
-* Bundla javascript
+-   Skippa [Bootstrap](https://getbootstrap.com/)
+-   Skriva CSS med struktur och tanke
+-   Bundla javascript
 
 Jag är hyfsat nöjd med slutresultatet och har lyckats halvera storleken på CSS och halvera storleken på JS. Förutom det så är Lighthouse poängen något bättre och jag har mer kontroll över alltihopa.
 
@@ -24,7 +25,7 @@ Jag är hyfsat nöjd med slutresultatet och har lyckats halvera storleken på CS
 
 ## Innehåll
 
-Så nu när sidan är mer eller mindre klar(fix fix fix) handlar det främst om att skriva innehåll. Förhoppningsvis kan jag komma igång med det snart, men det tar emot att slita sig ur sommarlovslunken. 
+Så nu när sidan är mer eller mindre klar(fix fix fix) handlar det främst om att skriva innehåll. Förhoppningsvis kan jag komma igång med det snart, men det tar emot att slita sig ur sommarlovslunken.
 När det är gjort så ska jag försöka uppdatera den här sidan med lite av det jag lärt mig.
 
 Resultaten av arbetet finns att beskåda på [Webbutveckling](https://webbutveckling.jensa.xyz) och [Programmering](https://programmering.jensa.xyz) och uppdateras kontinuerligt.

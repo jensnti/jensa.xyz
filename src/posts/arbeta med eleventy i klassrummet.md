@@ -14,4 +14,3 @@ Att arbeta med Eleventy mot [Netlify](https://www.netlify.com/) ger även en ut�
 De första vi skapat är någon form av personlig sida, blog eller portfolio. Det är framförallt ett sätt att testa och prova Eleventy innan vi går vidare till ytterligare projekt. Självklart finns det där en tanke om att skriva och reflektera över eget lärande, men det är inget jag förväntar mig ta skruv.
 
 Resultat och reflektion kring hur det har gått kommer.
-

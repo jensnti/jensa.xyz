@@ -24,7 +24,7 @@
             <ol class="post-list__list">
                 {% for item in postListItems %}
                     <li>
-                        <h3>
+                        <h3 class="post-list__heading">
                             <a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
                         </h3>
                         <time datetime="{{ item.date | htmlDateString }}">{{ item.date | readableDate }}</time>

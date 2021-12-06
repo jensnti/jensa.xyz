@@ -10,28 +10,28 @@ Jag har omformulerat texten till det här inlägget ett par gånger nu istället
 
 Det första utkastet handlade om BEM och det sättet att tänka kring CSS, men jag vet inte om jag riktigt är med på tåget. Jag har ofta använt [Bootstrap](https://getbootstrap.com/) för de projekt jag har gjort. Bootstrap är långt från BEM i sin utformning. Från Bootstrap har jag främst använt mig av de utility-klasser som finns. Positionering, grid och en grundläggande stil för forms. Ett bibliotek som Bootstrap är väldigt smidigt och fungerar utmärkt när en vant sig vid det.
 
-Jag har tittat på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Tailwind är väldigt mycket utility-klasser. Jag upplever det som ett steg för långt, även om jag verkligen kan uppskatta utility-klasser. Många som ondgör sig över Tailwind jämför det med att skriva inline css. Det är inte en helt rättvis jämförelse (mer om detta på [CSS-tricks](https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/)). 
+Jag har tittat på [Tailwind](https://tailwindcss.com/), men aldrig riktigt testat. Tailwind är väldigt mycket utility-klasser. Jag upplever det som ett steg för långt, även om jag verkligen kan uppskatta utility-klasser. Många som ondgör sig över Tailwind jämför det med att skriva inline css. Det är inte en helt rättvis jämförelse (mer om detta på [CSS-tricks](https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/)).
 
 ## Utility-first
 
 Det som Tailwind kommit att representera är att skriva CSS Utility-first.
-I ett [blogginlägg]((https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)) från 2017 resonerar sig Adam Wathan fram till tänket bakom ramverket. Texten är väl värd att läsa. Jag tror att de flesta som arbetat med  CSS kommer att känna igen sig i hans resonemang om hur CSS bör/ska/kan struktureras.
+I ett [blogginlägg](<(https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)>) från 2017 resonerar sig Adam Wathan fram till tänket bakom ramverket. Texten är väl värd att läsa. Jag tror att de flesta som arbetat med CSS kommer att känna igen sig i hans resonemang om hur CSS bör/ska/kan struktureras.
 
 ## BEM
 
-Jag nämnde BEM tidigare i texten, det står för Block Element Modifier och är en metod för att namnge CSS i större projekt. Ordningen i BEM är tämligen sund och tydlig tycker jag. 
+Jag nämnde BEM tidigare i texten, det står för Block Element Modifier och är en metod för att namnge CSS i större projekt. Ordningen i BEM är tämligen sund och tydlig tycker jag.
 
-* Block, en semantisk komponent
-* Element, en del som är beroende av blocket
-* Modifier, något som kan ändra blockets stil
+-   Block, en semantisk komponent
+-   Element, en del som är beroende av blocket
+-   Modifier, något som kan ändra blockets stil
 
-BEM försöker att [undvika cascade](https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/), något som jag förstår poängen med. Cascade är dock en feature i CSS och något som bör användas anser jag. 
+BEM försöker att [undvika cascade](https://www.smashingmagazine.com/2014/07/bem-methodology-for-small-projects/), något som jag förstår poängen med. Cascade är dock en feature i CSS och något som bör användas anser jag.
 På den här sidan har jag försökt låna BEM liknande klassnamn i min CSS, men jag är ganska långt ifrån att följa reglerna.
 Läs mer om BEM i [BEM-101](https://css-tricks.com/bem-101/) på CSS-Tricks, för BEM har en del bra poänger det med.
 
 ## Ett exempel
 
-Här nedan finns scss koden för ```.post``` klassen här på sidan. ```.post``` är ett semantiskt namn för vad det är. Klassen återfinns på ett ```<article>``` element.
+Här nedan finns scss koden för `.post` klassen här på sidan. `.post` är ett semantiskt namn för vad det är. Klassen återfinns på ett `<article>` element.
 
 ```scss
 .post {
@@ -57,28 +57,28 @@ Här nedan finns scss koden för ```.post``` klassen här på sidan. ```.post```
 }
 ```
 
-I ```.post``` klassen så är ett antal andra element nästlade, headings, bilder osv. Eftersom dessa element är genererade av Eleventy så har jag valt att använda element-selektorer. Detta skapar då problemet att klassen med största sannolikhet inte går att återanvända, den blir väldigt specifik för denna sida.
+I `.post` klassen så är ett antal andra element nästlade, headings, bilder osv. Eftersom dessa element är genererade av Eleventy så har jag valt att använda element-selektorer. Detta skapar då problemet att klassen med största sannolikhet inte går att återanvända, den blir väldigt specifik för denna sida.
 
-Det går inte heller att återanvända koden för en figure, då den är specifik under ```.post```. Den skulle behöva flyttas till en klass. Den upprepning är inte heller bra i enlighet med Don't Repeat Yourself (DRY) principer. Koden för utfall (eng. [bleed](https://en.wikipedia.org/wiki/Bleed_(printing))) även på ```pre``` elementet (som används för kod).
+Det går inte heller att återanvända koden för en figure, då den är specifik under `.post`. Den skulle behöva flyttas till en klass. Den upprepning är inte heller bra i enlighet med Don't Repeat Yourself (DRY) principer. Koden för utfall (eng. [bleed](<https://en.wikipedia.org/wiki/Bleed_(printing)>)) även på `pre` elementet (som används för kod).
 
 ```scss
-    &__lead {
-        font-family: $serif;
-    }
-    &__foot {
-        padding-top: ms(1);
-        padding-bottom: ms(1);
-    }
+&__lead {
+    font-family: $serif;
+}
+&__foot {
+    padding-top: ms(1);
+    padding-bottom: ms(1);
+}
 ```
 
-Sist finns det två klasser för delar i en ```.post```. Tyvärr är bitar av det också återanvänt i ```.pagination```.
+Sist finns det två klasser för delar i en `.post`. Tyvärr är bitar av det också återanvänt i `.pagination`.
 
 Utöver det så laddas en del andra stilar kopplade till header- och image-elementen som ärvs med cascade. Det är även det som gör att marginaler och padding krävs på vissa ställen, då andra värden önskas.
 
 ### Analys
 
 En stor del av den CSS på den här sidan faller i fällorna som Adam tar upp i sin artikel. Klassnamnen försöker vara semantiska, men klasserna i sig är inte tillräckligt generiska för att kunna återanvändas.
-Jag har lite BEM tänk där, vilket orsakar en del upprepning. 
+Jag har lite BEM tänk där, vilket orsakar en del upprepning.
 
 ```scss
 .post-list__list {
@@ -127,7 +127,7 @@ Då hade min markup ändrats ganska avsevärt för att undvika upprepning i CSS-
 </ul>
 ```
 
-En annan variant är att skippa det semantiska och skapa en ```.styled-list``` klass som går att återanvända tillsammans med specifika och/eller utilities.
+En annan variant är att skippa det semantiska och skapa en `.styled-list` klass som går att återanvända tillsammans med specifika och/eller utilities.
 
 ```scss
 .styled-list {
@@ -145,7 +145,7 @@ En annan variant är att skippa det semantiska och skapa en ```.styled-list``` k
 }
 ```
 
-I det här fallet kanske klassen passar bättre som ```.unstyled-list```. CSS-klassens namn blir inte lika specifikt semantisk, men frågan om det verkligen påverkar kodens läsbarhet. En vinner nog lite här och förlorar lite där.
+I det här fallet kanske klassen passar bättre som `.unstyled-list`. CSS-klassens namn blir inte lika specifikt semantisk, men frågan om det verkligen påverkar kodens läsbarhet. En vinner nog lite här och förlorar lite där.
 
 ## Slutsats
 

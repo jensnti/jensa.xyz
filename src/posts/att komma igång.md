@@ -10,7 +10,7 @@ Kanske är det inte så intressant för någon annan, men att skriva är en vikt
 Eftersom jag är som jag är så började jag med den tekniska biten. Ett nytt repo, titta runt lite på teknik och fundera och grubbla.
 Jag har nyligen lärt mig lite [Eleventy](https://11ty.dev) och det har varit en väldigt trevlig erfarenhet. En bra utvecklar upplevelse (eng. developer experience, DX). Så att köra en blogg, eller personlig sida om en vill kalla det det med Eleventy kändes självklart. Jag började genast titta, gilla, undersöka, rata, kolla, och fundera på massor av olika [Eleventy-starters](https://www.11ty.dev/docs/starter/), alla skapade av mer begåvade kodare än undertecknad. Utifrån det så började jag sätta ihop bitar och skriva CSS och... Sen stannade jag där, för att fixa med hela den biten är kul, engagerande och tillfredsställande.
 
-> Men det som oftast saknas är innehållet. 
+> Men det som oftast saknas är innehållet.
 
 Så här sitter jag nu och tvingar mig själv att skriva lite innehåll, det handlar om att [skriva](https://www.sarasoueidan.com/desk/just-write/) inte bara designa och koda. Innehåll är svårt och viktigt, ytan kan komma sen. Ytan är ändå ett evigt work in progress som jag aldrig riktigt blir nöjd med. Att ifrågasätta sin egen process, sitt driv och reflektera över det, det känns viktigt och leder mig tillbaka till varför jag skriver det här.
 Det finns något väldigt lärorikt i att skriva och reflektera och det vill jag utnyttja. Sedan om någon faktiskt läser det här eller inte, det är inte lika relevant. Om du nu kommit hit, så bra jobbat! 🙂

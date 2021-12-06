@@ -23,7 +23,7 @@ Du hittar den här, [Learn Eleventy From Scratch](https://piccalil.li/course/lea
 ## Erfarenheter och intryck
 
 Här är lite tankar efter att jag kört igenom kursen.
-Kursen är skapad i fyra moduler. Det är dock mer som tre, eftersom den fjärde är en wrap-up. 
+Kursen är skapad i fyra moduler. Det är dock mer som tre, eftersom den fjärde är en wrap-up.
 
 ### Modul 1
 
@@ -43,8 +43,8 @@ Den här modulen innehåller även ett avsnitt kring att arbeta med bilder. Jag 
 
 ### Modul 3
 
-I den här modulen är det dags för CSS och för att få sidan att se ut som något. Här får Andy verkligen visa upp det han kan och sidan introducerar steg för steg [CUBE CSS](https://cube.fyi/) och tänket bakom det. Andy visar även sitt verktyg för utilities,[Gorko](https://www.npmjs.com/package/gorko). 
-Det finns mycket bra att lära här kring CSS och en metodologi för det som jag tycker känns rimlig, men jag är nog inte riktigt där i att använda den för något eget. 
+I den här modulen är det dags för CSS och för att få sidan att se ut som något. Här får Andy verkligen visa upp det han kan och sidan introducerar steg för steg [CUBE CSS](https://cube.fyi/) och tänket bakom det. Andy visar även sitt verktyg för utilities,[Gorko](https://www.npmjs.com/package/gorko).
+Det finns mycket bra att lära här kring CSS och en metodologi för det som jag tycker känns rimlig, men jag är nog inte riktigt där i att använda den för något eget.
 
 Om du letat efter en bra introduktion till CSS_grid så finns det även här. CSS-grid är något som jag inte alls gett mig in på, flexbox har gjort det jag önskat hittills. Men det är nog något som kommer ändras efter detta.
 
@@ -58,6 +58,6 @@ Kursens form är i stilen av att kod presenteras, förklaras och sedan upprepas 
 
 Det har hänt en del kring Eleventy sen kursen skapades. Nyheter och plugins har lagts till, men det påverkar inte kursens kvalité och innehåll.
 
-Så slutligen kan jag *verkligen* rekommendera kursen för att komma igång med statiska sidor och Eleventy.
+Så slutligen kan jag _verkligen_ rekommendera kursen för att komma igång med statiska sidor och Eleventy.
 
 ⭐⭐⭐⭐⭐

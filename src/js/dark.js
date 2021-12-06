@@ -14,7 +14,7 @@ const getCSSCustomProp = (propKey) => {
     );
 
     if (response.length) {
-        response = response.replace(/\"/g, '').trim();
+        response = response.replace(/"/g, '').trim();
     }
 
     return response;
@@ -39,7 +39,7 @@ const setButtonLabelAndStatus = (currentSetting) => {
         currentSetting === 'dark' ? 'light' : 'dark'
     } mode`;
     modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
-    
+
     switch (currentSetting) {
         case 'light':
             modeSunElement.classList.add('d-none');
