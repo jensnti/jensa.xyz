@@ -82,4 +82,4 @@ Inte helt oväntat så stötte jag på en del problem med att få igång verktyg
 
 Ett område som jag inte riktigt har en bra lösning på är dock arbetet med Eleventy. Formatteringen av Markdown går sådär och ibland så saboteras front-matter fullständigt. I andra fall så blir [Nunjucks](https://mozilla.github.io/nunjucks/) filer en ren röra och det går inte överhuvudtaget med kod-snuttar i Nunjucks.
 
-Tyvärr så sviket mig minnet något här och denna post blev främst en en lista över vad jag använder.
+Tyvärr så sviker mig minnet något här och denna post blev främst en en lista över vad jag använder. Kanske användbart.
