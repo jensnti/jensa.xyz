@@ -1,0 +1,121 @@
+---
+title: Sandbox för kod
+date: 2022-01-20
+tags: ['kod', 'exempel', 'sandbox']
+---
+
+<p>I dags läget har jag ett par olika sidor som snurrar med kodexempel som jag använder i min undervisning. 
+    Det slog mig att jag kanske borde samla allt på den här sidan istället. Detta i sin tur 
+kräver möjligheten att kunna visa och köra kod.</p>
+<p>Så av den anledningen så kommer lite test här på kodsandbox för att kunna visa och köra exempel i poster.</p>
+
+<link rel="stylesheet" href="{{ '/css/examples/nav.css' }}">
+<h2>Navbar, responsiv utan javascript</h2>
+<div class="sandbox">
+    {% include "examples/nav.njk" %}
+</div>
+
+{% highlight "html" %}
+<nav class="navbar">
+    <a class="brand" href="#">Brand</a>
+    <ul class="nav">
+        <li>
+            <a class="active" href="index.html">Hem</a>
+        </li>
+        <li>
+            <a href="#">Navigation</a>
+        </li>
+        <li class="dropdown">
+            <button >Dropdown</button>
+            <ul class="nav">
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endhighlight %}
+
+{% highlight "css" %}
+:root {
+--color-light: #f9f9f9;
+--color-dark: #212121;
+--color-shadow: rgba(33, 33, 33, 0.2);
+--color-secondary:#4a0080;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-light);
+    font-size: 1.4rem;
+}
+.nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.nav li {
+    padding-right: 1rem;
+}
+.nav li:first-child {
+    padding-left: 1rem;
+}
+.nav li a {
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+.nav li a:hover {
+    color: var(--color-dark);
+}
+.active {
+    color: var(--color-dark);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown:hover .nav {
+    display: flex;
+    flex-direction: column;
+}
+.dropdown > button {
+    padding: 0;
+    border: 0;
+    background-color: inherit;
+    font-size: 1.4rem;
+}
+.dropdown .nav {
+    display: none;
+    position: absolute;
+    background-color: var(--color-light);
+    min-width: 10rem;
+    box-shadow: 0px 8px 16px 0px var(--color-shadow);
+    background-color: var(--color-light);
+    z-index: 1010;
+}
+.dropdown .nav li {
+    padding: 0.4rem;
+}
+.dropdown .nav li:hover {
+    box-shadow: 0px 8px 16px 0px var(--color-shadow);
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav {
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .nav li:first-child {
+        padding-left: 0;
+    }
+}
+{% endhighlight %}
