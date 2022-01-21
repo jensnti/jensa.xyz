@@ -1,0 +1,16 @@
+---
+title: Taggar
+permalink: /tags/
+layout: layouts/base.njk
+---
+
+{% set introHeading = title %}
+
+{% include "components/intro.njk" %}
+
+<section class="container">
+    {% for tag in collections.tagList %}
+    {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
+        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag | capitalize }}</a>
+    {% endfor %}
+</section>

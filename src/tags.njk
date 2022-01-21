@@ -5,7 +5,7 @@ pagination:
     data: collections
     size: 1
     alias: tag
-    filter: ['all', 'nav', 'pages']
+    filter: ['all', 'nav', 'pages', 'tagList']
 permalink: /tag/{{ tag | slug }}/
 postsHeading: 'Alla inlägg'
 ---
@@ -20,5 +20,9 @@ postsHeading: 'Alla inlägg'
 {% set postListItems =  collections[tag] | reverse %}
 
 {% include "components/post-list.njk" %}
+
+<section class="container">
+    <p><a href="{{ '/tags/' | url }}">Alla taggar</a>.</p>
+</section>
 
 <script src="/js/sort.js"></script>

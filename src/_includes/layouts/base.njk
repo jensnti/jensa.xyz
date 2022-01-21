@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ meta.locale }}">
+<html lang="{{ meta.lang }}">
     <head>
         {% set pageTitle = title + ' - ' + meta.siteName %}
         {% set siteTitle = meta.siteName %}
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ '/css/prism.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
         <meta name="description" content="{{ meta.siteDesc }}">
-        <meta name="theme-color" content="{{ meta.colors.bg }}">
+        <meta name="theme-color" content="{{ meta.theme }}">
         <meta property="og:site_name" content="{{ siteTitle }}"/>
         <meta property="og:title" content="{{ pageTitle }}"/>
         <meta property="og:type" content="website"/>
@@ -38,7 +38,9 @@
         <main id="main-content" tabindex="-1" role="main">
             {{ content | safe }}
         </main>
+        {% include "components/flash-message.njk" %}
         {% include "../components/site-foot.njk" %}
         <script defer src="/js/dark.js"></script>
+        <script defer src="/js/flash.js"></script>
     </body>
 </html>
