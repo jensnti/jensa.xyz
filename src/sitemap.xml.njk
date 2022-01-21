@@ -4,15 +4,11 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for page in collections.pages %}
+{%- for page in collections.all %}
+  {% set absoluteUrl %}{{ page.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <url>
-    <loc>{{ meta.url }}{{ page.url }}</loc>
-  </url>
-{%- endfor %}
-{%- for post in collections.posts %}
-  <url>
-    <loc>{{ meta.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | htmlDateString }}</lastmod>
+    <loc>{{ absoluteUrl }}</loc>
+    <lastmod>{{ page.date | htmlDateString }}</lastmod>
   </url>
 {%- endfor %}
 </urlset>
