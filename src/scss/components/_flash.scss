@@ -1,0 +1,22 @@
+.flash {
+    z-index: 1100;
+    position: fixed;
+    background: var(--color-bg-variant);
+    left: 2vmin;
+    bottom: 2vmin;
+    max-width: 40ch;
+    width: 100%;
+    padding: ms(0);
+    &__inner {
+        display: grid;
+        justify-items: end;
+    }
+    &__button {
+        background-color:  var(--color-bg) !important;
+        border: none !important;
+        &:hover {
+            color: var(--color-primary);
+            box-shadow: none !important;
+        }
+    }
+}
