@@ -35,7 +35,7 @@ Det finns även mycket bra här kring användadet av [Nunjucks](https://mozilla.
 
 Efter att ha skapat sidans HTML kod i den första modulen så handlar denna om byggsystem. Jag hade inte testat att använd [GULP](https://gulpjs.com/) tidigare (i alla fall medvetet) och tycker att det var en mycket bra introduktion.
 
-Den här sidan använder inte GULP, utan den byggs med [npm-run-all](https://www.npmjs.com/package/npm-run-all), [cssnano](https://www.npmjs.com/package/cssnano), [autoprefixer](https://www.npmjs.com/package/autoprefixer) och [postcss](https://www.npmjs.com/package/postcss). Detta är något som jag plockade upp från Stephanie Eckles också utmärkta kurs, [Build An Eleventy (11ty) Site From Scratch](https://egghead.io/courses/build-an-eleventy-11ty-site-from-scratch-bfd3).
+Den här sidan använder inte GULP, utan den byggs med [npm-run-all](https://www.npmjs.com/package/npm-run-all), [cssnano](https://www.npmjs.com/package/cssnano), [autoprefixer](https://www.npmjs.com/package/autoprefixer) och [postcss](https://www.npmjs.com/package/postcss). Detta är något som jag plockade upp från [Stephanie Eckles](https://twitter.com/5t3ph) utmärkta startkurs, [Build An Eleventy (11ty) Site From Scratch](https://egghead.io/courses/build-an-eleventy-11ty-site-from-scratch-bfd3).
 
 Men efter att ha testat att bygga med GULP så kommer jag nog att prova det framöver då det ger en del extra kontroll (tror jag).
 
@@ -43,7 +43,7 @@ Den här modulen innehåller även ett avsnitt kring att arbeta med bilder. Jag 
 
 ### Modul 3
 
-I den här modulen är det dags för CSS och för att få sidan att se ut som något. Här får Andy verkligen visa upp det han kan och sidan introducerar steg för steg [CUBE CSS](https://cube.fyi/) och tänket bakom det. Andy visar även sitt verktyg för utilities,[Gorko](https://www.npmjs.com/package/gorko).
+I den här modulen är det dags för CSS och för att få sidan att se ut som något. Här får Andy verkligen visa upp det han kan och sidan introducerar steg för steg [CUBE CSS](https://cube.fyi/) och tänket bakom det. Andy visar även sitt verktyg för utilities, [Gorko](https://www.npmjs.com/package/gorko).
 Det finns mycket bra att lära här kring CSS och en metodologi för det som jag tycker känns rimlig, men jag är nog inte riktigt där i att använda den för något eget.
 
 Om du letat efter en bra introduktion till CSS_grid så finns det även här. CSS-grid är något som jag inte alls gett mig in på, flexbox har gjort det jag önskat hittills. Men det är nog något som kommer ändras efter detta.
