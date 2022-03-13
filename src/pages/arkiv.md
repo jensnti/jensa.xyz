@@ -3,7 +3,7 @@ title: Arkiv
 layout: layouts/archive.njk
 pagination:
     data: collections.posts
-    size: 6
+    size: 10
 permalink: 'arkiv{% if pagination.pageNumber > 0 %}/posts/{{ pagination.pageNumber }}{% endif %}/index.html'
 paginationPrevText: 'Nyare inlägg'
 paginationNextText: 'Tidigare inlägg'
