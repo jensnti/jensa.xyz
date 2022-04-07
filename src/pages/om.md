@@ -1,6 +1,6 @@
 ---
 title: Om
-permalink: /om/index.html
+permalink: /om/
 ---
 
 {% image "./src/images/jens.jpg", "En Jens", "Mitt fejs. Foto av Jens Andreasson." %}

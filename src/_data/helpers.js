@@ -9,4 +9,7 @@ module.exports = {
             return `${readingTime} minuts läsning`;
         }
     },
+    getPageLinks(page) {
+        console.log(page);
+    },
 };

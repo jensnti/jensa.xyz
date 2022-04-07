@@ -5,12 +5,14 @@ const mia = require('markdown-it-attrs');
 const glob = require('fast-glob');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const fs = require('fs');
-
+const { format, parseISO } = require('date-fns');
+const { sv } = require('date-fns/locale');
+const Image = require("@11ty/eleventy-img");
 // const imageShortcode = require('./src/shortcodes/image');
 
 // Import transforms
-const htmlMinTransform = require('./src/transforms/html-min-transform.js');
-const parseTransform = require('./src/transforms/parse-transform.js');
+// const htmlMinTransform = require('./src/transforms/html-min-transform.js');
+// const parseTransform = require('./src/transforms/parse-transform.js');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(rssPlugin);
@@ -18,7 +20,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.setDataDeepMerge(true);
 
-    eleventyConfig.addWatchTarget('./src/scss/');
+    eleventyConfig.addWatchTarget('./src/sass/');
     eleventyConfig.addWatchTarget('./src/js/');
 
     eleventyConfig.addPassthroughCopy('src/robots.txt');
@@ -28,37 +30,51 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/images/jens.jpg');
 
     // Filters
-    glob.sync(['src/filters/*.js']).forEach((file) => {
-        let filters = require('./' + file);
-        Object.keys(filters).forEach((name) =>
-            eleventyConfig.addFilter(name, filters[name])
-        );
-    });
+    const readableDate = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return format(dateObj, 'PP', { locale: sv });
+    };
+    
+    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+    const htmlDateString = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return format(dateObj, 'yyyy-MM-dd');
+    };
+
+    eleventyConfig.addFilter("readableDate", readableDate);
+    eleventyConfig.addFilter("htmlDateString", htmlDateString);
 
     // Shortcodes
-    glob.sync(['src/shortcodes/*.js']).forEach((file) => {
-        let shortcodes = require('./' + file);
-        Object.keys(shortcodes).forEach((name) => {
-            if (name === 'image') {
-                eleventyConfig.addNunjucksAsyncShortcode(
-                    name,
-                    shortcodes[name]
-                );
-            } else {
-                eleventyConfig.addShortcode(name, shortcodes[name]);
-            }
+    const year = () => {
+        return `${new Date().getFullYear()}`;
+    };
+    const imageShortcode = async (src, alt, title, sizes = '100%') => {
+        const metadata = await Image(src, {
+            widths: [300, 600],
+            outputDir: './public/img/',
         });
-    });
+    
+        const imageAttributes = {
+            alt,
+            sizes,
+            title,
+            loading: 'lazy',
+            decoding: 'async',
+        };
+    
+        // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+        return Image.generateHTML(metadata, imageAttributes, {
+            whitespaceMode: 'inline',
+        });
+    }
+    eleventyConfig.addShortcode("year", year);
+    eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
-    // PairedShortcodes
-    glob.sync(['src/paired-shortcodes/*.js']).forEach((file) => {
-        let pairedShortcodes = require('./' + file);
-        Object.keys(pairedShortcodes).forEach((name) =>
-            eleventyConfig.addPairedShortcode(name, pairedShortcodes[name])
-        );
-    });
-
-    function filterTagList(tags) {
+    const filterTagList = (tags) =>{
         return (tags || []).filter(
             (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
         );
@@ -77,8 +93,8 @@ module.exports = function (eleventyConfig) {
     });
 
     // Transforms
-    eleventyConfig.addTransform('htmlmin', htmlMinTransform);
-    eleventyConfig.addTransform('parse', parseTransform);
+    // eleventyConfig.addTransform('htmlmin', htmlMinTransform);
+    // eleventyConfig.addTransform('parse', parseTransform);
 
     // Collections
     eleventyConfig.addCollection('pages', (collectionApi) =>
@@ -87,6 +103,10 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection('posts', (collectionApi) =>
         collectionApi.getFilteredByGlob('src/posts/*.md').reverse()
+    );
+
+    eleventyConfig.addCollection('projects', (collectionApi) =>
+        collectionApi.getFilteredByGlob('src/projects/*.md').reverse()
     );
 
     eleventyConfig.addCollection('feed', (collectionApi) =>

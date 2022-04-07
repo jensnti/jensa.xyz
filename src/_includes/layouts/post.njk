@@ -18,6 +18,7 @@ layout: layouts/base.njk
             </p>
         {% endif %}
         {{ content | safe }}
+        {{ helpers.getPageLinks(content) }}
     </div>
     <footer class="post__foot">
         <div class="container">
