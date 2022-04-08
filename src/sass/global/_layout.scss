@@ -1,0 +1,6 @@
+.container {
+    // --container-width: 80ch;
+
+    width: min(var(--container-width, 80ch), 100vw - 3rem);
+    margin-inline: auto;
+}
