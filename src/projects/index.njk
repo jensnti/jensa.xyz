@@ -1,0 +1,12 @@
+---
+title: Projects
+permalink: /projects/
+---
+
+Grid över projekt
+
+<ul>
+    {% for project in collections.projects %}
+        <li>{{ project.data.title }}</li>
+    {% endfor %}
+</ul>

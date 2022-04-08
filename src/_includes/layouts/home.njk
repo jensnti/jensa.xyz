@@ -3,16 +3,15 @@ layout: layouts/base.njk
 postsHeading: Senaste inläggen
 ---
 
-{# Intro content #}
 {% set introHeading = title %}
 {% set introSummary %}
   {{ content | safe }}
 {% endset %}
 
-{% include "../components/intro.njk" %}
+{% include "../partials/components/hero.njk" %}
 
 {# Post list content #}
 {% set postListHeading = postsHeading %}
 {% set postListItems = collections.feed %}
 
-{% include "../components/post-list.njk" %}
+{% include "../partials/components/post-list.njk" %}

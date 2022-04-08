@@ -1,4 +1,4 @@
 {
-    "layout": "layouts/projects.njk",
-    "permalink": "projects/{{ title | slug }}/"
+    "layout": "layouts/project.njk",
+    "permalink": "projects/{{ title | slug }}/index.html"
 }

@@ -98,7 +98,8 @@ module.exports = function (eleventyConfig) {
 
     // Collections
     eleventyConfig.addCollection('pages', (collectionApi) =>
-        collectionApi.getFilteredByGlob('src/pages/*.md')
+        collectionApi.getFilteredByGlob(['src/pages/*.md']
+        )
     );
 
     eleventyConfig.addCollection('posts', (collectionApi) =>

@@ -34,12 +34,12 @@
         </script>
     </head>
     <body>
-        {% include "../components/site-head.njk" %}
-        <main id="main-content" tabindex="-1" role="main">
+        {% include "../partials/global/site-head.njk" %}
+        <main id="main-content" tabindex="-1">
             {{ content | safe }}
         </main>
-        {% include "components/flash-message.njk" %}
-        {% include "../components/site-foot.njk" %}
+        {% include "partials/components/flash-message.njk" %}
+        {% include "../partials/global/site-foot.njk" %}
         <script defer src="/js/dark.js"></script>
         <script defer src="/js/flash.js"></script>
     </body>

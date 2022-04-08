@@ -13,13 +13,13 @@ postsHeading: 'Alla inlägg'
 {# Intro content #}
 {% set introHeading = title + ' - ' + tag %}
 
-{% include "components/intro.njk" %}
+{% include "partials/components/hero.njk" %}
 
 {# Post list content #}
 {% set postListHeading = postsHeading %}
 {% set postListItems =  collections[tag] | reverse %}
 
-{% include "components/post-list.njk" %}
+{% include "partials/components/post-list.njk" %}
 
 <section class="container">
     <p><a href="{{ '/tags/' | url }}">Alla taggar</a>.</p>

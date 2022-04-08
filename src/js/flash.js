@@ -9,6 +9,7 @@ if (!consent) {
     button.classList.add('button', 'flash__button');
     button.textContent = `Ok`;
     const p = document.createElement('p');
+    p.id = 'alertdialogTitle';
     p.textContent = `Den här webbplatsen sparar information i din webbläsare.`;
     message.appendChild(p);
     inner.appendChild(button);

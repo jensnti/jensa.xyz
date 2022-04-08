@@ -1,0 +1,13 @@
+{% set getPageLinks = helpers.getPageLinks(content) %}
+{% if getPageLinks %}
+<footer class="post__foot">
+    <h3>Länkar</h3>
+    <ul>
+        {% for link in getPageLinks %}
+        <li>
+            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</footer>
+{% endif %}
