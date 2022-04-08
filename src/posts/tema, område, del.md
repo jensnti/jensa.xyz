@@ -9,11 +9,11 @@ I slutet av vårterminen 2021 så diskuterade jag tillsammans med min kollega Ka
 Kaj hade delat upp kursens innehåll i teman, områden och delar. Där en del var ett begränsat område (till en sida) innehållandes information, instruktion och uppgift. Jag gillande upplägget och började fundera utifrån det.
 Det var i samband med detta som jag bestämde mig för att testa [Eleventy](https://www.11ty.dev/) för att skapa en slags kurswebb.
 
-Min testkurs blev [Webbutveckling](https://www.skolverket.se/undervisning/gymnasieskolan/laroplan-program-och-amnen-i-gymnasieskolan/gymnasieprogrammen/amne?url=1530314731%2Fsyllabuscw%2Fjsp%2Fsubject.htm%3FsubjectCode%3DWEU%26tos%3Dgy&sv.url=12.5dfee44715d35a5cdfa92a3) och jag skapade ett system kring detta. Min kurswebb för [Webbutveckling](https://keen-jones-305b5d.netlify.app/) är ofullständig, men gav mig en bas för att skapa en Eleventy template att använda.
+Min testkurs blev [Webbutveckling (obs sökning på skolverket)](https://www.skolverket.se/undervisning/gymnasieskolan/laroplan-program-och-amnen-i-gymnasieskolan/hitta-program-amnen-och-kurser-i-gymnasieskolan?url=-996270488%2Fsyllabuscw%2Fjsp%2Fsearch.htm%3FalphaSearchString%3DW%26searchType%3DFREETEXT%26searchRange%3DCOURSE%26subjectCategory%3D%26searchString%3Dwebbutveckling&sv.url=12.5dfee44715d35a5cdfa8e7a) och jag skapade ett system kring detta. Min kurswebb för [Webbutveckling](https://webbutveckling.jensa.xyz) är ofullständig, men gav mig en bas för att skapa en Eleventy template att använda.
 
 ## TOD
 
-[Templaten](https://github.com/jensnti/tod) kom att döpas till TOD efter just tema, område, del(fiffigare namnförslag är välkomna). Så nu skriver jag om TOD här, eftersom jag nyss gått igenom sidan och gjort en rejäl uppdatering av den. Efter att ha skapat [jensa.xyz](https://www.jensa.xyz), där du läser detta och sedan kört igenom [Learn eleventy from scratch](/posts/learn-eleventy-from-scratch/) kursen så bestämde jag mig för att arbeta om vissa grunder på sidan.
+[Projekt templaten](https://github.com/jensnti/tod) kom att döpas till TOD efter just tema, område, del(fiffigare namnförslag är välkomna). Så nu skriver jag om TOD här, eftersom jag nyss gått igenom sidan och gjort en rejäl uppdatering av den. Efter att ha skapat [jensa.xyz](https://www.jensa.xyz), där du läser detta och sedan kört igenom [Learn eleventy from scratch](/posts/learn-eleventy-from-scratch/) kursen så bestämde jag mig för att arbeta om vissa grunder på sidan.
 
 -   Skippa [Bootstrap](https://getbootstrap.com/)
 -   Skriva CSS med struktur och tanke

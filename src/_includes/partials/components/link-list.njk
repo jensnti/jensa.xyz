@@ -1,11 +1,11 @@
 {% set getPageLinks = helpers.getPageLinks(content) %}
 {% if getPageLinks %}
-<footer class="post__foot">
-    <h3>Länkar</h3>
+<footer class="content__footer">
+    <h2>Länklista</h2>
     <ul>
         {% for link in getPageLinks %}
         <li>
-            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+            <a href="{{ link.url }}">{{ link.title }}</a>
         </li>
         {% endfor %}
     </ul>

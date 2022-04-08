@@ -19,17 +19,16 @@ module.exports = {
         const document = DOM.window.document;
 
         const articleLinks = [...document.querySelectorAll('a')];
-        let externalLinks = [];
         if (articleLinks.length) {
-            externalLinks = articleLinks.map((articleLink) => {
-                if (articleLink.href.startsWith('https')) {
-                    return {
-                        url: articleLink.href,
-                        title: articleLink.textContent,
-                    };
-                }
+            const externalLinks = articleLinks.filter((articleLink) => {
+                return articleLink.href.startsWith('https');
+            });
+            return externalLinks.map((link) => {
+                return {
+                    url: link.href,
+                    title: link.textContent,
+                };
             });
         }
-        return externalLinks;
     },
 };

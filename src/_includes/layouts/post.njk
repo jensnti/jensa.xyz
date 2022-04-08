@@ -4,9 +4,9 @@
 {% set introHeading = title %}
 {% block content %}
   <main id="main-content" tabindex="-1">
-    <article class="post">
-        {% include "../partials/components/hero.njk" %}
+    <article class="content">
         <div class="container">
+            {% include "../partials/components/header.njk" %}
 
             {% if update %}
                 <p>
@@ -15,16 +15,17 @@
             {% endif %}
 
             {% if lead %}
-                <p class="post__lead">
+                <p class="content__lead">
                     <em>{{ lead | safe }}</em>
                 </p>
             {% endif %}
 
             {{ content | safe }}
+
+            {% if pagesCheck == false %}
+                {% include "../partials/components/link-list.njk" %}
+            {% endif %}
         </div>
-        {% if pagesCheck == false %}
-            {% include "../partials/components/link-list.njk" %}
-        {% endif %}
     </article>
 </main>
 {% endblock %}

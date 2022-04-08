@@ -14,7 +14,7 @@ postsHeading: 'Alla inlägg'
 {% set introHeading = title + ' - ' + tag %}
 
 {% block content %}
-    {% include "partials/components/hero.njk" %}
+    {% include "partials/components/header.njk" %}
     <main id="main-content" tabindex="-1">
         {% set postListHeading = postsHeading %}
         {% set postListItems =  collections[tag] | reverse %}

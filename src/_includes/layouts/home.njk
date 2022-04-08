@@ -7,10 +7,10 @@ postsHeading: Senaste inläggen
 {% block content %}
     <main id="main-content" tabindex="-1">
         {% set introSummary %}
-        {{ content | safe }}
+            {{ content | safe }}
         {% endset %}
 
-        {% include "../partials/components/hero.njk" %}
+        {% include "../partials/components/header.njk" %}
 
         {% set postListHeading = postsHeading %}
         {% set postListItems = collections.feed %}

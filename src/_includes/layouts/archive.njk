@@ -11,9 +11,8 @@ postsHeading: 'Alla inlägg'
             {{ content | safe }}
         {% endset %}
 
-        {% include "../partials/components/hero.njk" %}
+        {% include "../partials/components/header.njk" %}
 
-        {# Post list content #}
         {% set postListHeading = postsHeading %}
         {% set postListItems = pagination.items %}
 

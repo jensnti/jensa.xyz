@@ -7,7 +7,7 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const fs = require('fs');
 const { format, parseISO } = require('date-fns');
 const { sv } = require('date-fns/locale');
-const Image = require("@11ty/eleventy-img");
+const Image = require('@11ty/eleventy-img');
 // const imageShortcode = require('./src/shortcodes/image');
 
 // Import transforms
@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
         }
         return format(dateObj, 'PP', { locale: sv });
     };
-    
+
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     const htmlDateString = (dateObj) => {
         if (typeof dateObj === 'string') {
@@ -45,40 +45,45 @@ module.exports = function (eleventyConfig) {
         return format(dateObj, 'yyyy-MM-dd');
     };
 
-    eleventyConfig.addFilter("readableDate", readableDate);
-    eleventyConfig.addFilter("htmlDateString", htmlDateString);
+    eleventyConfig.addFilter('readableDate', readableDate);
+    eleventyConfig.addFilter('htmlDateString', htmlDateString);
 
     // Shortcodes
     const year = () => {
         return `${new Date().getFullYear()}`;
     };
-    const imageShortcode = async (src, alt, title, sizes = '100%') => {
+    const imageShortcode = async (
+        src,
+        alt,
+        title,
+        sizes = '(min-width: 30em) 50vw, 100vw'
+    ) => {
         const metadata = await Image(src, {
-            widths: [300, 600],
+            widths: [400, 800],
             outputDir: './public/img/',
         });
-    
+
         const imageAttributes = {
             alt,
-            sizes,
             title,
+            sizes,
             loading: 'lazy',
             decoding: 'async',
         };
-    
+
         // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
         return Image.generateHTML(metadata, imageAttributes, {
             whitespaceMode: 'inline',
         });
-    }
-    eleventyConfig.addShortcode("year", year);
-    eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+    };
+    eleventyConfig.addShortcode('year', year);
+    eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
-    const filterTagList = (tags) =>{
+    const filterTagList = (tags) => {
         return (tags || []).filter(
             (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
         );
-    }
+    };
 
     eleventyConfig.addFilter('filterTagList', filterTagList);
 
@@ -98,8 +103,7 @@ module.exports = function (eleventyConfig) {
 
     // Collections
     eleventyConfig.addCollection('pages', (collectionApi) =>
-        collectionApi.getFilteredByGlob(['src/pages/*.md']
-        )
+        collectionApi.getFilteredByGlob(['src/pages/*.md'])
     );
 
     eleventyConfig.addCollection('posts', (collectionApi) =>
