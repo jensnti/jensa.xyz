@@ -1,16 +1,21 @@
 ---
 title: Taggar
 permalink: /tags/
-layout: layouts/base.njk
 ---
+
+{% extends 'layouts/base.njk' %}
 
 {% set introHeading = title %}
 
-{% include "partials/components/hero.njk" %}
+{% block content %}
+    {% include "partials/components/hero.njk" %}
+    <main id="main-content" tabindex="-1">
 
-<section class="container">
-    {% for tag in collections.tagList %}
-    {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag | capitalize }}</a>
-    {% endfor %}
-</section>
+        <section class="container">
+            {% for tag in collections.tagList %}
+            {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
+                <a href="{{ tagUrl | url }}" class="post-tag">{{ tag | capitalize }}</a>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}

@@ -1,45 +1,27 @@
 <!DOCTYPE html>
 <html lang="{{ meta.lang }}">
     <head>
-        {% set pageTitle = title + ' - ' + meta.siteName %}
-        {% set siteTitle = meta.siteName %}
-        {% set currentUrl = meta.url + page.url %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{{ pageTitle }}</title>
+        {% include "../partials/global/meta.njk" %}
         <link rel="canonical" href="{{ currentUrl }}"/>
         <link rel="preconnect" href="https://use.typekit.net">
         <link rel="stylesheet" href="https://use.typekit.net/hzx7qyg.css">
         <link rel="alternate" type="application/rss+xml" title="{{ meta.siteName }}" href="{{ meta.url }}/feed.xml"/>
         <link rel="stylesheet" href="{{ '/css/prism.css' }}">
         <link rel="stylesheet" href="{{ '/css/style.css' }}">
-        <meta name="description" content="{{ meta.siteDesc }}">
-        <meta name="theme-color" content="{{ meta.theme }}">
-        <meta property="og:site_name" content="{{ siteTitle }}"/>
-        <meta property="og:title" content="{{ pageTitle }}"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="{{ currentUrl }}"/>
-        <meta property="og:description" content="{{ meta.siteDesc }}"/>
         <link rel='icon' type='image/x-icon' href='/favicon.ico'/>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RREZWE4VCC"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'G-RREZWE4VCC');
-        </script>
+        {% include "../partials/global/analytics.njk" %}
+        {% block head %}
+        {% endblock %}
     </head>
     <body>
         {% include "../partials/global/site-head.njk" %}
-        <main id="main-content" tabindex="-1">
-            {{ content | safe }}
-        </main>
-        {% include "partials/components/flash-message.njk" %}
+        {% block content %}
+        {% endblock content %}
         {% include "../partials/global/site-foot.njk" %}
+        {% include "partials/components/flash-message.njk" %}
         <script defer src="/js/dark.js"></script>
         <script defer src="/js/flash.js"></script>
     </body>

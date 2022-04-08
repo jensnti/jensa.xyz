@@ -1,21 +1,26 @@
 ---
-layout: layouts/base.njk
 postsHeading: 'Alla inlägg'
 ---
 
+{% extends 'layouts/base.njk' %}
+
 {% set introHeading = title %}
-{% set introSummary %}
-    {{ content | safe }}
-{% endset %}
+{% block content %}
+    <main id="main-content" tabindex="-1">
+        {% set introSummary %}
+            {{ content | safe }}
+        {% endset %}
 
-{% include "../partials/components/hero.njk" %}
+        {% include "../partials/components/hero.njk" %}
 
-{# Post list content #}
-{% set postListHeading = postsHeading %}
-{% set postListItems = pagination.items %}
+        {# Post list content #}
+        {% set postListHeading = postsHeading %}
+        {% set postListItems = pagination.items %}
 
-{% include "../partials/components/post-list.njk" %}
+        {% include "../partials/components/post-list.njk" %}
 
-{% if not tag %}
-    {% include "../partials/components/pagination.njk" %}
-{% endif %}
+        {% if not tag %}
+            {% include "../partials/components/pagination.njk" %}
+        {% endif %}
+    </main>
+{% endblock %}
