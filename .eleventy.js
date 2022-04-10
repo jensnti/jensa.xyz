@@ -45,6 +45,18 @@ module.exports = function (eleventyConfig) {
         return format(dateObj, 'yyyy-MM-dd');
     };
 
+    const tagCountCss = (count) => {
+        const prefix = 'tag-cloud__item--';
+        if (count < 1) {
+            return `${prefix}100`;
+        } else if (count < 3) {
+            return `${prefix}200`;
+        } else {
+            return `${prefix}300`;
+        }
+    };
+
+    eleventyConfig.addFilter('tagCountCss', tagCountCss);
     eleventyConfig.addFilter('readableDate', readableDate);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
 
@@ -93,7 +105,6 @@ module.exports = function (eleventyConfig) {
         collection.getAll().forEach((item) => {
             (item.data.tags || []).forEach((tag) => tagSet.add(tag));
         });
-
         return filterTagList([...tagSet]);
     });
 
