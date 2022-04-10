@@ -4,28 +4,26 @@
 {% set introHeading = title %}
 {% block content %}
   <main id="main-content" tabindex="-1">
-    <article class="content">
-        <div class="container">
-            {% include "../partials/components/header.njk" %}
+    <article class="content container">
+        {% include "../partials/components/header.njk" %}
 
-            {% if update %}
-                <p>
-                    <strong>Texten är uppdaterad <time datetime="{{ update | htmlDateString }}">{{ update | readableDate }}</time>.</strong>
-                </p>
-            {% endif %}
+        {% if update %}
+            <p>
+                <strong>Texten är uppdaterad <time datetime="{{ update | htmlDateString }}">{{ update | readableDate }}</time>.</strong>
+            </p>
+        {% endif %}
 
-            {% if lead %}
-                <p class="content__lead">
-                    <em>{{ lead | safe }}</em>
-                </p>
-            {% endif %}
+        {% if lead %}
+            <p class="content__lead">
+                <em>{{ lead | safe }}</em>
+            </p>
+        {% endif %}
 
-            {{ content | safe }}
+        {{ content | safe }}
 
-            {% if pagesCheck == false %}
-                {% include "../partials/components/link-list.njk" %}
-            {% endif %}
-        </div>
+        {% if pagesCheck == false %}
+            {% include "../partials/components/link-list.njk" %}
+        {% endif %}
     </article>
 </main>
 {% endblock %}

@@ -6,15 +6,17 @@ postsHeading: Senaste inläggen
 {% set introHeading = title %}
 {% block content %}
     <main id="main-content" tabindex="-1">
-        {% set introSummary %}
+        <section class="container">
+            {% set introSummary %}
             {{ content | safe }}
-        {% endset %}
-
-        {% include "../partials/components/header.njk" %}
-
-        {% set postListHeading = postsHeading %}
-        {% set postListItems = collections.feed %}
-
-        {% include "../partials/components/post-list.njk" %}
+            {% endset %}
+            
+            {% include "../partials/components/header.njk" %}
+            
+            {% set postListHeading = postsHeading %}
+            {% set postListItems = collections.feed %}
+            
+            {% include "../partials/components/post-list.njk" %}
+        </section>
     </main>
 {% endblock %}

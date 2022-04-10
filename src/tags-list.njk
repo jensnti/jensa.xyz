@@ -1,5 +1,5 @@
 ---
-title: Taggar
+title: Alla taggar
 permalink: /tags/
 ---
 
@@ -8,14 +8,18 @@ permalink: /tags/
 {% set introHeading = title %}
 
 {% block content %}
-    {% include "partials/components/header.njk" %}
     <main id="main-content" tabindex="-1">
-
         <section class="container">
-            {% for tag in collections.tagList %}
-            {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
-                <a href="{{ tagUrl | url }}" class="post-tag">{{ tag | capitalize }}</a>
-            {% endfor %}
+                {% include "partials/components/header.njk" %}
+                <ol class="tag-cloud">
+                    {% for tag in collections.tagList %}
+                        {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
+                            <li class="{{ collections[tag].length | tagCountCss }}">
+                                <a href="{{ tagUrl | url }}">{{ tag | capitalize }}</a>
+                                {{ collections[tag].length }}
+                            </li>
+                    {% endfor %}
+                </ol>
         </section>
     </main>
 {% endblock %}

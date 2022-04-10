@@ -7,19 +7,20 @@ postsHeading: 'Alla inlägg'
 {% set introHeading = title %}
 {% block content %}
     <main id="main-content" tabindex="-1">
-        {% set introSummary %}
-            {{ content | safe }}
-        {% endset %}
+        <section class="container">
+            {% set introSummary %}
+                {{ content | safe }}
+            {% endset %}
+            
+            {% include "../partials/components/header.njk" %}
 
-        {% include "../partials/components/header.njk" %}
-
-        {% set postListHeading = postsHeading %}
-        {% set postListItems = pagination.items %}
-
-        {% include "../partials/components/post-list.njk" %}
-
-        {% if not tag %}
-            {% include "../partials/components/pagination.njk" %}
-        {% endif %}
+            {% set postListItems = pagination.items %}
+            
+            {% include "../partials/components/post-list.njk" %}
+            
+            {% if not tag %}
+                {% include "../partials/components/pagination.njk" %}
+            {% endif %}
+        </section>
     </main>
 {% endblock %}

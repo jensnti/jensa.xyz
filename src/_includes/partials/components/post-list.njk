@@ -1,6 +1,6 @@
 {% if postListItems.length %}
     <section class="post-list">
-        <div class="container">
+        {% if postListHeading %}
             <div class="post-list__title">
                 <h2 id="{{ postListHeading | slug }}">{{ postListHeading }}
                     <a href="#{{ postListHeading | slug }}" class="anchor">
@@ -21,19 +21,23 @@
                     </a>
                 </h2>
             </div>
-            <ol class="posts-list__list">
-                {% for item in postListItems %}
-                    <li>
-                        <h3 class="posts-list__heading">
-                            <a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
-                        </h3>
-                        <time datetime="{{ item.date | htmlDateString }}">{{ item.date | readableDate }}</time>
-                        {% if item.data.update %}
-                            (uppdaterad <time datetime="{{ item.data.update | htmlDateString }}">{{ item.data.update | readableDate }}</time>)
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ol>
-        </div>
+        {% endif %}
+        <ol class="posts-list__list">
+            {% for item in postListItems %}
+                <li class="posts-list__heading">
+                    <a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
+                    <time datetime="{{ item.date | htmlDateString }}">
+                        {{ item.date | readableDate }}
+                    </time>
+                    {% if item.data.update %}
+                        <span class="posts-list__heading--updated">(uppdaterad 
+                            <time datetime="{{ item.data.update | htmlDateString }}">
+                                {{ item.data.update | readableDate }}
+                            </time>)
+                        </span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
     </section>
 {% endif %}

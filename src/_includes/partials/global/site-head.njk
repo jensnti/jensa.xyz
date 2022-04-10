@@ -1,12 +1,10 @@
 <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
 <header class="site-head">
-    <div class="container">
-        <div class="site-head__inner">
-            <a href="/" class="site-head__brand" aria-label="{{ meta.siteName }} - Hem">
-                <span class="site-head__title" aria-hidden="true">{{ meta.siteName }}</span>
-            </a>
-            {% set top = true %}
-            {% include "partials/components/nav.njk" %}
-        </div>
+    <div class="site-head__inner container">
+        <a href="/" class="site-head__brand" aria-label="{{ meta.siteName }} - Hem">
+            <span class="site-head__title" aria-hidden="true">{{ meta.siteName }}</span>
+        </a>
+        {% set top = true %}
+        {% include "partials/components/nav.njk" %}
     </div>
 </header>

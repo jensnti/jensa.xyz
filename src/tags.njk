@@ -11,18 +11,18 @@ postsHeading: 'Alla inlägg'
 
 {% extends 'layouts/base.njk' %}
 
-{% set introHeading = title + ' - ' + tag %}
+{% set introHeading = title + ' med ' + tag %}
 
 {% block content %}
-    {% include "partials/components/header.njk" %}
-    <main id="main-content" tabindex="-1">
-        {% set postListHeading = postsHeading %}
-        {% set postListItems =  collections[tag] | reverse %}
+<main id="main-content" tabindex="-1">
+    <section class="container">
+            {% include "partials/components/header.njk" %}
 
-        {% include "partials/components/post-list.njk" %}
-
-        <section class="container">
-            <p><a href="{{ '/tags/' | url }}">Alla taggar</a>.</p>
+            {% set postListItems =  collections[tag] | reverse %}
+            
+            {% include "partials/components/post-list.njk" %}
+            
+            <h4><a href="{{ '/tags/' | url }}">Alla taggar</a></h4>
         </section>
     </main>
 <script src="/js/sort.js"></script>
