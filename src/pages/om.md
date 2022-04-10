@@ -1,6 +1,7 @@
 ---
 title: Om
 permalink: /om/
+layout: layouts/post.njk
 ---
 
 {% image "./src/images/jens.jpg", "En Jens", "Mitt fejs. Foto av Jens Andreasson." %}

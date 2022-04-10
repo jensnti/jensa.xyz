@@ -2,27 +2,36 @@
 
 {% set pagesCheck = page.filePathStem.includes('/pages/') %}
 {% set introHeading = title %}
+
 {% block content %}
-  <main id="main-content" tabindex="-1">
+<main id="main-content" tabindex="-1">
     <article class="content container">
         {% include "../partials/components/header.njk" %}
 
         {% if update %}
-            <p>
-                <strong>Texten är uppdaterad <time datetime="{{ update | htmlDateString }}">{{ update | readableDate }}</time>.</strong>
-            </p>
+        <p>
+            <strong
+                >Texten är uppdaterad
+                <time datetime="{{ update | htmlDateString }}">{{
+                    update | readableDate
+                }}</time
+                >.</strong
+            >
+        </p>
         {% endif %}
 
         {% if lead %}
-            <p class="content__lead">
+        <div class="content__lead">
+            <p>
                 <em>{{ lead | safe }}</em>
             </p>
+        </div>
         {% endif %}
 
         {{ content | safe }}
 
         {% if pagesCheck == false %}
-            {% include "../partials/components/link-list.njk" %}
+            {% include "../partials/components/link-list-footer.njk" %}
         {% endif %}
     </article>
 </main>

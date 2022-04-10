@@ -1,6 +1,6 @@
 ---
 title: Alla taggar
-permalink: /tags/
+permalink: /taggar/
 ---
 
 {% extends 'layouts/base.njk' %}
@@ -9,17 +9,17 @@ permalink: /tags/
 
 {% block content %}
     <main id="main-content" tabindex="-1">
-        <section class="container">
-                {% include "partials/components/header.njk" %}
-                <ol class="tag-cloud">
-                    {% for tag in collections.tagList %}
-                        {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
-                            <li class="{{ collections[tag].length | tagCountCss }}">
-                                <a href="{{ tagUrl | url }}">{{ tag | capitalize }}</a>
-                                {{ collections[tag].length }}
-                            </li>
-                    {% endfor %}
-                </ol>
+        <section class="content container">
+            {% include "partials/components/header.njk" %}
+            <ul class="tag-cloud">
+                {% for tag in collections.tagList %}
+                    {% set tagUrl %}/tagg/{{ tag | slug }}/{% endset %}
+                        <li class="{{ collections[tag].length | tagCountCss }}">
+                            <a href="{{ tagUrl | url }}">{{ tag | capitalize }}</a>
+                            {{ collections[tag].length }}
+                        </li>
+                {% endfor %}
+            </ul>
         </section>
     </main>
 {% endblock %}

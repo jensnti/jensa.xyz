@@ -1,12 +1,25 @@
 ---
-title: Projects
-permalink: /projects/
+title: Alla projekt
+permalink: /projekt/
 ---
 
-Grid över projekt
+{% extends "layouts/base.njk" %}
 
-<ul>
-    {% for project in collections.projects %}
-        <li>{{ project.data.title }}</li>
-    {% endfor %}
-</ul>
+{% set introHeading = title %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+    <section class="content container">
+        {% include "partials/components/header.njk" %}
+        <ul>
+            {% for project in collections.projects %}
+            <li>
+                <a href="{{ project.url }}">
+                    {{ project.data.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+{% endblock %}

@@ -8,6 +8,9 @@ const fs = require('fs');
 const { format, parseISO } = require('date-fns');
 const { sv } = require('date-fns/locale');
 const Image = require('@11ty/eleventy-img');
+const path = require('path');
+
+const prettier = require('prettier');
 // const imageShortcode = require('./src/shortcodes/image');
 
 // Import transforms
@@ -47,9 +50,9 @@ module.exports = function (eleventyConfig) {
 
     const tagCountCss = (count) => {
         const prefix = 'tag-cloud__item--';
-        if (count < 1) {
+        if (count < 2) {
             return `${prefix}100`;
-        } else if (count < 3) {
+        } else if (count < 4) {
             return `${prefix}200`;
         } else {
             return `${prefix}300`;
@@ -167,6 +170,21 @@ module.exports = function (eleventyConfig) {
             },
         },
     });
+
+    // eleventyConfig.addTransform('prettier', function (content, outputPath) {
+    //     // https://github.com/11ty/eleventy/issues/1314#issuecomment-657999759
+    //     const extname = path.extname(outputPath);
+    //     switch (extname) {
+    //         case '.html':
+    //         case '.json':
+    //             // Strip leading period from extension and use as the Prettier parser.
+    //             const parser = extname.replace(/^./, '');
+    //             return prettier.format(content, { parser });
+
+    //         default:
+    //             return content;
+    //     }
+    // });
 
     return {
         markdownTemplateEngine: 'njk',

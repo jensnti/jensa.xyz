@@ -5,22 +5,21 @@ postsHeading: 'Alla inlägg'
 {% extends 'layouts/base.njk' %}
 
 {% set introHeading = title %}
-{% block content %}
-    <main id="main-content" tabindex="-1">
-        <section class="container">
-            {% set introSummary %}
-                {{ content | safe }}
-            {% endset %}
-            
-            {% include "../partials/components/header.njk" %}
+{% set introSummary %}
+    {{ content | safe }}
+{% endset %}
+{% set postListItems = pagination.items %}
 
-            {% set postListItems = pagination.items %}
-            
-            {% include "../partials/components/post-list.njk" %}
-            
-            {% if not tag %}
-                {% include "../partials/components/pagination.njk" %}
-            {% endif %}
-        </section>
-    </main>
+{% block content %}
+<main id="main-content" tabindex="-1">
+    <section class="container">
+        {% include "../partials/components/header.njk" %}
+
+        {% include "../partials/components/post-list.njk" %}
+
+        {% if not tag %}
+            {% include "../partials/components/pagination.njk" %}
+        {% endif %}
+    </section>
+</main>
 {% endblock %}

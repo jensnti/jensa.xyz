@@ -5,25 +5,23 @@ pagination:
     size: 1
     alias: tag
     filter: ['all', 'nav', 'pages', 'tagList']
-permalink: /tag/{{ tag | slug }}/
+permalink: /tagg/{{ tag | slug }}/
 postsHeading: 'Alla inlägg'
 ---
 
 {% extends 'layouts/base.njk' %}
-
 {% set introHeading = title + ' med ' + tag %}
+{% set postListItems = collections[tag] | reverse %}
 
 {% block content %}
 <main id="main-content" tabindex="-1">
-    <section class="container">
-            {% include "partials/components/header.njk" %}
+    <section class="content container">
+        {% include "partials/components/header.njk" %}
+        {% include "partials/components/post-list.njk" %}
 
-            {% set postListItems =  collections[tag] | reverse %}
-            
-            {% include "partials/components/post-list.njk" %}
-            
-            <h4><a href="{{ '/tags/' | url }}">Alla taggar</a></h4>
-        </section>
-    </main>
-<script src="/js/sort.js"></script>
+        <footer class="content__footer">
+            <h4><a href="{{ '/taggar/' | url }}">Alla taggar</a></h4>
+        </footer>
+    </section>
+</main>
 {% endblock %}
