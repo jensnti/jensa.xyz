@@ -2,7 +2,7 @@
 title: Testa med JS
 date: 2022-05-14
 lead: I veckan omarbetade jag en uppgift från det här läsåret. Jag skapade tester som ska fungera som milstolpar i arbetet för eleverna. Att skriva tester är inte något jag gjort i större utsträckning och jag tänkte skriva om några lärdomar.
-tags: ['skola', 'javascript', 'tester']
+tags: ['javascript', 'tester', 'jest', 'supertest', 'mysql']
 ---
 
 Min utgångspunk blev en kort en artikel, [How to test Express.js...](https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/) om att testa [Express](https://expressjs.com/) med [Jest](https://jestjs.io/) och [Supertest](https://www.npmjs.com/package/supertest). Jag hade dock inte något behov av babel, så jag installerade följande:
