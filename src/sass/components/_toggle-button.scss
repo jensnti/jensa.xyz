@@ -1,0 +1,26 @@
+.toggle-button {
+    display: inline-flex;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    &:hover > span > svg > path {
+        fill-rule: inherit;
+    }
+    &__icon {
+        color: var(--color-link);
+        transform: translateY(1px); /* Optical adjustment */
+        transition: all 500ms ease;
+        &:hover {
+            color: var(--color-fg);
+        }
+        svg {
+            height: var(--font-size-h4);
+            width: var(--font-size-h4);
+        }
+    }
+}
+
+.no-js .user-toggle {
+    display: none;
+}

@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    &__item {
+        text-decoration: none;
+        &:not(:first-child) {
+            padding-left: var(--nav-left-padding, 1rem);
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

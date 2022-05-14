@@ -1,0 +1,27 @@
+:root {
+    --shadow-color: 0deg 0% 0%;
+    --shadow:
+    0.1px 0.6px 0.8px hsl(var(--shadow-color) / 0.04),
+    0.4px 1.9px 2.5px -0.5px hsl(var(--shadow-color) / 0.05),
+    0.8px 4.1px 5.4px -1px hsl(var(--shadow-color) / 0.06),
+    1.9px 9.2px 12px -1.4px hsl(var(--shadow-color) / 0.08);
+
+    --color-fg: #CCCAC2;
+    --color-bg: #242936;
+    --color-link: #5CCFE6;
+    --color-selection: #409Fff40;
+}
+
+body {
+    color: var(--color-fg);
+    background-color: var(--color-bg);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+::selection {
+    background-color: var(--color-selection);
+}

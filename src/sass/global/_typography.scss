@@ -43,7 +43,7 @@ $type-styles: ();
 $level-size: $type-base-size;
 @each $level in $type-levels {
   $level-size: $level-size * $type-size-ratio;
-  $type-styles: map-merge($type-styles, (#{"h"}$level: $level-size));
+  $type-styles: map-merge($type-styles, (#{"h"+$level}: $level-size));
 
   // Output heading styles
   // Assign to element and create utility class
@@ -96,6 +96,13 @@ $level-size: $type-base-size;
 
 // Test retrieving heading style value from the map
 // @debug "h3:" #{type-style(h3)};
+
+:root {
+    @each $type, $size in $type-styles {
+        --font-size-#{$type}: #{type-style($type)};
+    }
+}
+
 h1,
 h2,
 h3 {
