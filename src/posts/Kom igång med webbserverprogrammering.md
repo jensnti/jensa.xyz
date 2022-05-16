@@ -1,8 +1,8 @@
 ---
-title: Kom igång webbserver
+title: Kom igång med webbserverprogrammering
 date: 2022-05-16
-tags: ['jobb', 'skola', 'webbserverprogrammering', 'setup']
-lead: Istället för att dela upp det jag skriver på flera olika sidor har jag bestämt mig för att samla det på ett ställe. Det här är alltså en introduktionspost till det du behöver för att komma igång med webbserverprogrammeringen.
+tags: ['jobb', 'webbserverprogrammering', 'setup', 'node', 'wsl', 'mysql']
+lead: Istället för att dela upp det jag skriver på flera olika sidor har jag bestämt mig för att samla det på ett ställe. Det här är alltså en introduktionspost till det du behöver för att komma igång med kursen webbserverprogrammering.
 ---
 
 Den teknik, eller stack, vi använder i kursen är Node, Mysql och WSL.
@@ -32,6 +32,8 @@ cd code
 ls -la
 ```
 
+{% image "./src/images/Screenshot 2022-05-16 115024.png", "Skärmdump av WSL", "Skärmdump av WSL" %}
+
 ### Några användbara bash kommandon
 
 | Kommando | Beskrivning |
@@ -43,18 +45,19 @@ ls -la
 | `rm` | Tar bort en fil, ska du ta bort en mapp med filer lägg till `-rf`, recursive force |
 | `cp` | Kopierar en fil |
 | `mv` | Flyttar en fil |
-
 | `cat` | Läser en fil och skriver ut den |
 | `history` | Listar historik, du kan seadan köra kommandot från historiken med !# |
 
 ## Nodejs
 
-Node[Node](https://nodejs.org/en/) är en javascript runtime byggd på Chrome V8s javascript motor. Tillsammans med [Express](https://expressjs.com/) blir Node den webbserver vi använder.
-Vi använder Node för att det låter oss använda samma programmeringsspråk både för frontend och backend, javascript. Att använda Node får oss även in i användadet av [Node packet manager (npm)](https://www.npmjs.com/).
+[Node](https://nodejs.org/en/) är en javascript runtime byggd på Chrome V8s javascript motor. Tillsammans med [Express](https://expressjs.com/) blir Node den webbserver vi använder.
+Vi använder Node för att det låter oss använda samma programmeringsspråk både för frontend och backend, javascript. Genom att använda Node får vi även en koppling till att använda [Node packet manager (npm)](https://www.npmjs.com/).
 
 För att installera och köra Node samt NPM så använder vi oss utan Node Version Manager(nvm).
 
 * [Installera Node](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl#install-nvm-nodejs-and-npm)
+
+Mer om Node i ett första Express exempel.
 
 ## [Mysql](https://www.mysql.com/)
 
@@ -79,10 +82,16 @@ Du är nu redo att skapa en databasanvändare på din server. Detta måste göra
 sudo mysql -u root
 ```
 
-Väl inne i MySQL klienten så kör du följande kommando för att skapa en user med alla rättigheter.
+{% image "./src/images/Screenshot 2022-05-16 115805.png", "Skärmdump av MySQL-klienten", "Skärmdump av MySQL-klienten. Notera att trots varningen så är restarten av servern [  OK  ], vid fel så står det inte OK." %}
 
-```SQL
+Väl inne i MySQL klienten så kör du följande kommando för att skapa en user med alla rättigheter. Kom ihåg att byta ut `username` och `password`.
+
+```sql
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
 FLUSH PRIVILEGES;
 ```
+
+När du skapat användaren så avsluta med `exit`. Du kan nu ansluta till databasen igen med din skapade användare.
+
+Mer SQL i det avsnittet.
