@@ -20,14 +20,13 @@ module.exports = {
 
         const articleLinks = [...document.querySelectorAll('a')];
         if (articleLinks.length) {
-            const externalLinks = articleLinks.filter((articleLink) => {
-                return articleLink.href.startsWith('https');
-            });
-            return externalLinks.map((link) => {
-                return {
-                    url: link.href,
-                    title: link.textContent,
-                };
+            return articleLinks.map((link) => {
+                if (link.href.startsWith('https')) {
+                    return {
+                        url: link.href,
+                        title: link.textContent,
+                    };
+                }
             });
         }
     },
