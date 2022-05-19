@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(syntaxHighlight);
 
-    eleventyConfig.setDataDeepMerge(true);
+    // eleventyConfig.setDataDeepMerge(true);
 
     eleventyConfig.addWatchTarget('./src/sass/');
     eleventyConfig.addWatchTarget('./src/js/');
@@ -32,7 +32,13 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy('./src/images/jens.jpg');
 
+
     // Filters
+
+    eleventyConfig.addFilter('getDemo', function (demos, title) {
+        return demos.find(demo => demo.data.title === title);
+    });
+
     const readableDate = (dateObj) => {
         if (typeof dateObj === 'string') {
             dateObj = parseISO(dateObj);
@@ -111,11 +117,19 @@ module.exports = function (eleventyConfig) {
         return filterTagList([...tagSet]);
     });
 
-    // Transforms
-    // eleventyConfig.addTransform('htmlmin', htmlMinTransform);
-    // eleventyConfig.addTransform('parse', parseTransform);
+    // collections
 
-    // Collections
+    // Get only content that matches a tag
+    eleventyConfig.addCollection('demos', function (collectionApi) {
+        return collectionApi.getFilteredByTag('demos');
+    });
+
+    eleventyConfig.addCollection('orderedDemos', function (collectionApi) {
+        return collectionApi.getFilteredByTag('demos').sort((a, b) => {
+            return a.data.order - b.data.order;
+        });
+    });
+
     eleventyConfig.addCollection('pages', (collectionApi) =>
         collectionApi.getFilteredByGlob(['src/pages/*.md'])
     );
@@ -187,11 +201,11 @@ module.exports = function (eleventyConfig) {
     // });
 
     return {
-        markdownTemplateEngine: 'njk',
         dir: {
             input: 'src',
             output: 'public',
         },
         passthroughFileCopy: true,
+        markdownTemplateEngine: 'njk',
     };
 };

@@ -1,0 +1,27 @@
+---
+title: "CSS Centering"
+order: 1
+date: 2021-03-31
+templateEngineOverride: njk, md
+---
+
+{% set description %}
+
+**Put down the CSS centering jokes**! This modern update is often the solution you're looking for to solve your centering woes.
+
+{% endset %}
+
+{% set css %}
+.centering {
+  display: grid;
+  place-content: center;
+}
+{% endset %}
+
+{% set html %}
+<div class="centering">
+  <span>Feeling Centered</span>
+</div>
+{% endset %}
+
+{% include "demo.njk" %}

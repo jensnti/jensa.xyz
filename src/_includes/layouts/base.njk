@@ -26,8 +26,7 @@
         {% block content %}
         {% endblock content %}
         {% include "../partials/global/site-foot.njk" %}
-        {% include "partials/components/flash-message.njk" %}
-        <script defer src="/js/dark.js"></script>
-        <script defer src="/js/flash.js"></script>
-        </body>
+        {% include "../partials/components/flash-message.njk" %}
+        <script defer src="/js/bundle.js"></script>
+    </body>
 </html>

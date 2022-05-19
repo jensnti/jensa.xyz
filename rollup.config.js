@@ -10,10 +10,10 @@ export default {
             sourcemap: true,
             format: 'iife',
             name: 'main',
-            file: 'dist/js/bundle.js',
+            file: 'public/js/bundle.js',
         },
         {
-            file: 'dist/js/bundle.min.js',
+            file: 'public/js/bundle.min.js',
             format: 'iife',
             name: 'main',
         },
