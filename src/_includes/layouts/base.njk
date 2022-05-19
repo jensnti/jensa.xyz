@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         {% include "../partials/global/meta.njk" %}
+        <link rel="preconnect" href="https:/cdnjs.cloudflare.com" />
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/hzx7qyg.css" />
         <link
@@ -13,10 +14,7 @@
             title="{{ meta.siteName }}"
             href="{{ meta.url }}/feed.xml"
         />
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/prismjs@1.27.0/themes/prism.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{ '/css/style.css' }}" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         {% include "../partials/global/analytics.njk" %}
@@ -31,7 +29,5 @@
         {% include "partials/components/flash-message.njk" %}
         <script defer src="/js/dark.js"></script>
         <script defer src="/js/flash.js"></script>
-        <script src="https://unpkg.com/prismjs@1.27.0/components/prism-core.min.js"></script>
-        <script src="https://unpkg.com/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    </body>
+        </body>
 </html>

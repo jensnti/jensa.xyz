@@ -2,16 +2,18 @@
 title: Kom igång med webbserverprogrammering
 date: 2022-05-16
 tags: ['jobb', 'webbserverprogrammering', 'setup', 'node', 'wsl', 'mysql']
-lead: Istället för att dela upp det jag skriver på flera olika sidor har jag bestämt mig för att samla det på ett ställe. Det här är alltså en introduktionspost till det du behöver för att komma igång med kursen webbserverprogrammering.
 ---
+> Istället för att dela upp det jag skriver på flera olika webbplatser har jag bestämt mig för att samla det här. Det här är alltså en introduktionspost till det du behöver för att komma igång med kursen webbserverprogrammering.
 
-Den teknik, eller stack, vi använder i kursen är Node, Mysql och WSL.
+För kursen Webbserverprogrammering 1 på gymnasienivå har jag valt att tekniken, eller stacken, Node, Mysql och WSL. Jag anser att den är relevant och ger oss en god plattform för att koda på. Det är även en fördel att använda javascript backend för då kan vi använda samma programmeringsspråk frontend.
+
+Det här en introduktion till de olika delarna du behöver förbereda för att kunna arbeta med kursen. Här hittar du installationsinstruktioner, länkar och exempel.
 
 ## Windows Subsystem for Linux
 
 WSL låter oss köra Linux under Windows. Det är i min mening helt fantastiskt och med det slipper vi dual-boot och massa annan ondska. Det är enkelt och smidigt och ger oss tillgång till bash i en terminal under Windows. Med WSL2 går det även att köra grafiska program om du så önskar.
 
-Det är otroligt nyttigt att lära sig bash och att kunna använda Linux. Enklast är att köra Ubuntu (finns i Microsoft store) även om du får välja dist själv.
+Att kunna åtminstone lite bash och kunna arbeta i terminalen är en förutsättning för att arbeta med kod anser jag. Med WSL kan du välja vilken [Linux dist](https://en.wikipedia.org/wiki/Linux_distribution) du vill köra, men till att börja med rekommenderar jag Ubuntu (finns i Microsoft store).
 
 * [Installera WSL](https://docs.microsoft.com/en-us/windows/wsl/install)
 * [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/install)

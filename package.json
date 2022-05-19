@@ -30,7 +30,7 @@
         "@11ty/eleventy": "^1.0.0",
         "@11ty/eleventy-img": "^1.0.0",
         "@11ty/eleventy-plugin-rss": "^1.1.2",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^3.2.2",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
         "@rollup/plugin-commonjs": "^21.0.3",
         "@rollup/plugin-json": "^4.1.0",
         "@rollup/plugin-node-resolve": "^13.1.3",
