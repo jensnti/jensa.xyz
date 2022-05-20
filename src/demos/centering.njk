@@ -13,14 +13,20 @@ templateEngineOverride: njk, md
 
 {% set css %}
 .centering {
-  display: grid;
-  place-content: center;
+    display: grid;
+    place-content: center;
+    min-height: 30vh;
 }
+  
+.centering span {
+    padding: .5em;
+    outline: 2px solid;
+  }
 {% endset %}
 
 {% set html %}
 <div class="centering">
-  <span>Feeling Centered</span>
+    <span>Feeling Centered</span>
 </div>
 {% endset %}
 

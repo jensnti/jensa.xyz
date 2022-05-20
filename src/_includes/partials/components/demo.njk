@@ -1,10 +1,14 @@
+{% if not hideDescription %}
 {{ description | safe }}
+{% endif %}
 
+{%- if not hideDemo -%}
 <style>
 {{ css | safe }}
 </style>
+{%- endif -%}
 
-<details>
+<details {{ "open" if showDetails }}>
   <summary>CSS for "{{ title }}"</summary>
 
   {% highlight "css" %}
@@ -12,6 +16,8 @@
   {% endhighlight %}
 </details>
 
+{%- if not hideDemo -%}
 <div class="demo">
 {{ html | safe }}
 </div>
+{%- endif -%}
