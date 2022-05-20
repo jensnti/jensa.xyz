@@ -20,14 +20,14 @@ module.exports = {
 
         const articleLinks = [...document.querySelectorAll('a')];
         if (articleLinks.length) {
-            return articleLinks.map((link) => {
-                if (link.href.startsWith('https')) {
+            return articleLinks
+                .filter((link) => link.href.startsWith('http'))
+                .map((link) => {
                     return {
                         url: link.href,
                         title: link.textContent,
                     };
-                }
-            });
+                });
         }
     },
 };
