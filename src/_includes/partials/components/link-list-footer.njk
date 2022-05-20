@@ -1,8 +1,13 @@
 {% set getPageLinks = helpers.getPageLinks(content) %}
-
 {% if getPageLinks %}
 <footer class="content__footer">
-    <h4>Länklista</h4>
+    <h4 id="links">
+        <a href="#links" class="anchor">
+            <span class="visually-hidden">permalink</span>
+            #
+        </a>
+        Länkar
+    </h4>
     <ul>
         {% for link in getPageLinks %}
         <li>
