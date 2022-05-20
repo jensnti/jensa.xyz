@@ -1,0 +1,103 @@
+---
+title: "Knappar"
+order: 2
+date: 2022-05-20
+templateEngineOverride: njk, md
+---
+
+{% set description %}
+Knappar eller stilar som ser ut som knappar. En knapp ska inte ha funktionen av en länk, då använder du en länk, men inget hindrar dig från att ge länken en knapps stil.
+{% endset %}
+
+{% set css %}
+:root {
+    --color-light: #f0f0f0;
+    --color-dark: #212121;
+    --color-primary: #ec325a;
+    --color-secondary:#4a0080;
+}
+.btn {
+    text-align: center;
+    text-decoration: none;
+    margin: 0 0.25rem;
+    padding: 0.375rem 0.75rem;
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border: 1px solid transparent;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn:hover {
+    background-color: var(--color-primary);
+}
+.btn-rounded {
+    border-radius: 2rem;
+}
+.btn-animated {
+    background: var(--color-primary);
+    transition: background 0.5s ease-in-out border 0.5s ease-in-out;
+}
+.btn-animated:hover {
+    border: 1px solid var(--color-primary);
+    background: var(--color-dark);
+}
+.bg-primary {
+    background-color: var(--color-primary);
+}
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+/* för demo */
+.btn {
+    display: block;
+    margin-top: 1rem;
+}
+{% endset %}
+
+{% set html %}
+<button>Standard button</button>
+<button class="btn">Styled button</button>
+<button class="btn bg-primary">Primary button</button>
+<button class="btn bg-secondary">Secondary button</button>
+<button class="btn btn-rounded">Rounded button</button>
+<button class="btn btn-animated">Animated button</button>
+<button class="btn" id="js-button">JS button</button>
+<button class="btn" id="counter-button">Clicked: 0</button>
+<a class="btn" id="a-button" href="#">Link button</a>
+{% endset %}
+
+{% set javascript %}
+/*
+ * Vänta på att sidan har laddats.
+ * Läs mer, https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+ */
+window.addEventListener('load', (event) => {
+    // Hitta knappen i DOM-trädet och spara den i variabeln button
+    // Du kan använda alla css selektorer (selector).
+    // Vad är en selector?
+    // https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
+    let button = document.querySelector('#js-button');
+    // Lyssna på ett event
+    // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Button clicked');
+        console.log(e);
+    });
+    let aBtn = document.querySelector('#a-button');
+    aBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Link clicked');
+    });
+    let counterBtn = document.querySelector('#counter-button');
+    let counter = 0;
+    counterBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        counter += 1;
+        counterBtn.textContent = `Clicked: ${counter}`;
+        console.log('Link clicked');
+    });
+});
+{% endset %}
+
+{% include "partials/components/demo.njk" %}

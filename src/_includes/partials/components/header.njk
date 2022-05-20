@@ -24,13 +24,13 @@
         </div>
         {% endif %}
         {% if tags %}
-        <div>
+        <div class="tags">
             <p class="visually-hidden" id="tags-desc">
                 Taggar för det här inlägget
             </p>
-            <ul class="tag-list" aria-describedby="tags-desc">
+            <ul class="tags__list" aria-describedby="tags__list-desc">
                 {% for tag in tags %}
-                <li class="tag-list__item">
+                <li class="tags__list-item">
                     <a href="/tagg/{{ tag | slug }}">{{ tag }}</a>
                 </li>
                 {% endfor %}
