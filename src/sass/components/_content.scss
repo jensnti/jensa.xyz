@@ -1,0 +1,11 @@
+.content {
+    picture {
+        width: 100%;
+        display: grid;
+        place-content: center;
+    }
+    &__header {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+    }
+}

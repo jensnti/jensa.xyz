@@ -1,39 +1,42 @@
 <header class="content__header">
-    <h1 class="content__header-title" id="{{ introHeading | slug }}">
-        <!-- <a href="#{{ introHeading | slug }}" class="anchor">
-            <span class="visually-hidden">permalink</span>
-            #
-        </a> -->
-        {{ introHeading }}
-    </h1>
-    {% if introSummary %}
-    <div class="content__header-lead">
-        {{ introSummary | safe }}
+    <div class="content__header-inner container">
+        <h1 class="content__header-title" id="{{ introHeading | slug }}">
+            <!-- <a href="#{{ introHeading | slug }}" class="anchor">
+                <span class="visually-hidden">permalink</span>
+                #
+            </a> -->
+            {{ introHeading }}
+        </h1>
+        {% if introSummary %}
+        <div class="content__header-lead">
+            {{ introSummary | safe }}
+        </div>
+        {% elif date %}
+        <div>
+            <p class="lead">
+                {% if date %}
+                <time datetime="{{ date | htmlDateString }}">{{
+                    date | readableDate
+                }}</time>
+                {% endif %}
+                <span>— {{ helpers.getReadingTime(content) }}</span>
+            </p>
+        </div>
+        {% endif %}
+        {% if tags %}
+        <div>
+            <p class="visually-hidden" id="tags-desc">
+                Taggar för det här inlägget
+            </p>
+            <ul class="tag-list" aria-describedby="tags-desc">
+                {% for tag in tags %}
+                <li class="tag-list__item">
+                    <a href="/tagg/{{ tag | slug }}">{{ tag }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
-    {% elif date %}
-    <div>
-        <p class="lead">
-            {% if date %}
-            <time datetime="{{ date | htmlDateString }}">{{
-                date | readableDate
-            }}</time>
-            {% endif %}
-            <span>— {{ helpers.getReadingTime(content) }}</span>
-        </p>
-    </div>
-    {% endif %}
-    {% if tags %}
-    <div>
-        <p class="visually-hidden" id="tags-desc">
-            Taggar för det här inlägget
-        </p>
-        <ul class="tag-list" aria-describedby="tags-desc">
-            {% for tag in tags %}
-            <li class="tag-list__item">
-                <a href="/tagg/{{ tag | slug }}">{{ tag }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
-</header>
+    </header>
+    
