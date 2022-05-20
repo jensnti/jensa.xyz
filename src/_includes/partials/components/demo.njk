@@ -4,20 +4,20 @@
 
 {%- if not hideDemo -%}
 <style>
-{{ css | safe }}
+{{- css | safe }}
 </style>
 {%- endif -%}
 
 <details {{ "open" if showDetails }}>
   <summary>CSS for "{{ title }}"</summary>
 
-  {% highlight "css" %}
-  {{- css | safe }}
-  {% endhighlight %}
+```css
+{{- css | safe }}
+```
 </details>
 
 {%- if not hideDemo -%}
 <div class="demo">
-{{ html | safe }}
+{{- html | safe }}
 </div>
 {%- endif -%}
