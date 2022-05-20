@@ -2,6 +2,7 @@
 title: SQL
 date: 2022-05-16
 tags: ['jobb', 'webbserverprogrammering', 'mysql', 'sql']
+templateEngineOverride: njk, md
 ---
 
 

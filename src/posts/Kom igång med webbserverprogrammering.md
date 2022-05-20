@@ -2,6 +2,7 @@
 title: Kom igång med webbserverprogrammering
 date: 2022-05-16
 tags: ['jobb', 'webbserverprogrammering', 'setup', 'node', 'wsl', 'mysql']
+templateEngineOverride: njk, md
 ---
 > Istället för att dela upp det jag skriver på flera olika webbplatser har jag bestämt mig för att samla det här. Det här är alltså en introduktionspost till det du behöver för att komma igång med kursen webbserverprogrammering.
 
