@@ -62,24 +62,23 @@ För att installera och köra Node samt NPM så använder vi oss utan Node Versi
 
 Mer om Node i ett första Express exempel.
 
-## [Mysql](https://www.mysql.com/)
+## MySQL
 
-För att arbeta med databas så använder vi Mysql. Mysql är en relationsbaserad databas.
-Vi använder SQL som databasspråk för att det är användbart och relevant att kunna. Vi kör MySQL för att det är en av de vanligaste databaserna.
+För att arbeta med databas så använder vi [MySQL](https://www.mysql.com/). SQL är ett språk för relationsdatabaser, MySQL är en hanterare för detta. Vi använder SQL som databasspråk för att det är användbart och relevant att kunna. Vi kör MySQL för att det är en av de vanligaste databaserna.
 
-MySQL körs med en server på din dator. Du kan sedan använda en client för att koppla upp dig till databasen. FÖr att installera MySQL server och klient.
+MySQL körs med en server på din eller en annan dator. Du kan sedan använda en client för att koppla upp dig till databasservern. FÖr att installera MySQL server och klient kör.
 
 ```bash
 sudo apt install mysql-server mysql-client
 ```
 
-WSL verkar inte starta upp MySQL servern korrekt när det startas, så kom in i vanan att starta om servern.
+WSL verkar inte starta upp MySQL servern korrekt när det startas, för att starta om/upp servern.
 
 ```bash
 sudo service mysql restart
 ```
 
-Du är nu redo att skapa en databasanvändare på din server. Detta måste göras som superuser första gången. Detta gör du genom att koppla upp dig till databasservern som superuser med användaren root.
+Med servern igång kan du skapa en databasanvändare för den. Detta måste göras som superuser (säkerhet). För att skapa en användare behöver du koppla upp dig till databasservern från användaren root, för att göra det kör du kommandot som [sudo](https://sv.wikipedia.org/wiki/Sudo).
 
 ```bash
 sudo mysql -u root

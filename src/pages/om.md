@@ -7,13 +7,13 @@ templateEngineOverride: njk, md
 
 {% image "./src/images/jens.jpg", "En Jens", "Mitt fejs. Foto av Jens Andreasson." %}
 
-Jag är en legitimerad lärare och arbetar på NTI Gymnasiet i Umeå. I höst, 2021, så blir det mitt femte år där. Tidigare har jag arbetat med vuxenutbildning på distans.
+Jag är en legitimerad lärare och arbetar på [NTI Gymnasiet Umeå](https://www.ntigymnasiet.se/umea/) sedan 2017. Tidigare har jag arbetat med vuxenutbildning på distans.
 
-Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmering. Jag jobbar även med eftergymnasial utbildning för gymnasieingenjörer på teknikprogrammets fjärde år.
+Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmering. Jag är även lärare på den eftergymnasiala utbildning för gymnasieingenjörer, teknikprogrammets fjärde år.
 
 Jag är en [GitHub Campus Advisor](https://education.github.com/teachers/advisors).
 
-Vid sidan av mitt arbete och det som jag skriver om på denna sida så gillar jag att lyssna på och spela musik, laga mat, flugfiska, vandra, spela dataspel, läsa, nörda om saker.
+Vid sidan av mitt arbete och det som jag skriver om på denna sida så gillar jag att lyssna på och spela musik, laga mat, flugfiska, vandra, spela dataspel, brädspel, läsa samt nörda om saker.
 
 ### Mitt hem
 
@@ -34,6 +34,6 @@ För min undervisning har jag skapat en del material:
 -   [Gitbook](https://jens-andreasson.gitbook.io/)
 -   [YouTube](https://www.youtube.com/channel/UCTqbOlkdA_9q-agUM0Hh9Ag)
 
-Önskar du kontakta mig använd denna [mail](mailto:jens.andreasson@ntig.se).
+Privat [mail](mailto:jensandreasson77@gmail.com).
 
-[Prenumerera](/feed.xml) på sidans feed.
+Är du en likt jag en dinosaurie kan du [prenumerera](/feed.xml) på den här sidans feed.

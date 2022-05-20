@@ -11,3 +11,10 @@ templateEngineOverride: njk, md
   <h2 id="{{ demo.fileSlug }}">{{ demo.data.title }}</h2>
   {{ demo.templateContent | safe }}
 </article>
+
+{% set demo = collections.orderedDemos | getDemo("Knappar") %}
+{{ demo | log }}
+<article>
+  <h2 id="{{ demo.fileSlug }}">{{ demo.data.title }}</h2>
+  {{ demo.templateContent | safe }}
+</article>
