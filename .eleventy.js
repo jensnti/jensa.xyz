@@ -9,6 +9,7 @@ const { format, parseISO } = require('date-fns');
 const { sv } = require('date-fns/locale');
 const Image = require('@11ty/eleventy-img');
 const path = require('path');
+const markdownItAnchor = require('markdown-it-anchor');
 
 const prettier = require('prettier');
 // const imageShortcode = require('./src/shortcodes/image');
@@ -32,11 +33,10 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy('./src/images/jens.jpg');
 
-
     // Filters
 
     eleventyConfig.addFilter('getDemo', function (demos, title) {
-        return demos.find(demo => demo.data.title === title);
+        return demos.find((demo) => demo.data.title === title);
     });
 
     const readableDate = (dateObj) => {
@@ -154,6 +154,20 @@ module.exports = function (eleventyConfig) {
         linkify: true,
         typographer: true,
     })
+        .use(markdownItAnchor, {
+            permalink: true,
+            permalinkClass: 'anchor',
+            permalinkSymbol: '#',
+            permalinkSpace: true,
+            permalinkBefore: true,
+            level: [1, 2, 3, 4],
+            slugify: (s) =>
+                s
+                    .trim()
+                    .toLowerCase()
+                    .replace(/[\s+~\/]/g, '-')
+                    .replace(/[().`,%·'"!?¿:@*]/g, ''),
+        })
         .use(mila, {
             pattern: /^https:/,
             attrs: {
