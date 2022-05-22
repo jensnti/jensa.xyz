@@ -1,11 +1,13 @@
 ---
-postListHeading: Senaste inläggen
+postListHeading: Senaste
 ---
 
 {% extends 'layouts/base.njk' %}
 
 {% set introHeading = title %}
 {% set postListItems = collections.feed %}
+{% set postListLatest = postListItems[0] %}
+
 {% set introSummary %}
     {{ content | safe }}
 {% endset %}
@@ -13,7 +15,6 @@ postListHeading: Senaste inläggen
 {% block content %}
 <main id="main-content" tabindex="-1">
     <section class="content container flow">
-        {% include "../partials/components/header.njk" %}
         <div class="post-list">
             <div class="post-list__title">
                 <h2 id="{{ postListHeading | slug }}">
@@ -22,8 +23,13 @@ postListHeading: Senaste inläggen
                         #
                     </a>
                     {{ postListHeading }}
+                    {{ postListLatest.data.title }}
+                    {{ postListLatest.data.lead }}
                 </h2>
             </div>
+        </div>
+            {% include "../partials/components/header.njk" %}
+
             {% include "../partials/components/post-list.njk" %}
 
         </div>
