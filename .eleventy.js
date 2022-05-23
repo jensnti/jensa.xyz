@@ -77,7 +77,7 @@ module.exports = function (eleventyConfig) {
         src,
         alt,
         title,
-        sizes = '(min-width: 30em) 50vw, 100vw'
+        sizes = '100vw'
     ) => {
         const metadata = await Image(src, {
             widths: [400, 800],
@@ -145,7 +145,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('feed', (collectionApi) =>
         [...collectionApi.getFilteredByGlob('src/posts/*.md')]
             .reverse()
-            .slice(0, 5)
+            .slice(0, 9)
     );
 
     const markdownLibrary = markdownIt({

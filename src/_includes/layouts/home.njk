@@ -6,7 +6,7 @@ postListHeading: Senaste
 
 {% set introHeading = title %}
 {% set postListItems = collections.feed %}
-{% set postListLatest = postListItems[0] %}
+{% set postListLatest = postListItems.shift() %}
 
 {% set introSummary %}
     {{ content | safe }}
@@ -14,23 +14,30 @@ postListHeading: Senaste
 
 {% block content %}
 <main id="main-content" tabindex="-1">
-    <section class="content container flow">
-        <div class="post-list">
-            <div class="post-list__title">
-                <h2 id="{{ postListHeading | slug }}">
-                    <a href="#{{ postListHeading | slug }}" class="anchor">
-                        <span class="visually-hidden">permalink</span>
-                        #
-                    </a>
-                    {{ postListHeading }}
-                    {{ postListLatest.data.title }}
-                    {{ postListLatest.data.lead }}
+    <section class="content container">
+        <header class="content__header content__header-intro">
+            <div class="content__header-intro__inner container">
+                <h1 class="h3">
+                    Senaste
+                </h1>
+                <h2 class="h2">
+                    <a href="{{ postListLatest.url }}" rel="bookmark">{{ postListLatest.data.title }}</a>
                 </h2>
+                <p class="h4 lead">
+                    {{ postListLatest.data.lead }}
+                </p>
             </div>
-        </div>
-            {% include "../partials/components/header.njk" %}
+        </header>
+        <aside class="content__info container">
+            <h2 class="h1">
+                {{ introHeading | safe}}
+            </h2>
+            <div class="h4 lead">
+                {{ introSummary | safe }}
+            </div>
+        </aside>
 
-            {% include "../partials/components/post-list.njk" %}
+        {% include "../partials/components/post-list.njk" %}
 
         </div>
     </section>

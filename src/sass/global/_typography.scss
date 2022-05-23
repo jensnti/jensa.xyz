@@ -58,7 +58,8 @@ $level-size: $type-base-size;
 
     // Set with `em` to be relative to current `font-size`
     //margin-bottom: 0.65em;
-    margin-bottom: 2em - $type-size-ratio;
+    // --flow-heading: 2em - #{$type-size-ratio};
+    margin-bottom: var(--flow-heading, 2em - $type-size-ratio);
     // Limit in place based on testing -> smaller ratios are
     // prematurely or unnecessarily reduced
     @if ($type-size-ratio > 1.2) {
@@ -114,7 +115,6 @@ body {
     font-family: $font-family-body;
     font-weight: 400;
     line-height: 1.5;
-
 }
 
 p,
@@ -134,8 +134,7 @@ h4 {
 }
 
 .lead {
-    font-size: 1.2rem;
-    line-height: 1.3;
+    font-weight: 300;
 }
 
 .text-bold {
