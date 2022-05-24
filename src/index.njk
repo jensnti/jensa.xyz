@@ -1,5 +1,5 @@
 ---
-title: "Hej, jag heter Jens"
+title: 'Hej, jag heter Jens'
 ---
 
 <!DOCTYPE html>
@@ -38,19 +38,19 @@ title: "Hej, jag heter Jens"
     <body>
         <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
         <header class="site-head">
-            <div class="site-head__inner container">
-                <div class="site-head__title">
+            <div class="site-head__inner container site-grid">
+                <div class="site-grid__left">
                     <h1>{{ title | linebreak }}</h1>
                 </div>
-                <div class="site-head__nav">
+                <div class="site-grid__right">
                     <nav class="nav" aria-label="Main">
                         <div class="nav__brand">
                             <h2>
                                 <a
-                                href="/"
-                                class="nav__brand-item"
-                                aria-label="{{ meta.siteName }} - Hem"
-                                >{{ meta.siteName }}
+                                    href="/"
+                                    class="nav__brand-item"
+                                    aria-label="{{ meta.siteName }} - Hem"
+                                    >{{ meta.siteName }}
                                 </a>
                             </h2>
                         </div>
@@ -70,68 +70,61 @@ title: "Hej, jag heter Jens"
                 </div>
             </div>
         </header>
-        {% set postListItems = collections.feed %} {% set postListLatest =
-        postListItems.shift() %}
+        {% set postListItems = collections.feed %}
+        <!-- {% set postListLatest = postListItems.shift() %} -->
         <main id="main-content" tabindex="-1">
-            <section class="content container">
-                <header class="content__header content__header-intro">
-                    <div class="content__header-intro__inner container">
-                        <h1 class="h3">Senaste</h1>
-                        <h2 class="h2">
-                            <a href="{{ postListLatest.url }}" rel="bookmark">{{
-                                postListLatest.data.title
-                            }}</a>
-                        </h2>
-                        <p class="h4 lead">
-                            {{ postListLatest.data.lead }}
-                        </p>
-                    </div>
-                </header>
-                <aside class="content__info container">
-                    <h2 class="h1">
-                        {{ title }}
-                    </h2>
+            <section class="content container site-grid">
+                <aside class="content__info site-grid__full">
                     <p class="h4 lead">
-                        Jag är en lärare på [NTI Gymnasiet
-                        Umeå](https://www.ntigymnasiet.se/umea/). Att designa
-                        och koda är något som jag gjort större delen av mitt liv
-                        och nu har privilegiet att arbeta med. Mer [om](/om)
-                        mig. På [GitHub](https://github.com/jensnti) finns saker
-                        jag har kodat, på den här webbplatsen, mina
+                        Jag är en lärare på
+                        <a href="https://www.ntigymnasiet.se/umea/"
+                            >NTI Gymnasiet Umeå</a
+                        >. Att designa och koda är något som jag gjort större
+                        delen av mitt liv och nu har privilegiet att arbeta med.
+                        Mer <a href="/om">om</a> mig. På
+                        <a href="https://github.com/jensnti">GitHub</a> finns
+                        saker jag har kodat, på den här webbplatsen, mina
                         anteckningar.
                     </p>
                 </aside>
-                {% if postListItems.length %}
-                <ol class="post-list">
-                    {% for item in postListItems %}
-                    <li>
-                        <time
-                            class="h4"
-                            datetime="{{ item.date | htmlDateString }}"
-                        >
-                            {{ item.date | readableDate }}
-                        </time>
-                        {% if item.data.update %}
-                        <span class="post-list__list-item--updated"
-                            >(uppdaterad
-                            <time
-                                datetime="{{
-                                    item.data.update | htmlDateString
-                                }}"
-                            >
-                                {{ item.data.update | readableDate }} </time
-                            >)
-                        </span>
-                        {% endif %}
-                        <h3>
-                            <a href="{{ item.url }}" rel="bookmark">{{
-                                item.data.title
-                            }}</a>
-                        </h3>
-                    </li>
-                    {% endfor %}
-                </ol>
-                {% endif %}
+                <!-- <div class="site-grid__left"> -->
+                    {% if postListItems.length %}
+                    <ol class="content__list site-grid__full">
+                        {% for item in postListItems %}
+                        <li class="site-grid">
+                            <div class="site-grid__left">
+                                <time
+                                    class="h4"
+                                    datetime="{{ item.date | htmlDateString }}"
+                                >
+                                    {{ item.date | readableDate }}
+                                </time>
+                                {% if item.data.update %}
+                                <span class="post-list__list-item--updated"
+                                    >(uppdaterad
+                                    <time
+                                        datetime="{{
+                                            item.data.update | htmlDateString
+                                        }}"
+                                    >
+                                        {{ item.data.update | readableDate }} </time
+                                    >)
+                                </span>
+                                {% endif %}
+                            </div>
+                            <div class="site-grid__right">
+                                <h3>
+                                    <a href="{{ item.url }}" rel="bookmark">{{
+                                        item.data.title
+                                    }}</a>
+                                </h3>
+                                <p>{{ item.data.lead }}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                    {% endif %}
+                <!-- </div> -->
             </section>
         </main>
         <footer class="site-footer">
