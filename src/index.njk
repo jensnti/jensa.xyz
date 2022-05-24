@@ -1,0 +1,178 @@
+---
+title: "Hej, jag heter Jens"
+---
+
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        {% include "partials/global/meta.njk" %}
+        <link rel="preconnect" href="https:/cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://use.typekit.net" />
+        <!-- <link rel="stylesheet" href="https://use.typekit.net/hzx7qyg.css" /> -->
+        <link rel="stylesheet" href="https://use.typekit.net/hrh0cnz.css" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="{{ meta.siteName }}"
+            href="{{ meta.url }}/feed.xml"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css"
+            integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="{{ '/css/ng-style.css' }}" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        {% block head %} {% endblock %}
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        <header class="site-head">
+            <div class="site-head__inner container">
+                <div class="site-head__title">
+                    <h1>{{ title | linebreak }}</h1>
+                </div>
+                <div class="site-head__nav">
+                    <nav class="nav" aria-label="Main">
+                        <div class="nav__brand">
+                            <h2>
+                                <a
+                                href="/"
+                                class="nav__brand-item"
+                                aria-label="{{ meta.siteName }} - Hem"
+                                >{{ meta.siteName }}
+                                </a>
+                            </h2>
+                        </div>
+                        <a
+                            class="nav__item{% if item.url == page.url %} active{% endif %}"
+                            href="/projekt"
+                            >Projekt
+                        </a>
+                        {% for item in collections.pages | reverse %}
+                        <a
+                            class="nav__item{% if item.url == page.url %} active{% endif %}"
+                            href="{{ item.url }}"
+                            >{{ item.data.title }}
+                        </a>
+                        {% endfor %}
+                    </nav>
+                </div>
+            </div>
+        </header>
+        {% set postListItems = collections.feed %} {% set postListLatest =
+        postListItems.shift() %}
+        <main id="main-content" tabindex="-1">
+            <section class="content container">
+                <header class="content__header content__header-intro">
+                    <div class="content__header-intro__inner container">
+                        <h1 class="h3">Senaste</h1>
+                        <h2 class="h2">
+                            <a href="{{ postListLatest.url }}" rel="bookmark">{{
+                                postListLatest.data.title
+                            }}</a>
+                        </h2>
+                        <p class="h4 lead">
+                            {{ postListLatest.data.lead }}
+                        </p>
+                    </div>
+                </header>
+                <aside class="content__info container">
+                    <h2 class="h1">
+                        {{ title }}
+                    </h2>
+                    <p class="h4 lead">
+                        Jag är en lärare på [NTI Gymnasiet
+                        Umeå](https://www.ntigymnasiet.se/umea/). Att designa
+                        och koda är något som jag gjort större delen av mitt liv
+                        och nu har privilegiet att arbeta med. Mer [om](/om)
+                        mig. På [GitHub](https://github.com/jensnti) finns saker
+                        jag har kodat, på den här webbplatsen, mina
+                        anteckningar.
+                    </p>
+                </aside>
+                {% if postListItems.length %}
+                <ol class="post-list">
+                    {% for item in postListItems %}
+                    <li>
+                        <time
+                            class="h4"
+                            datetime="{{ item.date | htmlDateString }}"
+                        >
+                            {{ item.date | readableDate }}
+                        </time>
+                        {% if item.data.update %}
+                        <span class="post-list__list-item--updated"
+                            >(uppdaterad
+                            <time
+                                datetime="{{
+                                    item.data.update | htmlDateString
+                                }}"
+                            >
+                                {{ item.data.update | readableDate }} </time
+                            >)
+                        </span>
+                        {% endif %}
+                        <h3>
+                            <a href="{{ item.url }}" rel="bookmark">{{
+                                item.data.title
+                            }}</a>
+                        </h3>
+                    </li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="site-footer__inner container">
+                <p class="text-small">
+                    Den här sidan är skapad med
+                    <a
+                        href="https://www.11ty.dev/"
+                        rel="noopener"
+                        target="_blank"
+                        >Eleventy</a
+                    >. Detta är version {{ pkg.version }} av den här sidan och
+                    källkoden finns i detta
+                    <a href="{{ pkg.homepage }}" rel="noopener" target="_blank"
+                        >GitHub repo</a
+                    >. Den är fri att använda.
+                </p>
+                <p class="text-small">
+                    Sidan är publicerad med
+                    <a
+                        href="https://www.netlify.com/"
+                        rel="noopener"
+                        target="_blank"
+                        >Netlify</a
+                    >.
+                </p>
+                <p class="text-small">
+                    Sidan använder
+                    <a
+                        href="https://analytics.google.com/"
+                        rel="noopener"
+                        target="_blank"
+                        >Google analytics</a
+                    >
+                    för att undersöka trafikdata.
+                </p>
+                <p class="text-small">
+                    All text och innehåll &copy; {% year %}
+                    {{ meta.author.name }}.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

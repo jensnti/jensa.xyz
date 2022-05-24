@@ -58,8 +58,7 @@ $level-size: $type-base-size;
 
     // Set with `em` to be relative to current `font-size`
     //margin-bottom: 0.65em;
-    // --flow-heading: 2em - #{$type-size-ratio};
-    margin-bottom: var(--flow-heading, 2em - $type-size-ratio);
+    margin-bottom: var(--font-mb, 2em - $type-size-ratio);
     // Limit in place based on testing -> smaller ratios are
     // prematurely or unnecessarily reduced
     @if ($type-size-ratio > 1.2) {
@@ -102,6 +101,8 @@ $level-size: $type-base-size;
     @each $type, $size in $type-styles {
         --font-size-#{$type}: #{type-style($type)};
     }
+    --font-mb: #{2em - $type-size-ratio};
+    --font-line-height: calc(2px + 2ex + 2px);
 }
 
 h1,

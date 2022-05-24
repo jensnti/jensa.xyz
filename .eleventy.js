@@ -68,6 +68,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter('tagCountCss', tagCountCss);
     eleventyConfig.addFilter('readableDate', readableDate);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
+    eleventyConfig.addFilter('linebreak', (str) => str.split(' ').join('\n'));
 
     // Shortcodes
     const year = () => {
