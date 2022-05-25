@@ -47,6 +47,13 @@ module.exports = function (eleventyConfig) {
         return format(dateObj, 'PP', { locale: sv });
     };
 
+    // const shortDate = (dateObj) => {
+    //     if (typeof dateObj === 'string') {
+    //         dateObj = parseISO(dateObj);
+    //     }
+    //     return format(dateObj, 'yyyMd', { locale: sv });
+    // };
+
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     const htmlDateString = (dateObj) => {
         if (typeof dateObj === 'string') {
@@ -68,6 +75,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('tagCountCss', tagCountCss);
     eleventyConfig.addFilter('readableDate', readableDate);
+    eleventyConfig.addFilter('shortDate', shortDate);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
     eleventyConfig.addFilter('linebreak', (str) => str.split(' ').join('\n'));
 
@@ -133,7 +141,8 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addCollection('pages', (collectionApi) =>
-        collectionApi.getFilteredByGlob(['src/pages/*.md'])
+        collectionApi.getFilteredByGlob(['src/pages/*.md', 'src/projects/index.*'])
+        .sort((a, b) => b.data.order - a.data.order)
     );
 
     eleventyConfig.addCollection('posts', (collectionApi) =>
@@ -147,7 +156,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('feed', (collectionApi) =>
         [...collectionApi.getFilteredByGlob('src/posts/*.md')]
             .reverse()
-            .slice(0, 5)
+            .slice(0, 15)
     );
 
     const markdownLibrary = markdownIt({
