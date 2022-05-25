@@ -1,5 +1,11 @@
 ---
 title: 'Hej, jag heter Jens'
+introText: 'Jag är en lärare på
+<a href="https://www.ntigymnasiet.se/umea/">NTI Gymnasiet Umeå</a>. Att designa 
+och koda är något som jag gjort större delen av mitt liv och nu har privilegiet 
+att arbeta med. Mer <a href="/om">om</a> mig. På 
+<a href="https://github.com/jensnti">GitHub</a> finns saker jag har kodat, på 
+den här webbplatsen, mina anteckningar.'
 ---
 
 <!DOCTYPE html>
@@ -76,15 +82,7 @@ title: 'Hej, jag heter Jens'
             <section class="content container site-grid">
                 <aside class="content__info site-grid__full">
                     <p class="h4 lead">
-                        Jag är en lärare på
-                        <a href="https://www.ntigymnasiet.se/umea/"
-                            >NTI Gymnasiet Umeå</a
-                        >. Att designa och koda är något som jag gjort större
-                        delen av mitt liv och nu har privilegiet att arbeta med.
-                        Mer <a href="/om">om</a> mig. På
-                        <a href="https://github.com/jensnti">GitHub</a> finns
-                        saker jag har kodat, på den här webbplatsen, mina
-                        anteckningar.
+                        {{ introText |safe }}
                     </p>
                 </aside>
                 <!-- <div class="site-grid__left"> -->

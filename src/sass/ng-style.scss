@@ -4,9 +4,16 @@
 // @use "utils";
 
 $ratio: 1.333;
+$breakpoint: 48;
 
 :root {
     --color-dark: #252a37;
+}
+
+body {
+    // background-image: url("../assets/images/img-noise-400x400.png");
+    background-image: url("../assets/images/noisy-texture-100x100-o5-d10-c-f34379-t1");
+    background-repeat: repeat;
 }
 
 body,
@@ -18,10 +25,25 @@ h4 {
     font-family: aktiv-grotesk, sans-serif;
 }
 
+.lead {
+    column-count: 2;
+    column-gap: #{$ratio}rem;
+    @media (max-width: #{$breakpoint}rem) {
+        column-count: 1;
+    }
+}
+
 .site-head {
+    &__inner > div {
+        height: 100%;
+        border-bottom: 1px solid var(--color-dark);
+    }
     h1 {
         white-space: pre-line;
         font-size: calc(var(--font-size-h1) * $ratio);
+        @media (max-width: 768px) {
+            white-space: normal;
+        }
     }
 }
 
@@ -29,6 +51,7 @@ h4 {
     display: grid;
     gap: #{$ratio}rem;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
 
     &__full,
     &__right,
@@ -43,10 +66,18 @@ h4 {
     &__left {
         grid-column: span 2 / 3;
         place-self: start;
+        @media (max-width: #{$breakpoint}rem) {
+            grid-column: span 4;
+            grid-row: 2;
+        }
     }
     &__right {
         grid-column: 3 / span 2;
         place-self: start end;
+        @media (max-width: #{$breakpoint}rem) {
+            grid-column: span 4;
+            grid-row: 1;
+        }
     }
 }
 
@@ -78,7 +109,7 @@ h4 {
 
 .content {
     &__info {
-        border-top: 1px solid var(--color-dark);
+        // border-top: 1px solid var(--color-dark);
         padding-top: calc(var(--font-mb) * $ratio * $ratio);
     }
     &__list {
