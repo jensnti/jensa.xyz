@@ -6,6 +6,7 @@ och koda är något som jag gjort större delen av mitt liv och nu har privilegi
 att arbeta med. Mer <a href="/om">om</a> mig. På 
 <a href="https://github.com/jensnti">GitHub</a> finns saker jag har kodat, på 
 den här webbplatsen, mina anteckningar.'
+footerText: ''
 ---
 
 <!DOCTYPE html>
@@ -54,20 +55,20 @@ den här webbplatsen, mina anteckningar.'
                             <h2>
                                 <a
                                     href="/"
-                                    class="nav__brand-item"
+                                    class="nav__brand-item h3"
                                     aria-label="{{ meta.siteName }} - Hem"
                                     >{{ meta.siteName }}
                                 </a>
                             </h2>
                         </div>
                         <a
-                            class="nav__item{% if item.url == page.url %} active{% endif %}"
+                            class="nav__item h5{% if item.url == page.url %} active{% endif %}"
                             href="/projekt"
                             >Projekt
                         </a>
                         {% for item in collections.pages | reverse %}
                         <a
-                            class="nav__item{% if item.url == page.url %} active{% endif %}"
+                            class="nav__item h5{% if item.url == page.url %} active{% endif %}"
                             href="{{ item.url }}"
                             >{{ item.data.title }}
                         </a>
@@ -81,43 +82,45 @@ den här webbplatsen, mina anteckningar.'
         <main id="main-content" tabindex="-1">
             <section class="content container site-grid">
                 <aside class="content__info site-grid__full">
-                    <p class="h4 lead">
+                    <p class="h5 lead">
                         {{ introText |safe }}
                     </p>
                 </aside>
                 <!-- <div class="site-grid__left"> -->
                     {% if postListItems.length %}
-                    <ol class="content__list site-grid__full">
+                    <ol class="content__list">
                         {% for item in postListItems %}
-                        <li class="site-grid">
-                            <div class="site-grid__left">
-                                <time
-                                    class="h4"
+                        <li>
+                            <div class="content__list-item--left">
+                                    <time
+                                    class="h5"
                                     datetime="{{ item.date | htmlDateString }}"
-                                >
+                                    >
                                     {{ item.date | readableDate }}
                                 </time>
                                 {% if item.data.update %}
                                 <span class="post-list__list-item--updated"
                                     >(uppdaterad
                                     <time
-                                        datetime="{{
-                                            item.data.update | htmlDateString
-                                        }}"
+                                    datetime="{{
+                                        item.data.update | htmlDateString
+                                    }}"
                                     >
-                                        {{ item.data.update | readableDate }} </time
+                                    {{ item.data.update | readableDate }} </time
                                     >)
                                 </span>
                                 {% endif %}
                             </div>
-                            <div class="site-grid__right">
-                                <h3>
+                            <div class="content__list-item--right">
+                                <h3 class="h4">
                                     <a href="{{ item.url }}" rel="bookmark">{{
                                         item.data.title
                                     }}</a>
                                 </h3>
-                                <p>{{ item.data.lead }}</p>
                             </div>
+                            <!-- <div class="content__list-item--right">
+                                <p>{{ item.data.lead }}</p>
+                            </div> -->
                         </li>
                         {% endfor %}
                     </ol>
@@ -125,43 +128,16 @@ den här webbplatsen, mina anteckningar.'
                 <!-- </div> -->
             </section>
         </main>
-        <footer class="site-footer">
-            <div class="site-footer__inner container">
+        <footer class="site-foot">
+            <div class="site-foot__inner container">
                 <p class="text-small">
-                    Den här sidan är skapad med
-                    <a
-                        href="https://www.11ty.dev/"
-                        rel="noopener"
-                        target="_blank"
-                        >Eleventy</a
-                    >. Detta är version {{ pkg.version }} av den här sidan och
-                    källkoden finns i detta
-                    <a href="{{ pkg.homepage }}" rel="noopener" target="_blank"
-                        >GitHub repo</a
-                    >. Den är fri att använda.
-                </p>
-                <p class="text-small">
-                    Sidan är publicerad med
-                    <a
-                        href="https://www.netlify.com/"
-                        rel="noopener"
-                        target="_blank"
-                        >Netlify</a
-                    >.
-                </p>
-                <p class="text-small">
-                    Sidan använder
-                    <a
-                        href="https://analytics.google.com/"
-                        rel="noopener"
-                        target="_blank"
-                        >Google analytics</a
-                    >
-                    för att undersöka trafikdata.
-                </p>
-                <p class="text-small">
-                    All text och innehåll &copy; {% year %}
-                    {{ meta.author.name }}.
+                    Det här är version {{ pkg.version }} av den här sidan.
+                    Den är skapad med <a href="https://111ty.dev">11ty</a> och publicerad på 
+                    <a href="https://netlify.com">Netlify</a>. Koden till sidan finns på 
+                    <a href="{{ pkg.url }}">GitHub</a>, den är fri att använda.
+                    
+                    Jag använder Google analytics på webbplatsen för att se trafikdata.
+                    All text och innehåll © {% year %} Jens Andreasson.
                 </p>
             </div>
         </footer>

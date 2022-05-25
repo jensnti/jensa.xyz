@@ -1,7 +1,7 @@
 // @use "theme";
 @use "global";
 // @use "components";
-// @use "utils";
+@use "utils";
 
 $ratio: 1.333;
 $breakpoint: 48;
@@ -40,7 +40,6 @@ h4 {
     }
     h1 {
         white-space: pre-line;
-        font-size: calc(var(--font-size-h1) * $ratio);
         @media (max-width: 768px) {
             white-space: normal;
         }
@@ -83,24 +82,43 @@ h4 {
 
 .nav {
     line-height: var(--font-line-height);
-    text-align: start;
+    text-align: end;
+
+    @media (max-width: #{$breakpoint}rem) {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
 
     &__item {
         display: block;
-        margin-bottom: var(--font-mb);
         text-decoration: none;
-        font-size: var(--font-size-h4);
+        margin-bottom: calc(var(--font-mb) * 1.333 * 1.333);
+        margin-left: #{$ratio}rem;
+        @media (min-width: #{$breakpoint}rem) {
+            margin-bottom: var(--font-mb);
+        }
+
     }
 
     &__brand {
-        width: 100%;
-        border-bottom: 1px solid var(--color-dark);
+        margin-right: auto;
+        @media (min-width: #{$breakpoint}rem) {
+            width: 100%;
+            border-bottom: 1px solid var(--color-dark);
+        }
         &-item {
             margin-bottom: 0;
             text-decoration: none;
+            @media (max-width: #{$breakpoint}rem) {
+                display: block;
+                width: 2.7ch;
+                word-break: break-all;
+                overflow: hidden;
+                white-space: nowrap;
+            }
         }
-        h2 {
-            text-align: end;
+        > h2 {
             margin-bottom: 0;
         }
         margin-bottom: calc(var(--font-mb) * $ratio * $ratio);
@@ -115,15 +133,36 @@ h4 {
     &__list {
         padding: 0;
         margin: 0;
+        grid-column: span 4;
+        border-top: 1px solid var(--color-dark);
+        padding-top: calc(var(--font-mb) * $ratio * $ratio);
         li {
-            grid-auto-rows: minmax(8vh, auto);
-            grid-row: 1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            min-height: 8vh;
+            gap: #{$ratio}rem;
+            // grid-auto-rows: minmax(8vh, auto);
         }
-        // :first-child {
-            div {
-                border-top: 1px solid var(--color-dark);
-                padding-top: calc(var(--font-mb) * $ratio * $ratio);
+        &-item {
+            &--left {
+                grid-column: 1 / 2;
             }
-        // }
+            &--right {
+                grid-column: 2 / 5;
+            }
+        }
+    }
+}
+
+.site-foot {
+    &__inner {
+        column-count: 2;
+        column-gap: #{$ratio}rem;
+        border-top: 1px solid var(--color-dark);
+        padding-top: calc(var(--font-mb) * $ratio * $ratio);
+
+        @media (max-width: #{$breakpoint}rem) {
+            column-count: 1;
+        }
     }
 }
