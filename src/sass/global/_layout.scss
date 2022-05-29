@@ -5,11 +5,26 @@
     margin-inline: auto;
 }
 
-.site-head {
-    &__inner {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        padding: 1rem 0;
+.site-grid {
+    display: grid;
+    gap: var(--m-100);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+    &__full,
+    &__right,
+    &__left {
+        width: 100%;
+    }
+
+    &__full {
+        grid-column: span 4 / 5;
+    }
+
+    &__left {
+        grid-column: span 2 / 3;
+    }
+    &__right {
+        grid-column: 3 / span 2;
     }
 }

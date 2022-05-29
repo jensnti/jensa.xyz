@@ -1,15 +1,10 @@
 @forward "reset";
 @forward "layout";
-$serif: 'calluna', serif; 
-$sans-serif: 'calluna-sans', sans-serif; 
+$sans-serif: 'aktiv-grotesk', sans-serif;
 $mono: Consolas, Menlo, Monaco, Courier, monospace;
 @forward "typography" with (
-    $font-family-headlines: $serif,
+    $font-family-headlines: $sans-serif,
     $font-family-body: $sans-serif,
     $font-family-mono: $mono,
     $font-weight-bold: 700
 );
-
-h1 {
-    font-weight: 900;
-}

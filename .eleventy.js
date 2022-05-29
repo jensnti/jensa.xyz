@@ -47,13 +47,6 @@ module.exports = function (eleventyConfig) {
         return format(dateObj, 'PP', { locale: sv });
     };
 
-    // const shortDate = (dateObj) => {
-    //     if (typeof dateObj === 'string') {
-    //         dateObj = parseISO(dateObj);
-    //     }
-    //     return format(dateObj, 'yyyMd', { locale: sv });
-    // };
-
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     const htmlDateString = (dateObj) => {
         if (typeof dateObj === 'string') {
@@ -75,7 +68,6 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('tagCountCss', tagCountCss);
     eleventyConfig.addFilter('readableDate', readableDate);
-    eleventyConfig.addFilter('shortDate', shortDate);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
     eleventyConfig.addFilter('linebreak', (str) => str.split(' ').join('\n'));
 

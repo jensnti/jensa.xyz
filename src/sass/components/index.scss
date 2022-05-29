@@ -1,7 +1,8 @@
 @forward "content";
-@forward "nav";
+@forward "../../_includes/partials/components/nav/";
 @forward "toggle-button";
 @forward "demo";
 @forward "tags";
-@forward "post-list";
-@forward "footer";
+@forward "../../_includes/partials/components/post-list/";
+@forward "../../_includes/partials/components/site-foot/";
+@forward "../../_includes/partials/components/site-head/";

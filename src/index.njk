@@ -1,145 +1,29 @@
----
-title: 'Hej, jag heter Jens'
-introText: 'Jag är en lärare på
-<a href="https://www.ntigymnasiet.se/umea/">NTI Gymnasiet Umeå</a>. Att designa 
-och koda är något som jag gjort större delen av mitt liv och nu har privilegiet 
-att arbeta med. Mer <a href="/om">om</a> mig. På 
-<a href="https://github.com/jensnti">GitHub</a> finns saker jag har kodat, på 
-den här webbplatsen, mina anteckningar.'
-footerText: ''
----
-
-<!DOCTYPE html>
-<html lang="{{ meta.lang }}">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        {% include "partials/global/meta.njk" %}
-        <link rel="preconnect" href="https:/cdnjs.cloudflare.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://use.typekit.net" />
-        <!-- <link rel="stylesheet" href="https://use.typekit.net/hzx7qyg.css" /> -->
-        <link rel="stylesheet" href="https://use.typekit.net/hrh0cnz.css" />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="{{ meta.siteName }}"
-            href="{{ meta.url }}/feed.xml"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css"
-            integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="{{ '/css/ng-style.css' }}" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        {% block head %} {% endblock %}
-    </head>
-    <body>
-        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
-        <header class="site-head">
-            <div class="site-head__inner container site-grid">
-                <div class="site-grid__left">
-                    <h1>{{ title | linebreak }}</h1>
-                </div>
-                <div class="site-grid__right">
-                    <nav class="nav" aria-label="Main">
-                        <div class="nav__brand">
-                            <h2>
-                                <a
-                                    href="/"
-                                    class="nav__brand-item h3"
-                                    aria-label="{{ meta.siteName }} - Hem"
-                                    >{{ meta.siteName }}
-                                </a>
-                            </h2>
-                        </div>
-                        <a
-                            class="nav__item h5{% if item.url == page.url %} active{% endif %}"
-                            href="/projekt"
-                            >Projekt
-                        </a>
-                        {% for item in collections.pages | reverse %}
-                        <a
-                            class="nav__item h5{% if item.url == page.url %} active{% endif %}"
-                            href="{{ item.url }}"
-                            >{{ item.data.title }}
-                        </a>
-                        {% endfor %}
-                    </nav>
-                </div>
-            </div>
-        </header>
-        {% set postListItems = collections.feed %}
-        <!-- {% set postListLatest = postListItems.shift() %} -->
-        <main id="main-content" tabindex="-1">
-            <section class="content container site-grid">
-                <aside class="content__info site-grid__full">
-                    <p class="h5 lead">
-                        {{ introText |safe }}
-                    </p>
-                </aside>
-                <!-- <div class="site-grid__left"> -->
-                    {% if postListItems.length %}
-                    <ol class="content__list">
-                        {% for item in postListItems %}
-                        <li>
-                            <div class="content__list-item--left">
-                                    <time
-                                    class="h5"
-                                    datetime="{{ item.date | htmlDateString }}"
-                                    >
-                                    {{ item.date | readableDate }}
-                                </time>
-                                {% if item.data.update %}
-                                <span class="post-list__list-item--updated"
-                                    >(uppdaterad
-                                    <time
-                                    datetime="{{
-                                        item.data.update | htmlDateString
-                                    }}"
-                                    >
-                                    {{ item.data.update | readableDate }} </time
-                                    >)
-                                </span>
-                                {% endif %}
-                            </div>
-                            <div class="content__list-item--right">
-                                <h3 class="h4">
-                                    <a href="{{ item.url }}" rel="bookmark">{{
-                                        item.data.title
-                                    }}</a>
-                                </h3>
-                            </div>
-                            <!-- <div class="content__list-item--right">
-                                <p>{{ item.data.lead }}</p>
-                            </div> -->
-                        </li>
-                        {% endfor %}
-                    </ol>
-                    {% endif %}
-                <!-- </div> -->
-            </section>
-        </main>
-        <footer class="site-foot">
-            <div class="site-foot__inner container">
-                <p class="text-small">
-                    Det här är version {{ pkg.version }} av den här sidan.
-                    Den är skapad med <a href="https://111ty.dev">11ty</a> och publicerad på 
-                    <a href="https://netlify.com">Netlify</a>. Koden till sidan finns på 
-                    <a href="{{ pkg.url }}">GitHub</a>, den är fri att använda.
-                    
-                    Jag använder Google analytics på webbplatsen för att se trafikdata.
-                    All text och innehåll © {% year %} Jens Andreasson.
-                </p>
-            </div>
-        </footer>
-    </body>
-</html>
+{% set title = 'Hej, jag heter Jens' %}
+{% extends 'layouts/base.njk' %}
+{%- from 'partials/components/post-list/macro.njk' import postList -%}
+{% block content %}
+<main id="main-content" tabindex="-1">
+    <section class="content container site-grid">
+        <aside class="content__info site-grid__full">
+            <p class="h5 lead">
+                Jag är en lärare på
+                <a href="https://www.ntigymnasiet.se/umea/"
+                    >NTI Gymnasiet Umeå</a
+                >. Att designa och koda är något som jag gjort större delen av
+                mitt liv och nu har privilegiet att arbeta med. På den här
+                webbplatsen samlar jag mina anteckningar och en del annat
+                material. På
+                <a href="https://github.com/jensnti">GitHub</a> finns saker jag
+                har kodat. Vill du veta mer <a href="/om">om</a> mig.
+            </p>
+        </aside>
+        {% set postListItems = collections.feed %} {% if postListItems.length %}
+        {{
+            postList({
+                items: postListItems
+            })
+        }}
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

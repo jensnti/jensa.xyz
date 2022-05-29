@@ -1,14 +1,12 @@
 {% extends 'layouts/base.njk' %}
 
 {% set pagesCheck = page.filePathStem.includes('/pages/') %}
-{% set introHeading = title %}
 
 {% block content %}
 <main id="main-content" tabindex="-1">
-    <article class="content container flow">
-        {% include "../partials/components/header.njk" %}
+    <article class="content container">
 
-        {% if update %}
+        <!-- {% if update %}
         <p>
             <strong
                 >Texten är uppdaterad
@@ -18,15 +16,15 @@
                 >.</strong
             >
         </p>
-        {% endif %}
+        {% endif %} -->
 
-        {% if lead %}
+        <!-- {% if lead %}
         <div class="content__lead">
             <p>
                 <em>{{ lead | safe }}</em>
             </p>
         </div>
-        {% endif %}
+        {% endif %} -->
 
         {{ content | safe }}
 

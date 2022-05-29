@@ -134,13 +134,22 @@ h4 {
   margin-top: 0;
 }
 
-.lead {
-    font-weight: 300;
-}
-
 .text-bold {
     font-weight: $font-weight-bold;
 }
+
+.text-small {
+    font-size: 1rem;
+}
+
+.lead {
+    column-count: 2;
+    column-gap: #{$type-size-ratio}rem;
+    @media (max-width: 80ch) {
+        column-count: 1;
+    }
+}
+
 
 /*
 
