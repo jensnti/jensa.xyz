@@ -1,0 +1,14 @@
+<header class="site-head">
+    <div class="site-head__inner container site-grid">
+        <div class="site-grid__left">
+            <h1>{{ title | linebreak }}</h1>
+        </div>
+        <div class="site-grid__right">
+{{ nav({
+siteName: meta.siteName,
+active: page.url,
+items: collections.pages
+}) }}
+        </div>
+    </div>
+</header>
