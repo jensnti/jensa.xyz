@@ -48,7 +48,10 @@
         {% block content %}
         {% endblock %}
         {% block footer %}
-            {{ siteFoot() }}
+            {{ siteFoot({
+                version: pkg.version,
+                url: pkg.homepage
+            }) }}
         {% endblock %}
         {% include "../partials/components/flash-message.njk" %}
         {% block scripts %}

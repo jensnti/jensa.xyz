@@ -14,6 +14,7 @@
             padding: 0.15em 0.5em;
             color: var(--color-link);
             cursor: pointer;
+            // border-bottom: var(--border);
         }
         
         summary:focus {
@@ -25,7 +26,12 @@
     &__playground {
         min-height: 30vh;
         padding: 1rem;
-        border: 2px dashed currentColor;
+        resize: horizontal;
+        overflow: auto;
+        position: relative;
+
+        border-top: 2px solid var(--color-dark);
+        // box-shadow: var(--shadow);
         * {
             margin: 0;
             padding: unset;
@@ -34,5 +40,25 @@
             color: unset;
             font: unset;
         }
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        //     width: 80%;
+        //     height: 1px;
+        //     background: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 60%);
+        //     z-index: -1;
+        // }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        //     width: 1px;
+        //     height: 80%;
+        //     background: linear-gradient(180deg, var(--color-light) 0%, var(--color-dark) 60%);
+        //     z-index: -1;
+        // }
     }
 }
