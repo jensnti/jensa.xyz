@@ -1,0 +1,65 @@
+<div class="demo">
+
+{%- if not hideDemo -%}
+<style>{{- css | safe }}</style>
+{%- endif -%}
+
+{% if javascript %}
+<script>{{- javascript | safe }}</script>
+{%- endif -%}
+
+<div class="tabbed">
+{% if not hideDescription %}
+{{ description | safe }}
+{% endif %}
+
+<ul class="tabs">
+{% if html %}
+<li>
+    <a href="#html-{{ title | slugify }}">HTML</a>
+</li>
+{% endif %}
+{% if css %}
+<li>
+    <a href="#css-{{ title | slugify }}">CSS</a>
+</li>
+{% endif %}
+{% if javascript %}
+<li>
+    <a href="#js-{{ title | slugify }}">Javascript</a>
+</li>
+{% endif %}
+</ul>
+
+{% if html %}
+<div id="html-{{ title | slugify }}" class="tab">
+
+```html
+{{- html | safe }}
+```
+</div>
+{% endif %}
+{% if css %}
+<div id="css-{{ title | slugify }}" class="tab">
+
+```css
+{{- css | safe }}
+```
+</div>
+{% endif %}
+{% if javascript %}
+<div id="js-{{ title | slugify }}" class="tab">
+
+```js
+{{- javascript | safe }}
+```
+</div>
+{% endif %}
+<div id="default" class="tab">by default, show no text</div>
+</div>
+{%- if not hideDemo -%}
+<div class="demo__playground">
+{{- html | safe }}
+</div>
+{%- endif -%}
+</div>

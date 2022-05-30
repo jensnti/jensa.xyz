@@ -1,0 +1,85 @@
+.demo {
+    &__details {
+
+        details {
+            margin: var(--m-100) 0 0;
+            width: 100%;
+        }
+
+        // details pre[class*="language-"] {
+        //     margin: 0;
+        // }
+        
+        summary {
+            padding: 0.15em 0.5em;
+            color: var(--color-link);
+            cursor: pointer;
+            // border-bottom: var(--border);
+        }
+        
+        summary:focus {
+            // outline: 2px solid #0d3233;
+            // outline-offset: 2px;
+        }
+        
+    }
+    &__playground {
+        min-height: 30vh;
+        padding: 1rem;
+        resize: horizontal;
+        overflow: auto;
+        position: relative;
+
+        border-top: 2px solid var(--color-dark);
+        // box-shadow: var(--shadow);
+        * {
+            margin: 0;
+            padding: unset;
+            border: unset;
+            border-radius: unset;
+            color: unset;
+            font: unset;
+        }
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        //     width: 80%;
+        //     height: 1px;
+        //     background: linear-gradient(90deg, var(--color-light) 0%, var(--color-dark) 60%);
+        //     z-index: -1;
+        // }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        //     width: 1px;
+        //     height: 80%;
+        //     background: linear-gradient(180deg, var(--color-light) 0%, var(--color-dark) 60%);
+        //     z-index: -1;
+        // }
+    }
+}
+
+.tabs {
+    display: flex;
+    list-style: none;
+}
+
+.tab {
+    display: none
+}
+
+.tab:target {
+    display: block
+}
+
+.tab:not(:target) {
+    display: none
+}
+
+.tab:target {
+    display: block
+}

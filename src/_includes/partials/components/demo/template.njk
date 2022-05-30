@@ -1,0 +1,45 @@
+<div class="demo">
+
+{% if not hideDescription %}
+{{ description | safe }}
+{% endif %}
+
+{%- if not hideDemo -%}
+<style>{{- css | safe }}</style>
+{%- endif -%}
+
+{% if javascript %}
+<script>{{- javascript | safe }}</script>
+{%- endif -%}
+
+<div class="demo__details">
+<details {{ "open" if showDetails }}>
+    <summary class="h5">HTML for "{{ title }}"</summary>
+
+```html
+{{- html | safe }}
+```
+</details>
+<details {{ "open" if showDetails }}>
+    <summary class="h5">CSS for "{{ title }}"</summary>
+
+```css
+{{- css | safe }}
+```
+</details>
+{% if javascript %}
+<details {{ "open" if showDetails }}>
+    <summary class="h5">JS for "{{ title }}"</summary>
+
+```js
+{{- javascript | safe }}
+```
+</details>
+{%- endif -%}
+</div>
+{%- if not hideDemo -%}
+<div class="demo__playground">
+    {{- html | safe }}
+</div>
+{%- endif -%}
+</div>
