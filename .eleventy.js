@@ -75,12 +75,7 @@ module.exports = function (eleventyConfig) {
     const year = () => {
         return `${new Date().getFullYear()}`;
     };
-    const imageShortcode = async (
-        src,
-        alt,
-        title,
-        sizes = '100vw'
-    ) => {
+    const imageShortcode = async (src, alt, title, sizes = '100vw') => {
         const metadata = await Image(src, {
             widths: [400, 800],
             outputDir: './public/img/',
@@ -133,8 +128,9 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addCollection('pages', (collectionApi) =>
-        collectionApi.getFilteredByGlob(['src/pages/*.md', 'src/projects/index.*'])
-        .sort((a, b) => b.data.order - a.data.order)
+        collectionApi
+            .getFilteredByGlob(['src/pages/*.md', 'src/projects/index.*'])
+            .sort((a, b) => b.data.order - a.data.order)
     );
 
     eleventyConfig.addCollection('posts', (collectionApi) =>
@@ -148,7 +144,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('feed', (collectionApi) =>
         [...collectionApi.getFilteredByGlob('src/posts/*.md')]
             .reverse()
-            .slice(0, 15)
+            .slice(0, 6)
     );
 
     const markdownLibrary = markdownIt({
@@ -158,11 +154,10 @@ module.exports = function (eleventyConfig) {
         typographer: true,
     })
         .use(markdownItAnchor, {
-            permalink: true,
-            permalinkClass: 'anchor',
-            permalinkSymbol: '#',
-            permalinkSpace: true,
-            permalinkBefore: true,
+            permalink: markdownItAnchor.permalink.linkInsideHeader({
+                symbol: `<span aria-hidden="true">#</span>`,
+                placement: 'before'
+              }),
             level: [1, 2, 3],
             slugify: (s) =>
                 s
@@ -222,6 +217,6 @@ module.exports = function (eleventyConfig) {
             input: 'src',
             output: 'public',
         },
-        passthroughFileCopy: true
+        passthroughFileCopy: true,
     };
 };
