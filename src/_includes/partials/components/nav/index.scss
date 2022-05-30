@@ -11,7 +11,6 @@
     &__item {
         display: block;
         text-decoration: none;
-        margin-bottom: var(--m-300);
         margin-left: var(--m-100);
 
         @media (min-width: 80ch) {
@@ -21,6 +20,7 @@
 
     &__brand {
         margin-right: auto;
+        margin-bottom: var(--m-100);
         @media (min-width: 80ch) {
             width: 100%;
             border-bottom: 1px solid var(--color-dark);
@@ -39,6 +39,5 @@
         > h2 {
             margin-bottom: 0;
         }
-        margin-bottom: var(--m-300);
     }
 }

@@ -13,10 +13,18 @@
     &__item {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        min-height: 5vh;
+        min-height: var(--m-300);
+        margin-bottom: var(--m-100);
         gap: var(--m-100);
         // grid-auto-rows: minmax(8vh, auto);
-    
+        padding-top:  var(--m-000);
+        padding-bottom: var(--m-000);
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-bottom: 1px solid var(--color-dark);
+        }
+
         &--left {
             align-self: baseline;
             grid-column: 1 / 2;

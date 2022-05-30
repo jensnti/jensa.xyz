@@ -1,5 +1,5 @@
 .site-head {
-    margin-bottom: var(-m-300);
+    // margin-bottom: var(-m-300);
     &__inner {
         &--left {
             grid-column: 1 / span 3;
@@ -25,8 +25,9 @@
     h1 {
         white-space: pre-line;
         max-width: 8ch;
-        @media (max-width: 768px) {
+        @media (max-width: 80ch) {
             white-space: normal;
+            max-width: max-content;
         }
     }
 }
