@@ -3,7 +3,7 @@
         column-count: 2;
         column-gap: var(--m-100);
         border-top: 1px solid var(--color-dark);
-        padding-top: var(--m-300);
+        padding: var(--m-300) 0;
 
         @media (max-width: 80ch) {
             column-count: 1;

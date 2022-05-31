@@ -2,8 +2,9 @@
 $ratio: 1.333 !default;
 
 :root {
-    --color-dark: #252a37;
-    --color-light: #f3f4f7;
+    --color-dark: hsl(223, 20%, 18%);
+    --color-light: hsl(223, 20%, 96%);
+    --color-gray: hsl(223, 20%, 60%);
 
     --shadow-color: 0deg 0% 0%;
     --shadow:

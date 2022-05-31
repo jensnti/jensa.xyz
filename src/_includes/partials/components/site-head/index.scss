@@ -1,4 +1,6 @@
 .site-head {
+    background-color: #f44336;
+    color: var(--color-light);
     // margin-bottom: var(-m-300);
     &__inner {
         &--left {
@@ -23,8 +25,8 @@
         }
     }
     h1 {
+        // --font-mb: 0.667rem;
         white-space: pre-line;
-        max-width: 9ch;
         @media (max-width: 80ch) {
             white-space: normal;
             max-width: max-content;

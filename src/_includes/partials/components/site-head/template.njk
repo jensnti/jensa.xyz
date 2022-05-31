@@ -1,16 +1,14 @@
 {%- from '../nav/macro.njk' import nav -%}
 
 <header class="site-head">
-    <div class="site-head__inner container site-grid">
-        <div class="site-head__inner--left site-grid__left">
-            <h1>{{ props.title | linebreak }}</h1>
-        </div>
-        <div class="site-head__inner--right site-grid__right">
-            {{ nav({
-                siteName: props.siteName,
-                active: props.active,
-                items: props.items
-            }) }}
+    <div class="site-head__inner container">
+        {{ nav({
+            siteName: props.siteName,
+            active: props.active,
+            items: props.items
+        }) }}
+        <div class="site-grid">
+            <h1 class="site-grid__full">{{ props.title | linebreak }}</h1>
         </div>
     </div>
 </header>

@@ -26,11 +26,11 @@
         }
 
         &--left {
-            align-self: baseline;
+            align-self: end;
             grid-column: 1 / 2;
         }
         &--right {
-            align-self: baseline;
+            align-self: end;
             grid-column: 2 / 5;
         }
     }

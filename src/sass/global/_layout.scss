@@ -8,8 +8,9 @@
 .site-grid {
     display: grid;
     gap: var(--m-100);
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
+    // grid-template-rows: auto;
+    justify-items: start;
 
     &__full,
     &__right,

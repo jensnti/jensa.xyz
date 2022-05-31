@@ -1,43 +1,48 @@
 .nav {
     line-height: var(--font-line-height);
-    text-align: end;
+    // text-align: end;
+    padding-top: var(--m-100);
+    margin-bottom: var(--m-100);
+    // flex-direction: column;
 
-    @media (max-width: 80ch) {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-    }
+    // @media (max-width: 80ch) {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: baseline;
+    // }
 
     &__item {
         display: block;
         text-decoration: none;
-        margin-left: var(--m-100);
-
-        @media (min-width: 80ch) {
-            margin-bottom: var(--font-mb);
+        border-bottom: 2px solid var(--color-light);
+        width: 100%;
+        color: var(--color-light);
+        transition: border-bottom 0.2s ease-in-out;
+        &:hover {
+            border-bottom: 2px solid var(--color-dark);
         }
     }
 
-    &__brand {
-        margin-right: auto;
-        margin-bottom: var(--m-100);
-        @media (min-width: 80ch) {
-            width: 100%;
-            border-bottom: 1px solid var(--color-dark);
-        }
-        &-item {
-            margin-bottom: 0;
-            text-decoration: none;
-            @media (max-width: 80ch) {
-                display: block;
-                width: 2.7ch;
-                word-break: break-all;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-        }
-        > h2 {
-            margin-bottom: 0;
-        }
-    }
+    // &__brand {
+    //     margin-right: auto;
+    //     margin-bottom: var(--m-100);
+    //     @media (min-width: 80ch) {
+    //         width: 100%;
+    //         border-bottom: 1px solid var(--color-dark);
+    //     }
+    //     &-item {
+    //         margin-bottom: 0;
+    //         text-decoration: none;
+    //         @media (max-width: 80ch) {
+    //             display: block;
+    //             width: 2.7ch;
+    //             word-break: break-all;
+    //             overflow: hidden;
+    //             white-space: nowrap;
+    //         }
+    //     }
+    //     > h2 {
+    //         margin-bottom: 0;
+    //     }
+    // }
 }
