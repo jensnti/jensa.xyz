@@ -16,19 +16,22 @@
 <ul class="tabs">
 {% if html %}
 <li>
-    <a href="#html-{{ title | slugify }}">HTML</a>
+    <a class="stretched-link" href="#html-{{ title | slugify }}">HTML</a>
 </li>
 {% endif %}
 {% if css %}
 <li>
-    <a href="#css-{{ title | slugify }}">CSS</a>
+    <a class="stretched-link" href="#css-{{ title | slugify }}">CSS</a>
 </li>
 {% endif %}
 {% if javascript %}
 <li>
-    <a href="#js-{{ title | slugify }}">Javascript</a>
+    <a class="stretched-link" href="#js-{{ title | slugify }}">Javascript</a>
 </li>
 {% endif %}
+<li>
+    <a class="stretched-link" href="#{{ title | slugify }}">X</a>
+</li>
 </ul>
 
 {% if html %}
@@ -55,7 +58,6 @@
 ```
 </div>
 {% endif %}
-<div id="default" class="tab">by default, show no text</div>
 </div>
 {%- if not hideDemo -%}
 <div class="demo__playground">

@@ -8,3 +8,9 @@
 //         content: '#';
 //     }
 // }
+
+[id] {
+    @media (min-height: 32rem) {
+      scroll-margin-top: 100px; // 1
+    }
+  }
