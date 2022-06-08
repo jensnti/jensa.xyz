@@ -19,11 +19,7 @@
             <span
                 class="post-list__updated h5 text-small"
                 >uppdaterad
-                <time
-                    datetime="{{
-                        item.data.update | htmlDateString
-                    }}"
-                >
+                <time datetime="{{ item.data.update | htmlDateString }}">
                     {{ item.data.update | readableDate }}
                 </time>
             </span>

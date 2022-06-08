@@ -2,16 +2,17 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const mila = require('markdown-it-link-attributes');
 const mia = require('markdown-it-attrs');
-const glob = require('fast-glob');
+// const glob = require('fast-glob');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const fs = require('fs');
 const { format, parseISO } = require('date-fns');
 const { sv } = require('date-fns/locale');
 const Image = require('@11ty/eleventy-img');
-const path = require('path');
+// const path = require('path');
 const markdownItAnchor = require('markdown-it-anchor');
+// const slugify = require('@sindresorhus/slugify');
 
-const prettier = require('prettier');
+// const prettier = require('prettier');
 // const imageShortcode = require('./src/shortcodes/image');
 
 // Import transforms
