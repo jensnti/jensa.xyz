@@ -1,5 +1,5 @@
 ---
-title: Kom igång med webbserverprogrammering
+title: Webbserverprogrammering
 date: 2022-05-16
 tags: ['jobb', 'webbserverprogrammering', 'setup', 'node', 'wsl', 'mysql']
 templateEngineOverride: njk, md

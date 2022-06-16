@@ -1,9 +1,9 @@
-<ol class="post-list">
+<ol class="post-list site-grid__full">
     {% for item in props.items %}
     <li class="post-list__item">
         <div class="post-list__item--left">
             <time
-                class="h5"
+                class=""
                 datetime="{{ item.date | htmlDateString }}"
             >
                 {{ item.date | frontDate | safe }}
@@ -11,7 +11,7 @@
         </div>
         <div class="post-list__item--right">
             <h3 class="post-list__title h4">
-                <a href="{{ item.url }}" rel="bookmark">{{
+                <a class="stretched-link" href="{{ item.url }}" rel="bookmark">{{
                     item.data.title
                 }}</a>
             </h3>

@@ -147,11 +147,12 @@ h4 {
 }
 
 .lead {
-    column-count: 2;
+    column-count: auto;
     column-gap: #{$type-size-ratio}rem;
-    @media (max-width: 80ch) {
-        column-count: 1;
-    }
+    column-width: 20ch;
+    // @media (max-width: 80ch) {
+    //     column-count: 1;
+    // }
 }
 
 /*
