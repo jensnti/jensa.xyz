@@ -1,0 +1,12 @@
+.button {
+    border: none;
+    display: inline-block;
+    padding: var(--font-mb);
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}

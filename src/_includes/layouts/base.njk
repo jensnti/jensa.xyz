@@ -21,15 +21,20 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
             rel="stylesheet"
         />
-        <link
+        <!-- <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css"
             integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="{{ '/css/style.css' }}" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        /> -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-base16-ateliersulphurpool.light.min.css" integrity="sha512-Fy937YAIEYLKKxl8PezgPCwzr6rNqTp4x2uJ2zS28+lZQtYK3brE8R49TcNhCDdagEt+uRyMz+gyoPnZMOwfmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+        
+        <link rel="stylesheet" href="{{ '/css/prism-custom.css'}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="{{ '/css/style.css' }}">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
         {% include "../partials/global/analytics.njk" %}
         {% block head %} {% endblock %}
     </head>

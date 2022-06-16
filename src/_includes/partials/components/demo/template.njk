@@ -1,8 +1,8 @@
-<div class="demo">
+{% macro closeButton(title) %}
+<a class="button demo__close" href="#"><span class="material-symbols-sharp">close</span></a>
+{% endmacro %}
 
-{% if not hideDescription %}
-{{ description | safe }}
-{% endif %}
+<div class="demo">
 
 {%- if not hideDemo -%}
 <style>{{- css | safe }}</style>
@@ -12,34 +12,72 @@
 <script>{{- javascript | safe }}</script>
 {%- endif -%}
 
-<div class="demo__details">
-<details {{ "open" if showDetails }}>
-    <summary class="h5">HTML for "{{ title }}"</summary>
+{% if not hideDescription %}
+{{ description | safe }}
+{% endif %}
+
+
+<div class="demo__code">
+{% if html %}
+<div id="html-{{ title | slugify }}" class="tab">
+{{- closeButton(title) }}
 
 ```html
 {{- html | safe }}
 ```
-</details>
-<details {{ "open" if showDetails }}>
-    <summary class="h5">CSS for "{{ title }}"</summary>
+</div>
+{% endif %}
+{% if css %}
+<div id="css-{{ title | slugify }}" class="tab">
+{{- closeButton(title) }}
 
 ```css
 {{- css | safe }}
 ```
-</details>
+</div>
+{% endif %}
 {% if javascript %}
-<details {{ "open" if showDetails }}>
-    <summary class="h5">JS for "{{ title }}"</summary>
+<div id="js-{{ title | slugify }}" class="tab">
+{{- closeButton(title) }}
 
 ```js
 {{- javascript | safe }}
 ```
-</details>
-{%- endif -%}
+</div>
+{% endif %}
+
+<ul class="tabs group">
+{% if html %}
+<li>
+    <a href="#html-{{ title | slugify }}">HTML</a>
+</li>
+{% endif %}
+{% if css %}
+<li>
+    <a href="#css-{{ title | slugify }}">CSS</a>
+</li>
+{% endif %}
+{% if javascript %}
+<li>
+    <a href="#js-{{ title | slugify }}">Javascript</a>
+</li>
+{% endif %}
+
 </div>
 {%- if not hideDemo -%}
 <div class="demo__playground">
-    {{- html | safe }}
+{{- html | safe }}
 </div>
 {%- endif -%}
 </div>
+
+<style>
+#html-{{ title | slugify }}:target ~ .tabs li > a[href="#html-{{ title | slugify }}"],
+#css-{{ title | slugify }}:target ~ .tabs li > a[href="#css-{{ title | slugify }}"],
+#js-{{ title | slugify }}:target ~ .tabs li > a[href="#js-{{ title | slugify }}"] {
+    border-bottom-color: var(--color-light);
+    border-top-color: #B721FF;
+    background: white;
+    color: #222;
+    }
+</style>
