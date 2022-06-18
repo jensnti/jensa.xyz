@@ -1,0 +1,33 @@
+:root {
+  --prism-scheme: dark;
+  --prism-foreground: #d7dce2;
+  --prism-background: #1d2433;
+  --prism-comment: #6679a4;
+  --prism-string: #bae67e;
+  --prism-literal: #c3a6ff;
+  --prism-keyword: #ffae57;
+  --prism-function: #ffd580;
+  --prism-deleted: #ef6b73;
+  --prism-class: #ffd580;
+  --prism-builtin: #5ccfe6;
+  --prism-property: #5ccfe6;
+  --prism-namespace: #ffd580;
+  --prism-punctuation: #5ccfe6;
+  --prism-decorator: #ffd580;
+  --prism-operator: #ffae57;
+  --prism-number: #c3a6ff;
+  --prism-boolean: #ffd580;
+  --prism-variable: #a2aabc;
+  --prism-constant: #ffae57;
+  --prism-symbol: #a2aabc;
+  --prism-interpolation: #a2aabc;
+  --prism-selector: #ffae57;
+  --prism-keyword-control: #ffae57;
+  --prism-regex: #67cdcc;
+  --prism-json-property: #bae67e;
+  --prism-line-number: #2f3b54;
+  --prism-line-number-gutter: #8695b7;
+  --prism-line-highlight-background: #2f3b54;
+  --prism-selection-background: #2f3b54;
+  --prism-font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
