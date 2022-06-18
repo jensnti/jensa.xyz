@@ -2,7 +2,8 @@
 $ratio: 1.333 !default;
 
 :root {
-    --color-dark: hsl(223, 20%, 18%);
+    // --color-dark: hsl(223, 20%, 18%);
+    --color-dark: hsl(0, 0%, 12%);
     --color-grey-300: hsl(223, 20%, 48%);
     --color-grey-200: hsl(223, 20%, 68%);
     --color-grey-100: hsl(223, 20%, 88%);
@@ -26,8 +27,7 @@ $ratio: 1.333 !default;
 }
 
 body {
-    // background-image: url("../assets/images/img-noise-400x400.png");
-    background-image: url("../assets/images/noisy-texture-100x100-o5-d10-c-f34379-t1");
+    background-image: url("../assets/images/img-noise-400x400.png");
     background-repeat: repeat;
     background-color: var(--color-light);
     color: var(--color-dark);
