@@ -1,7 +1,7 @@
 .button {
     border: none;
     display: inline-block;
-    padding: var(--font-mb);
+    padding: calc(var(--font-mb) / 2) var(--font-mb);
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;

@@ -2,10 +2,10 @@
 $ratio: 1.333 !default;
 
 :root {
-    --color-dark: #1f2430;
-    --color-grey-300: hsl(48, 9%, 38%);
-    --color-grey-200: hsl(48, 9%, 58%);
-    --color-grey-100: hsl(48, 9%, 78%);
+    --color-dark: hsl(222, 22%, 15%);
+    --color-grey-300: hsl(222, 22%, 40%);
+    --color-grey-200: hsl(222, 22%, 65%);
+    --color-grey-100: hsl(222, 22%, 90%);
     --color-light: hsl(48, 9%, 98%);
     --color-gray: hsl(223, 20%, 60%);
     --color-primary: hsl(4, 90%, 58%);
@@ -17,7 +17,8 @@ $ratio: 1.333 !default;
     0.8px 4.1px 5.4px -1px hsl(var(--shadow-color) / 0.06),
     1.9px 9.2px 12px -1.4px hsl(var(--shadow-color) / 0.08);
 
-    --border: 1px solid var(--color-dark);
+    --border-100: 1px solid var(--color-dark);
+    --border-200: 2px solid var(--color-dark);
 
     --m-100: #{$ratio}rem;
     --m-200: calc(#{math.pow($ratio, 2)}rem);

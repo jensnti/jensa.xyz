@@ -75,9 +75,8 @@
 #html-{{ title | slugify }}:target ~ .tabs li > a[href="#html-{{ title | slugify }}"],
 #css-{{ title | slugify }}:target ~ .tabs li > a[href="#css-{{ title | slugify }}"],
 #js-{{ title | slugify }}:target ~ .tabs li > a[href="#js-{{ title | slugify }}"] {
-    border-bottom-color: var(--color-light);
-    border-top-color: #B721FF;
-    background: white;
-    color: #222;
-    }
+    background: var(--color-dark);
+    color: var(--color-light);
+    border-color: var(--color-dark);
+}
 </style>
