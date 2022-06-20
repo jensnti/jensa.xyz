@@ -10,7 +10,6 @@ permalink: /taggar/
 {% block content %}
     <main id="main-content" tabindex="-1">
         <section class="content container">
-            {% include "partials/components/header.njk" %}
             <ul class="tag-cloud">
                 {% for tag in collections.tagList %}
                     {% set tagUrl %}/tagg/{{ tag | slug }}/{% endset %}

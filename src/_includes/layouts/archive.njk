@@ -13,9 +13,7 @@ postsHeading: 'Alla inlägg'
 {% block content %}
 <main id="main-content" tabindex="-1">
     <section class="container">
-        {% include "../partials/components/header.njk" %}
 
-        {% include "../partials/components/post-list.njk" %}
 
         {% if not tag %}
             {% include "../partials/components/pagination.njk" %}

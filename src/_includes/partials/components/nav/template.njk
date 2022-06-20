@@ -1,13 +1,13 @@
 <nav class="nav site-grid" aria-label="Main">
     <a
         href="/"
-        class="nav__item nav__brand h5"
+        class="nav__item nav__brand"
         aria-label="{{ props.siteName }} - Hem"
         >{{ props.siteName }}
     </a>
     {% for item in props.items | reverse %}
     <a
-        class="nav__item h5{% if item.url == props.active %} active{% endif %}"
+        class="nav__item {% if item.url == props.active %} active{% endif %}"
         href="{{ item.url }}"
         >{{ item.data.title }}
     </a>
