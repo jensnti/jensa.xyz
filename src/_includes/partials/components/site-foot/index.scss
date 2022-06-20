@@ -1,9 +1,9 @@
 .site-foot {
+    margin-top: var(--m-300);
     &__inner {
         column-count: 2;
         column-gap: var(--m-100);
         border-top: var(--border-100);
-        margin-top: var(--m-300);
         padding: var(--m-300) 0;
 
         @media (max-width: 80ch) {

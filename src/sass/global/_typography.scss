@@ -107,6 +107,7 @@ $level-size: $type-base-size;
     }
     --font-mb: #{2em - $type-size-ratio};
     --font-line-height: calc(2px + 2ex + 2px);
+    --m-00: #{2rem - $type-size-ratio};
 }
 
 h1,

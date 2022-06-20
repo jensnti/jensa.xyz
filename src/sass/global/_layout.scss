@@ -12,6 +12,10 @@
     // grid-template-rows: auto;
     justify-items: start;
 
+    @media (max-width: 80ch) {
+        gap: 0;
+    }
+
     &__full,
     &__right,
     &__left {
