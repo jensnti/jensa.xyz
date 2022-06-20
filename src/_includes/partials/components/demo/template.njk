@@ -1,5 +1,5 @@
 {% macro closeButton(title) %}
-<a class="button demo__close" href="#"><span class="material-symbols-sharp">close</span></a>
+<a class="button demo__close" href="#{{ title | slugify}}"><span class="material-symbols-sharp">close</span></a>
 {% endmacro %}
 
 <div class="demo">
