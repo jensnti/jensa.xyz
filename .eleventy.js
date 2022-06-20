@@ -45,16 +45,16 @@ module.exports = function (eleventyConfig) {
         if (typeof dateObj === 'string') {
             dateObj = parseISO(dateObj);
         }
-        return format(dateObj, 'PP', { locale: sv });
+        return format(dateObj, 'PPP', { locale: sv });
     };
 
     const frontDate = (dateObj) => {
         if (typeof dateObj === 'string') {
             dateObj = parseISO(dateObj);
         }
-        let temp = format(dateObj, 'PP', { locale: sv });
-        let arr = temp.split(' ');
-        return `<span>${arr[0]}</span><span> ${arr[1]} ${arr[2]}</span>`;
+        return  format(dateObj, 'MMM yyyy', { locale: sv });
+        // let arr = temp.split(' ');
+        // return `<span>${arr[0]}</span><span> ${arr[1]} ${arr[2]}</span>`;
     };
 
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

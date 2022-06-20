@@ -18,13 +18,9 @@
         </p>
         {% endif %} -->
 
-        <!-- {% if lead %}
-        <div class="content__lead">
-            <p>
-                <em>{{ lead | safe }}</em>
-            </p>
-        </div>
-        {% endif %} -->
+        {% if lead %}
+        <p class="content__lead"><em>{{ lead | safe }}</em></p>
+        {% endif %}
 
         {{ content | safe }}
 
