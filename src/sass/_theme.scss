@@ -6,7 +6,7 @@ $mono: Consolas, Menlo, Monaco, Courier, monospace;
 
 :root {
     --fluid-min-width: 320px;
-    --fluid-mid-width: 570px;
+    --fluid-mid-width: 666px;
     --fluid-max-width: 1140px;
 
     --step--2: clamp(0.74rem, calc(0.70rem + 0.21vw), 0.84rem);
@@ -40,6 +40,8 @@ $mono: Consolas, Menlo, Monaco, Courier, monospace;
     --font-headline: #{$sans-serif};
     --font-mono: #{$mono};
     --font-headline-height: calc(2px + 2ex + 2px);
+
+    --flow-space: var(--step-0);
 
 }
 

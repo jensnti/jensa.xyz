@@ -16,7 +16,7 @@
         > div {
             position: relative;
             background: var(--color-dark);
-            padding: var(--step-0);
+            padding: var(--step--1);
             // top: -1px;
             left: 0;
             width: 100%;
@@ -28,7 +28,7 @@
         resize: horizontal;
         overflow: auto;
         position: relative;
-        padding: var(--step-0);
+        padding: var(--step--1);
 
         // border-top: 2px solid var(--color-dark);
         // box-shadow: var(--shadow);
@@ -59,18 +59,13 @@
 
 .tabs {
     display: flex;
-    // padding: var(--font-mb);
     padding: 0;
     list-style: none;
     margin-bottom: 0;
-    // font-size: var(--font-size-fluid-h5);
     line-height: var(--font-headline-height);
-    // box-shadow: var(--shadow);
     border-bottom: var(--border-200);
     font-weight: 500;
     > li {
-        // background-color: var(--color-grey-100);
-        // box-shadow: var(--shadow);
         &:hover {
             background-color: var(--color-dark);
             color: var(--color-light);
@@ -81,7 +76,7 @@
             display: block;
             font-weight: 500;
             text-decoration: none;
-            padding: var(--step--1) var(--step-0);
+            padding: var(--step--2) var(--step--1);
             &:hover {
                 color: var(--color-light);
                 border-color: var(--color-dark);
