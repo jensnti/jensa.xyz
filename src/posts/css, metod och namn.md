@@ -3,7 +3,8 @@ title: CSS, namn och semantik
 date: 2021-06-22
 update: 2021-06-30
 lead: 'Att namnge CSS, att återanvända CSS och hantera cascade är något som de flesta webb-projekt behöver göra. Det finns ett antal olika sätt att närma sig detta.'
-tags: ['css', 'bem', 'bootstrap', 'tailwind', 'utilities']
+tags: ['css', 'praxis']
+category: resurs
 ---
 
 Jag har omformulerat texten till det här inlägget ett par gånger nu istället för att skriva flera. Kanske är det så att jag borde skriva ett inlägg mer som en artikel och låta den gro några dagar innan jag publicerar. Jag har även försökt att skriva så att texten kan bidra med lite förståelse och olika synpunkter, inte bara kasta ut min åsikt.

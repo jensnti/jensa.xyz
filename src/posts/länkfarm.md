@@ -1,7 +1,8 @@
 ---
 title: Länkfarm
 date: 2021-09-30
-tags: ['transform', 'eleventy', 'länkar']
+tags: ['eleventy', 'koda']
+category: anteckning
 ---
 
 När jag skrev föregående inlägg så formulerade sig en feature i mitt huvud som jag önskade på den här sidan. Ett sätt att sammanställa alla länkar i texten till en lista i slutet av dokumentet.

@@ -1,8 +1,9 @@
 ---
 title: SQL
 date: 2022-05-16
-tags: ['jobb', 'webbserverprogrammering', 'mysql', 'sql']
+tags: ['setup', 'sql']
 templateEngineOverride: njk, md
+category: resurs
 ---
 
 

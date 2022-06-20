@@ -2,8 +2,9 @@
 title: Tema, område, del
 date: 2021-07-31
 lead: 'Mitt intresse för att testa en statisk sidbyggare började i ett projekt kallat Tema, område, del. Detta efter samtal med en kollega.'
-tags: ['TOD', 'pedagogik', 'eleventy']
+tags: ['TOD', 'eleventy']
 templateEngineOverride: njk, md
+category: anteckning
 ---
 
 I slutet av vårterminen 2021 så diskuterade jag tillsammans med min kollega Kaj över hur uppgifter, information och instruktioner skulle kunna utformas för att nå elever på ett så gott sätt som möjligt.

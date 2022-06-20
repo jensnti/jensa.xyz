@@ -2,7 +2,8 @@
 title: Att komma igång
 date: 2021-06-16
 lead: 'Att komma igång och skriva på webben, blogga, är kanske inte det lättaste. Jag har funderat en del på ett varför. Varför ska jag skriva och varför skulle det vara intressant för någon annan.'
-tags: ['skriva', 'reflektion']
+tags: ['reflektion']
+category: anteckning
 ---
 
 Kanske är det inte så intressant för någon annan, men att skriva är en viktig och lärorik process som jag vill komma åt. Det blev min slutsats efter att ha läst lite kring att [starta en blog](https://firstsiteguide.com/why-start-a-blog/). Nu skriver jag redan en hel del i mitt yrke, men innehållet på den här sidan är tänkt att hysa en annan form.

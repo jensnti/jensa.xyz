@@ -4,6 +4,7 @@ date: 2022-05-20
 tags: ['kod', '2.0']
 templateEngineOverride: njk, md
 lead: "Testkod för att skapa kodexempel, hämtad från 5t3phs sida med lite variation för att kunna visa annan kod är css."
+category: anteckning
 ---
 
 ## Varför
@@ -162,7 +163,7 @@ Den utökning jag har gjort ses i javascript/html delarna och formatteringen och
 </style>
 ```
 
-Ganska så rörigt, tack och lov så behöver en kanske inte vara och peta i filen. Den sista delen är kopplat till tabbarna och krävs för att styla den aktiva tabben. Tabbarna är gjorda helt med css och förlitar sig på target selectorn genom fragment länkar (#id).
+Ganska så rörigt, tack och lov så behöver en kanske inte vara och peta i filen. Den sista delen är kopplat till tabbarna och krävs för att styla den aktiva tabben. Tabbarna är gjorda helt med css och förlitar sig på target selectorn genom fragment länkar (#id). Detta gör även att om jag vill länka till en bit av koden så använder jag helt enkelt en fragment länk.
 
 ```css
 .tab {

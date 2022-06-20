@@ -1,7 +1,8 @@
 ---
-title: Kod
+title: Kodformattering
 date: 2021-06-21
-tags: ['kod', 'markdown', 'prism', 'css']
+tags: ['markdown', 'css']
+category: resurs
 ---
 
 Att kunna skriva kodexempel och visa kod på den här sidan är ett måste. Som tur är så finns det tillgängligt med Eleventys [Syntax Highlight Plugin](https://www.11ty.dev/docs/plugins/syntaxhighlight/). Det använder i sin tur [Prism](https://prismjs.com/) för att stila koden.

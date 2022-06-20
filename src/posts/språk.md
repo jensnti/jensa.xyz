@@ -1,7 +1,8 @@
 ---
 title: Språk
 date: 2021-06-20
-tags: ['skriva', 'reflektion', 'språk']
+tags: ['reflektion']
+category: anteckning
 ---
 
 På den här sidan har jag valt att skriva på svenska. Det kan verka som en dum ide, när en skriver om kod. Men skitsamma, jag är nöjd med det.
