@@ -7,12 +7,11 @@
 
 .site-grid {
     display: grid;
-    gap: var(--m-100);
+    gap: var(--step-1);
     grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
-    // grid-template-rows: auto;
     justify-items: start;
 
-    @media (max-width: 80ch) {
+    @media (max-width: --fluid-mid-width) {
         gap: 0;
     }
 

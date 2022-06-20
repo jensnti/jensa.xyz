@@ -1,7 +1,23 @@
 @use "sass:math";
 $ratio: 1.333 !default;
+$sans-serif: 'aktiv-grotesk', sans-serif;
+$mono: Consolas, Menlo, Monaco, Courier, monospace;
+/* @link https://utopia.fyi/type/calculator?c=320,21,1.333,1140,24,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
 :root {
+    --fluid-min-width: 320px;
+    --fluid-mid-width: 570px;
+    --fluid-max-width: 1140px;
+
+    --step--2: clamp(0.74rem, calc(0.70rem + 0.21vw), 0.84rem);
+    --step--1: clamp(0.98rem, calc(0.93rem + 0.27vw), 1.13rem);
+    --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.50rem);
+    --step-1: clamp(1.75rem, calc(1.65rem + 0.49vw), 2.00rem);
+    --step-2: clamp(2.33rem, calc(2.20rem + 0.65vw), 2.67rem);
+    --step-3: clamp(3.11rem, calc(2.94rem + 0.87vw), 3.55rem);
+    --step-4: clamp(4.14rem, calc(3.91rem + 1.16vw), 4.74rem);
+    --step-5: clamp(5.52rem, calc(5.22rem + 1.54vw), 6.31rem);
+
     --color-dark: hsl(222, 22%, 15%);
     --color-grey-300: hsl(222, 22%, 40%);
     --color-grey-200: hsl(222, 22%, 65%);
@@ -20,70 +36,16 @@ $ratio: 1.333 !default;
     --border-100: 1px solid var(--color-dark);
     --border-200: 2px solid var(--color-dark);
 
-    --m-100: #{$ratio}rem;
-    --m-200: calc(#{math.pow($ratio, 2)}rem);
-    --m-300: calc(#{math.pow($ratio, 3)}rem );
-    --m-400: calc(#{math.pow($ratio, 4)}rem);
+    --font-body: #{$sans-serif};
+    --font-headline: #{$sans-serif};
+    --font-mono: #{$mono};
+    --font-headline-height: calc(2px + 2ex + 2px);
+
 }
 
 body {
-    background-image: url("../assets/images/img-noise-400x400.png");
+    // background-image: url("../assets/images/img-noise-400x400.png");
     background-repeat: repeat;
     background-color: var(--color-light);
     color: var(--color-dark);
 }
-
-
-
-
-// @use "sass:color";
-
-// $primary: #252a37;
-// $secondary: #5ccfe6; // #54d2ff
-// $tertiary: hsl(42, 100%, 72%);
-// $light: #f3f4f7;
-// $dark: #252a37;
-// // $dark: #252a37;
-// $red: hsl(7, 77%, 69%);
-// $green: #87d96c;
-// $yellow: #facc6e;
-// $blue: #6dcbfa;
-// $magenta: #dabafa;
-// $cyan: #90e1c6;
-// $dark-variant: color.scale($dark, $lightness: 20%);
-// $selection: hsla(223, 80%, 60%, 0.25);
-
-// :root {
-//     --shadow-color: 0deg 0% 0%;
-//     --shadow:
-//     0.1px 0.6px 0.8px hsl(var(--shadow-color) / 0.04),
-//     0.4px 1.9px 2.5px -0.5px hsl(var(--shadow-color) / 0.05),
-//     0.8px 4.1px 5.4px -1px hsl(var(--shadow-color) / 0.06),
-//     1.9px 9.2px 12px -1.4px hsl(var(--shadow-color) / 0.08);
-
-//     --color-fg: #{$light};
-//     --color-bg: #{$dark};
-//     --color-link: #{$secondary};
-//     --color-link-hover: #{$cyan};
-//     --color-secondary: #{$red};
-//     --color-tertiary: #{$tertiary};
-//     // --color-selection: hsla(210, 100%, 63%, 0.251);
-//     --color-selection: #{$selection};
-// }
-
-// body {
-//     color: var(--color-fg);
-//     background-color: var(--color-bg);
-// }
-
-// a {
-//     color: var(--color-link);
-//     text-decoration: none;
-//     &:hover {
-//         color: var(--color-link-hover);
-//     }
-// }
-
-// ::selection {
-//     background-color: var(--color-selection);
-// }

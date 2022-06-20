@@ -1,13 +1,11 @@
 .site-foot {
-    margin-top: var(--m-300);
+    margin-top: var(--step-1);
     &__inner {
-        column-count: 2;
-        column-gap: var(--m-100);
         border-top: var(--border-100);
-        padding: var(--m-300) 0;
+        padding: var(--step-1) 0;
 
-        @media (max-width: 80ch) {
-            column-count: 1;
-        }
+        column-count: auto;
+        column-gap: var(--step-0);
+        column-width: var(--fluid-min-width);
     }
 }

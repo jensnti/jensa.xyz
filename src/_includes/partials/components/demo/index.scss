@@ -15,8 +15,8 @@
         flex-direction: column-reverse;
         > div {
             position: relative;
-            background: var(--prism-background);
-            padding: var(--m-100);
+            background: var(--color-dark);
+            padding: var(--step-0);
             // top: -1px;
             left: 0;
             width: 100%;
@@ -28,7 +28,7 @@
         resize: horizontal;
         overflow: auto;
         position: relative;
-        padding: var(--m-100);
+        padding: var(--step-0);
 
         // border-top: 2px solid var(--color-dark);
         // box-shadow: var(--shadow);
@@ -64,7 +64,7 @@
     list-style: none;
     margin-bottom: 0;
     // font-size: var(--font-size-fluid-h5);
-    line-height: var(--font-line-height);
+    line-height: var(--font-headline-height);
     // box-shadow: var(--shadow);
     border-bottom: var(--border-200);
     font-weight: 500;
@@ -81,7 +81,7 @@
             display: block;
             font-weight: 500;
             text-decoration: none;
-            padding: calc(var(--font-mb) / 2) var(--font-mb);
+            padding: var(--step--1) var(--step-0);
             &:hover {
                 color: var(--color-light);
                 border-color: var(--color-dark);

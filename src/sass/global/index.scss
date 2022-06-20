@@ -1,10 +1,11 @@
 @forward "reset";
 @forward "layout";
-$sans-serif: 'aktiv-grotesk', sans-serif;
-$mono: Consolas, Menlo, Monaco, Courier, monospace;
-@forward "typography" with (
-    $font-family-headlines: $sans-serif,
-    $font-family-body: $sans-serif,
-    $font-family-mono: $mono,
-    $font-weight-bold: 700
-);
+
+// @forward "typography" with (
+//     $font-family-headlines: $sans-serif,
+//     $font-family-body: $sans-serif,
+//     $font-family-mono: $mono,
+//     $font-weight-bold: 700
+// );
+
+@forward "type";

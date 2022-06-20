@@ -2,9 +2,9 @@ $ratio: 1.333 !default;
 
 .content {
     // border-top: 2px solid var(--color-dark);
-    padding-top: var(--m-300);
+    padding-top: var(--step-2);
     &__lead {
-        font-size: var(--font-size-fluid-h5);
+        font-size: var(--step-1);
         font-weight: 300;
         line-height: 1.5;
     }
