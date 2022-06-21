@@ -65,6 +65,13 @@ module.exports = function (eleventyConfig) {
         return format(dateObj, 'yyyy-MM-dd');
     };
 
+    const yearString = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return format(dateObj, 'yyyy');
+    };
+
     const tagCountCss = (count) => {
         const prefix = 'tag-cloud__item--';
         if (count < 2) {
@@ -79,6 +86,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter('tagCountCss', tagCountCss);
     eleventyConfig.addFilter('readableDate', readableDate);
     eleventyConfig.addFilter('frontDate', frontDate);
+    eleventyConfig.addFilter('yearString', frontDate);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
     eleventyConfig.addFilter('linebreak', (str) => str.split(' ').join('\n'));
 
