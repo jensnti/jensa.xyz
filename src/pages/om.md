@@ -37,4 +37,4 @@ För min undervisning har jag skapat en del material:
 
 Privat [mail](mailto:jensandreasson77@gmail.com).
 
-Är du en likt jag en dinosaurie kan du [prenumerera](/feed.xml) på den här sidans feed.
+Är du likt jag en dinosaurie kan du [prenumerera](/feed.xml) på den här sidans feed.
