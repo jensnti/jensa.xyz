@@ -2,7 +2,7 @@
 title: Webbserver
 date: 2022-05-16
 update: 2022-06-30
-tags: ['webbserver', 'setup', 'node', 'wsl', 'mysql']
+tags: ['webbserver', 'setup', 'node', 'wsl', 'sql']
 templateEngineOverride: njk, md
 category: resurs
 lead: Istället för att dela upp det jag skriver på flera olika webbplatser har jag bestämt mig för att samla det här. Det här är alltså en introduktionspost till det du behöver för att komma igång med kursen webbserverprogrammering.
