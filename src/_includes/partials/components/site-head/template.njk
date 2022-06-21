@@ -8,12 +8,15 @@
             items: props.items
         }) }}
         <div class="site-grid">
-            <h1 class="site-grid__title">{{ props.title | linebreak }}</h1>
+            <h1 class="site-grid__full">{{ props.title | linebreak }}</h1>
+            {% if props.category %}
+                <h2 class="site-grid__category">{{ props.category }}</h2>
+            {% endif %}
             {% if props.tags %}
                 <ul class="site-grid__tags site-head__tags">
                     {% for tag in props.tags | sort %}
                         <li class="tag">
-                            <a href="/tag/{{ tag | slugify }}">
+                            <a href="/tagg/{{ tag | slugify }}">
                                 {{ tag }}
                             </a>
                         </li>
