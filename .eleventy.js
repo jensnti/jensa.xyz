@@ -166,7 +166,7 @@ module.exports = function (eleventyConfig) {
     })
         .use(markdownItAnchor, {
             permalink: markdownItAnchor.permalink.linkInsideHeader({
-                symbol: `<span aria-hidden="true">#</span>`,
+                symbol: `<span class="anchor" aria-hidden="true">#</span>`,
                 placement: 'before'
               }),
             level: [1, 2, 3],
