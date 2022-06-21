@@ -163,7 +163,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection('feed', (collectionApi) =>
         [...collectionApi.getFilteredByGlob('src/posts/*.md')]
             .reverse()
-            .slice(0, 6)
+            .slice(0, 5)
     );
 
     const markdownLibrary = markdownIt({

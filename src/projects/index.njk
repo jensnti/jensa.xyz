@@ -14,7 +14,7 @@ order: 3
         {% if projects.length %}
         <ul class="project-list">
             {% for project in projects %}
-                {{ project | log }}
+                <!-- {{ project.data.project | log }} -->
                 <li><a href="{{ project.url }}">
                     {{ project.data.title }}
                 </a>
