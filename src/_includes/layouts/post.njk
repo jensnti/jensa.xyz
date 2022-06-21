@@ -5,21 +5,8 @@
 {% block content %}
 <main id="main-content" tabindex="-1">
     <article class="content container flow">
-
-        <!-- {% if update %}
-        <p>
-            <strong
-                >Texten är uppdaterad
-                <time datetime="{{ update | htmlDateString }}">{{
-                    update | readableDate
-                }}</time
-                >.</strong
-            >
-        </p>
-        {% endif %} -->
-
         {% if lead %}
-        <p class="content__lead"><em>{{ lead | safe }}</em></p>
+        <p class="content__lead">{{ lead | safe }}</p>
         {% endif %}
 
         {{ content | safe }}
