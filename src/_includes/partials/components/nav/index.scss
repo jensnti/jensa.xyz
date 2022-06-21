@@ -18,8 +18,23 @@
         width: 100%;
         color: var(--color-light);
         transition: border-bottom 0.2s ease-in-out;
-        &:hover {
-            border-bottom: 2px solid var(--color-dark);
+        &:hover[class*=orange] {
+            border-bottom: 2px solid var(--color-orange);
+        }
+        &:hover[class*=red] {
+            border-bottom: 2px solid var(--color-red);
+        }
+        &:hover[class*=yellow] {
+            border-bottom: 2px solid var(--color-yellow);
+        }
+        &:hover[class*=purple] {
+            border-bottom: 2px solid var(--color-purple);
+        }
+        &:hover[class*=blue] {
+            border-bottom: 2px solid var(--color-blue);
+        }
+        &:hover[class*=green] {
+            border-bottom: 2px solid var(--color-green);
         }
     }
 

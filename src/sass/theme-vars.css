@@ -1,10 +1,11 @@
 :root {
     --prism-scheme: dark;
     --prism-foreground: #cccac2;
-    --prism-background: #1f2430;
+    --prism-background: #242936;
+     /* #1f2430; */
     --prism-comment: #b8cfe680;
     --prism-string: #d5ff80;
-    --prism-literal: #ff0000;
+    --prism-literal: #f28779;
     --prism-keyword: #ffad66;
     --prism-function: #ffd173;
     --prism-deleted: #f27983;
@@ -14,7 +15,7 @@
     --prism-namespace: #ffad66;
     --prism-punctuation: #cccac2b3;
     --prism-decorator: #ffd173;
-    --prism-operator: #ffad66;
+    --prism-operator: #f29e74;
     --prism-number: #dfbfff;
     --prism-boolean: #dfbfff;
     --prism-variable: #cccac2;
@@ -22,13 +23,13 @@
     --prism-symbol: #dfbfff;
     --prism-interpolation: #cccac2;
     --prism-selector: #ffad66;
-    --prism-keyword-control: #00ff00;
+    --prism-keyword-control: #dfbfff;
     --prism-regex: #95e6cb;
     --prism-json-property: #5ccfe6;
-    --prism-line-number: #b8cfe680;
-    --prism-line-number-gutter: #1f2430;
-    --prism-line-highlight-background: #2f3b54;
-    --prism-selection-background: #80bfff14;
+    --prism-line-number: #8a919966;
+    --prism-line-number-gutter: #242936;
+    --prism-line-highlight-background: #409fff40;
+    --prism-selection-background: #409fff40;
     --prism-font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas,
         'DejaVu Sans Mono', monospace;
     --prism-tab-size: 4;
@@ -36,4 +37,5 @@
     --prism-font-size: var(--step--2);
     --prism-line-height: 1.5;
     --prism-block-margin-y: var(--step-0);
+    /* --prism-inline-background:#242936; */
 }

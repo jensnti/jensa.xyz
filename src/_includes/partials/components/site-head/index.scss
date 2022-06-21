@@ -3,7 +3,17 @@
     // background-image: url("../assets/images/img-noise-400x400.png");
     // background-repeat: repeat;
     color: var(--color-light);
-    // margin-bottom: var(-m-300);
+    padding-bottom: var(--step-2);
+    &__tags {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: end;
+        a {
+            color: var(--color-light);
+        }
+    }
     &__inner {
         &--left {
             grid-column: 1 / span 3;
@@ -29,9 +39,20 @@
     h1 {
         // --font-mb: 0.667rem;
         white-space: pre-line;
+        margin-bottom: 0;
         @media (max-width: var(--fluid-mid-width)) {
             white-space: normal;
             max-width: max-content;
+        }
+    }
+    a {
+        color: var(--color-light);
+        &:hover {
+            color: var(--color-tertiary);
+            text-decoration: none;
+        }
+        &:visited {
+            color: var(--color-light);
         }
     }
 }

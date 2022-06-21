@@ -18,13 +18,19 @@ $mono: Consolas, Menlo, Monaco, Courier, monospace;
     --step-4: clamp(4.14rem, calc(3.91rem + 1.16vw), 4.74rem);
     --step-5: clamp(5.52rem, calc(5.22rem + 1.54vw), 6.31rem);
 
-    --color-dark: hsl(222, 22%, 15%);
+    --color-dark: #242936;
     --color-grey-300: hsl(222, 22%, 40%);
     --color-grey-200: hsl(222, 22%, 65%);
     --color-grey-100: hsl(222, 22%, 90%);
     --color-light: hsl(48, 9%, 98%);
     --color-gray: hsl(223, 20%, 60%);
-    --color-primary: hsl(4, 90%, 58%);
+    // --color-primary: hsl(4, 90%, 58%);
+    --color-orange:#ffad66;
+    --color-red: #f28779;
+    --color-blue: #5ccfe6;
+    --color-yellow: #ffd173;
+    --color-purple: #dfbfff;
+    --color-green: #d5ff80;
 
     --shadow-color: 0deg 0% 0%;
     --shadow:
@@ -40,6 +46,9 @@ $mono: Consolas, Menlo, Monaco, Courier, monospace;
     --font-headline: #{$sans-serif};
     --font-mono: #{$mono};
     --font-headline-height: calc(2px + 2ex + 2px);
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-light: 300;
 
     --flow-space: var(--step-0);
 

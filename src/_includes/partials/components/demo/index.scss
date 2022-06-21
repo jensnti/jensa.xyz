@@ -5,7 +5,10 @@
         right: 0;
         color: var(--color-grey-200);
         &:hover {
-            color: var(--color-light);
+            color: var(--color-light) !important;
+        }
+        &:visited {
+            color: var(--color-grey-200);
         }
     }
 
@@ -78,8 +81,11 @@
             text-decoration: none;
             padding: var(--step--2) var(--step--1);
             &:hover {
-                color: var(--color-light);
+                color: var(--color-light) !important;
                 border-color: var(--color-dark);
+            }
+            &:visited {
+                color: var(--color-dark);
             }
         }
     }
