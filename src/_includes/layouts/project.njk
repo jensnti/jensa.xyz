@@ -2,7 +2,25 @@
 
 {% block content %}
 <main id="main-content" tabindex="-1">
-    <section class="content container">
+    <section class="content container flow">
+        {% if project %}
+        <aside class="content__info">
+            <ul class="content__info-card">
+                <li>
+                    <span>Titel:</span> {{ project.title }}
+                </li>
+                <li>
+                   <span>Start:</span> <time datetime="{{ project.start | htmlDateString }}">{{ project.start | frontDate }}</time>
+                </li>
+                <li>
+                    <span>Status:</span> {{ project.status }}
+                </li>
+                <li>
+                    <span>URL:</span> <a href="{{ project.url | url }}" target="_blank">{{ project.url }}</a>
+                </li>
+            </ul>
+        </aside>
+        {% endif %}
         {{ content | safe }}
     </section>
 </main>
