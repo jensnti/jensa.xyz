@@ -1,22 +1,20 @@
 {% if pagination.href.next or pagination.href.previous %}
-    <footer class="content__footer">
-        <nav class="pagination" aria-label="Pagination links">
-            {% if pagination.href.previous %}
-            <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">
-                <span class="material-symbols-sharp">
-                    chevron_left
-                </span>
-                <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
-            </a>
-            {% endif %}
-            {% if pagination.href.next %}
-            <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards">
-                <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
-                <span class="material-symbols-sharp">
-                    chevron_right
-                </span>
-            </a>
-            {% endif %}
-        </nav>
-    </footer>
+    <nav class="pagination" aria-label="Pagination links">
+        {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">
+            <span class="material-symbols-sharp">
+                chevron_left
+            </span>
+            <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
+        </a>
+        {% endif %}
+        {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards">
+            <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
+            <span class="material-symbols-sharp">
+                chevron_right
+            </span>
+        </a>
+        {% endif %}
+    </nav>
 {% endif %}

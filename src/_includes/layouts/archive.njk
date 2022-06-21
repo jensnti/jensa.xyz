@@ -9,6 +9,11 @@ postsHeading: 'Alla inlägg'
 {% block content %}
 <main id="main-content" tabindex="-1">
     <section class="content container flow">
+        <header class="content__info">
+            {% if not tag %}
+                {% include "../partials/components/pagination/template.njk" %}
+            {% endif %}
+        </header>
         {% if postListItems.length %}
         {{
             postList({
@@ -17,9 +22,11 @@ postsHeading: 'Alla inlägg'
         }}
         {% endif %}
 
-        {% if not tag %}
-            {% include "../partials/components/pagination/template.njk" %}
-        {% endif %}
+        <footer class="content__footer">
+            {% if not tag %}
+                {% include "../partials/components/pagination/template.njk" %}
+            {% endif %}
+        </footer>
     </section>
 </main>
 {% endblock %}
