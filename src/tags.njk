@@ -4,7 +4,7 @@ pagination:
     size: 1
     alias: tag
     filter: ['all', 'nav', 'pages', 'tagList']
-permalink: /tag/{{ tag | slugify }}/
+permalink: /tagg/{{ tag | slugify }}/
 postsHeading: 'Alla inlägg'
 ---
 
@@ -17,7 +17,7 @@ postsHeading: 'Alla inlägg'
     <section class="content container">
 
         <footer class="content__footer">
-            <h4><a href="{{ '/taggar/' | url }}">Alla taggar</a></h4>
+            <h4><a href="{{ '/taggar/' }}">Alla taggar</a></h4>
         </footer>
     </section>
 </main>

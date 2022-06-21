@@ -1,8 +1,7 @@
 .post-list {
     padding: 0;
     margin: 0;
-    border-top: 1px solid var(--color-dark);
-    padding-top: var(--step-1);
+    padding-top: var(--step-0);
     // padding-bottom: var(--m-300);
     &__title {
         margin-bottom: var(--step--2);
@@ -23,35 +22,35 @@
         padding: var(--step--1) 0;
         gap: var(--step--2) var(--step--1);
         grid-auto-rows: auto;
-        // border-bottom: 1px solid var(--color-grey-100);
-        &:before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            inset: 0 0 0 0;
-            background-color: var(--color-dark);
-            z-index: -1;
-            transition: transform .3s ease;
-            width: 100vw;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-        }
-        &::before {
-            transform: scaleX(0);
-            transform-origin: bottom right;
-        }
+        border-bottom: 1px solid var(--color-grey-100);
+        // &:before {
+        //     content: " ";
+        //     display: block;
+        //     position: absolute;
+        //     top: 0; right: 0; bottom: 0; left: 0;
+        //     inset: 0 0 0 0;
+        //     background-color: var(--color-dark);
+        //     z-index: -1;
+        //     transition: transform .3s ease;
+        //     width: 100vw;
+        //     left: 50%;
+        //     right: 50%;
+        //     margin-left: -50vw;
+        //     margin-right: -50vw;
+        // }
+        // &::before {
+        //     transform: scaleX(0);
+        //     transform-origin: bottom right;
+        // }
         &:hover {
-            // border-bottom: 1px solid var(--color-dark);
-            &::before {
-                transform: scaleX(1);
-                transform-origin: bottom left;
-            }
-            * {
-                color: var(--color-light);
-            }
+            border-bottom: 1px solid var(--color-grey-300);
+            // &::before {
+            //     transform: scaleX(1);
+            //     transform-origin: bottom left;
+            // }
+            // * {
+            //     color: var(--color-light);
+            // }
         }
 
         &--date {

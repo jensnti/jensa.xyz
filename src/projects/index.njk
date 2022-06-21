@@ -6,21 +6,22 @@ order: 3
 
 {% extends "layouts/base.njk" %}
 
-{% set introHeading = title %}
-
 {% block content %}
 <main id="main-content" tabindex="-1">
     <section class="content container">
-        {% include "partials/components/header.njk" %}
-        <ul>
-            {% for project in collections.projects %}
-            <li>
-                <a href="{{ project.url }}">
+        <p class="content__lead">Projekt att visa upp</p>
+        {% set projects = collections.projects %}
+        {% if projects.length %}
+        <ul class="project-list">
+            {% for project in projects %}
+                {{ project | log }}
+                <li><a href="{{ project.url }}">
                     {{ project.data.title }}
                 </a>
             </li>
             {% endfor %}
         </ul>
+        {% endif %}
     </section>
 </main>
 {% endblock %}

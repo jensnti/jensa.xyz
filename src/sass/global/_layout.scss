@@ -26,12 +26,18 @@
         grid-column: span 4 / 5;
     }
 
-    &__title {
-        grid-column: span 3 / 4;
+    // &__title {
+    //     grid-column: span 3 / 4;
+    // }
+
+    &__category {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        align-self: end;
     }
 
     &__tags {
-        grid-column: 4 / 5;
+        grid-column: 3 / 5;
         align-self: end;
         grid-row: 2;
     }
