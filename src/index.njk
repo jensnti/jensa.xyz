@@ -7,16 +7,18 @@
         <aside class="content__info site-grid__full">
             <p class="lead">
                 Jag är en lärare på
-                <a href="https://www.ntigymnasiet.se/umea/"
-                    >NTI Gymnasiet Umeå</a
-                > som gillar att koda och designa. Att få kombinera dessa intressen i mitt arbete är ett
+                <a href="https://www.ntigymnasiet.se/umea/">NTI Gymnasiet Umeå</a> 
+                som gillar att koda och designa. Att
+                få kombinera dessa intressen i mitt arbete är ett
                 privilegium. På den här
-                webbplatsen samlar jag mina <a href="/arkiv">anteckningar</a> och <a href="/projekt">projekt</a>. På
+                webbplatsen samlar jag mina <a href="/arkiv">anteckningar</a> och 
+                <a href="/projekt">projekt</a>. På
                 <a href="https://github.com/jensnti">GitHub</a> finns saker jag
                 har kodat. Önskar du veta mer kan du läsa <a href="/om">om</a> mig.
             </p>
         </aside>
-        {% set postListItems = collections.feed %} {% if postListItems.length %}
+        {% set postListItems = collections.feed %}
+        {% if postListItems.length %}
         {{
             postList({
                 items: postListItems
