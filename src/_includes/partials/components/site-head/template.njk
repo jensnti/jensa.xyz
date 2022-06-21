@@ -23,6 +23,15 @@
                     {% endfor %}
                 </ul>
             {% endif %}
+            {% if props.link %}
+            <ul class="site-grid__tags site-head__tags">
+                <li class="tag">
+                    <a href="{{ props.link[1] }}">
+                        {{ props.link[0] }}
+                    </a>
+                </li>
+            </ul>
+            {% endif %}
         </div>
     </div>
 </header>
