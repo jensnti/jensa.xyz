@@ -1,3 +1,6 @@
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+
 module.exports = {
     getReadingTime(text) {
         const wordsPerMinute = 200;
@@ -7,6 +10,24 @@ module.exports = {
             return `${readingTime} minuters läsning`;
         } else {
             return `${readingTime} minuts läsning`;
+        }
+    },
+    getPageLinks(page) {
+        const DOM = new JSDOM(page, {
+            resources: 'usable',
+        });
+        const document = DOM.window.document;
+
+        const articleLinks = [...document.querySelectorAll('a')];
+        if (articleLinks.length) {
+            return articleLinks
+                .filter((link) => link.href.startsWith('http'))
+                .map((link) => {
+                    return {
+                        url: link.href,
+                        title: link.textContent,
+                    };
+                });
         }
     },
 };

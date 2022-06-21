@@ -1,0 +1,41 @@
+:root {
+    --prism-scheme: dark;
+    --prism-foreground: #cccac2;
+    --prism-background: #242936;
+     /* #1f2430; */
+    --prism-comment: #b8cfe680;
+    --prism-string: #d5ff80;
+    --prism-literal: #f28779;
+    --prism-keyword: #ffad66;
+    --prism-function: #ffd173;
+    --prism-deleted: #f27983;
+    --prism-class: #73d0ff;
+    --prism-builtin: #5ccfe6;
+    --prism-property: #73d0ff;
+    --prism-namespace: #ffad66;
+    --prism-punctuation: #cccac2b3;
+    --prism-decorator: #ffd173;
+    --prism-operator: #f29e74;
+    --prism-number: #dfbfff;
+    --prism-boolean: #dfbfff;
+    --prism-variable: #cccac2;
+    --prism-constant: #cccac2;
+    --prism-symbol: #dfbfff;
+    --prism-interpolation: #cccac2;
+    --prism-selector: #ffad66;
+    --prism-keyword-control: #dfbfff;
+    --prism-regex: #95e6cb;
+    --prism-json-property: #5ccfe6;
+    --prism-line-number: #8a919966;
+    --prism-line-number-gutter: #242936;
+    --prism-line-highlight-background: #409fff40;
+    --prism-selection-background: #409fff40;
+    --prism-font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas,
+        'DejaVu Sans Mono', monospace;
+    --prism-tab-size: 4;
+    --prism-block-radius: 0;
+    --prism-font-size: var(--step--2);
+    --prism-line-height: 1.5;
+    --prism-block-margin-y: var(--step-0);
+    /* --prism-inline-background:#242936; */
+}

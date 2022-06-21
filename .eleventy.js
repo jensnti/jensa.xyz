@@ -2,67 +2,125 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const mila = require('markdown-it-link-attributes');
 const mia = require('markdown-it-attrs');
-const glob = require('fast-glob');
+// const glob = require('fast-glob');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const fs = require('fs');
+const { format, parseISO } = require('date-fns');
+const { sv } = require('date-fns/locale');
+const Image = require('@11ty/eleventy-img');
+// const path = require('path');
+const markdownItAnchor = require('markdown-it-anchor');
+// const slugify = require('@sindresorhus/slugify');
 
+// const prettier = require('prettier');
 // const imageShortcode = require('./src/shortcodes/image');
 
 // Import transforms
-const htmlMinTransform = require('./src/transforms/html-min-transform.js');
-const parseTransform = require('./src/transforms/parse-transform.js');
+// const htmlMinTransform = require('./src/transforms/html-min-transform.js');
+// const parseTransform = require('./src/transforms/parse-transform.js');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(syntaxHighlight);
 
-    eleventyConfig.setDataDeepMerge(true);
+    // eleventyConfig.setDataDeepMerge(true);
 
-    eleventyConfig.addWatchTarget('./src/scss/');
+    eleventyConfig.addWatchTarget('./src/sass/');
     eleventyConfig.addWatchTarget('./src/js/');
 
     eleventyConfig.addPassthroughCopy('src/robots.txt');
     eleventyConfig.addPassthroughCopy('./src/js');
     eleventyConfig.addPassthroughCopy('./src/favicon.ico');
+    eleventyConfig.addPassthroughCopy('./src/assets/');
 
     eleventyConfig.addPassthroughCopy('./src/images/jens.jpg');
 
     // Filters
-    glob.sync(['src/filters/*.js']).forEach((file) => {
-        let filters = require('./' + file);
-        Object.keys(filters).forEach((name) =>
-            eleventyConfig.addFilter(name, filters[name])
-        );
+
+    eleventyConfig.addFilter('getDemo', function (demos, title) {
+        return demos.find((demo) => demo.data.title === title);
     });
+
+    const readableDate = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return format(dateObj, 'PPP', { locale: sv });
+    };
+
+    const frontDate = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return  format(dateObj, 'MMM yyyy', { locale: sv });
+        // let arr = temp.split(' ');
+        // return `<span>${arr[0]}</span><span> ${arr[1]} ${arr[2]}</span>`;
+    };
+
+    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+    const htmlDateString = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return format(dateObj, 'yyyy-MM-dd');
+    };
+
+    const yearString = (dateObj) => {
+        if (typeof dateObj === 'string') {
+            dateObj = parseISO(dateObj);
+        }
+        return format(dateObj, 'yyyy');
+    };
+
+    const tagCountCss = (count) => {
+        const prefix = 'tag-cloud__item--';
+        if (count < 2) {
+            return `${prefix}100`;
+        } else if (count < 4) {
+            return `${prefix}200`;
+        } else {
+            return `${prefix}300`;
+        }
+    };
+
+    eleventyConfig.addFilter('tagCountCss', tagCountCss);
+    eleventyConfig.addFilter('readableDate', readableDate);
+    eleventyConfig.addFilter('frontDate', frontDate);
+    eleventyConfig.addFilter('yearString', frontDate);
+    eleventyConfig.addFilter('htmlDateString', htmlDateString);
+    eleventyConfig.addFilter('linebreak', (str) => str.split(' ').join('\n'));
 
     // Shortcodes
-    glob.sync(['src/shortcodes/*.js']).forEach((file) => {
-        let shortcodes = require('./' + file);
-        Object.keys(shortcodes).forEach((name) => {
-            if (name === 'image') {
-                eleventyConfig.addNunjucksAsyncShortcode(
-                    name,
-                    shortcodes[name]
-                );
-            } else {
-                eleventyConfig.addShortcode(name, shortcodes[name]);
-            }
+    const year = () => {
+        return `${new Date().getFullYear()}`;
+    };
+    const imageShortcode = async (src, alt, title, sizes = '100vw') => {
+        const metadata = await Image(src, {
+            widths: [400, 800],
+            outputDir: './public/img/',
         });
-    });
 
-    // PairedShortcodes
-    glob.sync(['src/paired-shortcodes/*.js']).forEach((file) => {
-        let pairedShortcodes = require('./' + file);
-        Object.keys(pairedShortcodes).forEach((name) =>
-            eleventyConfig.addPairedShortcode(name, pairedShortcodes[name])
-        );
-    });
+        const imageAttributes = {
+            alt,
+            title,
+            sizes,
+            loading: 'lazy',
+            decoding: 'async',
+        };
 
-    function filterTagList(tags) {
+        // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+        return Image.generateHTML(metadata, imageAttributes, {
+            whitespaceMode: 'inline',
+        });
+    };
+    eleventyConfig.addShortcode('year', year);
+    eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+
+    const filterTagList = (tags) => {
         return (tags || []).filter(
             (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
         );
-    }
+    };
 
     eleventyConfig.addFilter('filterTagList', filterTagList);
 
@@ -72,21 +130,34 @@ module.exports = function (eleventyConfig) {
         collection.getAll().forEach((item) => {
             (item.data.tags || []).forEach((tag) => tagSet.add(tag));
         });
-
         return filterTagList([...tagSet]);
     });
 
-    // Transforms
-    eleventyConfig.addTransform('htmlmin', htmlMinTransform);
-    eleventyConfig.addTransform('parse', parseTransform);
+    // collections
 
-    // Collections
+    // Get only content that matches a tag
+    eleventyConfig.addCollection('demos', function (collectionApi) {
+        return collectionApi.getFilteredByTag('demos');
+    });
+
+    eleventyConfig.addCollection('orderedDemos', function (collectionApi) {
+        return collectionApi.getFilteredByTag('demos').sort((a, b) => {
+            return a.data.order - b.data.order;
+        });
+    });
+
     eleventyConfig.addCollection('pages', (collectionApi) =>
-        collectionApi.getFilteredByGlob('src/pages/*.md')
+        collectionApi
+            .getFilteredByGlob(['src/pages/*.md', 'src/projects/index.*'])
+            .sort((a, b) => b.data.order - a.data.order)
     );
 
     eleventyConfig.addCollection('posts', (collectionApi) =>
         collectionApi.getFilteredByGlob('src/posts/*.md').reverse()
+    );
+
+    eleventyConfig.addCollection('projects', (collectionApi) =>
+        collectionApi.getFilteredByGlob('src/projects/*.md').reverse()
     );
 
     eleventyConfig.addCollection('feed', (collectionApi) =>
@@ -101,6 +172,19 @@ module.exports = function (eleventyConfig) {
         linkify: true,
         typographer: true,
     })
+        .use(markdownItAnchor, {
+            permalink: markdownItAnchor.permalink.linkInsideHeader({
+                symbol: `<span class="anchor" aria-hidden="true">#</span>`,
+                placement: 'before'
+              }),
+            level: [1, 2, 3],
+            slugify: (s) =>
+                s
+                    .trim()
+                    .toLowerCase()
+                    .replace(/[\s+~\/]/g, '-')
+                    .replace(/[().`,%·'"!?¿:@*]/g, ''),
+        })
         .use(mila, {
             pattern: /^https:/,
             attrs: {
@@ -132,8 +216,22 @@ module.exports = function (eleventyConfig) {
         },
     });
 
+    // eleventyConfig.addTransform('prettier', function (content, outputPath) {
+    //     // https://github.com/11ty/eleventy/issues/1314#issuecomment-657999759
+    //     const extname = path.extname(outputPath);
+    //     switch (extname) {
+    //         case '.html':
+    //         case '.json':
+    //             // Strip leading period from extension and use as the Prettier parser.
+    //             const parser = extname.replace(/^./, '');
+    //             return prettier.format(content, { parser });
+
+    //         default:
+    //             return content;
+    //     }
+    // });
+
     return {
-        markdownTemplateEngine: 'njk',
         dir: {
             input: 'src',
             output: 'public',

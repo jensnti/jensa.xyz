@@ -1,0 +1,15 @@
+{% set siteTitle = meta.siteName %}
+{% set currentUrl = meta.url + page.url %}
+{% set pageTitle = title + ' - ' + meta.siteName %}
+
+<meta name="description" content="{{ meta.siteDesc }}">
+<meta name="theme-color" content="{{ meta.theme }}">
+<meta property="og:site_name" content="{{ siteTitle }}"/>
+<meta property="og:title" content="{{ pageTitle }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ currentUrl }}"/>
+<meta property="og:description" content="{{ meta.siteDesc }}"/>
+
+<title>{{ pageTitle }}</title>
+
+<link rel="canonical" href="{{ currentUrl }}"/>

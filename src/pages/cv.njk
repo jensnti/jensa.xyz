@@ -1,96 +1,145 @@
 ---
-title : CV
-layout : layouts/base.njk
-eleventyExcludeFromCollections : true
-permalink : /cv/index.html
+title: CV
+eleventyExcludeFromCollections: true
+permalink: /cv/
 ---
-<link rel="stylesheet" href="/css/cv.css">
 
-<article class="post">
-    <div class="container with-sidebar">
-        <header class="post__cv">
-            <h1>Jens Andreasson</h1>
-            <p class="lead">Legitimerad lärare i webbteknik, programmering och engelska</p>
-        </header>
-        <aside class="sidebar">
-            <img src="/images/jens.jpg" class="sidebar__mug">
-            <div>
-                <h3>Kontakt</h3>
-                <address>
-                    Jens Andreasson<br>
-                    073-7084974<br>
-                    <a href="mailto:jensandreasson77@gmail.com">jensandreasson77@gmail.com</a><br>
-                    Kuratorvägen 25<br>
-                    907 36 Umeå<br>
-                    <a class="adr-link" href="https://www.linkedin.com/in/jens-andreasson-bba4141a2/" target="_blank" rel="noreferrer noopener">LinkedIn</a><br>
-                    <a class="adr-link" href="https://github.com/jensnti" target="_blank" rel="noreferrer noopener">GitHub</a>
-                </address>
-            </div>
-            <div>
-               <h3>Övriga kompetenser</h3>
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+    <link rel="stylesheet" href="/css/cv.css" />
+
+    <article class="post">
+        <div class="container with-sidebar">
+            <header class="post__cv">
+                <h1>Jens Andreasson</h1>
+                <p class="lead">
+                    Legitimerad lärare i webbteknik, programmering och engelska
+                </p>
+            </header>
+            <aside class="sidebar">
+                <img src="/images/jens.jpg" class="sidebar__mug" />
+                <div>
+                    <h3>Kontakt</h3>
+                    <address>
+                        Jens Andreasson<br />
+                        073-7084974<br />
+                        <a href="mailto:jensandreasson77@gmail.com"
+                            >jensandreasson77@gmail.com</a
+                        ><br />
+                        Kuratorvägen 25<br />
+                        907 36 Umeå<br />
+                        <a
+                            class="adr-link"
+                            href="https://www.linkedin.com/in/jens-andreasson-bba4141a2/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            >LinkedIn</a
+                        ><br />
+                        <a
+                            class="adr-link"
+                            href="https://github.com/jensnti"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            >GitHub</a
+                        >
+                    </address>
+                </div>
+                <div>
+                    <h3>Övriga kompetenser</h3>
                     <ul class="cv-list">
                         <li>GitHub Campus Advisor</li>
                         <li>MTA: Javascript, css, html</li>
                         <li>UX, användbarhet och tillgänglighet</li>
                         <li>B körkort</li>
                     </ul>
-            </div>
-            <div>
-                <h3>Språk</h3>
-                <ul class="cv-list">
-                    <li>Svenska – Modersmål</li>
-                    <li>Engelska – Obehindrat</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Javascript</li>
-                    <li>SQL</li>
-                    <li>PHP, Python, Unity C#</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Referenser</h3>
-                <p>Referenser lämnas på begäran.</p>
-            </div>
-        </aside>
-        <section class="not-sidebar">
-            <h2>Arbetslivserfarenhet</h2>
-            <div class="erf">
-                <h3>Lärare</h3>
-                <p class="erf__lead">NTI Gymnasiet Umeå, <time datetime="2017-08">Augusti 2017</time> – <time>nu</time></p>
-                <p>På NTI Gymnasiet är jag lärare inom webbteknik(er) och programmering. Jag är även en av de ansvariga för skolans
-                    gymnasieingenjörsutbildning, teknikprogrammets fjärde år. Här får jag arbeta med att utveckla och styra våra kursers innehåll och nivå.
-                </p>
-            </div>
-            <div class="erf">
-                <h3>Lärare</h3>
-                <p class="erf__lead">NTI Skolan, <time datetime="2013-04">April 2013</time> – <time datetime="2017-08">Augusti 2017</time></p>
-                <p>Vuxenutbildning på distans. Kursutveckling. Ett flertal olika ämnen och kurser, från datorteknik till programmering och grafisk form.</p>
-            </div>
-            <div class="erf">
-                <h3>Föreläsare</h3>
-                <p class="erf__lead">Skolverket, konferens om Tillämpad programmering, <time datetime="2019">2019</time></p>
-            </div>
-            <h2>Utbildning</h2>
-            <div class="erf">
-                <h3>Lärarexamen på avancerad nivå</h3>
-                <p class="erf__lead">Umeå universitet, <time datetime="2016">2016</time></p>
-            </div>
-            <div class="erf">
-                <h3>Kurser</h3>
-                <p class="erf__lead">Luleå tekniska universitet, <time datetime="2013">2013</time> - <time datetime="2021">2021</time></p>
-                <ul class="cv-list">
-                    <li>Introduktion till datorspelsskapande</li>
-                    <li>Introduktion till programmering och C#</li>
-                </ul>
-            </div>
-            <div class="erf">
-                <h3>Kurser</h3>
-                <p class="erf__lead">Umeå universitet, <time datetime="2007">2007</time> - <time datetime="2007">2012</time></p>
-                <ul class="cv-list">
-                    <li>Webb, css, javascript - flertal kurser</li>
-                    <li>Informatik</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-</article>
+                </div>
+                <div>
+                    <h3>Språk</h3>
+                    <ul class="cv-list">
+                        <li>Svenska - Modersmål</li>
+                        <li>Engelska - Obehindrat</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                        <li>SQL</li>
+                        <li>C#, PHP, Python, Unity</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Referenser</h3>
+                    <p>Referenser lämnas på begäran.</p>
+                </div>
+            </aside>
+            <section class="not-sidebar">
+                <h2>Arbetslivserfarenhet</h2>
+                <div class="erf">
+                    <h3>Lärare</h3>
+                    <p class="erf__lead">
+                        NTI Gymnasiet Umeå,
+                        <time datetime="2017-08">Augusti 2017</time> -
+                        <time datetime="{% year %}">nu</time>
+                    </p>
+                    <p>
+                        På NTI Gymnasiet är jag lärare inom webbteknik(er) och
+                        programmering. Jag är även en av de ansvariga för
+                        skolans gymnasieingenjörsutbildning, teknikprogrammets
+                        fjärde år. Här får jag arbeta med att utveckla och styra
+                        våra kursers innehåll och nivå.
+                    </p>
+                </div>
+                <div class="erf">
+                    <h3>Lärare</h3>
+                    <p class="erf__lead">
+                        NTI Skolan, <time datetime="2013-04">April 2013</time> -
+                        <time datetime="2017-08">Augusti 2017</time>
+                    </p>
+                    <p>
+                        Vuxenutbildning på distans. Kursutveckling. Ett flertal
+                        olika ämnen och kurser, från datorteknik till
+                        programmering och grafisk form.
+                    </p>
+                </div>
+                <div class="erf">
+                    <h3>Föreläsare</h3>
+                    <p class="erf__lead">
+                        Skolverket, konferens om Tillämpad programmering,
+                        <time datetime="2019">2019</time>
+                    </p>
+                </div>
+                <h2>Utbildning</h2>
+                <div class="erf">
+                    <h3>Lärarexamen på avancerad nivå</h3>
+                    <p class="erf__lead">
+                        Umeå universitet, <time datetime="2016">2016</time>
+                    </p>
+                </div>
+                <div class="erf">
+                    <h3>Kurser</h3>
+                    <p class="erf__lead">
+                        Luleå tekniska universitet,
+                        <time datetime="2013">2013</time> -
+                        <time datetime="2021">2021</time>
+                    </p>
+                    <ul class="cv-list">
+                        <li>Introduktion till datorspelsskapande</li>
+                        <li>Introduktion till programmering och C#</li>
+                    </ul>
+                </div>
+                <div class="erf">
+                    <h3>Kurser</h3>
+                    <p class="erf__lead">
+                        Umeå universitet, <time datetime="2007">2007</time> -
+                        <time datetime="2007">2012</time>
+                    </p>
+                    <ul class="cv-list">
+                        <li>Webb, css, javascript - flertal kurser</li>
+                        <li>Informatik</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </article>
+</main>
+{% endblock %}

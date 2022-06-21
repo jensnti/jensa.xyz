@@ -1,16 +1,27 @@
 ---
-title: Taggar
-permalink: /tags/
-layout: layouts/base.njk
+title: Alla taggar
+permalink: /taggar/
 ---
 
-{% set introHeading = title %}
+{% extends 'layouts/base.njk' %}
 
-{% include "components/intro.njk" %}
+{% set colors = ["orange", "red", "blue", "yellow", "purple", "green"] %}
 
-<section class="container">
-    {% for tag in collections.tagList %}
-    {% set tagUrl %}/tag/{{ tag | slug }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag | capitalize }}</a>
-    {% endfor %}
-</section>
+{% block content %}
+    <main id="main-content" tabindex="-1">
+        <section class="content container flow">
+            <aside class="content__info">
+                <p>Här hittar du ett fluffigt moln med alla taggar.</p>
+            </aside>
+            <ul class="tag-cloud" data-show-value>
+                {% for tag in collections.tagList %}
+                    {% set tagUrl %}/tagg/{{ tag | slug }}/{% endset %}
+                        <li>
+                            <a class="{{ colors | random }}" data-weight="{{ collections[tag].length }}" href="{{ tagUrl | url }}">{{ tag | capitalize }}</a>
+                            <!-- {{ collections[tag].length }} -->
+                        </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+{% endblock %}

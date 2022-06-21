@@ -1,0 +1,62 @@
+@use "sass:math";
+$ratio: 1.333 !default;
+$sans-serif: "aktiv-grotesk", sans-serif;
+$mono: Consolas, Menlo, Monaco, Courier, monospace;
+/* @link https://utopia.fyi/type/calculator?c=320,21,1.333,1140,24,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+    --fluid-min-width: 320px;
+    --fluid-mid-width: 666px;
+    --fluid-max-width: 1140px;
+
+    --step--2: clamp(0.74rem, calc(0.7rem + 0.21vw), 0.84rem);
+    --step--1: clamp(0.98rem, calc(0.93rem + 0.27vw), 1.13rem);
+    --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.5rem);
+    --step-1: clamp(1.75rem, calc(1.65rem + 0.49vw), 2rem);
+    --step-2: clamp(2.33rem, calc(2.2rem + 0.65vw), 2.67rem);
+    --step-3: clamp(3.11rem, calc(2.94rem + 0.87vw), 3.55rem);
+    --step-4: clamp(4.14rem, calc(3.91rem + 1.16vw), 4.74rem);
+    --step-5: clamp(5.52rem, calc(5.22rem + 1.54vw), 6.31rem);
+
+    --color-dark: hsl(223, 20%, 18%);
+    --color-grey-300: hsl(222, 22%, 40%);
+    --color-grey-200: hsl(222, 22%, 65%);
+    --color-grey-100: hsl(222, 22%, 90%);
+    --color-light: hsl(48, 9%, 98%);
+    --color-gray: hsl(223, 20%, 60%);
+    // --color-primary: hsl(4, 90%, 58%);
+    --color-orange: hsl(28, 100%, 70%);
+    --color-red: hsl(7, 82%, 71%);
+    --color-blue: hsl(190, 73%, 63%);
+    --color-yellow: hsl(40, 100%, 73%);
+    --color-purple: hsl(270, 100%, 87%);
+    --color-green: hsl(80, 100%, 75%);
+
+    --color-link: hsl(210, 57%, 44%);
+    --color-link-visited: hsl(270, 45%, 64%);
+
+    --shadow-color: 0deg 0% 0%;
+    --shadow: 0.1px 0.6px 0.8px hsl(var(--shadow-color) / 0.04),
+        0.4px 1.9px 2.5px -0.5px hsl(var(--shadow-color) / 0.05), 0.8px 4.1px 5.4px -1px hsl(var(--shadow-color) / 0.06),
+        1.9px 9.2px 12px -1.4px hsl(var(--shadow-color) / 0.08);
+
+    --border-100: 1px solid var(--color-dark);
+    --border-200: 2px solid var(--color-dark);
+
+    --font-body: #{$sans-serif};
+    --font-headline: #{$sans-serif};
+    --font-mono: #{$mono};
+    --font-headline-height: calc(2px + 2ex + 2px);
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-light: 300;
+
+    --flow-space: var(--step-0);
+}
+
+body {
+    // background-image: url("../assets/images/img-noise-400x400.png");
+    background-repeat: repeat;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}

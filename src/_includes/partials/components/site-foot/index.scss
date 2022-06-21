@@ -1,0 +1,11 @@
+.site-foot {
+    margin-top: var(--step-1);
+    &__inner {
+        border-top: var(--border-100);
+        padding: var(--step-1) 0;
+
+        column-count: auto;
+        column-gap: var(--step-0);
+        column-width: var(--fluid-min-width);
+    }
+}

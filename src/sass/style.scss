@@ -1,0 +1,8 @@
+@use "theme";
+@use "global";
+@use "components";
+@use "utils";
+
+[id] {
+    scroll-margin-top: var(--step-5); // 1
+}

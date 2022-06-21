@@ -4,10 +4,10 @@ layout: layouts/archive.njk
 pagination:
     data: collections.posts
     size: 10
-permalink: 'arkiv{% if pagination.pageNumber > 0 %}/posts/{{ pagination.pageNumber }}{% endif %}/index.html'
-paginationPrevText: 'Nyare inlägg'
-paginationNextText: 'Tidigare inlägg'
-date: 2021-06-15
+permalink: 'arkiv{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber }}{% endif %}/'
+paginationPrevText: 'Nyare'
+paginationNextText: 'Tidigare'
+order: 1
 ---
 
 Här finns samtliga inlägg på den här sidan samlade.

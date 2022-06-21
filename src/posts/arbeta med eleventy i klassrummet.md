@@ -2,7 +2,8 @@
 title: Arbeta med Eleventy i klassrummet
 date: 2021-09-29
 lead: 'Terminen har rullat igång och jag har börjat använda Eleventy i undervisningen.'
-tags: ['eleventy', 'skola', 'webbutveckling']
+tags: ['11ty', 'webbutveckling']
+category: anteckning
 ---
 
 Efter en vår och sommar där jag använt [Eleventy](https://www.11ty.dev/) för egen hand till flera projekt så har jag valt att börja använda Eleventy i klassrummet. Utifrån vad Eleventy är tycker ([static site builder/generator](https://www.11ty.dev/docs/)) jag att det passar utmärkt att använda i kursen [Webbutveckling 2](https://www.skolverket.se/undervisning/gymnasieskolan/laroplan-program-och-amnen-i-gymnasieskolan/gymnasieprogrammen/amne?url=1530314731%2Fsyllabuscw%2Fjsp%2Fsubject.htm%3FsubjectCode%3DWEU%26tos%3Dgy&sv.url=12.5dfee44715d35a5cdfa92a3) (länken fungerar eventuellt, [Skolverket](https://www.skolverket.se/) kör random på sina länkar en gång i veckan).

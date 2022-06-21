@@ -1,27 +1,32 @@
----
-layout: layouts/base.njk
----
-{# Intro content #}
-{% set introHeading = title %}
+{% extends 'layouts/base.njk' %}
 
-<article class="post">
-    {% include "../components/intro.njk" %}
-    <div class="container">
-        {% if update %}
-            <p>
-                <strong>Texten är uppdaterad <time datetime="{{ update | htmlDateString }}">{{ update | readableDate }}</time>.</strong>
-            </p>
-        {% endif %}
+{% set pagesCheck = page.filePathStem.includes('/pages/') %}
+
+{% block header %}
+{{
+    siteHead({
+        title: title,
+        siteName: meta.siteName,
+        active: page.url,
+        items: collections.pages,
+        tags: tags,
+        category: category
+    })
+}} 
+{% endblock %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+    <article class="content container flow">
         {% if lead %}
-            <p class="post__lead">
-                <em>{{ lead | safe }}</em>
-            </p>
+        <p class="content__lead">{{ lead | safe }}</p>
         {% endif %}
+
         {{ content | safe }}
-    </div>
-    <footer class="post__foot">
-        <div class="container">
-            {% include "../components/link-list.njk" %}
-        </div>
-    </footer>
-</article>
+
+        {% if pagesCheck == false %}
+            {% include "../partials/components/link-list-footer.njk" %}
+        {% endif %}
+    </article>
+</main>
+{% endblock %}

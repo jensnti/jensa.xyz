@@ -2,7 +2,8 @@
 title: Linta
 date: 2021-12-06
 lead: 'Automatisk kodformattering och hjälp med stilen, det kan väl vara trevligt.'
-tags: ['TOD', 'eslint', 'kodstil', 'prettier']
+tags: ['eslint', 'praxis', 'prettier']
+category: resurs
 ---
 
 Jag tänkte först att jag skulle skriva den här posten för ett par veckor sedan, men tiden försvann till annat. Ibland är det bra att låta saker och texter gro, det är en lärdom från den här sidan, men i det här fallet har jag nog till viss del glömt vad jag ville skriva.

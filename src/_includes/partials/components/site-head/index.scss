@@ -1,0 +1,63 @@
+.site-head {
+    background-color: var(--color-dark);
+    // background-image: url("../assets/images/img-noise-400x400.png");
+    // background-repeat: repeat;
+    color: var(--color-light);
+    padding-bottom: var(--step-2);
+    &__tags {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: end;
+        a {
+            color: var(--color-light);
+        }
+    }
+    &__inner {
+        &--left {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+            place-self: start;
+            @media (max-width: var(--fluid-mid-width)) {
+                grid-column: span 4;
+                grid-row: 2;
+            }
+        }
+        &--right {
+            grid-column: span 2 / 5;
+            grid-row: 1;
+            place-self: start end;
+            @media (max-width: var(--fluid-mid-width)) {
+                grid-column: span 4;
+            }
+        }
+        > div {
+            height: 100%;
+        }
+    }
+    h1 {
+        // --font-mb: 0.667rem;
+        white-space: pre-line;
+        margin-bottom: 0;
+        margin-top: var(--step--2);
+        @media (max-width: var(--fluid-mid-width)) {
+            white-space: normal;
+            max-width: max-content;
+        }
+    }
+    h2 {
+        font-size: var(--step--2);
+        margin-bottom: 0;
+    }
+    a {
+        color: var(--color-light);
+        &:hover {
+            color: var(--color-tertiary);
+            text-decoration: none;
+        }
+        &:visited {
+            color: var(--color-light);
+        }
+    }
+}

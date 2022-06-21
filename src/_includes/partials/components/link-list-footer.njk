@@ -1,0 +1,18 @@
+{% set getPageLinks = helpers.getPageLinks(content) %}
+{% if getPageLinks.length > 0 %}
+<footer class="content__footer">
+    <h2 id="links">
+        <a href="#links">
+            <span class="anchor" aria-hidden="true">#</span>
+        </a>
+        Länkar
+    </h2>
+    <ul>
+        {% for link in getPageLinks %}
+        <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</footer>
+{% endif %}

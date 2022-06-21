@@ -1,0 +1,17 @@
+<!-- {% set colors = cycler( "red", "blue", "yellow", "purple") %} -->
+{% set colors = ["orange", "red", "blue", "yellow", "purple", "green"] %}
+<nav class="nav site-grid" aria-label="Main">
+    <a
+        href="/"
+        class="nav__item nav__brand {{ colors | random }}"
+        aria-label="{{ props.siteName }} - Hem"
+        >{{ props.siteName }}
+    </a>
+    {% for item in props.items | reverse %}
+    <a
+        class="nav__item {{ colors | random }}{% if item.url == props.active %} active{% endif %}"
+        href="{{ item.url }}"
+        >{{ item.data.title }}
+    </a>
+    {% endfor %}
+</nav>

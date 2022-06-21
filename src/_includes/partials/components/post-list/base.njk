@@ -1,0 +1,37 @@
+<ol class="content__list">
+    {% for item in postListItems %}
+    <li>
+        <div class="content__list-item--left">
+            <time
+                class="h5"
+                datetime="{{ item.date | htmlDateString }}"
+            >
+                {{ item.date | readableDate }}
+            </time>
+            {% if item.data.update %}
+            <span
+                class="post-list__list-item--updated h5 text-small"
+                >*uppdaterad
+                <time
+                    datetime="{{
+                        item.data.update | htmlDateString
+                    }}"
+                >
+                    {{ item.data.update | readableDate }}
+                </time>
+            </span>
+            {% endif %}
+        </div>
+        <div class="content__list-item--right">
+            <h3 class="h4">
+                <a href="{{ item.url }}" rel="bookmark">{{
+                    item.data.title
+                }}</a>
+            </h3>
+        </div>
+        <!-- <div class="content__list-item--right">
+                <p>{{ item.data.lead }}</p>
+            </div> -->
+    </li>
+    {% endfor %}
+</ol>

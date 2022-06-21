@@ -1,0 +1,43 @@
+<footer class="site-footer">
+    <div class="site-footer__inner container">
+        <div class="pr-md-3">
+            <p class="text-small">
+                Den här sidan är skapad med
+                <a
+                    href="https://www.11ty.dev/"
+                    rel="noopener"
+                    target="_blank"
+                    >Eleventy</a
+                >. Detta är version {{ pkg.version }} av den här sidan och
+                källkoden finns i detta
+                <a href="{{ pkg.homepage }}" rel="noopener" target="_blank"
+                    >GitHub repo</a
+                >. Den är fri att använda.
+            </p>
+            <p class="text-small">
+                Sidan är publicerad med
+                <a
+                    href="https://www.netlify.com/"
+                    rel="noopener"
+                    target="_blank"
+                    >Netlify</a
+                >.
+            </p>
+            <p class="text-small">
+                Sidan använder
+                <a
+                    href="https://analytics.google.com/"
+                    rel="noopener"
+                    target="_blank"
+                    >Google analytics</a
+                >
+                för att undersöka trafikdata.
+            </p>
+            <p class="text-small">
+                All text och innehåll &copy; {% year %}
+                {{ meta.author.name }}.
+            </p>
+        </div>
+        {% include "partials/components/nav.njk" %}
+    </div>
+</footer>

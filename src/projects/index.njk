@@ -1,0 +1,27 @@
+---
+title: Projekt
+permalink: /projekt/
+order: 3
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<main id="main-content" tabindex="-1">
+    <section class="content container flow">
+        <p class="content__lead">Länkar och eventuell info om projekt jag har varit delaktig i.</p>
+        {% set projects = collections.projects %}
+        {% if projects.length %}
+        <ul class="project-list">
+            {% for project in projects %}
+                <!-- {{ project.data.project | log }} -->
+                <li><a href="{{ project.url }}">
+                    {{ project.data.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

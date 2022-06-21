@@ -1,0 +1,92 @@
+.demo {
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--color-grey-200);
+        &:hover {
+            color: var(--color-light) !important;
+        }
+        &:visited {
+            color: var(--color-grey-200);
+        }
+    }
+
+    &__code {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        > div {
+            position: relative;
+            background: var(--color-dark);
+            padding: var(--step--1);
+            // top: -1px;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    &__playground {
+        min-height: 30vh;
+        resize: horizontal;
+        overflow: auto;
+        position: relative;
+        padding: var(--step--1);
+
+        // border-top: 2px solid var(--color-dark);
+        // box-shadow: var(--shadow);
+        border: 1px solid var(--color-grey-100);
+        border-top: none;
+        * {
+            margin: 0;
+            padding: unset;
+            border: unset;
+            border-radius: unset;
+            color: unset;
+            font: unset;
+        }
+    }
+}
+
+.tab {
+    display: none;
+}
+
+.tab:target {
+    display: block;
+}
+
+.tab:not(:target) {
+    display: none;
+}
+
+.tabs {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+    line-height: var(--font-headline-height);
+    border-bottom: var(--border-200);
+    font-weight: 500;
+    > li {
+        &:hover {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+        }
+        > a {
+            border: 1px solid var(--color-grey-100);
+            border-bottom: none;
+            display: block;
+            font-weight: 500;
+            text-decoration: none;
+            padding: var(--step--2) var(--step--1);
+            &:hover {
+                color: var(--color-light) !important;
+                border-color: var(--color-dark);
+            }
+            &:visited {
+                color: var(--color-dark);
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // padding-top: var(--step-0);
+    // padding-bottom: var(--step-0);
+    &>[data-direction=forwards] {
+        margin-inline-start: auto;
+    }
+    a {
+        display: flex;
+        align-items: center;
+        color: var(--color-grey-300);
+        &:hover {
+            text-decoration: none;
+            color: var(--color-dark);
+        }
+        &:visted {
+            color: var(--color-grey-300);
+        }
+    }
+}
