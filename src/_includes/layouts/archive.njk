@@ -3,20 +3,22 @@ postsHeading: 'Alla inlägg'
 ---
 
 {% extends 'layouts/base.njk' %}
-
-{% set introHeading = title %}
-{% set introSummary %}
-    {{ content | safe }}
-{% endset %}
+{%- from 'partials/components/post-list/macro.njk' import postList -%}
 {% set postListItems = pagination.items %}
 
 {% block content %}
 <main id="main-content" tabindex="-1">
-    <section class="container">
-
+    <section class="content container flow">
+        {% if postListItems.length %}
+        {{
+            postList({
+                items: postListItems
+            })
+        }}
+        {% endif %}
 
         {% if not tag %}
-            {% include "../partials/components/pagination.njk" %}
+            {% include "../partials/components/pagination/template.njk" %}
         {% endif %}
     </section>
 </main>
