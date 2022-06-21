@@ -1,7 +1,7 @@
 .button {
     border: none;
     display: inline-block;
-    padding: var(--step--1) var(--step-0);
+    padding: var(--step--2) var(--step--1);
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
@@ -9,4 +9,5 @@
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
+    font-weight: var(--font-weight-medium);
 }

@@ -43,15 +43,15 @@ ls -la
 
 | Kommando | Beskrivning |
 | --- | --- |
-| `ls` | Listar innehållet i en mapp, `-la` för att se allt |
-| `cd` | Går till en annan mapp |
-| `mkdir` | Skapar en ny mapp |
-| `touch` | Skapar en fil |
-| `rm` | Tar bort en fil, ska du ta bort en mapp med filer lägg till `-rf`, recursive force |
-| `cp` | Kopierar en fil |
-| `mv` | Flyttar en fil |
-| `cat` | Läser en fil och skriver ut den |
-| `history` | Listar historik, du kan seadan köra kommandot från historiken med !# |
+| ```ls``` | Listar innehållet i en mapp, ```-la``` för att se allt |
+| ```cd``` | Går till en annan mapp |
+| ```mkdir``` | Skapar en ny mapp |
+| ```touch``` | Skapar en fil |
+| ```rm``` | Tar bort en fil, ska du ta bort en mapp med filer lägg till ```-rf```, recursive force |
+| ```cp``` | Kopierar en fil |
+| ```mv``` | Flyttar en fil |
+| ```cat``` | Läser en fil och skriver ut den |
+| ```history``` | Listar historik, du kan seadan köra kommandot från historiken med !# |
 
 ## Nodejs
 

@@ -1,5 +1,3 @@
-$ratio: 1.333 !default;
-
 .content {
     // border-top: 2px solid var(--color-dark);
     padding-top: var(--step-2);
@@ -7,6 +5,12 @@ $ratio: 1.333 !default;
         font-size: var(--step-0);
         font-weight: 300;
         line-height: 1.5;
+    }
+
+    &__footer {
+        h2 {
+            // font-size: var(--step-1);
+        }
     }
 }
 

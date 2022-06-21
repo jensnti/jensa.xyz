@@ -1,22 +1,12 @@
 <ol class="post-list site-grid__full">
     {% for item in props.items %}
     <li class="post-list__item">
-
         <div class="post-list__item--title">
             <h3 class="post-list__title">
                 <a class="stretched-link" href="{{ item.url }}" rel="bookmark">{{
                     item.data.title
                 }}</a>
             </h3>
-            <!-- {% if item.data.update %}
-            <span
-                class="post-list__updated h5 text-small"
-                >uppdaterad
-                <time datetime="{{ item.data.update | htmlDateString }}">
-                    {{ item.data.update | readableDate }}
-                </time>
-            </span>
-            {% endif %} -->
         </div>
         <div class="post-list__item--category">
             {{ item.data.category | safe }}
@@ -32,7 +22,7 @@
         <div class="post-list__item--tags">
             <ul class="post-list__tags">
                 {% for tag in item.data.tags %}
-                    <li>{{ tag }}</li>
+                    <li class="tag">{{ tag }}</li>
                 {% endfor %}
             </ul>
         </div>

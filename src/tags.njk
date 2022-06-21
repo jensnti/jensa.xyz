@@ -1,16 +1,15 @@
 ---
-title: Taggat
 pagination:
     data: collections
     size: 1
     alias: tag
     filter: ['all', 'nav', 'pages', 'tagList']
-permalink: /tagg/{{ tag | slug }}/
+permalink: /tag/{{ tag | slugify }}/
 postsHeading: 'Alla inlägg'
 ---
 
+{% set title = 'Taggat med ' + tag %}
 {% extends 'layouts/base.njk' %}
-{% set introHeading = title + ' med ' + tag %}
 {% set postListItems = collections[tag] | reverse %}
 
 {% block content %}
