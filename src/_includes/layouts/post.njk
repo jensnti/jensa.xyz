@@ -2,6 +2,18 @@
 
 {% set pagesCheck = page.filePathStem.includes('/pages/') %}
 
+{% block header %}
+{{
+    siteHead({
+        title: title,
+        siteName: meta.siteName,
+        active: page.url,
+        items: collections.pages,
+        tags: tags
+    })
+}} 
+{% endblock %}
+
 {% block content %}
 <main id="main-content" tabindex="-1">
     <article class="content container flow">
