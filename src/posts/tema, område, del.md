@@ -2,7 +2,7 @@
 title: Tema, område, del
 date: 2021-07-31
 lead: 'Mitt intresse för att testa en statisk sidbyggare började i ett projekt kallat Tema, område, del. Detta efter samtal med en kollega.'
-tags: ['TOD', 'eleventy']
+tags: ['TOD', '11ty']
 templateEngineOverride: njk, md
 category: anteckning
 ---

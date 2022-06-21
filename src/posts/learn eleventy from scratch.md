@@ -3,7 +3,7 @@ title: Learn Eleventy From Scratch
 date: 2021-06-24
 update: 2021-07-11
 lead: 'Scrolla ned för att läsa mina intryck efter att jag slutfört kursen .'
-tags: ['css', 'länkar', 'eleventy']
+tags: ['css', 'länkar', '11ty']
 templateEngineOverride: njk, md
 category: anteckning
 ---

@@ -9,14 +9,12 @@ category: anteckning
 
 ## Varför
 
-Min tanke är att kunna använda den här sidan för att hosta kodexempel som jag använder i mina kurser. Som det är i dag har jag delat upp materialet på ett antal olika sidor:
-* [wu-exempel](https://jensnti.github.io/wu-exempel/)
+Min tanke är att kunna använda den här sidan för att hosta kodexempel som jag använder i mina kurser. För närvarande är materialet på ett antal olika sidor:
+* [Exempel för webbutveckling](https://jensnti.github.io/wu-exempel/)
 * [Webbserverprogrammering](https://jens-andreasson.gitbook.io/webbserverprogrammering/)
 * [Webbutveckling](https://jens-andreasson.gitbook.io/webbutveckling/)
 
-En del av materialet är i behov av uppdatering så när jag började titta på det och 
-arbetade med en uppdaterad version av exempel för webbutveckling så kändes det som
-en rimlig ambition. 
+En del av materialet är i behov av uppdatering så när jag började titta på det och arbetade med en uppdaterad version av exempel för webbutveckling så kändes det som en rimlig ambition att flytta koden hit.
 
 ## Hur
 

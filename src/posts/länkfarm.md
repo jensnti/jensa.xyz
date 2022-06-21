@@ -1,7 +1,7 @@
 ---
 title: Länkfarm
 date: 2021-09-30
-tags: ['eleventy', 'koda']
+tags: ['11ty', 'koda']
 category: anteckning
 ---
 

@@ -2,7 +2,7 @@
 title: Arbeta med Eleventy i klassrummet
 date: 2021-09-29
 lead: 'Terminen har rullat igång och jag har börjat använda Eleventy i undervisningen.'
-tags: ['eleventy', 'webbutveckling']
+tags: ['11ty', 'webbutveckling']
 category: anteckning
 ---
 

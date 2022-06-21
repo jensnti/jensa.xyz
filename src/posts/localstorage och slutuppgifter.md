@@ -2,7 +2,7 @@
 title: Localstorage och slutuppgifter
 date: 2021-11-16
 lead: 'Kurswebbsystemet, TOD, behövde en uppdatering för att tillåta slutuppgifter. Det var inte tvärenkelt att bara lägga till.'
-tags: ['TOD', 'eleventy', 'javascript', 'localstorage']
+tags: ['TOD', '11ty', 'javascript', 'localstorage']
 templateEngineOverride: njk, md
 category: anteckning
 ---
