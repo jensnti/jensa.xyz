@@ -80,7 +80,7 @@
             // }
         }
         &--tags {
-            align-self: start;
+            align-self: end;
             grid-column: 4 / 5;
             grid-row: 2;
             @media (max-width: 400px) {
