@@ -14,7 +14,7 @@ Jag undervisar i kurserna webbutveckling, webbserverprogrammering och programmer
 
 Jag är en [GitHub Campus Advisor](https://education.github.com/teachers/advisors).
 
-Vid sidan av mitt arbete och det som jag skriver om på denna sida så gillar jag att lyssna på och spela musik, laga mat, flugfiska, vandra, spela dataspel, brädspel, läsa samt nörda om saker.
+Vid sidan av mitt arbete och det som jag skriver om på denna sida så gillar jag att lyssna på och spela musik, laga mat, flugfiska, vandra, dataspel, brädspel, läsa samt nörda om saker.
 
 ### Mitt hem
 
@@ -37,4 +37,4 @@ För min undervisning har jag skapat en del material:
 
 Privat [mail](mailto:jensandreasson77@gmail.com).
 
-Är du likt jag en dinosaurie och använder feeds så kan du [prenumerera](/feed.xml) på den här sidans. Jag använder [Feedly](https://feedly.com).
+Är du som jag, en dinosaurie, så kan du prenumerera på den här sidans [feed](/feed.xml). Jag använder [Feedly](https://feedly.com).
