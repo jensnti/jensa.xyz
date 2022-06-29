@@ -2,66 +2,46 @@
 {%- from 'partials/components/site-foot/macro.njk' import siteFoot -%}
 <!DOCTYPE html>
 <html lang="{{ meta.lang }}">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        {% include "../partials/global/meta.njk" %}
-        <link rel="preconnect" href="https:/cdnjs.cloudflare.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://use.typekit.net" />
-        <link rel="stylesheet" href="https://use.typekit.net/hrh0cnz.css" />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="{{ meta.siteName }}"
-            href="{{ meta.url }}/feed.xml"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
-            rel="stylesheet"
-        />
-        <!-- <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css"
-            integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        /> -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-base16-ateliersulphurpool.light.min.css" integrity="sha512-Fy937YAIEYLKKxl8PezgPCwzr6rNqTp4x2uJ2zS28+lZQtYK3brE8R49TcNhCDdagEt+uRyMz+gyoPnZMOwfmQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-vars/base.css">
-        <link rel="stylesheet" href="{{ '/css/theme-vars.css'}}">
-        <!-- <link rel="stylesheet" href="{{ '/css/prism-custom.css' }}"> -->
 
-        <link rel="stylesheet" href="{{ '/css/style.css' }}">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        {% include "../partials/global/analytics.njk" %}
-        {% block head %} {% endblock %}
-    </head>
-    <body>
-        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
-        {% block header %}
-        {{
-            siteHead({
-                title: title,
-                siteName: meta.siteName,
-                active: page.url,
-                items: collections.pages
-            })
-        }}
-        {% endblock %}
-        {% block content %}
-        {% endblock %}
-        {% block footer %}
-            {{ siteFoot({
-                version: pkg.version,
-                url: pkg.homepage
-            }) }}
-        {% endblock %}
-        {% include "../partials/components/flash-message/template.njk" %}
-        {% block scripts %}
-            <script defer src="/js/bundle.js"></script>
-        {% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% include "../partials/global/meta.njk" %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://use.typekit.net" />
+    <link rel="alternate" type="application/rss+xml" title="{{ meta.siteName }}" href="{{ meta.url }}/feed.xml" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/hrh0cnz.css" />
+    <link rel="stylesheet" href="{{ '/css/style.css' }}">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    {% include "../partials/global/analytics.njk" %}
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+    {% block header %}
+        {{ siteHead({
+            title: title,
+            siteName: meta.siteName,
+            active: page.url,
+            items: collections.pages
+        }) }}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    {% block footer %}
+        {{ siteFoot({
+            version: pkg.version,
+            url: pkg.homepage
+        }) }}
+    {% endblock %}
+    {% include "../partials/components/flash-message/template.njk" %}
+    {% block scripts %}
+    <script defer src="/js/bundle.js"></script>
+    {% endblock %}
+</body>
+
 </html>

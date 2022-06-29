@@ -2,6 +2,11 @@
 
 {% set pagesCheck = page.filePathStem.includes('/pages/') %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ '/css/prism-theme-base.css'}}">
+<link rel="stylesheet" href="{{ '/css/theme-vars.css'}}">
+{% endblock %}
+
 {% block header %}
 {{
     siteHead({
