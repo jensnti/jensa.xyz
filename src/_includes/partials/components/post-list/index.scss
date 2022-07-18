@@ -58,6 +58,8 @@
             align-self: end;
             grid-column: 4 / 5;
             grid-row: 1;
+            font-size: var(--step--2);
+            text-transform: uppercase;
             @media (max-width: 400px) {
                 text-align: end;
             }
@@ -66,6 +68,7 @@
             align-self: end;
             grid-column: 1 / 4;
             grid-row: 1;
+            font-size: var(--step--2);
             // @media (max-width:80ch) {
             //     grid-column: 1/4;
             // }

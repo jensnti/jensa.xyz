@@ -5,24 +5,22 @@
             <h3 class="post-list__title">
                 <a class="stretched-link" href="{{ item.url }}" rel="bookmark">{{
                     item.data.title
-                }}</a>
+                    }}</a>
             </h3>
         </div>
         <div class="post-list__item--category">
-            {{ item.data.category | safe }}
-        </div>
-        <div class="post-list__item--date">
-            <time
-                class=""
-                datetime="{{ item.date | htmlDateString }}"
-            >
+            <time class="" datetime="{{ item.date | htmlDateString }}">
                 {{ item.date | frontDate }}
             </time>
+        </div>
+        <div class="post-list__item--date">
+            {{ item.data.category | safe }}
+
         </div>
         <div class="post-list__item--tags">
             <ul class="post-list__tags">
                 {% for tag in item.data.tags %}
-                    <li class="tag">{{ tag }}</li>
+                <li class="tag">{{ tag }}</li>
                 {% endfor %}
             </ul>
         </div>
